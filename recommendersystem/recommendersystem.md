@@ -66,11 +66,30 @@
     - Nevertheless, the latent representation learned by CTR may not be very effective when **the auxiliary information is very sparse**. To adresss the problem, we jointly performs **deep representation learning** for the content information and **collaborative filtering** for the ratings (feedback) matrix. 
     -  **Loosely coupled** methods like process the auxiliary information once and then use it to provide features for the CF models. Since information flow is one-way, the rating information cannot provide feedback to guide the extraction of useful features. For this sub-category, improvement often has to rely on a manual and tedious feature engineering process.
     -  **Tightly coupled** methods like allow two-way interaction. On one hand, the rating information can guide the learning of features. On the other hand, the extracted features can further improve the predictive power of the CF models (e.g., based on matrix factorization of the sparse rating matrix). With two-way interaction, tightly coupled methods can automatically learn features from the auxiliary information and naturally balance the influence of the rating and auxiliary information. 
-    - The hierarchical Bayesian model called **collaborative deep learning**(CDL) using [*SDAE*](../basemethods/Stacked%20Denoising%20Autoencoders%20Learning%20Useful%20Representations%20in%20a%20Deep%20Network%20with%20a%20Local%20Denoising%20Criterion.pdf) for its feature learning componen.
-    - 
+    -  CTR = PMF + LDA. But  the latent representation learned is often not effective enough especially when the auxiliary information is very sparse. It is this **representation learning problem** that we will focus on in this paper.
+    - The hierarchical Bayesian model called **collaborative deep learning**(CDL) using [*SDAE*](../basemethods/Stacked%20Denoising%20Autoencoders%20Learning%20Useful%20Representations%20in%20a%20Deep%20Network%20with%20a%20Local%20Denoising%20Criterion.pdf) for its feature learning component. With this, we then present our CDL model which tightly couples deep representation learning for the content information and collaborative filtering for the ratings (feedback) matrix, allowing two-way interaction between the two.
+    - SDAE is a feedforward neural network for learning representations (encoding) of the input data by learning to predict the clean input itself in the output.
+    - Note that the first L/2 layers of the network act as an encoder and the last L/2 layers act as a decoder.
+    - ![Model Architecture](./images/Collaborative%20Deep%20Learning%20for%20Recommender%20Systems_1.png)
+    - ![Model Architecture](./images/Collaborative%20Deep%20Learning%20for%20Recommender%20Systems_2.png)
 
 
 1. [Collaborative Topic Modeling for Recommending Scientific Articles](./collaborativefilteringbasedrecommendation/Collaborative%20Topic%20Modeling%20for%20Recommending%20Scientific%20Articles.pdf)
-   - Chong Wang, David M. Blei/2011/KDD/1792
+    - Chong Wang, David M. Blei/2011/KDD/1792
+    - **In-matrix prediction:** This refers to the problem of making recommendations about those articles that have been rated by at least one user in the system. This is the task that traditional collaborative filtering can address.
+    - **Out-of-matrix prediction:** A recommender system that cannot handle out-of-matrix prediction cannot recommend newly published papers to its users.
+    - Our approach combines the merits of **traditional collaborative filtering** and **probabilistic topic modeling**. It provides an interpretable latent structure for users and items, and can form recommendations about both existing and newly published articles.
+    - Each user has a **library of articles** that he or she is interested in, and our goal is to match each user to articles of interest that are **not in his or her library**.
+    - The rating variable $r_ij$ ∈ {0, 1} denotes whether user i includes article j in her library. This differs from some other systems where users explicitly rate items on a scale.
+    - There are two main disadvantages to matrix factorization for recommendation(probabilistic matrix factorization, PMF). First, the learnt latent space is **not easy to interpret**; second, as mentioned, matrix factorization only uses information from other users—it **cannot generalize to completely unrated items**.
+    - The simplest topic model is Latent Dirichlet Allocation ([*LDA*](../basemethods/Latent%20Dirichlet%20Allocation.pdf)). Unlike a clustering model, where each document is assigned to one cluster,LDA allows documents to exhibit multiple topics. Our goal is to use topic modeling to give a content-based representation of items in a recommender system. 
+    - ![Model Architecture](images/Collaborative%20Topic%20Modeling%20for%20Recommending%20Scientific%20Articles_1.png)
+    - ![Model Architecture](images/Collaborative%20Topic%20Modeling%20for%20Recommending%20Scientific%20Articles_2.png)
+
+
+
+
+
+
 
 
