@@ -71,8 +71,14 @@
 
 ## 3. [Neural Collaborative Filtering](./collaborativefilteringbasedrecommendation/Neural%20Collaborative%20Filtering.pdf)
 - Xiangnan He, Lizi Liao, Hanwang Zhang etc. /2017/WWW/3337
-- 
-
+- By **replacing the inner product with a neural architecture** that can learn an arbitrary function from data, we present a general framework named NCF, short for Neural networkbased Collaborative Filtering. 
+- **Pointwise learning** usually follow a regression framework by minimizing the squared loss between y_ui' and its target value y_ui. **Pairwise learning** the idea is that observed entries should be ranked higher than the unobserved ones. As such, instead of minimizing the loss between y_ui' and yui, pairwise learning maximizes the margin between observed entry y_ui' and unobserved entry y_uj'.
+- **There is a natural scarcity of negative feedback** in learning from implicit data. Because the user will not have any implicit action on negative samples.
+- ![Model Architecture](./images/Neural%20Collaborative%20Filtering_1.png)
+- The above example shows **the possible limitation** of MF caused by the use of a simple and fixed inner product to estimate complex user–item interactions in the **low-dimensional latent space**. We note that one way to resolve the issue is to use a large number of latent factors K. However, it may adversely hurt the generalization of the model especially in sparse settings(**Overfit**). In this work, we address the limitation by learning the interaction function using DNNs from data.
+- GMF that applies a linear kernel to model **the latent feature interactions**, and MLP that uses a non-linear kernel to learn **the interaction function from data**.
+- ![Model Architecture](./images/Neural%20Collaborative%20Filtering_2.png)
+- ![Model Architecture](./images/Neural%20Collaborative%20Filtering_3.png)
 
 
 
