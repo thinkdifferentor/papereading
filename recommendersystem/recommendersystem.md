@@ -22,6 +22,7 @@
 - DeepCoNN is the first one that jointly models both user and item from reviews using neural networks.(Based on *[Factorization Machine](../basemethods/Factorization%20Machines.pdf)*)
 - ![Model Architecture](images/Joint%20Deep%20Modeling%20of%20Users%20and%20Items%20Using%20Reviews%20for%20Recommendation.png)
 
+
 ## 4. [*Wide & Deep Learning for Recommender Systems](./deeplearningbasedrecommendation/Wide%20%26%20Deep%20Learning%20for%20Recommender%20Systems.pdf)
 - Heng-Tze Cheng, Levent Koc, Jeremiah Harmsen, Tal Shaked, Tushar Chandra etc./2016/DLRS/2115
 - **Memorization** of feature interactions through a wide set of cross-product feature transformations are **effective and interpretable**, while memorization requires more feature engineering effort. With less feature engineering, deep neural networks(**Generalization**) can generalize better to unseen feature combinations through low-dimensional dense embeddings learned for the sparse features.
@@ -38,8 +39,8 @@
 - ![Model Architecture](./images/Wide%20%26%20Deep%20Learning%20for%20Recommender%20Systems_4.png)
 
 
-## 5. 
-
+## 5. [GLocal-K Global and Local Kernels for Recommender Systems](./deeplearningbasedrecommendation/GLocal-K%20Global%20and%20Local%20Kernels%20for%20Recommender%20Systems%20.pdf)
+- Soyeon Caren Han, Taejun Lim, Siqu Long etc./2021/ACM/2
 
 
 
@@ -69,6 +70,7 @@
 - ![Model Architecture](images/Collaborative%20Topic%20Modeling%20for%20Recommending%20Scientific%20Articles_1.png)
 - ![Model Architecture](images/Collaborative%20Topic%20Modeling%20for%20Recommending%20Scientific%20Articles_2.png)
 
+
 ## 3. [Neural Collaborative Filtering](./collaborativefilteringbasedrecommendation/Neural%20Collaborative%20Filtering.pdf)
 - Xiangnan He, Lizi Liao, Hanwang Zhang etc. /2017/WWW/3337
 - By **replacing the inner product with a neural architecture** that can learn an arbitrary function from data, we present a general framework named NCF, short for Neural networkbased Collaborative Filtering. 
@@ -81,17 +83,26 @@
 - ![Model Architecture](./images/Neural%20Collaborative%20Filtering_3.png)
 
 
-
-
-
-# III. ReinforcementLearning Based Recommendation 
-
-
+## 4. [Collaborative Translational Metric Learning](./collaborativefilteringbasedrecommendation/Collaborative%20Translational%20Metric%20Learning.pdf)
+- Chanyoung Park, Donghyun Kim, Xing Xie, Hwanjo Yu/2018/IEEE/30
 
 
 
 
-# IV. SocialNetwork Based Recommendation 
+# III. SocialNetwork Based Recommendation
+## 1. [Geometric Matrix Completion with Recurrent Multi-Graph Neural Networks](./socialnetworkbasedrecommendation/Geometric%20Matrix%20Completion%20with%20Recurrent%20Multi-Graph%20Neural%20Networks.pdf)
+- Federico Monti, Michael M. Bronstein, Xavier Bresson /2017/NIPS/394
+
+
+
+
+# IV. ReinforcementLearning Based Recommendation 
+- 
+
+
+
+
+
 
 
 
