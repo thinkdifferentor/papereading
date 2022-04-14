@@ -85,8 +85,12 @@
 
 ## 4. [Collaborative Translational Metric Learning](./collaborativefilteringbasedrecommendation/Collaborative%20Translational%20Metric%20Learning.pdf)
 - Chanyoung Park, Donghyun Kim, Xing Xie, Hwanjo Yu/2018/IEEE/30
-
-
+- matrix factorization–based recommendation methods have been criticized for the problem raised by **the triangle inequality violation**. Although several metric learning–based approaches have been proposed to overcome this issue,existing approaches typically project each user to a **single point** in the metric space, and thus do not suffice for properly modeling the **intensity(Rating scale of user)** and the **heterogeneity(various item categories of user's tastes)** of user–item relationships in implicit feedback.
+- Inspired by the translation mechanism popularized by knowledge graph embedding, we construct user–item specific translation vectors by employing **the neighborhood information** of users and items, and **translate each user toward items** according to the user’s relationships with the items.
+- In this way, these approaches(**Metric learning–based methods**) not only expect to propagate positive **user–item relationships** to other unknown user–item pairs, but also to capture the similarity within **user–user and item–item pairs** by satisfying the triangle inequality.
+- In our work, we embed users and items as points in a low-dimensional metric space, and additionally introduce **translation vectors** to translate each user to **multiple points**. Recall that the objectives of this work are **1)** to address the limitation of the inner product as a scoring function,which violates the triangle inequality, and **2)** to model the intensity and the heterogeneity of user–item relationships in implicit feedback.and **3)** to handle the complex nature of CF(**user to items is one to many mapping**, traditional Metric learning–based methods can't deal with it).
+- ![Model Architecture](./images/Collaborative%20Translational%20Metric%20Learning_1.png)
+- ![Model Architecture](./images/Collaborative%20Translational%20Metric%20Learning_2.png)
 
 
 # III. SocialNetwork Based Recommendation
@@ -97,7 +101,6 @@
 
 
 # IV. ReinforcementLearning Based Recommendation 
-- 
 
 
 
