@@ -9,11 +9,11 @@
 
 ## 2. [Dynamic  Attention Deep Model for Article Recommendation by Learning Human Editors’ Demonstration](./deeplearningbasedrecommendation/Dynamic%20%20Attention%20Deep%20Model%20for%20Article%20Recommendation%20by%20Learning%20Human%20Editors%E2%80%99%20Demonstration.pdf)
  - Xuejian Wang, Lantao Yu, Kan Ren, Guanyu Tao, Weinan Zhang, Yong Yu, Jun Wang/2017/KDD/145
- - Our data analysis shows that (i) **editors’ selection criteria are non-explicit**, which are less based only on the keywords or topics,but more depend on the quality and atractiveness of the writing from the candidate article, which is hard to capture based on traditional bag-of-words article representation. And (ii) **editors’ article selection behaviors are dynamic**: articles with dierent data distribution come into the pool everyday and the editors’ preference varies, which are driven by some underlying periodic or occasional patterns.
+ - Our data analysis shows that (i) **editors’ selection criteria are non-explicit**, which are less based only on the keywords or topics,but more depend on the quality and atractiveness of the writing from the candidate article, which is hard to capture based on traditional bag-of-words article representation. And (ii) **editors’ article selection behaviors are dynamic**:articles with dierent data distribution come into the pool everyday and the editors’ preference varies, which are driven by some underlying periodic or occasional patterns.
  - To address such problems, we propose a **meta-attention model** across multiple deep neural nets to (i) automatically catch the editors’ underlying selection criteria via the automatic representation learning of each article and its interaction with the meta data and (ii) adaptively capture the change of such criteria via a hybrid attention model. 
  -  convolutional operation and max-pooling technique can be leveraged to capture **the underlying semantic patterns** within the word sequence, which are helpful for the prediction but may not be explicit to be specified. Recent literatures have shown that CNN-based model can achieve promising performance comparative with or even more competitive than other deep models,e.g. Long Short Term Memory (LSTM) in many NLP tasks.
- - ![Model Architecture](images/Dynamic%20Aention%20Deep%20Model_1.png#pic_center)
- - ![Model Architecture](images/Dynamic%20Aention%20Deep%20Model_2.png#pic_center)
+ - ![Model Architecture 1](images/Dynamic%20Aention%20Deep%20Model_1.png#pic_center)
+ - ![Model Architecture 2](images/Dynamic%20Aention%20Deep%20Model_2.png#pic_center)
 
 
 ## 3. [Joint Deep Modeling of Users and Items Using Reviews for Recommendation](./deeplearningbasedrecommendation/Joint%20Deep%20Modeling%20of%20Users%20and%20Items%20Using%20Reviews%20for%20Recommendation.pdf)
@@ -33,10 +33,10 @@
 - **The Deep Component**:For categorical features, the original inputs are feature strings (e.g., “language=en”).
 - **Joint Training of Wide & Deep Model**：The wide component and deep component are combined using a weighted sum of their output log odds as the prediction, which is then fed to one common logistic loss function for joint training.
 - In an **ensemble**, individual models are trained separately without knowing each other, and their predictions are combined only at inference time but not at training time. In contrast, **joint** training optimizes all parameters simultaneously by taking both the wide and deep part as well as the weights of their sum into account at training time. 
-- ![Model Architecture](./images/Wide%20%26%20Deep%20Learning%20for%20Recommender%20Systems_1.png)
-- ![Model Architecture](./images/Wide%20%26%20Deep%20Learning%20for%20Recommender%20Systems_2.png)
-- ![Model Architecture](./images/Wide%20%26%20Deep%20Learning%20for%20Recommender%20Systems_3.png)
-- ![Model Architecture](./images/Wide%20%26%20Deep%20Learning%20for%20Recommender%20Systems_4.png)
+- ![Model Architecture 1](./images/Wide%20%26%20Deep%20Learning%20for%20Recommender%20Systems_1.png)
+- ![Model Architecture 2](./images/Wide%20%26%20Deep%20Learning%20for%20Recommender%20Systems_2.png)
+- ![Model Architecture 3](./images/Wide%20%26%20Deep%20Learning%20for%20Recommender%20Systems_3.png)
+- ![Model Architecture 4](./images/Wide%20%26%20Deep%20Learning%20for%20Recommender%20Systems_4.png)
 
 
 ## 5. [GLocal-K Global and Local Kernels for Recommender Systems](./deeplearningbasedrecommendation/GLocal-K%20Global%20and%20Local%20Kernels%20for%20Recommender%20Systems%20.pdf)
@@ -54,8 +54,8 @@
 - The hierarchical Bayesian model called **collaborative deep learning**(CDL) using [*SDAE*](../basemethods/Stacked%20Denoising%20Autoencoders%20Learning%20Useful%20Representations%20in%20a%20Deep%20Network%20with%20a%20Local%20Denoising%20Criterion.pdf) for its feature learning component. With this, we then present our CDL model which tightly couples deep representation learning for the content information and collaborative filtering for the ratings (feedback) matrix, allowing two-way interaction between the two.
 - SDAE is a feedforward neural network for learning representations (encoding) of the input data by learning to predict the clean input itself in the output.
 - Note that the first L/2 layers of the network act as an encoder and the last L/2 layers act as a decoder.
-- ![Model Architecture](./images/Collaborative%20Deep%20Learning%20for%20Recommender%20Systems_1.png)
-- ![Model Architecture](./images/Collaborative%20Deep%20Learning%20for%20Recommender%20Systems_2.png)
+- ![Model Architecture 1](./images/Collaborative%20Deep%20Learning%20for%20Recommender%20Systems_1.png)
+- ![Model Architecture 2](./images/Collaborative%20Deep%20Learning%20for%20Recommender%20Systems_2.png)
 
 
 ## 2. [Collaborative Topic Modeling for Recommending Scientific Articles](./collaborativefilteringbasedrecommendation/Collaborative%20Topic%20Modeling%20for%20Recommending%20Scientific%20Articles.pdf)
@@ -67,8 +67,8 @@
 - The rating variable $r_ij$ ∈ {0, 1} denotes whether user i includes article j in her library. This differs from some other systems where users explicitly rate items on a scale.
 - There are two main disadvantages to matrix factorization for recommendation(probabilistic matrix factorization, PMF). First, the learnt latent space is **not easy to interpret**; second, as mentioned, matrix factorization only uses information from other users—it **cannot generalize to completely unrated items**.
 - The simplest topic model is Latent Dirichlet Allocation ([*LDA*](../basemethods/Latent%20Dirichlet%20Allocation.pdf)). Unlike a clustering model, where each document is assigned to one cluster,LDA allows documents to exhibit multiple topics. Our goal is to use topic modeling to give a content-based representation of items in a recommender system. 
-- ![Model Architecture](images/Collaborative%20Topic%20Modeling%20for%20Recommending%20Scientific%20Articles_1.png)
-- ![Model Architecture](images/Collaborative%20Topic%20Modeling%20for%20Recommending%20Scientific%20Articles_2.png)
+- ![Model Architecture 1](images/Collaborative%20Topic%20Modeling%20for%20Recommending%20Scientific%20Articles_1.png)
+- ![Model Architecture 2](images/Collaborative%20Topic%20Modeling%20for%20Recommending%20Scientific%20Articles_2.png)
 
 
 ## 3. [Neural Collaborative Filtering](./collaborativefilteringbasedrecommendation/Neural%20Collaborative%20Filtering.pdf)
@@ -76,21 +76,21 @@
 - By **replacing the inner product with a neural architecture** that can learn an arbitrary function from data, we present a general framework named NCF, short for Neural networkbased Collaborative Filtering. 
 - **Pointwise learning** usually follow a regression framework by minimizing the squared loss between y_ui' and its target value y_ui. **Pairwise learning** the idea is that observed entries should be ranked higher than the unobserved ones. As such, instead of minimizing the loss between y_ui' and yui, pairwise learning maximizes the margin between observed entry y_ui' and unobserved entry y_uj'.
 - **There is a natural scarcity of negative feedback** in learning from implicit data. Because the user will not have any implicit action on negative samples.
-- ![Model Architecture](./images/Neural%20Collaborative%20Filtering_1.png)
+- ![Model Architecture 1](./images/Neural%20Collaborative%20Filtering_1.png)
 - The above example shows **the possible limitation** of MF caused by the use of a simple and fixed inner product to estimate complex user–item interactions in the **low-dimensional latent space**. We note that one way to resolve the issue is to use a large number of latent factors K. However, it may adversely hurt the generalization of the model especially in sparse settings(**Overfit**). In this work, we address the limitation by learning the interaction function using DNNs from data.
 - GMF that applies a linear kernel to model **the latent feature interactions**, and MLP that uses a non-linear kernel to learn **the interaction function from data**.
-- ![Model Architecture](./images/Neural%20Collaborative%20Filtering_2.png)
-- ![Model Architecture](./images/Neural%20Collaborative%20Filtering_3.png)
+- ![Model Architecture 2](./images/Neural%20Collaborative%20Filtering_2.png)
+- ![Model Architecture 3](./images/Neural%20Collaborative%20Filtering_3.png)
 
 
 ## 4. [Collaborative Translational Metric Learning](./collaborativefilteringbasedrecommendation/Collaborative%20Translational%20Metric%20Learning.pdf)
 - Chanyoung Park, Donghyun Kim, Xing Xie, Hwanjo Yu/2018/IEEE/30
-- matrix factorization–based recommendation methods have been criticized for the problem raised by **the triangle inequality violation**. Although several metric learning–based approaches have been proposed to overcome this issue,existing approaches typically project each user to a **single point** in the metric space, and thus do not suffice for properly modeling the **intensity(Rating scale of user)** and the **heterogeneity(various item categories of user's tastes)** of user–item relationships in implicit feedback.
+- matrix factorization–based recommendation methods have been criticized for the problem raised by **the triangle inequality violation**. Although several metric learning–based approaches have been proposed to overcome this issue,existing approaches typically project each user to a **single point** in the metric space, and thus do not suffice for properly modeling the **intensity( higher ratings imply a higher intensity of user–item relationships)** and the **heterogeneity(various item categories of user's tastes)** of user–item relationships in implicit feedback.
 - Inspired by the translation mechanism popularized by knowledge graph embedding, we construct user–item specific translation vectors by employing **the neighborhood information** of users and items, and **translate each user toward items** according to the user’s relationships with the items.
 - In this way, these approaches(**Metric learning–based methods**) not only expect to propagate positive **user–item relationships** to other unknown user–item pairs, but also to capture the similarity within **user–user and item–item pairs** by satisfying the triangle inequality.
 - In our work, we embed users and items as points in a low-dimensional metric space, and additionally introduce **translation vectors** to translate each user to **multiple points**. Recall that the objectives of this work are **1)** to address the limitation of the inner product as a scoring function,which violates the triangle inequality, and **2)** to model the intensity and the heterogeneity of user–item relationships in implicit feedback.and **3)** to handle the complex nature of CF(**user to items is one to many mapping**, traditional Metric learning–based methods can't deal with it).
-- ![Model Architecture](./images/Collaborative%20Translational%20Metric%20Learning_1.png)
-- ![Model Architecture](./images/Collaborative%20Translational%20Metric%20Learning_2.png)
+- ![Model Architecture 1](./images/Collaborative%20Translational%20Metric%20Learning_1.png)
+- ![Model Architecture 2](./images/Collaborative%20Translational%20Metric%20Learning_2.png)
 
 
 # III. SocialNetwork Based Recommendation
