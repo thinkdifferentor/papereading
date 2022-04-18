@@ -93,6 +93,21 @@
 - ![Model Architecture 2](./images/Collaborative%20Translational%20Metric%20Learning_2.png)
 
 
+## 5. [Collaborative Metric Learning](./collaborativefilteringbasedrecommendation/Collaborative%20Metric%20Learning.pdf)
+- Cheng-Kang Hsieh, Longqi Yang, Yin Cui etc./2017/WWW/369
+- **Metric learning** algorithms produce distance metrics that capture the important relationships among data. We propose Collaborative Metric Learning (CML) which learns a joint metric space to encode not only **users’ preferences** but also the **user-user and item-item similarity**. Beyond the improvement in accuracy, an exciting property of CML is its capability of uncovering **fine-grained relationships** among users’ preferences.
+- For items the user likes, their gradients move inward to create a smaller radius(*pull loss*). For impostor items, which are the items the user did not like but which invade the perimeter, their gradients move outward from the user until they are pushed out of the perimeter by a safe margin(*push loss*).([*LMNN*](../basemethods/Distance%20Metric%20Learning%20for%20Large%20Margin%20Nearest%20Neighbor%20Classification.pdf))
+- ![Model Architecture 1](./images/Collaborative%20Metric%20Learning_1.png)
+- ![Model Architecture 2](./images/Collaborative%20Metric%20Learning_2.png)
+
+
+
+
+
+
+
+
+
 # III. SocialNetwork Based Recommendation
 ## 1. [Geometric Matrix Completion with Recurrent Multi-Graph Neural Networks](./socialnetworkbasedrecommendation/Geometric%20Matrix%20Completion%20with%20Recurrent%20Multi-Graph%20Neural%20Networks.pdf)
 - Federico Monti, Michael M. Bronstein, Xavier Bresson /2017/NIPS/394
