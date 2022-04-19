@@ -101,7 +101,15 @@
 - ![Model Architecture 2](./images/Collaborative%20Metric%20Learning_2.png)
 
 
+## 6. [Improving Pairwise Learning for Item Recommendation from Implicit Feedback](./collaborativefilteringbasedrecommendation/Improving%20Pairwise%20Learning%20for%20Item%20Recommendation.pdf)
+- Steffen Rendle, Christoph Freudenthaler/2014/WSDM/302
+- We show that convergence of such SGD learning algorithms **slows down** considerably if the **item popularity has a tailed distribution**. We propose a **non-uniform item sampler** to overcome this problem. The proposed sampler is **context-dependent and oversamples informative pairs** to speed up convergence.
+-  In this paper, it is shown that **uniform sampling pairs** results in slow convergence, especially if **the pool of items is large and the overall item-popularity is tailed**. *Uniform sampling*: equivalent to the common BPR algorithm; *Static oversampling* which samples negative items from the **global popularity distribution (Global & Static)**. *Adaptive oversampling* which samples negative items with respect to **the estimated ranking for this context (Context-dependent & Adaptive)**.
 
+
+## 7. [Collaborative Denoising Auto-Encoders for Top-N Recommender Systems](./collaborativefilteringbasedrecommendation/Collaborative%20Denoising%20Auto-Encoders%20for%20Top-N%20Recommender%20Systems.pdf)
+- Yao Wu, Christopher DuBois, Alice X. Zheng, Martin Ester/2016/WSDM/765
+- 
 
 
 
