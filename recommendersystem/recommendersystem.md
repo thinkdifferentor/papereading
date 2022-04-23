@@ -1,3 +1,29 @@
+<!-- TOC -->
+
+- [I. DeepLearning Based Recommendation](#i-deeplearning-based-recommendation)
+  - [1. Deep Neural Architecture for News Recommendation](#1-deep-neural-architecture-for-news-recommendation)
+  - [2. Dynamic Attention Deep Model for Article Recommendation by Learning Human Editors’ Demonstration](#2-dynamic-attention-deep-model-for-article-recommendation-by-learning-human-editors-demonstration)
+  - [3. Joint Deep Modeling of Users and Items Using Reviews for Recommendation](#3-joint-deep-modeling-of-users-and-items-using-reviews-for-recommendation)
+  - [4. *Wide & Deep Learning for Recommender Systems](#4-wide--deep-learning-for-recommender-systems)
+  - [5. GLocal-K Global and Local Kernels for Recommender Systems](#5-glocal-k-global-and-local-kernels-for-recommender-systems)
+- [II. CollaborativeFiltering Based Recommendation](#ii-collaborativefiltering-based-recommendation)
+  - [1. Collaborative Deep Learning for Recommender Systems](#1-collaborative-deep-learning-for-recommender-systems)
+  - [2. Collaborative Topic Modeling for Recommending Scientific Articles](#2-collaborative-topic-modeling-for-recommending-scientific-articles)
+  - [3. Neural Collaborative Filtering](#3-neural-collaborative-filtering)
+  - [4. Collaborative Translational Metric Learning](#4-collaborative-translational-metric-learning)
+  - [5. Collaborative Metric Learning](#5-collaborative-metric-learning)
+  - [6. Latent Relational Metric Learning via Memory-based Attention for Collaborative Ranking](#6-latent-relational-metric-learning-via-memory-based-attention-for-collaborative-ranking)
+  - [7. Collaborative Representation for Deep Meta Metric Learning](#7-collaborative-representation-for-deep-meta-metric-learning)
+  - [8. Improving Collaborative Metric Learning with Efficient Negative Sampling](#8-improving-collaborative-metric-learning-with-efficient-negative-sampling)
+  - [9. Hierarchical Latent Relation Modeling for Collaborative Metric Learning](#9-hierarchical-latent-relation-modeling-for-collaborative-metric-learning)
+  - [10. Improving Pairwise Learning for Item Recommendation from Implicit Feedback](#10-improving-pairwise-learning-for-item-recommendation-from-implicit-feedback)
+  - [11. Collaborative Denoising Auto-Encoders for Top-N Recommender Systems](#11-collaborative-denoising-auto-encoders-for-top-n-recommender-systems)
+- [III. SocialNetwork Based Recommendation](#iii-socialnetwork-based-recommendation)
+  - [1. Geometric Matrix Completion with Recurrent Multi-Graph Neural Networks](#1-geometric-matrix-completion-with-recurrent-multi-graph-neural-networks)
+- [IV. ReinforcementLearning Based Recommendation](#iv-reinforcementlearning-based-recommendation)
+
+<!-- /TOC -->
+
 # I. DeepLearning Based Recommendation 
 ## 1. [Deep Neural Architecture for News Recommendation](./deeplearningbasedrecommendation/Deep%20Neural%20Architecture%20for%20News%20Recommendation.pdf)
 - Vaibhav Kumar, Dhruv Khattar, Shashank Gupta, Manish Gupta, Vasudeva Varma/2017/CLEF/42
@@ -99,13 +125,15 @@
 
 
 ## 6. [Latent Relational Metric Learning via Memory-based Attention for Collaborative Ranking](./collaborativefilteringbasedrecommendation/Latent%20Relational%20Metric%20Learning%20via%20Memory-based%20Attention%20for%20Collaborative%20Ranking.pdf)
-
-
-
+- Yi Tay, Luu Anh Tuan, Siu Cheung Hui/2018/WWW/224
+- Instead of simple **push-pull mechanisms** between user and item pairs, we propose to **learn latent relations** that describe each user item interaction. This helps to alleviate **the potential geometric inflexibility** of existing metric learning approaches. 
+- we employ a **augmented memory module** and learn to attend over these memory blocks to construct latent relations. The memory-based attention module is controlled by **the user-item interaction**, making the learned relation vector **specific** to each user-item pair.
+- The shortcoming of CML as follow: 1) the scoring function of CML is geometrically restrictive since the objective function tries to fit each user-item pair into the same point in vector space. 2) CML is an **ill-posed algebraic system**(the solution of problem is not *unique and stable* which further reinforces and aggravates the problem of geometric inflexibility.
+- ![Model Architecture 1](./images/Latent%20Relational%20Metric%20Learning%20via%20Memory-based%20Attention%20for%20Collaborative%20Ranking_1.png)
 
 
 ## 7. [Collaborative Representation for Deep Meta Metric Learning](./collaborativefilteringbasedrecommendation/Collaborative%20Representation%20for%20Deep%20Meta%20Metric%20Learning.pdf)
-
+- 
 
 
 
@@ -138,18 +166,17 @@
 
 
 
-## 6. [Improving Pairwise Learning for Item Recommendation from Implicit Feedback](./collaborativefilteringbasedrecommendation/Improving%20Pairwise%20Learning%20for%20Item%20Recommendation.pdf)
+## 10. [Improving Pairwise Learning for Item Recommendation from Implicit Feedback](./collaborativefilteringbasedrecommendation/Improving%20Pairwise%20Learning%20for%20Item%20Recommendation.pdf)
 - Steffen Rendle, Christoph Freudenthaler/2014/WSDM/302
 - We show that convergence of such SGD learning algorithms **slows down** considerably if the **item popularity has a tailed distribution**. We propose a **non-uniform item sampler** to overcome this problem. The proposed sampler is **context-dependent and oversamples informative pairs** to speed up convergence.
 -  In this paper, it is shown that **uniform sampling pairs** results in slow convergence, especially if **the pool of items is large and the overall item-popularity is tailed**. *Uniform sampling*: equivalent to the common BPR algorithm; *Static oversampling* which samples negative items from the **global popularity distribution (Global & Static)**. *Adaptive oversampling* which samples negative items with respect to **the estimated ranking for this context (Context-dependent & Adaptive)**.
 
 
-## 7. [Collaborative Denoising Auto-Encoders for Top-N Recommender Systems](./collaborativefilteringbasedrecommendation/Collaborative%20Denoising%20Auto-Encoders%20for%20Top-N%20Recommender%20Systems.pdf)
+## 11. [Collaborative Denoising Auto-Encoders for Top-N Recommender Systems](./collaborativefilteringbasedrecommendation/Collaborative%20Denoising%20Auto-Encoders%20for%20Top-N%20Recommender%20Systems.pdf)
 - Yao Wu, Christopher DuBois, Alice X. Zheng, Martin Ester/2016/WSDM/765
-- In this paper, we present a new model-based collaborative filtering (CF) method for top-N recommendation called **Collaborative Denoising Auto-Encoder (CDAE)**. CDAE assumes that whatever user-item interactions are observed are a **corrupted version of the user’s full preference set**. In other words, **during training**, we feed the model a subset of a user’s item set and train the model to recover the whole item set; at prediction time, the model recommends new items to the user given the existing preference set as input.
-- 
-
-
+- In this paper, we present a new model-based collaborative filtering (CF) method for top-N recommendation called **Collaborative Denoising Auto-Encoder (CDAE)**. CDAE assumes that whatever user-item interactions are observed are a **corrupted version of the user’s full preference set**. In other words, **during training**, we feed the model a subset of a user’s item set and train the model to **recover** the whole item set; at **prediction time**, the model recommends new items to the user given the existing preference set as input.
+- ![Model Architecture 1](./images/Collaborative%20Denoising%20Auto-Encoders%20for%20Top-N%20Recommender%20Systems.png)
+- The main components of the proposed CDAE model include **the types of the mapping functions**(identity, Sigmoid, Tanh), **the loss function**(Square Loss, Log Loss, Hinge Loss, Cross Entropy Loss) and **the level of corruption**(the probability of each dimensions of $x$). Different choices of these components result in different variants of the model that make different top-N recommendations.
 
 
 
