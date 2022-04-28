@@ -13,8 +13,7 @@
   - [4. Collaborative Translational Metric Learning](#4-collaborative-translational-metric-learning)
   - [5. Collaborative Metric Learning](#5-collaborative-metric-learning)
   - [6. Latent Relational Metric Learning via Memory-based Attention for Collaborative Ranking](#6-latent-relational-metric-learning-via-memory-based-attention-for-collaborative-ranking)
-  - [7. Collaborative Representation for Deep Meta Metric Learning](#7-collaborative-representation-for-deep-meta-metric-learning)
-  - [8. Improving Collaborative Metric Learning with Efficient Negative Sampling](#8-improving-collaborative-metric-learning-with-efficient-negative-sampling)
+  - [7. Improving Collaborative Metric Learning with Efficient Negative Sampling](#7-improving-collaborative-metric-learning-with-efficient-negative-sampling)
   - [9. Hierarchical Latent Relation Modeling for Collaborative Metric Learning](#9-hierarchical-latent-relation-modeling-for-collaborative-metric-learning)
   - [10. Improving Pairwise Learning for Item Recommendation from Implicit Feedback](#10-improving-pairwise-learning-for-item-recommendation-from-implicit-feedback)
   - [11. Collaborative Denoising Auto-Encoders for Top-N Recommender Systems](#11-collaborative-denoising-auto-encoders-for-top-n-recommender-systems)
@@ -132,12 +131,7 @@
 - ![Model Architecture 1](./images/Latent%20Relational%20Metric%20Learning%20via%20Memory-based%20Attention%20for%20Collaborative%20Ranking_1.png)
 
 
-## 7. [Collaborative Representation for Deep Meta Metric Learning](./collaborativefilteringbasedrecommendation/Collaborative%20Representation%20for%20Deep%20Meta%20Metric%20Learning.pdf)
-- 
-
-
-
-## 8. [Improving Collaborative Metric Learning with Efficient Negative Sampling](./collaborativefilteringbasedrecommendation/Improving%20Collaborative%20Metric%20Learning%20with%20Efficient%20Negative%20Sampling.pdf)
+## 7. [Improving Collaborative Metric Learning with Efficient Negative Sampling](./collaborativefilteringbasedrecommendation/Improving%20Collaborative%20Metric%20Learning%20with%20Efficient%20Negative%20Sampling.pdf)
 
 
 
@@ -187,14 +181,20 @@
 
 
 
-# IV. ReinforcementLearning Based Recommendation 
+# IV. ReinforcementLearning Based Recommendation
 
 
 
 
+1. Metric Learning：
 
+2. Learn to Rank：将用户的推荐任务看做一个以用户特征向量为输入的查询，推荐模型输出与该用户特征向量相关的项目。训练的策略有PointWise, PairWise, ListWise, GroupWise等，训练的数据可以是用户显式的评分，也可是隐式的反馈。输出推荐项目的结果可以是具体的推荐分数，也可以是与用户特征向量的相似度，也可是推荐的概率。
 
+3. User/Item Represention
 
+4. User-Item Intersection Learning
+
+5. DeepLearning Methods
 
 
 
