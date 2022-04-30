@@ -9,14 +9,14 @@
 - [II. CollaborativeFiltering Based Recommendation](#ii-collaborativefiltering-based-recommendation)
   - [1. Collaborative Deep Learning for Recommender Systems](#1-collaborative-deep-learning-for-recommender-systems)
   - [2. Collaborative Topic Modeling for Recommending Scientific Articles](#2-collaborative-topic-modeling-for-recommending-scientific-articles)
-  - [3. Neural Collaborative Filtering](#3-neural-collaborative-filtering)
+  - [3. *Neural Collaborative Filtering](#3-neural-collaborative-filtering)
   - [4. Collaborative Translational Metric Learning](#4-collaborative-translational-metric-learning)
-  - [5. Collaborative Metric Learning](#5-collaborative-metric-learning)
+  - [5. *Collaborative Metric Learning](#5-collaborative-metric-learning)
   - [6. Latent Relational Metric Learning via Memory-based Attention for Collaborative Ranking](#6-latent-relational-metric-learning-via-memory-based-attention-for-collaborative-ranking)
   - [7. Improving Collaborative Metric Learning with Efficient Negative Sampling](#7-improving-collaborative-metric-learning-with-efficient-negative-sampling)
-  - [9. Hierarchical Latent Relation Modeling for Collaborative Metric Learning](#9-hierarchical-latent-relation-modeling-for-collaborative-metric-learning)
-  - [10. Improving Pairwise Learning for Item Recommendation from Implicit Feedback](#10-improving-pairwise-learning-for-item-recommendation-from-implicit-feedback)
-  - [11. Collaborative Denoising Auto-Encoders for Top-N Recommender Systems](#11-collaborative-denoising-auto-encoders-for-top-n-recommender-systems)
+  - [8. Hierarchical Latent Relation Modeling for Collaborative Metric Learning](#8-hierarchical-latent-relation-modeling-for-collaborative-metric-learning)
+  - [9. Improving Pairwise Learning for Item Recommendation from Implicit Feedback](#9-improving-pairwise-learning-for-item-recommendation-from-implicit-feedback)
+  - [10. Collaborative Denoising Auto-Encoders for Top-N Recommender Systems](#10-collaborative-denoising-auto-encoders-for-top-n-recommender-systems)
 - [III. SocialNetwork Based Recommendation](#iii-socialnetwork-based-recommendation)
   - [1. Geometric Matrix Completion with Recurrent Multi-Graph Neural Networks](#1-geometric-matrix-completion-with-recurrent-multi-graph-neural-networks)
 - [IV. ReinforcementLearning Based Recommendation](#iv-reinforcementlearning-based-recommendation)
@@ -93,7 +93,7 @@
 - ![Model Architecture 2](images/Collaborative%20Topic%20Modeling%20for%20Recommending%20Scientific%20Articles_2.png)
 
 
-## 3. [Neural Collaborative Filtering](./collaborativefilteringbasedrecommendation/Neural%20Collaborative%20Filtering.pdf)
+## 3. [*Neural Collaborative Filtering](./collaborativefilteringbasedrecommendation/Neural%20Collaborative%20Filtering.pdf)
 - Xiangnan He, Lizi Liao, Hanwang Zhang etc. /2017/WWW/3337
 - By **replacing the inner product with a neural architecture** that can learn an arbitrary function from data, we present a general framework named NCF, short for Neural networkbased Collaborative Filtering. 
 - **Pointwise learning** usually follow a regression framework by minimizing the squared loss between y_ui' and its target value y_ui. **Pairwise learning** the idea is that observed entries should be ranked higher than the unobserved ones. As such, instead of minimizing the loss between y_ui' and yui, pairwise learning maximizes the margin between observed entry y_ui' and unobserved entry y_uj'.
@@ -115,7 +115,7 @@
 - ![Model Architecture 2](./images/Collaborative%20Translational%20Metric%20Learning_2.png)
 
 
-## 5. [Collaborative Metric Learning](./collaborativefilteringbasedrecommendation/Collaborative%20Metric%20Learning.pdf)
+## 5. [*Collaborative Metric Learning](./collaborativefilteringbasedrecommendation/Collaborative%20Metric%20Learning.pdf)
 - Cheng-Kang Hsieh, Longqi Yang, Yin Cui etc./2017/WWW/369
 - **Metric learning** algorithms produce distance metrics that capture the important relationships among data. We propose Collaborative Metric Learning (CML) which learns a joint metric space to encode not only **users’ preferences** but also the **user-user and item-item similarity**. Beyond the improvement in accuracy, an exciting property of CML is its capability of uncovering **fine-grained relationships** among users’ preferences.
 - For items the user likes, their gradients move inward to create a smaller radius(*pull loss*). For impostor items, which are the items the user did not like but which invade the perimeter, their gradients move outward from the user until they are pushed out of the perimeter by a safe margin(*push loss*).([*LMNN*](../basemethods/Distance%20Metric%20Learning%20for%20Large%20Margin%20Nearest%20Neighbor%20Classification.pdf))
@@ -132,17 +132,13 @@
 
 
 ## 7. [Improving Collaborative Metric Learning with Efficient Negative Sampling](./collaborativefilteringbasedrecommendation/Improving%20Collaborative%20Metric%20Learning%20with%20Efficient%20Negative%20Sampling.pdf)
+- Viet-Anh Tran, Romain Hennequin, Jimena Royo-Letelier, Manuel Moussallam./2019/SIGIR/12
+- CML requires **large batches** to work reasonably well because of a **too simplistic uniform negative sampling strategy** for selecting triplets. Due to **memory limitations**,this makes it difficult to scale in **high-dimensional scenarios**. 
+- We proposed a **2-stage sampling strategy** that enables the CML model to perform efficiently with batch size an order of magnitude smaller than what would be needed with the default uniform sampling. At its heart, *1)* a set of samples is first selected based on their popularity. Then, *2)* informative ones are drawn from this set based on their inner product weights with anchors. 
 
 
-
-## 9. [Hierarchical Latent Relation Modeling for Collaborative Metric Learning](./collaborativefilteringbasedrecommendation/Hierarchical%20Latent%20Relation%20Modeling%20for%20Collaborative%20Metric%20Learning.pdf)
-
-
-
-
-
-
-
+## 8. [Hierarchical Latent Relation Modeling for Collaborative Metric Learning](./collaborativefilteringbasedrecommendation/Hierarchical%20Latent%20Relation%20Modeling%20for%20Collaborative%20Metric%20Learning.pdf)
+- 
 
 
 
@@ -150,23 +146,13 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-## 10. [Improving Pairwise Learning for Item Recommendation from Implicit Feedback](./collaborativefilteringbasedrecommendation/Improving%20Pairwise%20Learning%20for%20Item%20Recommendation.pdf)
+## 9. [Improving Pairwise Learning for Item Recommendation from Implicit Feedback](./collaborativefilteringbasedrecommendation/Improving%20Pairwise%20Learning%20for%20Item%20Recommendation.pdf)
 - Steffen Rendle, Christoph Freudenthaler/2014/WSDM/302
 - We show that convergence of such SGD learning algorithms **slows down** considerably if the **item popularity has a tailed distribution**. We propose a **non-uniform item sampler** to overcome this problem. The proposed sampler is **context-dependent and oversamples informative pairs** to speed up convergence.
 -  In this paper, it is shown that **uniform sampling pairs** results in slow convergence, especially if **the pool of items is large and the overall item-popularity is tailed**. *Uniform sampling*: equivalent to the common BPR algorithm; *Static oversampling* which samples negative items from the **global popularity distribution (Global & Static)**. *Adaptive oversampling* which samples negative items with respect to **the estimated ranking for this context (Context-dependent & Adaptive)**.
 
 
-## 11. [Collaborative Denoising Auto-Encoders for Top-N Recommender Systems](./collaborativefilteringbasedrecommendation/Collaborative%20Denoising%20Auto-Encoders%20for%20Top-N%20Recommender%20Systems.pdf)
+## 10. [Collaborative Denoising Auto-Encoders for Top-N Recommender Systems](./collaborativefilteringbasedrecommendation/Collaborative%20Denoising%20Auto-Encoders%20for%20Top-N%20Recommender%20Systems.pdf)
 - Yao Wu, Christopher DuBois, Alice X. Zheng, Martin Ester/2016/WSDM/765
 - In this paper, we present a new model-based collaborative filtering (CF) method for top-N recommendation called **Collaborative Denoising Auto-Encoder (CDAE)**. CDAE assumes that whatever user-item interactions are observed are a **corrupted version of the user’s full preference set**. In other words, **during training**, we feed the model a subset of a user’s item set and train the model to **recover** the whole item set; at **prediction time**, the model recommends new items to the user given the existing preference set as input.
 - ![Model Architecture 1](./images/Collaborative%20Denoising%20Auto-Encoders%20for%20Top-N%20Recommender%20Systems.png)
@@ -182,19 +168,3 @@
 
 
 # IV. ReinforcementLearning Based Recommendation
-
-
-
-
-1. Metric Learning：
-
-2. Learn to Rank：将用户的推荐任务看做一个以用户特征向量为输入的查询，推荐模型输出与该用户特征向量相关的项目。训练的策略有PointWise, PairWise, ListWise, GroupWise等，训练的数据可以是用户显式的评分，也可是隐式的反馈。输出推荐项目的结果可以是具体的推荐分数，也可以是与用户特征向量的相似度，也可是推荐的概率。
-
-3. User/Item Represention
-
-4. User-Item Intersection Learning
-
-5. DeepLearning Methods
-
-
-
