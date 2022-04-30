@@ -138,9 +138,11 @@
 
 
 ## 8. [Hierarchical Latent Relation Modeling for Collaborative Metric Learning](./collaborativefilteringbasedrecommendation/Hierarchical%20Latent%20Relation%20Modeling%20for%20Collaborative%20Metric%20Learning.pdf)
-- 
-
-
+- Viet-Anh Tran, Guillaume Salha-Galvan, Romain Hennequin, Manuel Moussallam/2021/RecSys/1
+- CML nonetheless suffers from an inherent limitation: each user is represented by a single vector, which does not fit the many-to-many nature of real-world recommendation problems.In particular, *1) standard CML fails to capture the heterogeneity in user-item relations* (user-item relations). *2) CML does not model the fact that a user’s preference for an item depends, not only on its intrinsic characteristics, but also on items they previously interacted with.* (item-item relations)
+- More specifically, our work builds upon the assumption that there exists a **hierarchical structure in different relation types**, and that *user-item relations are built on top of item-item relations*.
+- ![Model Architecture 1](./images/Hierarchical%20Latent%20Relation%20Modeling%20for%20Collaborative%20Metric%20Learning_1.png)
+- ![Model Architecture 2](./images/Hierarchical%20Latent%20Relation%20Modeling%20for%20Collaborative%20Metric%20Learning_2.png)
 
 
 
