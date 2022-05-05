@@ -164,6 +164,7 @@
 - ![Model Architecture](./images/GLocal-K%20Global%20and%20Local%20Kernels%20for%20Recommender%20Systems.png)
 
 
+
 # III. SocialNetwork Based Recommendation
 
 ## [00 Geometric Matrix Completion with Recurrent Multi-Graph Neural Networks](./socialnetworkbasedrecommendation/Geometric%20Matrix%20Completion%20with%20Recurrent%20Multi-Graph%20Neural%20Networks.pdf)
