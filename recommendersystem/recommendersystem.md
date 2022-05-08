@@ -5,6 +5,9 @@
   - [01 Dynamic Attention Deep Model for Article Recommendation by Learning Human Editors’ Demonstration](#01-dynamic-attention-deep-model-for-article-recommendation-by-learning-human-editors-demonstration)
   - [02 Joint Deep Modeling of Users and Items Using Reviews for Recommendation](#02-joint-deep-modeling-of-users-and-items-using-reviews-for-recommendation)
   - [03 *Wide & Deep Learning for Recommender Systems](#03-wide--deep-learning-for-recommender-systems)
+  - [04 xDeepFM: Combining Explicit and Implicit Feature Interactions for Recommender Systems](#04-xdeepfm-combining-explicit-and-implicit-feature-interactions-for-recommender-systems)
+  - [05 Product-based Neural Networks for User Response Prediction](#05-product-based-neural-networks-for-user-response-prediction)
+  - [06 DeepFM: A Factorization-Machine based Neural Network for CTR Prediction](#06-deepfm-a-factorization-machine-based-neural-network-for-ctr-prediction)
 - [II. CollaborativeFiltering Based Recommendation](#ii-collaborativefiltering-based-recommendation)
   - [00 Collaborative Deep Learning for Recommender Systems](#00-collaborative-deep-learning-for-recommender-systems)
   - [01 Collaborative Topic Modeling for Recommending Scientific Articles](#01-collaborative-topic-modeling-for-recommending-scientific-articles)
@@ -17,9 +20,8 @@
   - [08 Improving Pairwise Learning for Item Recommendation from Implicit Feedback](#08-improving-pairwise-learning-for-item-recommendation-from-implicit-feedback)
   - [09 Collaborative Denoising Auto-Encoders for Top-N Recommender Systems](#09-collaborative-denoising-auto-encoders-for-top-n-recommender-systems)
   - [10 GLocal-K Global and Local Kernels for Recommender Systems](#10-glocal-k-global-and-local-kernels-for-recommender-systems)
-- [III. SocialNetwork Based Recommendation](#iii-socialnetwork-based-recommendation)
+- [III. GraphNeuralNetwork Based Recommendation](#iii-graphneuralnetwork-based-recommendation)
   - [00 Geometric Matrix Completion with Recurrent Multi-Graph Neural Networks](#00-geometric-matrix-completion-with-recurrent-multi-graph-neural-networks)
-- [IV. ReinforcementLearning Based Recommendation](#iv-reinforcementlearning-based-recommendation)
 
 <!-- /TOC -->
 
@@ -62,6 +64,20 @@
 - ![Model Architecture 3](./images/Wide%20%26%20Deep%20Learning%20for%20Recommender%20Systems_3.png)
 - ![Model Architecture 4](./images/Wide%20%26%20Deep%20Learning%20for%20Recommender%20Systems_4.png)
 
+
+## [04 xDeepFM: Combining Explicit and Implicit Feature Interactions for Recommender Systems](./deeplearningbasedrecommendation/xDeepFM%EF%BC%9ACombining%20Explicit%20and%20Implicit%20Feature%20Interactions%20for%20Recommender%20Systems.pdf)
+- 
+
+
+## [05 Product-based Neural Networks for User Response Prediction](./deeplearningbasedrecommendation/Product%20Based%20Neural%20Networks%20for%20User%20Response%20Prediction.pdf)
+- Qu Y, Cai H, Ren K, et al./2016/ICDM/407
+- Product-based Neural Networks (PNN) with **1)** an embedding layer to learn a distributed representation of the categorical data,
+**2)** a product layer to capture interactive patterns between interfield categories, and further **3)** fully connected layers to explore
+high-order feature interactions. We present two types of PNNs, with inner product operations **(IPNN)** and outer product operations **(OPNN)** in the product layer, to efficiently model the interactive patterns. The model learn local dependencies and high-order feature interactions.
+- ![Model Architecture](./images/Product-based%20Neural%20Networks.png)
+- To reduce product layer space complexity and time complexity, as inner product, it takes **matrix factorization** strategy; as outer product, it takes **superposition** strategy. 
+
+## [06 DeepFM: A Factorization-Machine based Neural Network for CTR Prediction]()
 
 
 
@@ -165,12 +181,14 @@
 
 
 
-# III. SocialNetwork Based Recommendation
-
-## [00 Geometric Matrix Completion with Recurrent Multi-Graph Neural Networks](./socialnetworkbasedrecommendation/Geometric%20Matrix%20Completion%20with%20Recurrent%20Multi-Graph%20Neural%20Networks.pdf)
-- Federico Monti, Michael M. Bronstein, Xavier Bresson /2017/NIPS/394
 
 
 
+# III. GraphNeuralNetwork Based Recommendation
 
-# IV. ReinforcementLearning Based Recommendation
+## [00 Geometric Matrix Completion with Recurrent Multi-Graph Neural Networks](./graphneuralnetworkbasedrecommendation/Geometric%20Matrix%20Completion%20with%20Recurrent%20Multi-Graph%20Neural%20Networks.pdf)
+- Federico Monti, Michael M. Bronstein, Xavier Bresson./2017/NIPS/394
+- 
+
+
+
