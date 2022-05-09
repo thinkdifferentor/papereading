@@ -8,6 +8,7 @@
   - [04 xDeepFM: Combining Explicit and Implicit Feature Interactions for Recommender Systems](#04-xdeepfm-combining-explicit-and-implicit-feature-interactions-for-recommender-systems)
   - [05 Product-based Neural Networks for User Response Prediction](#05-product-based-neural-networks-for-user-response-prediction)
   - [06 DeepFM: A Factorization-Machine based Neural Network for CTR Prediction](#06-deepfm-a-factorization-machine-based-neural-network-for-ctr-prediction)
+  - [07 Deep & Cross Network for Ad Click Predictions](#07-deep--cross-network-for-ad-click-predictions)
 - [II. CollaborativeFiltering Based Recommendation](#ii-collaborativefiltering-based-recommendation)
   - [00 Collaborative Deep Learning for Recommender Systems](#00-collaborative-deep-learning-for-recommender-systems)
   - [01 Collaborative Topic Modeling for Recommending Scientific Articles](#01-collaborative-topic-modeling-for-recommending-scientific-articles)
@@ -77,7 +78,19 @@ high-order feature interactions. We present two types of PNNs, with inner produc
 - ![Model Architecture](./images/Product-based%20Neural%20Networks.png)
 - To reduce product layer space complexity and time complexity, as inner product, it takes **matrix factorization** strategy; as outer product, it takes **superposition** strategy. 
 
-## [06 DeepFM: A Factorization-Machine based Neural Network for CTR Prediction]()
+
+## [06 DeepFM: A Factorization-Machine based Neural Network for CTR Prediction](./deeplearningbasedrecommendation/DeepFM%20A%20Factorization-Machine%20based%20Neural%20Network%20for%20CTR%20Prediction.pdf)
+- Guo H, Tang R, Ye Y, et al/2017/arXiv/2017
+- **DeepFM**, combines the power of **factorization machines** for recommendation and **deep learning for feature learning** in a new neural network architecture. It models **low-order feature** interactions like FM and models **high-order feature** interactions like DNN. DeepFM can be trained end-to-end **without any feature engineering**.
+- ![Model Architecture 1](./images/DeepFM_1.png)
+- FM models pairwise feature interactions as **inner product** of respective **feature latent vectors**. Therefore, feature interactions, which are never or rarely appeared in the training data, are better learnt by FM. (In previous approaches, the parameter of an interaction of features i and j can be trained only when feature i and feature j both appear in the same data record.). FM component and deep component share the same feature embedding, which brings two important benefits: 1) it learns both low-order and high-order feature interactions from raw features; 2) there is no need for expertise feature engineering of the input.
+- ![Model Architecture 2](./images/DeepFM_2.png)
+- ![Model Architecture 3](./images/DeepFM_3.png)
+- ![Model Architecture 4](./images/DeepFM_4.png)
+
+
+## [07 Deep & Cross Network for Ad Click Predictions]()
+
 
 
 
