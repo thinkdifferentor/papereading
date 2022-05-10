@@ -83,15 +83,19 @@ high-order feature interactions. We present two types of PNNs, with inner produc
 - Guo H, Tang R, Ye Y, et al/2017/arXiv/1323
 - **DeepFM**, combines the power of **factorization machines** for recommendation and **deep learning for feature learning** in a new neural network architecture. It models **low-order feature** interactions like FM and models **high-order feature** interactions like DNN. DeepFM can be trained end-to-end **without any feature engineering**.
 - ![Model Architecture 1](./images/DeepFM_1.png)
-- FM models pairwise feature interactions as **inner product** of respective **feature latent vectors**. Therefore, feature interactions, which are never or rarely appeared in the training data, are better learnt by FM. (In previous approaches, the parameter of an interaction of features i and j can be trained only when feature i and feature j both appear in the same data record.). FM component and deep component share the same feature embedding, which brings two important benefits: 1) it learns both low-order and high-order feature interactions from raw features; 2) there is no need for expertise feature engineering of the input.
+- FM models pairwise feature interactions as **inner product** of respective **feature latent vectors**. Therefore, feature interactions, which are never or rarely appeared in the training data, are better learnt by FM. (In previous approaches, the parameter of an interaction of features i and j can be trained only when feature i and feature j both appear in the same data record). FM component and deep component share the same feature embedding, which brings two important benefits: 1) it learns both low-order and high-order feature interactions from raw features; 2) there is no need for expertise feature engineering of the input.
 - ![Model Architecture 2](./images/DeepFM_2.png)
 - ![Model Architecture 3](./images/DeepFM_3.png)
 - ![Model Architecture 4](./images/DeepFM_4.png)
 
 
-## [07 Deep & Cross Network for Ad Click Predictions]()
-
-
+## [07 Deep & Cross Network for Ad Click Predictions](./deeplearningbasedrecommendation/Deep%20%26%20Cross%20Network%20for%20Ad%20Click%20Predictions.pdf)
+- Wang R, Fu B, Fu G, et al/2017/ADKKD/514
+- Deep & Cross Network (DCN) which keeps the benefts of a DNN model, and beyond that, it introduces a **novel cross network** that is more effcient in learning certain bounded-degree feature interactions. In particular, DCN explicitly applies feature crossing at each layer, requires **no manual feature engineering**, and adds **negligible extra complexity** to the DNN model. 
+- DNN has the promise to capture very complex interactions across features; however, compared to our cross network it requires nearly **an order of magnitude more parameters**, is **unable to form cross features explicitly**, and may **fail to effciently learn some types of feature interactions**. The *Cross Network* structure is suitable to catch the feature interactions.
+- Jointly train both networks, as this allows each individual network to be aware of the others during the training.
+- ![Model Architecture 1](./images/DCN_1.png)
+- ![Model Architecture 2](./images/DCN_2.png)
 
 
 # II. CollaborativeFiltering Based Recommendation
