@@ -80,7 +80,7 @@ high-order feature interactions. We present two types of PNNs, with inner produc
 
 
 ## [06 DeepFM: A Factorization-Machine based Neural Network for CTR Prediction](./deeplearningbasedrecommendation/DeepFM%20A%20Factorization-Machine%20based%20Neural%20Network%20for%20CTR%20Prediction.pdf)
-- Guo H, Tang R, Ye Y, et al/2017/arXiv/2017
+- Guo H, Tang R, Ye Y, et al/2017/arXiv/1323
 - **DeepFM**, combines the power of **factorization machines** for recommendation and **deep learning for feature learning** in a new neural network architecture. It models **low-order feature** interactions like FM and models **high-order feature** interactions like DNN. DeepFM can be trained end-to-end **without any feature engineering**.
 - ![Model Architecture 1](./images/DeepFM_1.png)
 - FM models pairwise feature interactions as **inner product** of respective **feature latent vectors**. Therefore, feature interactions, which are never or rarely appeared in the training data, are better learnt by FM. (In previous approaches, the parameter of an interaction of features i and j can be trained only when feature i and feature j both appear in the same data record.). FM component and deep component share the same feature embedding, which brings two important benefits: 1) it learns both low-order and high-order feature interactions from raw features; 2) there is no need for expertise feature engineering of the input.
