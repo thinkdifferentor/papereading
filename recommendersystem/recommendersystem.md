@@ -67,6 +67,7 @@
 
 
 ## [04 xDeepFM: Combining Explicit and Implicit Feature Interactions for Recommender Systems](./deeplearningbasedrecommendation/xDeepFM%EF%BC%9ACombining%20Explicit%20and%20Implicit%20Feature%20Interactions%20for%20Recommender%20Systems.pdf)
+- Lian J, Zhou X, Zhang F, et al./2018/KDD/496
 - 
 
 

@@ -1,4 +1,11 @@
-# Paper Reading Notes of Base Methods
+<!-- TOC -->
+
+- [00 A Short Introduction to Learning to Rank](#00-a-short-introduction-to-learning-to-rank)
+- [01 Deep Metric Learning: A Survey](#01-deep-metric-learning-a-survey)
+- [02 Deep Learning for Click-Through Rate Estimation](#02-deep-learning-for-click-through-rate-estimation)
+- [03 Factorization Machines](#03-factorization-machines)
+
+<!-- /TOC -->
 
 ## [00 A Short Introduction to Learning to Rank](A%20Short%20Introduction%20to%20Learning%20to%20Rank.pdf)
 - Hang LI./2011/IEICE/352
