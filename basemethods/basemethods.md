@@ -33,3 +33,12 @@
 - User Behavior Modeling algorithms could be categorized into three classes, **attention based models** (DIN/DIEN/BST/DSIN), **memory network based models** (HPMN/UIC/MIMN) and **retrieval based models** (UBR4CTR/SIM/).
 - ![Model Architecture3](./images/Deep%20Learning%20for%20Click-Through%20Rate%20Estimation_3.png)
 - Automated Architecture Search which can be categorized into three classes: (1) automatic design of flexible and adaptable embedding dimensions for individual features(**Embedding Dimension Search**); (2) automatic selection or generation of effective feature interactions;(**Feature Interaction Search**) (3) automatic design of network architectures (**Whole Architecture Search**).
+
+
+## [03 Factorization Machines](./Factorization%20Machines.pdf)
+- Rendle S./2010/ICDM/2167
+- SVM predictors are not successful in these tasks is that they cannot learn reliable parameters (‘hyperplanes’) in **complex kernel**(non-linear) spaces under very **sparse data**.
+- the Factorization Machine (FM), that is a general predictor like SVMs but is also able to **estimate reliable parameters under very high sparsity**. FM uses a factorized parametrization instead of a dense parametrization like in SVMs and can be computed in **linear time** and that it depends only on a **linear number of parameters**.
+- *The 2-way Model Equation:* ![Model Equation1](./images/FM_1.png)
+- *The d-way Model Equation:* ![Model Equation2](./images/FM_2.png)
+- FMs model all possible interactions between values in the feature vector x using **factorized interactions** instead of full parametrized ones. This has two main advantages: *1)* The interactions between values can be estimated even under high sparsity. Especially, it is possible to generalize to **unobserved interactions**. *2)* The number of parameters as well as the time for prediction and learning is **linear**. This makes direct optimization using SGD feasible and allows optimizing against a variety of loss functions.
