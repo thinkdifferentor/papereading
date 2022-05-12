@@ -24,7 +24,7 @@
 - ![Model Architecture1](./images/Deep%20Metric%20Learning_1.png)
 - Deep metric learning consists of three main parts, which are **informative input samples**, **the structure of the network model**, and a **metric loss function**.  Informative samples are one of the most substantial elements that increase the success of deep metric learning.
 - ![Model Architecture2](./images/Deep%20Metric%20Learning_2.png)
-- ![Model Architecture3](./images/Deep%20Metric%20Learning_3.png)
+- ![Model Architecture3](./images/Deep%20Metric%20Learning_3.png)e
 - The Siamese network, as a metric learning approach, receives pair images, including positive and negative samples to train a network model. The distance between these pair images is calculated via a loss function.
 - Triplet network inspired by Siamese network contains three objects, which are formed positive,negative and anchor samples. Triplet networks provide a higher discrimination power while using both in-class and inter-class relations.
 - ![Model Architecture4](./images/Deep%20Metric%20Learning_4.png)
