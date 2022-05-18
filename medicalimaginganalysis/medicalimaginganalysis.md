@@ -5,7 +5,7 @@
 
 <!-- /TOC -->
 
-## [00 A Review of Deep Learning in Medical Imaging: Imaging Traits, Technology Trends, Case Studies With Progress Highlights, and Future Promises](./A_Review_of_Deep_Learning_in_Medical_Imaging_Imaging_Traits_Technology_Trends_Case_Studies_With_Progress_Highlights_and_Future_Promises.pdf)
+## [00 A Review of Deep Learning in Medical Imaging: Imaging Traits, Technology Trends, Case Studies With Progress Highlights, and Future Promises](./A%20Review%20of%20Deep%20Learning%20in%20Medical%20Imaging%20Imaging%20Traits%2C%20Technology%20Trends%2C%20Case%20Studies%20With%20Progress%20Highlights%2C%20and%20Future%20Promises.pdf)
 - Zhou S K, Greenspan H, Davatzikos C, et al./2021/Proceedings of the IEEE/142
 - **Traits of Medical Imaging:** 
     1. Medical images have multiple modalities and are dense in pixel resolution; 
@@ -32,7 +32,7 @@
 - **Medical Data Collectio**: This step requires building complex infrastructure, along with the generation of new privacy and security regulations—between hospitals and academic research institutes, across hospitals, and in multinational consortia. As more and more data become available, DL and AI will enable unsupervised explorations within the data, thus providing for new discoveries of drugs and treatments toward the advancement and augmentation of healthcare as we know it.
 
 
-## [01 Survey Study Of Multimodality Medical Image Fusion Methods]()
+## [01 Survey Study Of Multimodality Medical Image Fusion Methods](./Survey%20Study%20Of%20Multimodality%20Medical%20Image%20Fusion%20Methods.pdf)
 - Tawfik N, Elnemr H A, Fakhr M, et al./2021/Multimedia Tools and Applications/20
 - Each imaging technique has its **practical characteristics and its limitations**, So there is a need to find new imaging technologies or to develop new fusion methods that are able to merge information from several images with different modalities and take the privileges of the complementary characteristics exhibited in these different images. The multimodality medical image fusion generally focuses on three groups: **MRI-CT, MRI-PET, and MRI-SPECT images**.
 - ![Steps of image fusion](./images/Survey%20Study%20Of%20Multimodality%20Medical%20Image%20Fusion%20Methods_1.png)

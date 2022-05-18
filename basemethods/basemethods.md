@@ -4,6 +4,7 @@
 - [01 Deep Metric Learning: A Survey](#01-deep-metric-learning-a-survey)
 - [02 Deep Learning for Click-Through Rate Estimation](#02-deep-learning-for-click-through-rate-estimation)
 - [03 Factorization Machines](#03-factorization-machines)
+- [04 Graph Attention Networks](#04-graph-attention-networks)
 
 <!-- /TOC -->
 
@@ -49,3 +50,12 @@
 - *The 2-way Model Equation:* ![Model Equation1](./images/FM_1.png)
 - *The d-way Model Equation:* ![Model Equation2](./images/FM_2.png)
 - FMs model all possible interactions between values in the feature vector x using **factorized interactions** instead of full parametrized ones. This has two main advantages: *1)* The interactions between values can be estimated even under high sparsity. Especially, it is possible to generalize to **unobserved interactions**. *2)* The number of parameters as well as the time for prediction and learning is **linear**. This makes direct optimization using SGD feasible and allows optimizing against a variety of loss functions.
+
+## [04 Graph Attention Networks](./Graph%20Attention%20Networks.pdf)
+- Veličković P, Cucurull G, Casanova A, et al./2018/ICLR/3363
+- Graph Attention Networks (GATs), novel convolution-style neural networks that operate on graph-structured data, leveraging **masked self-attentional layers**. 
+- **Advantage**: 1) does not require costly matrix operations; 2) parallelizable across all nodes in the graph; 3) allows for (implicitly) assigning different importances to different nodes within a neighborhood while dealing with different sized neighborhoods; 4) does not depend on knowing the entire graph structure.
+- ![Model Architecture 1](./images/Graph%20Attention%20Networks_1.png)
+- The attention mechanism formulation ![Model Architecture 2](./images/Graph%20Attention%20Networks_2.png)
+- Concate multi-head attention ![Model Architecture 3](./images/Graph%20Attention%20Networks_3.png)
+- Average multi-head attention ![Model Architecture 4](./images/Graph%20Attention%20Networks_4.png)
