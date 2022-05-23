@@ -4,6 +4,7 @@
 - [01 Survey Study Of Multimodality Medical Image Fusion Methods](#01-survey-study-of-multimodality-medical-image-fusion-methods)
 - [02 Deep Learning Techniques for Medical Image Segmentation: Achievements and Challenges](#02-deep-learning-techniques-for-medical-image-segmentation-achievements-and-challenges)
 - [03 Fully Convolutional Networks for Semantic Segmentation](#03-fully-convolutional-networks-for-semantic-segmentation)
+- [U-Net: Convolutional Networks for Biomedical Image Segmentation](#u-net-convolutional-networks-for-biomedical-image-segmentation)
 
 <!-- /TOC -->
 
@@ -78,3 +79,15 @@
 - ![FCN 3](./images/FCN_3.png)
 - ![FCN 4](./images/FCN_4.png)
 - ![FCN 5](./images/FCN_5.png)
+
+
+## [U-Net: Convolutional Networks for Biomedical Image Segmentation](./segmentation/U-Net%20Convolutional%20Networks%20for%20Biomedical%20Image%20Segmentation.pdf)
+- Ronneberger O, Fischer P, Brox T./2015/MICCAI/42233
+- The architecture consists of a **contracting path** to capture **context** and a symmetric **expanding path** that enables **precise localization** witch relies on the strong use of **data augmentation** to get more efficient using of the annotated samples.
+- **Sliding-window based segmentation method:**
+    1. Advantage: First, this network can **localize**. Secondly, the training data in terms of **patches** is much larger than the number of training images.
+    2. Disadvantage: First, it is quite slow because the network must be run separately for each patch, and there is a lot of **redundancy** due to overlapping patches. Secondly, there is a **trade-off** between **localization** accuracy and the use of **context**.
+- ![Model Architecture](./images/UNet_1.png)
+- ![Overlap-tile strategy](./images/UNet_2.png)
+- *Many cell segmentation tasks is the separation of **touching objects** of the same class. To handle this issue, this paper propose the use of a **weighted loss**, where the separating background labels between touching cells obtain a large weight in the loss function.
+- ![Weighted Loss](./images/UNet_3.png)
