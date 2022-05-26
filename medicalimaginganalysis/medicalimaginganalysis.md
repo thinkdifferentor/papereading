@@ -6,6 +6,7 @@
 - [03 U-Net and Its Variants for Medical Image Segmentation A Review of Theory and Applications](#03-u-net-and-its-variants-for-medical-image-segmentation-a-review-of-theory-and-applications)
 - [04 Fully Convolutional Networks for Semantic Segmentation](#04-fully-convolutional-networks-for-semantic-segmentation)
 - [05 U-Net: Convolutional Networks for Biomedical Image Segmentation](#05-u-net-convolutional-networks-for-biomedical-image-segmentation)
+- [05 Unet++: A nested u-net architecture for medical image segmentation](#05-unet-a-nested-u-net-architecture-for-medical-image-segmentation)
 
 <!-- /TOC -->
 
@@ -113,3 +114,10 @@ feedback loops into a convolutional layer. The feedback is applied after both co
 - ![Weighted Loss](./images/UNet_3.png)
 
 
+## [05 Unet++: A nested u-net architecture for medical image segmentation](./segmentation/Unet%2B%2B%20A%20nested%20u-net%20architecture%20for%20medical%20image%20segmentation.pdf)
+- Zhou Z, Rahman Siddiquee M M, Tajbakhsh N, et al./2018/DLMIA/2025
+- These encoder-decoder networks used for segmentation share a **key similarity**: skip connections, which combine deep, semantic, coarse-grained feature maps from the decoder sub-network with shallow, low-level, fine-grained feature maps from the encoder sub-network.
+- This is in contrast to the plain skip connections commonly used in U-Net, which directly fast-forward high-resolution feature maps from the encoder to the decoder network, **resulting in the fusion of semantically dissimilar feature maps**.
+- ![Model Architecture](./images/UNet++.png)
+- In summary, UNet++ differs from the original U-Net in three ways: (1) **having convolution layers on skip pathways** (shown in green),
+which bridges the semantic gap between encoder and decoder feature maps; (2) **having dense skip connections on skip pathways** (shown in blue), which improves gradient flow; and (3) **having deep supervision** (shown in red), which enables model pruning and improves or in the worst case achieves comparable performance to using only one loss layer.
