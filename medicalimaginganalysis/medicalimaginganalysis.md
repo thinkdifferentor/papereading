@@ -5,8 +5,9 @@
 - [02 Deep Learning Techniques for Medical Image Segmentation: Achievements and Challenges](#02-deep-learning-techniques-for-medical-image-segmentation-achievements-and-challenges)
 - [03 U-Net and Its Variants for Medical Image Segmentation A Review of Theory and Applications](#03-u-net-and-its-variants-for-medical-image-segmentation-a-review-of-theory-and-applications)
 - [04 Fully Convolutional Networks for Semantic Segmentation](#04-fully-convolutional-networks-for-semantic-segmentation)
-- [05 U-Net: Convolutional Networks for Biomedical Image Segmentation](#05-u-net-convolutional-networks-for-biomedical-image-segmentation)
-- [05 Unet++: A nested u-net architecture for medical image segmentation](#05-unet-a-nested-u-net-architecture-for-medical-image-segmentation)
+- [05 SegNet: A Deep Convolutional Encoder-Decoder Architecture for Image Segmentation](#05-segnet-a-deep-convolutional-encoder-decoder-architecture-for-image-segmentation)
+- [06 U-Net: Convolutional Networks for Biomedical Image Segmentation](#06-u-net-convolutional-networks-for-biomedical-image-segmentation)
+- [07 Unet++: A nested u-net architecture for medical image segmentation](#07-unet-a-nested-u-net-architecture-for-medical-image-segmentation)
 
 <!-- /TOC -->
 
@@ -102,7 +103,14 @@ feedback loops into a convolutional layer. The feedback is applied after both co
 - ![FCN 5](./images/FCN_5.png)
 
 
-## [05 U-Net: Convolutional Networks for Biomedical Image Segmentation](./segmentation/U-Net%20Convolutional%20Networks%20for%20Biomedical%20Image%20Segmentation.pdf)
+## [05 SegNet: A Deep Convolutional Encoder-Decoder Architecture for Image Segmentation](./segmentation/SegNet%20A%20Deep%20Convolutional%20Encoder-Decoder%20Architecture%20for%20Image%20Segmentation.pdf)
+- Badrinarayanan V, Kendall A, Cipolla R./2017/Pattern Analysis And Machine Learning/11224
+- The results of semantic pixel-wise labelling appear coarse. This is primarily because **max pooling and sub-sampling reduce feature map resolution**. Our motivation to design SegNet arises from this need to map low resolution features to input resolution for pixel-wise classification. 
+- The increasingly lossy (boundary detail) image representation is not beneficial for segmentation where boundary delineation is vital. Therefore, it is necessary to capture and store boundary information in the encoder feature maps before sub-sampling is performed. However, it's need tons of memory to store all the encode feature maps in pratical applications. SgeNet store only the max-pooling indeces for each encode feature map. 
+-  ![SegNet](./images/SegNet.png)
+
+
+## [06 U-Net: Convolutional Networks for Biomedical Image Segmentation](./segmentation/U-Net%20Convolutional%20Networks%20for%20Biomedical%20Image%20Segmentation.pdf)
 - Ronneberger O, Fischer P, Brox T./2015/MICCAI/42233
 - The architecture consists of a **contracting path** to capture **context** and a symmetric **expanding path** that enables **precise localization** witch relies on the strong use of **data augmentation** to get more efficient using of the annotated samples.
 - **Sliding-window based segmentation method:**
@@ -114,7 +122,7 @@ feedback loops into a convolutional layer. The feedback is applied after both co
 - ![Weighted Loss](./images/UNet_3.png)
 
 
-## [05 Unet++: A nested u-net architecture for medical image segmentation](./segmentation/Unet%2B%2B%20A%20nested%20u-net%20architecture%20for%20medical%20image%20segmentation.pdf)
+## [07 Unet++: A nested u-net architecture for medical image segmentation](./segmentation/Unet%2B%2B%20A%20nested%20u-net%20architecture%20for%20medical%20image%20segmentation.pdf)
 - Zhou Z, Rahman Siddiquee M M, Tajbakhsh N, et al./2018/DLMIA/2025
 - These encoder-decoder networks used for segmentation share a **key similarity**: skip connections, which combine deep, semantic, coarse-grained feature maps from the decoder sub-network with shallow, low-level, fine-grained feature maps from the encoder sub-network.
 - This is in contrast to the plain skip connections commonly used in U-Net, which directly fast-forward high-resolution feature maps from the encoder to the decoder network, **resulting in the fusion of semantically dissimilar feature maps**.
