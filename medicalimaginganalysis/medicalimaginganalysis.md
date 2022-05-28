@@ -8,8 +8,10 @@
 - [05 SegNet: A Deep Convolutional Encoder-Decoder Architecture for Image Segmentation](#05-segnet-a-deep-convolutional-encoder-decoder-architecture-for-image-segmentation)
 - [06 U-Net: Convolutional Networks for Biomedical Image Segmentation](#06-u-net-convolutional-networks-for-biomedical-image-segmentation)
 - [07 Unet++: A nested u-net architecture for medical image segmentation](#07-unet-a-nested-u-net-architecture-for-medical-image-segmentation)
-- [08 DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution and Fully Connected CRFs](#08-deeplab-semantic-image-segmentation-with-deep-convolutional-nets-atrous-convolution-and-fully-connected-crfs)
-- [09 DeepLabV3: Rethinking Atrous Convolution for Semantic Image Segmentation](#09-deeplabv3-rethinking-atrous-convolution-for-semantic-image-segmentation)
+- [08 3D U-Net: Learning Dense Volumetric Segmentation from Sparse Annotation](#08-3d-u-net-learning-dense-volumetric-segmentation-from-sparse-annotation)
+- [09 DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution and Fully Connected CRFs](#09-deeplab-semantic-image-segmentation-with-deep-convolutional-nets-atrous-convolution-and-fully-connected-crfs)
+- [10 DeepLabV3: Rethinking Atrous Convolution for Semantic Image Segmentation](#10-deeplabv3-rethinking-atrous-convolution-for-semantic-image-segmentation)
+- [11 DeepLabV3+: Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation](#11-deeplabv3-encoder-decoder-with-atrous-separable-convolution-for-semantic-image-segmentation)
 
 <!-- /TOC -->
 
@@ -133,7 +135,11 @@ feedback loops into a convolutional layer. The feedback is applied after both co
 which bridges the semantic gap between encoder and decoder feature maps; (2) **having dense skip connections on skip pathways** (shown in blue), which improves gradient flow; and (3) **having deep supervision** (shown in red), which enables model pruning and improves or in the worst case achieves comparable performance to using only one loss layer.
 
 
-## [08 DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution and Fully Connected CRFs](./segmentation/DeepLab%20Semantic%20Image%20Segmentation%20with%20Deep%20Convolutional%20Nets%2C%20Atrous%20Convolution%20and%20Fully%20Connected%20CRFs.pdf)
+## [08 3D U-Net: Learning Dense Volumetric Segmentation from Sparse Annotation]()
+- 
+
+
+## [09 DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution and Fully Connected CRFs](./segmentation/DeepLab%20Semantic%20Image%20Segmentation%20with%20Deep%20Convolutional%20Nets%2C%20Atrous%20Convolution%20and%20Fully%20Connected%20CRFs.pdf)
 - Chen L C, Papandreou G, Kokkinos I, et al./2017/Pattern Analysis and Machine Intelligence/11453
 - Three **challengens** of  DCNNs to semantic image segmentation: **(1)** reduced feature resolution(caused by repeated combination of max-pooling and downsampling->**atrous convolution**), **(2)** existence of objects at multiple scales(using multiple parallel atrous convolutional layers with different sampling rates, called **ASPP**), and **(3)** reduced localization accuracy due to DCNN invariance (fully connected Conditional Random Field, **CRF**). The DeepLab have three main advantages: *(1) Speed; (2) Accuracy; (3)Simplicity*
 - ![DeepLabV1_1](./images/DeepLabV1_1.png)
@@ -143,9 +149,19 @@ which bridges the semantic gap between encoder and decoder feature maps; (2) **h
 - ![DeepLabV1_5](./images/DeepLabV1_5.png)
 
 
-## [09 DeepLabV3: Rethinking Atrous Convolution for Semantic Image Segmentation](./segmentation/DeepLabV3%20Rethinking%20Atrous%20Convolution%20for%20Semantic%20Image%20Segmentation.pdf)
+## [10 DeepLabV3: Rethinking Atrous Convolution for Semantic Image Segmentation](./segmentation/DeepLabV3%20Rethinking%20Atrous%20Convolution%20for%20Semantic%20Image%20Segmentation.pdf)
 - Chen L C, Papandreou G, Schroff F, et al./2017/CVPR/4868
 -  Deep Convolutional Neural Networks (DCNNs) for the semantic segmentation task have two challenges: **(1)** reduced feature resolution(**atrous convolution**); **(2)** existence of objects at multiple scales(**atrous convolution & spatial pyramid pooling**). In DeepLab V3, the authors take different strategy to handle these issues.
 - ![DeepLabV3_1](./images/DeepLabV3_2.png)
-- ![DeepLabV3_1](./images/DeepLabV3_1.png)
-- ![DeepLabV3_1](./images/DeepLabV3_3.png)
+- ![DeepLabV3_2](./images/DeepLabV3_1.png)
+- ![DeepLabV3_3](./images/DeepLabV3_3.png)
+
+
+## [11 DeepLabV3+: Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation](./segmentation/DeepLabV3%2B%20Encoder-Decoder%20with%20Atrous%20Separable%20Convolution%20for%20Semantic%20Image%20Segmentation.pdf)
+- Chen L C, Zhu Y, Papandreou G, et al./2018/ECCV/6537
+- The former networks are able to **encode multi-scale contextual information** by probing the incoming features with filters or pooling operations at multiple rates and multiple effective fields-of-view, while the latter networks can **capture sharper object boundaries** by gradually recovering the spatial information. DeepLabv3+ extends DeepLabv3 by adding a **simple yet effective decoder module** to refine the
+segmentation results especially along object boundaries and apply the **depthwise separable convolution**(depthwise convolution + pointwise convolution, to reduce the model parameter) to both ASPP and decoder modules.
+- DeepLabv3+'s work: 1) powerful encoder with atrous convolution and simple yet effective decoder; 2) adapt the Xception model to get faster and stronger encoder-decoder network.
+- ![DeepLabV3+_1](./images/DeepLabV3%2B_1.png)
+- ![DeepLabV3+_2](./images/DeepLabV3%2B_2.png)
+- ![DeepLabV3+_3](./images/DeepLabV3%2B_3.png)
