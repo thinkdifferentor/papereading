@@ -1,6 +1,7 @@
 <!-- TOC -->
 
 - [00 Generative Adversarial Nets](#00-generative-adversarial-nets)
+- [01 Self-supervised Visual Feature Learning with Deep Neural Networks: A Survey](#01-self-supervised-visual-feature-learning-with-deep-neural-networks-a-survey)
 
 <!-- /TOC -->
 
@@ -15,3 +16,26 @@
 - In practice, equation 1 may not provide sufficient gradient for G to learn well. Early in learning, when G is poor, D can reject samples with high confidence because they are clearly different from the training data. In this case, log(1 − D(G(z))) saturates. Rather than training G to minimize log(1 − D(G(z))) we can train G to **maximize** log D(G(z)). This objective function results in the same fixed point of the dynamics of G and D but provides much stronger gradients early in learning. (**New problem**: D(G(z)) might close to zero and log D(G(z)) close to infinit)
 
  
+ ## [01 Self-supervised Visual Feature Learning with Deep Neural Networks: A Survey]()
+ - Jing L, Tian Y./2019/Pattern Analysis and Machine Intelligence/752.
+ - ![Self-supervised Visual Feature Learning with Deep Neural Networks_1](./images/Self-supervised%20Visual%20Feature%20Learning%20with%20Deep%20Neural%20Networks_1.png)
+ - The pre-trained models and fine-tuned for other tasks for two main reasons: (1) the parameters learned from large-scale diverse datasets provide a good starting point, therefore, networks training on other tasks can **converge faster**, (2) the network trained on large-scale datasets already learned the hierarchy features which can help to **reduce over-fitting problem** during the training of other tasks, especially when datasets of other tasks are **small or training labels are scarce**.
+- The pretext tasks share two common properties: (1) visual features of images or videos need to **be captured by ConvNets** to solve the pretext tasks, (2) pseudo labels for the pretext task can be **automatically generated** based on the attributes of images or videos. After the training on the pretext task is finished, **ConvNet models** that can capture visual **features** for images or videos are obtained.
+- ![Self-supervised Visual Feature Learning with Deep Neural Networks_2](./images/Self-supervised%20Visual%20Feature%20Learning%20with%20Deep%20Neural%20Networks_2.png)
+- **Some Important Definition:**
+    1. Supervised Learning: Supervised learning indicates learning methods using data with **fine-grained human-annotated labels** to train networks.
+    2. Semi-supervised Learning: Semi-supervised learning refers to learning methods using a **small amount of labeled data** in conjunction with a **large amount of unlabeled data**.
+    3. Weakly-supervised Learning: Weakly supervised learning refers to learning methods to learn with **coarse-grained labels or inaccurate labels**. The cost of obtaining weak supervision labels is generally **much cheaper** than fine-grained labels for supervised methods.
+    4. **Unsupervised Learning**: Unsupervised learning refers to learning methods without using any human-annotated labels.(K-means, KNN)
+    5. **Self-supervised Learning**: Self-supervised learning is a **subset of** unsupervised learning methods. Self-supervised learning refers to learning methods in which ConvNets are explicitly trained with **automatically generated labels**(Pseudo Lable).
+- ![Self-supervised Visual Feature Learning with Deep Neural Networks_3](./images/Self-supervised%20Visual%20Feature%20Learning%20with%20Deep%20Neural%20Networks_3.png)
+- Generation-based Image Feature Learning:
+    1. Image Generation with GAN: The discriminator is required to capture **the semantic features** from images to accomplish the discriminate task(**real data distribution or generated data distribution**). The **parameters of the discriminator** can server as the pre-trained model for other computer vision tasks. ![Self-supervised Visual Feature Learning with Deep Neural Networks_4](./images/Self-supervised%20Visual%20Feature%20Learning%20with%20Deep%20Neural%20Networks_4.png)
+    2. Image Generation with Inpainting:![Self-supervised Visual Feature Learning with Deep Neural Networks_5](./images/Self-supervised%20Visual%20Feature%20Learning%20with%20Deep%20Neural%20Networks_5.png)
+    3. Image Generation with Colorization:![Self-supervised Visual Feature Learning with Deep Neural Networks_6](./images/Self-supervised%20Visual%20Feature%20Learning%20with%20Deep%20Neural%20Networks_6.png)
+- Context-Based Image Feature Learning:
+    1. Learning with Context Similarity:![Self-supervised Visual Feature Learning with Deep Neural Networks_7](./images/Self-supervised%20Visual%20Feature%20Learning%20with%20Deep%20Neural%20Networks_7.png)
+    2. Learning with Spatial Context Structure:![Self-supervised Visual Feature Learning with Deep Neural Networks_8](./images/Self-supervised%20Visual%20Feature%20Learning%20with%20Deep%20Neural%20Networks_8.png)
+- Free Semantic Label-based Image Feature Learning:
+    1. Learning with Labels Generated by Game Engines: One problem needed to solve is how to bridge the domain gap between synthetic data and real-world data.![Self-supervised Visual Feature Learning with Deep Neural Networks_9](./images/Self-supervised%20Visual%20Feature%20Learning%20with%20Deep%20Neural%20Networks_9.png)
+    2. Learning with Labels Generated by Hard-code programs: This type of methods generally has two steps: (1) label generation by employing hard-code programs on images or videos to obtain labels, (2) train ConvNets with the generated labels. Compared to other self-supervised learning methods, the supervision signal in these pretext tasks is **semantic labels(But very noisy)** which can directly drive the ConvNet to learn semantic features.
