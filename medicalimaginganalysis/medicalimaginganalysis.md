@@ -8,10 +8,11 @@
 - [05 SegNet: A Deep Convolutional Encoder-Decoder Architecture for Image Segmentation](#05-segnet-a-deep-convolutional-encoder-decoder-architecture-for-image-segmentation)
 - [06 U-Net: Convolutional Networks for Biomedical Image Segmentation](#06-u-net-convolutional-networks-for-biomedical-image-segmentation)
 - [07 Unet++: A nested u-net architecture for medical image segmentation](#07-unet-a-nested-u-net-architecture-for-medical-image-segmentation)
-- [08 3D U-Net: Learning Dense Volumetric Segmentation from Sparse Annotation](#08-3d-u-net-learning-dense-volumetric-segmentation-from-sparse-annotation)
-- [09 DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution and Fully Connected CRFs](#09-deeplab-semantic-image-segmentation-with-deep-convolutional-nets-atrous-convolution-and-fully-connected-crfs)
-- [10 DeepLabV3: Rethinking Atrous Convolution for Semantic Image Segmentation](#10-deeplabv3-rethinking-atrous-convolution-for-semantic-image-segmentation)
-- [11 DeepLabV3+: Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation](#11-deeplabv3-encoder-decoder-with-atrous-separable-convolution-for-semantic-image-segmentation)
+- [08 Unet 3+: A full-scale connected unet for medical image segmentation](#08-unet-3-a-full-scale-connected-unet-for-medical-image-segmentation)
+- [09 3D U-Net: Learning Dense Volumetric Segmentation from Sparse Annotation](#09-3d-u-net-learning-dense-volumetric-segmentation-from-sparse-annotation)
+- [10 DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution and Fully Connected CRFs](#10-deeplab-semantic-image-segmentation-with-deep-convolutional-nets-atrous-convolution-and-fully-connected-crfs)
+- [11 DeepLabV3: Rethinking Atrous Convolution for Semantic Image Segmentation](#11-deeplabv3-rethinking-atrous-convolution-for-semantic-image-segmentation)
+- [12 DeepLabV3+: Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation](#12-deeplabv3-encoder-decoder-with-atrous-separable-convolution-for-semantic-image-segmentation)
 
 <!-- /TOC -->
 
@@ -135,7 +136,17 @@ feedback loops into a convolutional layer. The feedback is applied after both co
 which bridges the semantic gap between encoder and decoder feature maps; (2) **having dense skip connections on skip pathways** (shown in blue), which improves gradient flow; and (3) **having deep supervision** (shown in red), which enables model pruning and improves or in the worst case achieves comparable performance to using only one loss layer.
 
 
-## [08 3D U-Net: Learning Dense Volumetric Segmentation from Sparse Annotation](./segmentation/3D%20U-Net%20Learning%20Dense%20Volumetric%20Segmentation%20from%20Sparse%20Annotation.pdf)
+## [08 Unet 3+: A full-scale connected unet for medical image segmentation](./segmentation/Unet%203%2B%20A%20full-scale%20connected%20unet%20for%20medical%20image%20segmentation.pdf)
+- Huang H, Lin L, Tong R, et al./2020/ICASSP/291
+- Unet 3+ takes advantage of **full-scale skip connections** and **deep supervisions**. The full-scale skip connections incorporate **low-level details**(rich spatial information, which highlight the boundaries of organs) with **high-level semantics**(embody position information, which locate where the organs are) from feature maps in different scales; while the deep supervision learns **hierarchical representations** from the full-scale aggregated feature maps. The model improve segmentation accuracy specially for organs that appear at **varying scales** and reduce the parameter of networks to get more **efficient computation**. (compare to U-net & U-net++)
+- Main contributions: **(i)** devising a novel UNet 3+ to make full use of the multi-scale features by introducing **full-scale skip connections**, which incorporate low-level details with high-level semantics from feature maps in full scales, but with fewer parameters; **(ii)** developing a **deep supervision to learn hierarchical representations** from the full-scale aggregated feature maps, which optimizes a hybrid loss function to enhance the organ boundary; **(iii)** proposing a **classification-guided module** to reduce over-segmentation on none-organ image by jointly training with an image-level classification;
+- ![U-net3+_1](./images/U-net3%2B_1.png)
+- To further enhance the boundary of organs, we propose a **[multi-scale structural similarity index (MS-SSIM) Loss](../basemethods/Multiscale%20Structural%20Similarity%20For%20Image%20Quality%20Assessment.pdf)** function to assign higher weights to the fuzzy boundary. Benefiting from it, the UNet 3+ will keep eye on fuzzy boundary as the greater the regional distribution difference, the higher the MS-SSIM value. Adapting **[Focal Loss](../basemethods/Focal%20Loss%20for%20Dense%20Object%20Detection.pdf)** to relieve the example inbalance problem.
+- ![U-net3+_2](./images/U-net3%2B_2.png)
+- ![U-net3+_3](./images/U-net3%2B_3.png)
+
+
+## [09 3D U-Net: Learning Dense Volumetric Segmentation from Sparse Annotation](./segmentation/3D%20U-Net%20Learning%20Dense%20Volumetric%20Segmentation%20from%20Sparse%20Annotation.pdf)
 - Çiçek Ö, Abdulkadir A, Lienkamp S S, et al./2016/MICCAI/3934
 - The 3D U-Net network extends the previous u-net architecture from U-Net by **replacing all 2D operations with their 3D counterparts**(3D convolutions, 3D max pooling, and 3D up-convolutional layers). There are two use cases of this model:  (1) In a **semi-automated setup**, the user annotates some slices in the volume to be segmented.
 The network learns from these sparse annotations and provides a dense 3D segmentation. (2) In a **fully-automated setup**, we assume that a representative, sparsely annotated training set exists. Trained on this data set, the network densely segments new volumetric images.
@@ -143,7 +154,7 @@ The network learns from these sparse annotations and provides a dense 3D segment
 - ![3D U-Net](./images/3DUNet.png)
 
 
-## [09 DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution and Fully Connected CRFs](./segmentation/DeepLab%20Semantic%20Image%20Segmentation%20with%20Deep%20Convolutional%20Nets%2C%20Atrous%20Convolution%20and%20Fully%20Connected%20CRFs.pdf)
+## [10 DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution and Fully Connected CRFs](./segmentation/DeepLab%20Semantic%20Image%20Segmentation%20with%20Deep%20Convolutional%20Nets%2C%20Atrous%20Convolution%20and%20Fully%20Connected%20CRFs.pdf)
 - Chen L C, Papandreou G, Kokkinos I, et al./2017/Pattern Analysis and Machine Intelligence/11453
 - Three **challengens** of  DCNNs to semantic image segmentation: **(1)** reduced feature resolution(caused by repeated combination of max-pooling and downsampling->**atrous convolution**), **(2)** existence of objects at multiple scales(using multiple parallel atrous convolutional layers with different sampling rates, called **ASPP**), and **(3)** reduced localization accuracy due to DCNN invariance (fully connected Conditional Random Field, **CRF**). The DeepLab have three main advantages: *(1) Speed; (2) Accuracy; (3)Simplicity*
 - ![DeepLabV1_1](./images/DeepLabV1_1.png)
@@ -153,7 +164,7 @@ The network learns from these sparse annotations and provides a dense 3D segment
 - ![DeepLabV1_5](./images/DeepLabV1_5.png)
 
 
-## [10 DeepLabV3: Rethinking Atrous Convolution for Semantic Image Segmentation](./segmentation/DeepLabV3%20Rethinking%20Atrous%20Convolution%20for%20Semantic%20Image%20Segmentation.pdf)
+## [11 DeepLabV3: Rethinking Atrous Convolution for Semantic Image Segmentation](./segmentation/DeepLabV3%20Rethinking%20Atrous%20Convolution%20for%20Semantic%20Image%20Segmentation.pdf)
 - Chen L C, Papandreou G, Schroff F, et al./2017/CVPR/4868
 -  Deep Convolutional Neural Networks (DCNNs) for the semantic segmentation task have two challenges: **(1)** reduced feature resolution(**atrous convolution**); **(2)** existence of objects at multiple scales(**atrous convolution & spatial pyramid pooling**). In DeepLab V3, the authors take different strategy to handle these issues.
 - ![DeepLabV3_1](./images/DeepLabV3_2.png)
@@ -161,7 +172,7 @@ The network learns from these sparse annotations and provides a dense 3D segment
 - ![DeepLabV3_3](./images/DeepLabV3_3.png)
 
 
-## [11 DeepLabV3+: Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation](./segmentation/DeepLabV3%2B%20Encoder-Decoder%20with%20Atrous%20Separable%20Convolution%20for%20Semantic%20Image%20Segmentation.pdf)
+## [12 DeepLabV3+: Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation](./segmentation/DeepLabV3%2B%20Encoder-Decoder%20with%20Atrous%20Separable%20Convolution%20for%20Semantic%20Image%20Segmentation.pdf)
 - Chen L C, Zhu Y, Papandreou G, et al./2018/ECCV/6537
 - The former networks are able to **encode multi-scale contextual information** by probing the incoming features with filters or pooling operations at multiple rates and multiple effective fields-of-view, while the latter networks can **capture sharper object boundaries** by gradually recovering the spatial information. DeepLabv3+ extends DeepLabv3 by adding a **simple yet effective decoder module** to refine the
 segmentation results especially along object boundaries and apply the **depthwise separable convolution**(depthwise convolution + pointwise convolution, to reduce the model parameter) to both ASPP and decoder modules.
