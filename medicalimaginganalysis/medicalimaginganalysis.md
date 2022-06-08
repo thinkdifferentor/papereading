@@ -13,6 +13,7 @@
 - [10 DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution and Fully Connected CRFs](#10-deeplab-semantic-image-segmentation-with-deep-convolutional-nets-atrous-convolution-and-fully-connected-crfs)
 - [11 DeepLabV3: Rethinking Atrous Convolution for Semantic Image Segmentation](#11-deeplabv3-rethinking-atrous-convolution-for-semantic-image-segmentation)
 - [12 DeepLabV3+: Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation](#12-deeplabv3-encoder-decoder-with-atrous-separable-convolution-for-semantic-image-segmentation)
+- [13 PANet: Few-Shot Image Semantic Segmentation with Prototype Alignment](#13-panet-few-shot-image-semantic-segmentation-with-prototype-alignment)
 
 <!-- /TOC -->
 
@@ -180,3 +181,12 @@ segmentation results especially along object boundaries and apply the **depthwis
 - ![DeepLabV3+_1](./images/DeepLabV3%2B_1.png)
 - ![DeepLabV3+_2](./images/DeepLabV3%2B_2.png)
 - ![DeepLabV3+_3](./images/DeepLabV3%2B_3.png)
+
+
+## [13 PANet: Few-Shot Image Semantic Segmentation with Prototype Alignment](./segmentation/PANet%20Few-Shot%20Image%20Semantic%20Segmentation%20with%20Prototype%20Alignment.pdf)
+- Wang K, Liew J H, Zou Y, et al./2019/ICCV/302
+- PANet learns **class specific prototype representations** from a few support images within an embedding space and then performs segmentation over the query images through **matching each pixel to the learned prototypes** (Segmentation over the query images
+is performed by labeling each pixel as the class of the nearest prototype). With non-parametric metric learning, PANet offers **high-quality prototypes** that are representative for each semantic class and meanwhile discriminative for different classes.
+- ![PANet1](./images/PANet_1.png)
+- **Key Steps:** 1) Prototype learning (adopted **masked average pooling**); 2) Non-parametric metric learning(adopted **cos similarity with factor alpha**) 3) Prototype alignment regularization(**swapping the support and query set**): Intuitively, if the model can predict a good segmentation mask for the query using prototypes extracted from the support, the prototypes learned from the query set based on the predicted masks should be able to segment support images well.
+- ![PANet_2](./images/PANet_2.png)
