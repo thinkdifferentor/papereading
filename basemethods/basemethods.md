@@ -5,6 +5,7 @@
 - [02 Deep Learning for Click-Through Rate Estimation](#02-deep-learning-for-click-through-rate-estimation)
 - [03 Factorization Machines](#03-factorization-machines)
 - [04 Graph Attention Networks](#04-graph-attention-networks)
+- [05 Prototypical Networks for Few-shot Learning](#05-prototypical-networks-for-few-shot-learning)
 
 <!-- /TOC -->
 
@@ -59,3 +60,10 @@
 - The attention mechanism formulation ![Model Architecture 2](./images/Graph%20Attention%20Networks_2.png)
 - Concate multi-head attention ![Model Architecture 3](./images/Graph%20Attention%20Networks_3.png)
 - Average multi-head attention ![Model Architecture 4](./images/Graph%20Attention%20Networks_4.png)
+
+
+## [05 Prototypical Networks for Few-shot Learning](./Prototypical%20Networks%20for%20Few-shot%20Learning.pdf)
+- Snell J, Swersky K, Zemel R./NIPS/2017/4230.
+- Prototypical Networks learn a **metric space** in which classification can be performed by **computing distances(cosin similarity)** to prototype representations of each class.
+- ![Prototypical Networks for Few-shot Learning_1](./images/Prototypical%20Networks%20for%20Few-shot%20Learning_1.png)
+- ![Prototypical Networks for Few-shot Learning_2](./images/Prototypical%20Networks%20for%20Few-shot%20Learning_2.png)
