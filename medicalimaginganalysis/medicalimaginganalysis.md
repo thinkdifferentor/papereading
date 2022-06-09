@@ -15,6 +15,7 @@
 - [12 DeepLabV3+: Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation](#12-deeplabv3-encoder-decoder-with-atrous-separable-convolution-for-semantic-image-segmentation)
 - [13 Pyramid Scene Parsing Network](#13-pyramid-scene-parsing-network)
 - [14 PANet: Few-Shot Image Semantic Segmentation with Prototype Alignment](#14-panet-few-shot-image-semantic-segmentation-with-prototype-alignment)
+- [15 Self-Supervision with Superpixels: Training Few-shot Medical Image Segmentation without Annotation](#15-self-supervision-with-superpixels-training-few-shot-medical-image-segmentation-without-annotation)
 
 <!-- /TOC -->
 
@@ -196,3 +197,10 @@ is performed by labeling each pixel as the class of the nearest prototype). With
 - **Key Steps:** 1) Prototype learning (adopted **masked average pooling**); 2) Non-parametric metric learning(adopted **cos similarity with factor alpha**) 3) Prototype alignment regularization(**swapping the support and query set**): Intuitively, if the model can predict a good segmentation mask for the query using prototypes extracted from the support, the prototypes learned from the query set based on the predicted masks should be able to segment support images well.
 - ![PANet_2](./images/PANet_2.png)
 
+
+## [15 Self-Supervision with Superpixels: Training Few-shot Medical Image Segmentation without Annotation]()
+- Ouyang C, Biffi C, Chen C, et al./2020/ECCV/54
+- Most of the existing Few-shot semantic segmentation (FSS) techniques require abundant (compare traditional segmentation model is **much fewer**) annotated semantic classes for training.To address this problem we make several contributions:(1) A novel self-supervised FSS framework for medical images in order to **eliminate the requirement for annotations** during training. Additionally, **superpixel-based pseudo-labels** are generated to provide supervision;(2) An **adaptive local prototype pooling** module plugged into prototypical networks, to solve the common challenging **foreground-background imbalance** problem in medical image segmentation;
+- The aim of few-shot segmentation is to obtain a model that can segment an **unseen semantic class**(Dtrain's Query set), by just learning from a **few labeled images**(Dtrain's Support set) of this unseen class during inference without retraining the model. Dataset: **Dtrain & Dtest** have the same structurs but the classes of them is totally different eg. **SupSet = {Image, Mask}, QurSet = {Image}**  
+- ![Self-Supervision with Superpixels 1](./images/Self-supervision%20with%20Superpixels_1.png)
+- ![Self-Supervision with Superpixels 2](./images/Self-supervision%20with%20Superpixels_2.png)
