@@ -14,8 +14,9 @@
 - [11 DeepLabV3: Rethinking Atrous Convolution for Semantic Image Segmentation](#11-deeplabv3-rethinking-atrous-convolution-for-semantic-image-segmentation)
 - [12 DeepLabV3+: Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation](#12-deeplabv3-encoder-decoder-with-atrous-separable-convolution-for-semantic-image-segmentation)
 - [13 Pyramid Scene Parsing Network](#13-pyramid-scene-parsing-network)
-- [14 PANet: Few-Shot Image Semantic Segmentation with Prototype Alignment](#14-panet-few-shot-image-semantic-segmentation-with-prototype-alignment)
-- [15 Self-Supervision with Superpixels: Training Few-shot Medical Image Segmentation without Annotation](#15-self-supervision-with-superpixels-training-few-shot-medical-image-segmentation-without-annotation)
+- [14 SG-One: Similarity Guidance Network for One-Shot Semantic Segmentation](#14-sg-one-similarity-guidance-network-for-one-shot-semantic-segmentation)
+- [15 PANet: Few-Shot Image Semantic Segmentation with Prototype Alignment](#15-panet-few-shot-image-semantic-segmentation-with-prototype-alignment)
+- [16 Self-Supervision with Superpixels: Training Few-shot Medical Image Segmentation without Annotation](#16-self-supervision-with-superpixels-training-few-shot-medical-image-segmentation-without-annotation)
 
 <!-- /TOC -->
 
@@ -190,7 +191,14 @@ segmentation results especially along object boundaries and apply the **depthwis
 - ![FPN](./images/PSPNet.png)
 
 
-## [14 PANet: Few-Shot Image Semantic Segmentation with Prototype Alignment](./segmentation/PANet%20Few-Shot%20Image%20Semantic%20Segmentation%20with%20Prototype%20Alignment.pdf)
+## [14 SG-One: Similarity Guidance Network for One-Shot Semantic Segmentation](./segmentation/SG-One%20Similarity%20Guidance%20Network%20for%20One-Shot%20Semantic%20Segmentation.pdf)
+- Zhang X, Wei Y, Yang Y, et al./2020/IEEE Transactions on Cybernetics/177
+- Main Contribution: 1) We propose to produce robust object-related representative vectors using **masked average pooling**(Inspiron next work) for incorporating contextual information without changing the input structure of networks. (2) We produce the **pixel-wise guidance** using **cosine similarities** between representative vectors and query features for predicting the segmentation masks.
+- ![SG-One_1](./images/SG-One_1.png)
+- ![SG-One_2](./images/SG-One_2.png),![SG-One_3](./images/SG-One_3.png)
+
+
+## [15 PANet: Few-Shot Image Semantic Segmentation with Prototype Alignment](./segmentation/PANet%20Few-Shot%20Image%20Semantic%20Segmentation%20with%20Prototype%20Alignment.pdf)
 - Wang K, Liew J H, Zou Y, et al./2019/ICCV/302
 - PANet learns **class specific prototype representations** from a few support images within an embedding space and then performs segmentation over the query images through **matching each pixel to the learned prototypes** (Segmentation over the query images
 is performed by labeling each pixel as the class of the nearest prototype). With non-parametric metric learning, PANet offers **high-quality prototypes** that are representative for each semantic class and meanwhile discriminative for different classes.
@@ -199,7 +207,7 @@ is performed by labeling each pixel as the class of the nearest prototype). With
 - ![PANet_2](./images/PANet_2.png)
 
 
-## [15 Self-Supervision with Superpixels: Training Few-shot Medical Image Segmentation without Annotation]()
+## [16 Self-Supervision with Superpixels: Training Few-shot Medical Image Segmentation without Annotation]()
 - Ouyang C, Biffi C, Chen C, et al./2020/ECCV/54
 - Most of the existing Few-shot semantic segmentation (FSS) techniques require abundant (compare traditional segmentation model is **much fewer**) annotated semantic classes for training.To address this problem we make several contributions:(1) A novel self-supervised FSS framework for medical images in order to **eliminate the requirement for annotations** during training. Additionally, **superpixel-based pseudo-labels** are generated to provide supervision;(2) An **adaptive local prototype pooling** module plugged into prototypical networks, to solve the common challenging **foreground-background imbalance** problem in medical image segmentation;
 - The aim of few-shot segmentation is to obtain a model that can segment an **unseen semantic class**(Dtrain's Query set), by just learning from a **few labeled images**(Dtrain's Support set) of this unseen class during inference without retraining the model. Dataset: **Dtrain & Dtest** have the same structurs but the classes of them is totally different eg. **SupSet = {Image, Mask}, QurSet = {Image}**  
