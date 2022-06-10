@@ -185,8 +185,9 @@ segmentation results especially along object boundaries and apply the **depthwis
 - ![DeepLabV3+_3](./images/DeepLabV3%2B_3.png)
 
 
-## [13 Pyramid Scene Parsing Network]()
-- 
+## [13 Pyramid Scene Parsing Network](./segmentation/Pyramid%20Scene%20Parsing%20Network.pdf)
+- Important Observations about FCN in ADE20K: 1) **Mismatched Relationship**: FCN is lack of the ability to **collect contextual information** increases the chance of misclassification. 2) **Confusion Categories**: There are confusing classfication in the ADE20K like field and earth, mountain and hill etc. FCN can not judge them in the segmentation task. This problem can be remedied by utilizing **the relationship between categories**. 3) **Inconspicuous Classes**: Serveral small-size things are hard to find while may be greate importance like streetlights and signboard. However, big objects or stuff may exceed the receptive field of FCN and thus cause discontinuous prediction. To improve performance for remarkably small or large objects, one should **pay much attention to different sub-regions** that contain inconspicuous-category stuff.
+- ![FPN](./images/PSPNet.png)
 
 
 ## [14 PANet: Few-Shot Image Semantic Segmentation with Prototype Alignment](./segmentation/PANet%20Few-Shot%20Image%20Semantic%20Segmentation%20with%20Prototype%20Alignment.pdf)
