@@ -8,7 +8,7 @@
 - [05 SegNet: A Deep Convolutional Encoder-Decoder Architecture for Image Segmentation](#05-segnet-a-deep-convolutional-encoder-decoder-architecture-for-image-segmentation)
 - [06 U-Net: Convolutional Networks for Biomedical Image Segmentation](#06-u-net-convolutional-networks-for-biomedical-image-segmentation)
 - [07 Unet++: A nested u-net architecture for medical image segmentation](#07-unet-a-nested-u-net-architecture-for-medical-image-segmentation)
-- [08 Unet 3+: A full-scale connected unet for medical image segmentation](#08-unet-3-a-full-scale-connected-unet-for-medical-image-segmentation)
+- [08 *Unet 3+: A full-scale connected unet for medical image segmentation](#08-unet-3-a-full-scale-connected-unet-for-medical-image-segmentation)
 - [09 3D U-Net: Learning Dense Volumetric Segmentation from Sparse Annotation](#09-3d-u-net-learning-dense-volumetric-segmentation-from-sparse-annotation)
 - [10 DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution and Fully Connected CRFs](#10-deeplab-semantic-image-segmentation-with-deep-convolutional-nets-atrous-convolution-and-fully-connected-crfs)
 - [11 DeepLabV3: Rethinking Atrous Convolution for Semantic Image Segmentation](#11-deeplabv3-rethinking-atrous-convolution-for-semantic-image-segmentation)
@@ -140,7 +140,7 @@ feedback loops into a convolutional layer. The feedback is applied after both co
 which bridges the semantic gap between encoder and decoder feature maps; (2) **having dense skip connections on skip pathways** (shown in blue), which improves gradient flow; and (3) **having deep supervision** (shown in red), which enables model pruning and improves or in the worst case achieves comparable performance to using only one loss layer.
 
 
-## [08 Unet 3+: A full-scale connected unet for medical image segmentation](./segmentation/Unet%203%2B%20A%20full-scale%20connected%20unet%20for%20medical%20image%20segmentation.pdf)
+## [08 *Unet 3+: A full-scale connected unet for medical image segmentation](./segmentation/Unet%203%2B%20A%20full-scale%20connected%20unet%20for%20medical%20image%20segmentation.pdf)
 - Huang H, Lin L, Tong R, et al./2020/ICASSP/291
 - Unet 3+ takes advantage of **full-scale skip connections** and **deep supervisions**. The full-scale skip connections incorporate **low-level details**(rich spatial information, which highlight the boundaries of organs) with **high-level semantics**(embody position information, which locate where the organs are) from feature maps in different scales; while the deep supervision learns **hierarchical representations** from the full-scale aggregated feature maps. The model improve segmentation accuracy specially for organs that appear at **varying scales** and reduce the parameter of networks to get more **efficient computation**. (compare to U-net & U-net++)
 - Main contributions: **(i)** devising a novel UNet 3+ to make full use of the multi-scale features by introducing **full-scale skip connections**, which incorporate low-level details with high-level semantics from feature maps in full scales, but with fewer parameters; **(ii)** developing a **deep supervision to learn hierarchical representations** from the full-scale aggregated feature maps, which optimizes a hybrid loss function to enhance the organ boundary; **(iii)** proposing a **classification-guided module** to reduce over-segmentation on none-organ image by jointly training with an image-level classification;
@@ -187,6 +187,7 @@ segmentation results especially along object boundaries and apply the **depthwis
 
 
 ## [13 Pyramid Scene Parsing Network](./segmentation/Pyramid%20Scene%20Parsing%20Network.pdf)
+- Zhao H, Shi J, Qi X, et al./2017/CVPR/7411
 - Important Observations about FCN in ADE20K: 1) **Mismatched Relationship**: FCN is lack of the ability to **collect contextual information** increases the chance of misclassification. 2) **Confusion Categories**: There are confusing classfication in the ADE20K like field and earth, mountain and hill etc. FCN can not judge them in the segmentation task. This problem can be remedied by utilizing **the relationship between categories**. 3) **Inconspicuous Classes**: Serveral small-size things are hard to find while may be greate importance like streetlights and signboard. However, big objects or stuff may exceed the receptive field of FCN and thus cause discontinuous prediction. To improve performance for remarkably small or large objects, one should **pay much attention to different sub-regions** that contain inconspicuous-category stuff.
 - ![FPN](./images/PSPNet.png)
 
@@ -196,20 +197,24 @@ segmentation results especially along object boundaries and apply the **depthwis
 - Main Contribution: 1) We propose to produce robust object-related representative vectors using **masked average pooling**(Inspiron next work) for incorporating contextual information without changing the input structure of networks. (2) We produce the **pixel-wise guidance** using **cosine similarities** between representative vectors and query features for predicting the segmentation masks.
 - ![SG-One_1](./images/SG-One_1.png)
 - ![SG-One_2](./images/SG-One_2.png),![SG-One_3](./images/SG-One_3.png)
-
+- ![SG-One_4](./images/SG-One_4.png)
+  
 
 ## [15 PANet: Few-Shot Image Semantic Segmentation with Prototype Alignment](./segmentation/PANet%20Few-Shot%20Image%20Semantic%20Segmentation%20with%20Prototype%20Alignment.pdf)
-- Wang K, Liew J H, Zou Y, et al./2019/ICCV/302
+- Wang K, Liew J H, Zou Y, et al./2020/ICCV/302
 - PANet learns **class specific prototype representations** from a few support images within an embedding space and then performs segmentation over the query images through **matching each pixel to the learned prototypes** (Segmentation over the query images
 is performed by labeling each pixel as the class of the nearest prototype). With non-parametric metric learning, PANet offers **high-quality prototypes** that are representative for each semantic class and meanwhile discriminative for different classes.
 - ![PANet1](./images/PANet_1.png)
 - **Key Steps:** 1) Prototype learning (adopted **masked average pooling**); 2) Non-parametric metric learning(adopted **cos similarity with factor alpha**) 3) Prototype alignment regularization(**swapping the support and query set**): Intuitively, if the model can predict a good segmentation mask for the query using prototypes extracted from the support, the prototypes learned from the query set based on the predicted masks should be able to segment support images well.
 - ![PANet_2](./images/PANet_2.png)
+- ![PANet_3](./images/PANet_3.png) , ![PANet_4](./images/PANet_4.png)
+  
 
-
-## [16 Self-Supervision with Superpixels: Training Few-shot Medical Image Segmentation without Annotation]()
+## [16 Self-Supervision with Superpixels: Training Few-shot Medical Image Segmentation without Annotation](./segmentation/Self-Supervision%20with%20Superpixels%20Training%20Few-shot%20Medical%20Image%20Segmentation%20without%20Annotation.pdf)
 - Ouyang C, Biffi C, Chen C, et al./2020/ECCV/54
 - Most of the existing Few-shot semantic segmentation (FSS) techniques require abundant (compare traditional segmentation model is **much fewer**) annotated semantic classes for training.To address this problem we make several contributions:(1) A novel self-supervised FSS framework for medical images in order to **eliminate the requirement for annotations** during training. Additionally, **superpixel-based pseudo-labels** are generated to provide supervision;(2) An **adaptive local prototype pooling** module plugged into prototypical networks, to solve the common challenging **foreground-background imbalance** problem in medical image segmentation;
 - The aim of few-shot segmentation is to obtain a model that can segment an **unseen semantic class**(Dtrain's Query set), by just learning from a **few labeled images**(Dtrain's Support set) of this unseen class during inference without retraining the model. Dataset: **Dtrain & Dtest** have the same structurs but the classes of them is totally different eg. **SupSet = {Image, Mask}, QurSet = {Image}**  
 - ![Self-Supervision with Superpixels 1](./images/Self-supervision%20with%20Superpixels_1.png)
 - ![Self-Supervision with Superpixels 2](./images/Self-supervision%20with%20Superpixels_2.png)
+- ![Self-Supervision with Superpixels 3](./images/Self-supervision%20with%20Superpixels_3.png) , ![Self-Supervision with Superpixels 4](./images/Self-supervision%20with%20Superpixels_4.png) 
+- ![Self-Supervision with Superpixels 5](./images/Self-supervision%20with%20Superpixels_5.png)
