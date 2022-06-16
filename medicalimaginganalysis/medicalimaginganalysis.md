@@ -17,6 +17,7 @@
 - [14 SG-One: Similarity Guidance Network for One-Shot Semantic Segmentation](#14-sg-one-similarity-guidance-network-for-one-shot-semantic-segmentation)
 - [15 PANet: Few-Shot Image Semantic Segmentation with Prototype Alignment](#15-panet-few-shot-image-semantic-segmentation-with-prototype-alignment)
 - [16 Self-Supervision with Superpixels: Training Few-shot Medical Image Segmentation without Annotation](#16-self-supervision-with-superpixels-training-few-shot-medical-image-segmentation-without-annotation)
+- [17 C-CAM: Causal CAM for Weakly Supervised Semantic Segmentation on Medical Image](#17-c-cam-causal-cam-for-weakly-supervised-semantic-segmentation-on-medical-image)
 
 <!-- /TOC -->
 
@@ -218,3 +219,14 @@ is performed by labeling each pixel as the class of the nearest prototype). With
 - ![Self-Supervision with Superpixels 2](./images/Self-supervision%20with%20Superpixels_2.png)
 - ![Self-Supervision with Superpixels 3](./images/Self-supervision%20with%20Superpixels_3.png) , ![Self-Supervision with Superpixels 4](./images/Self-supervision%20with%20Superpixels_4.png) 
 - ![Self-Supervision with Superpixels 5](./images/Self-supervision%20with%20Superpixels_5.png)
+  
+
+## [17 C-CAM: Causal CAM for Weakly Supervised Semantic Segmentation on Medical Image](./segmentation/C-CAM%20Causal%20CAM%20for%20Weakly%20Supervised%20Semantic%20Segmentation%20on%20Medical%20Image.pdf)
+- Chen Z, Tian Z, Zhu J, et al./2022/CVPR/-
+-  Main challenges of medical images. **Challenge1:** The object boundary for medical image is more ambiguous than natural image. **Challenge2:** Different organs often occur in the same medical image in training stage. To deal with those challenges, C-CAM(Causality CAM) proposal two cause-effect chains. The **category-causality**(designed to alleviate the problem of **ambiguous boundary**) chain represents the **image content** (cause) affects the **category** (effect). The **anatomy-causality**(designed to solve the co-occurrence problem) chain represents the **anatomical structure** (cause) affects the **organ segmentation** (effect).
+- ![C-CAM_1](./images/C-CAM_1.png)
+- Common pipeline of CAM-based method could be divided into three stages. **The first stage** is to generate seed regions with CAM method. **The second stage** is to refine seeds regions to generate pseudo masks.(Most work in the stage) **The last stage** is to train segmentation model with pseudo masks.
+- **Question 1:** why the accuracy of classification model is very high but the activated region of CAM is not accurate? **Question 2:** why the shape of activated region differs far from the groundtruth contour of object? The answer for the first question is that classification model is essentially an **association model**, which performs well in classification task. The answer for the second question is that current learning-based methods ignore **constraint of output structure** since they use pixel-wise loss functions.
+- ![C-CAM_2](./images/C-CAM_2.png)
+- ![C-CAM_3](./images/C-CAM_3.png)
+- ![C-CAM_4](./images/C-CAM_4.png)
