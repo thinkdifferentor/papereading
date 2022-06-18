@@ -16,3 +16,4 @@
 - We suspect that for **large values of d_k**, the dot products grow large in magnitude, pushing the softmax function into regions where it has **extremely small gradients**. To counteract this effect, we scale the dot products by 1/sqrt(d_k). So the attention is called **Scaled Dot-Product Attention**.
 - Multi-head attention allows the model to jointly attend to information from different representation subspaces at different positions. We can use **different attention function**(distence function) to compute the weight between the query with every key. (It's same to multi channel in CNN)
 - ![Transformer 4](./images/Transformer_4.png)
+- we found it beneficial to linearly project the queries, keys and values h times with different, learned linear projections to dk, dk and dv dimensions, respectively. Multi-head attention allows the model to jointly attend to information from **different representation subspaces at different positions**.
