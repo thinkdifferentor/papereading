@@ -3,6 +3,7 @@
 - [00 Generative Adversarial Nets](#00-generative-adversarial-nets)
 - [01 Self-supervised Visual Feature Learning with Deep Neural Networks: A Survey](#01-self-supervised-visual-feature-learning-with-deep-neural-networks-a-survey)
 - [02 An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale](#02-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale)
+- [03 Swin Transformer Hierarchical Vision Transformer using Shifted Windows](#03-swin-transformer-hierarchical-vision-transformer-using-shifted-windows)
 
 <!-- /TOC -->
 
@@ -49,3 +50,12 @@
 - ![ViT_1](./images/ViT_1.png)
 - ![ViT_2](./images/ViT_2.png)
 - Position embeddings are added to the patch embeddings to retain positional information. We use standard learnable 1D position embeddings, since we have not observed significant performance gains from using more advanced 2D-aware position embeddings.
+
+
+## [03 Swin Transformer Hierarchical Vision Transformer using Shifted Windows](./Swin%20Transformer%20Hierarchical%20Vision%20Transformer%20using%20Shifted%20Windows.pdf)
+- Liu Z, Lin Y, Cao Y, et al./2021/ICCV/1752
+- Challenges in adapting Transformer from language to vision arise from differences between the two domains, such as **large variations in the scale** of visual entities and the **high resolution of pixels** in images compared to words in text. In this paper, we seek to expand the applicability of Transformer such that it can serve as a **general-purpose backbone** for computer vision, as it does for NLP and as CNNs do in vision.
+- ![Swin_Transformer_1](./images/Swin_Transformer_1.png)
+- A key design element of Swin Transformer is its shift of the window partition between consecutive self-attention layers.  The shifted windows bridge the windows of the preceding layer, **providing connections among them that significantly enhance modeling power**. This strategy is also efficient in regards to real-world latency: all query patches within a window share the same key set, which **facilitates memory access in hardware**.
+- ![Swin_Transformer_2](./images/Swin_Transformer_2.png)
+- ![Swin_Transformer_3](./images/Swin_Transformer_3.png)
