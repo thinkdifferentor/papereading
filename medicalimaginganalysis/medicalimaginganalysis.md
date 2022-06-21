@@ -18,6 +18,7 @@
 - [15 PANet: Few-Shot Image Semantic Segmentation with Prototype Alignment](#15-panet-few-shot-image-semantic-segmentation-with-prototype-alignment)
 - [16 Self-Supervision with Superpixels: Training Few-shot Medical Image Segmentation without Annotation](#16-self-supervision-with-superpixels-training-few-shot-medical-image-segmentation-without-annotation)
 - [17 C-CAM: Causal CAM for Weakly Supervised Semantic Segmentation on Medical Image](#17-c-cam-causal-cam-for-weakly-supervised-semantic-segmentation-on-medical-image)
+- [18 Self-Supervised Pre-Training of Swin Transformers for 3D Medical Image Analysis](#18-self-supervised-pre-training-of-swin-transformers-for-3d-medical-image-analysis)
 
 <!-- /TOC -->
 
@@ -230,3 +231,10 @@ is performed by labeling each pixel as the class of the nearest prototype). With
 - ![C-CAM_2](./images/C-CAM_2.png)
 - ![C-CAM_3](./images/C-CAM_3.png)
 - ![C-CAM_4](./images/C-CAM_4.png)
+
+
+## [18 Self-Supervised Pre-Training of Swin Transformers for 3D Medical Image Analysis](./segmentation/Self-Supervised%20Pre-Training%20of%20Swin%20Transformers%20for%203D%20Medical%20Image%20Analysis.pdf)
+- Tang Y, Yang D, Li W, et al./2022/CVPR/10
+- The **contrastive learning** is used to differentiate various ROIs of different body compositions, whereas the **inpainting** allows for learning the texture, structure and correspondence of masked regions to their surrounding context. The **rotation** task serves as a mechanism to learn the structural content of images and generates various sub-volumes that can be used for contrastive learning.
+- ![Swin-UNETR_1](./images/Swin-UNETR_1.png)
+- ![Swin-UNETR_2](./images/Swin-UNETR_2.png)
