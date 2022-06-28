@@ -6,6 +6,7 @@
 - [03 Swin Transformer Hierarchical Vision Transformer using Shifted Windows](#03-swin-transformer-hierarchical-vision-transformer-using-shifted-windows)
 - [04 Learning Transferable Visual Models From Natural Language Supervision](#04-learning-transferable-visual-models-from-natural-language-supervision)
 - [05 Masked Autoencoders Are Scalable Vision Learners](#05-masked-autoencoders-are-scalable-vision-learners)
+- [06 Momentum Contrast for Unsupervised Visual Representation Learning](#06-momentum-contrast-for-unsupervised-visual-representation-learning)
 
 <!-- /TOC -->
 
@@ -80,3 +81,16 @@
 - ![MAE_1](./images/MAE_1.png)
 - ![MAE_2](./images/MAE_2.png)
 - ![MAE_3](./images/MAE_3.png)
+
+
+## [06 Momentum Contrast for Unsupervised Visual Representation Learning](./Momentum%20Contrast%20for%20Unsupervised%20Visual%20Representation%20Learning.pdf)
+- He K, Fan H, Wu Y, et al./2020/CVPR/3686
+- **Contrastive Learning (Anchor & Positive & Negetive)** can be thought of as building **dynamic dictionaries**. The “keys -> **anchor**” (tokens) in the dictionary are sampled from data (e.g., images or patches) and are represented by an encoder network. Unsupervised learning trains encoders to perform dictionary **look-up**: an encoded “query” should be similar to its matching key (**positive**) and dissimilar (**negetive**) to others. The dictionary is dynamic in the sense that the **keys are randomly sampled**, and that the **key encoder evolves during training**.
+- Momentum Contrast (MoCo) trains a **visual representation encoder** by matching an encoded query *q* to a dictionary of encoded keys using a contrastive loss. The keys are encoded by a slowly progressing encoder, driven by a **momentum update** with the query encoder. This method enables a **large** and **consistent** dictionary for learning **visual representations**.
+- ![MOCO_1](./images/MOCO_1.png) , ![MOCO_3](./images/MOCO_3.png)
+- **Dictionary as a queue** : a queue decouples the dictionary size from the mini-batch size and dictionary size can be much larger than a typical mini-batch size. removing the oldest mini-batch can be beneficial, because its encoded keys are the most outdated and thus the least consistent with the newest ones.
+- **Momentum update** : using queue makes the model intractable to update the key encoder by back-propagation.  copy the key encoder fk from the query encoder fq yields poor results. We hypothesize that such failure is caused by the rapidly changing encoder that reduces the key representations’ consistency. We propose a momentum update to address this issue. though the keys in the queue are encoded by different encoders (in different mini-batches), the difference among these encoders can be made small. **m = 0.999**
+- ![MOCO_2](./images/MOCO_2.png)
+- ![MOCO_4](./images/MOCO_4.png)
+- *Moco aim to provide tons of negetive sample for contrastive learning by constructing dynamic dictionaries to get excellent visual representation. *
+- *A main goal of unsupervised learning is to learn features that are transferrable. ImageNet supervised pre-training is most influential when serving as the initialization for fine-tuning in downstream tasks.*
