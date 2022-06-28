@@ -17,6 +17,7 @@
 - [14 SG-One: Similarity Guidance Network for One-Shot Semantic Segmentation](#14-sg-one-similarity-guidance-network-for-one-shot-semantic-segmentation)
 - [15 PANet: Few-Shot Image Semantic Segmentation with Prototype Alignment](#15-panet-few-shot-image-semantic-segmentation-with-prototype-alignment)
 - [16 Self-Supervision with Superpixels: Training Few-shot Medical Image Segmentation without Annotation](#16-self-supervision-with-superpixels-training-few-shot-medical-image-segmentation-without-annotation)
+- [17 Learning Non-target Knowledge for Few-shot Semantic Segmentation](#17-learning-non-target-knowledge-for-few-shot-semantic-segmentation)
 - [17 C-CAM: Causal CAM for Weakly Supervised Semantic Segmentation on Medical Image](#17-c-cam-causal-cam-for-weakly-supervised-semantic-segmentation-on-medical-image)
 - [18 Self-Supervised Pre-Training of Swin Transformers for 3D Medical Image Analysis](#18-self-supervised-pre-training-of-swin-transformers-for-3d-medical-image-analysis)
 
@@ -221,6 +222,14 @@ is performed by labeling each pixel as the class of the nearest prototype). With
 - ![Self-Supervision with Superpixels 3](./images/Self-supervision%20with%20Superpixels_3.png) , ![Self-Supervision with Superpixels 4](./images/Self-supervision%20with%20Superpixels_4.png) 
 - ![Self-Supervision with Superpixels 5](./images/Self-supervision%20with%20Superpixels_5.png)
   
+
+## [17 Learning Non-target Knowledge for Few-shot Semantic Segmentation](./segmentation/Learning%20Non-target%20Knowledge%20for%20Few-shot%20Semantic%20Segmentation.pdf)
+- Liu Y, Liu N, Cao Q, et al./2022/CVPR/-
+- For existing works, The main reason is that solely focusing on **target objects** in the few-shot setting makes their models hard on learning discriminative features and differentiating ambiguous regions. This paper aim to mining and excluding **non-target regions** like back grounds (BG) & co-existing objects belonging to other classes, namely, distracting objects (DOs).
+- ![Learning Non-target Knowledge_1](./images/Learning%20Non-target%20Knowledge%20for%20Few-shot%20Semantic%20Segmentation_1.png)
+- ![Learning Non-target Knowledge_2](./images/Learning%20Non-target%20Knowledge%20for%20Few-shot%20Semantic%20Segmentation_2.png)
+- PS. the detail of **BGMM, BGEM, FM, DOEM** should go to the paper.
+
 
 ## [17 C-CAM: Causal CAM for Weakly Supervised Semantic Segmentation on Medical Image](./segmentation/C-CAM%20Causal%20CAM%20for%20Weakly%20Supervised%20Semantic%20Segmentation%20on%20Medical%20Image.pdf)
 - Chen Z, Tian Z, Zhu J, et al./2022/CVPR/-
