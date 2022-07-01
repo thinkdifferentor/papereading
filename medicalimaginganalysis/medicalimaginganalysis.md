@@ -18,6 +18,8 @@
 - [15 PANet: Few-Shot Image Semantic Segmentation with Prototype Alignment](#15-panet-few-shot-image-semantic-segmentation-with-prototype-alignment)
 - [16 Self-Supervision with Superpixels: Training Few-shot Medical Image Segmentation without Annotation](#16-self-supervision-with-superpixels-training-few-shot-medical-image-segmentation-without-annotation)
 - [17 Learning Non-target Knowledge for Few-shot Semantic Segmentation](#17-learning-non-target-knowledge-for-few-shot-semantic-segmentation)
+- [18 Generalized Few-shot Semantic Segmentation](#18-generalized-few-shot-semantic-segmentation)
+- [19 Decoupling Zero-Shot Semantic Segmentation](#19-decoupling-zero-shot-semantic-segmentation)
 - [17 C-CAM: Causal CAM for Weakly Supervised Semantic Segmentation on Medical Image](#17-c-cam-causal-cam-for-weakly-supervised-semantic-segmentation-on-medical-image)
 - [18 Self-Supervised Pre-Training of Swin Transformers for 3D Medical Image Analysis](#18-self-supervised-pre-training-of-swin-transformers-for-3d-medical-image-analysis)
 
@@ -229,6 +231,18 @@ is performed by labeling each pixel as the class of the nearest prototype). With
 - ![Learning Non-target Knowledge_1](./images/Learning%20Non-target%20Knowledge%20for%20Few-shot%20Semantic%20Segmentation_1.png)
 - ![Learning Non-target Knowledge_2](./images/Learning%20Non-target%20Knowledge%20for%20Few-shot%20Semantic%20Segmentation_2.png)
 - PS. the detail of **BGMM, BGEM, FM, DOEM** should go to the paper.
+
+
+## [18 Generalized Few-shot Semantic Segmentation]()
+- Tian Z, Lai X, Jiang L, et al./2022/CVPR/7
+- Considering that the **contextual relation** is essential for semantic segmentation, we propose the Context-Aware Prototype Learning (CAPL) that provides significant performance gain to the baseline by updating the weights of base prototypes with adapted feature. CAPL not only exploits essential **co-occurrence information** from support samples, but also **adapts the model to various contexts** of query images.
+
+
+## [19 Decoupling Zero-Shot Semantic Segmentation](./segmentation/Decoupling%20Zero-Shot%20Semantic%20Segmentation.pdf)
+- Ding J, Xue N, Xia G S, et al./2022/CVPR/-
+- An intuitive observation is that, given an image for semantic segmentation, we humans can **first group pixels into segments** and **then perform a segment-level semantic labeling process**.  Decoupling the ZS3 have two sub-tasks: 1) a **class-agnostic grouping** task to **group** the pixels into segments (**CAG**). 2)a **zero-shot classification** task on **segments** (**s-ZSC**). The implementation of this architecture is named **ZegFormer**.
+- ![Decoupling Zero-Shot Semantic Segmentation_1](./images/Decoupling%20Zero-Shot%20Semantic%20Segmentation_1.png)
+- ![Decoupling Zero-Shot Semantic Segmentation_2](./images/Decoupling%20Zero-Shot%20Semantic%20Segmentation_2.png)
 
 
 ## [17 C-CAM: Causal CAM for Weakly Supervised Semantic Segmentation on Medical Image](./segmentation/C-CAM%20Causal%20CAM%20for%20Weakly%20Supervised%20Semantic%20Segmentation%20on%20Medical%20Image.pdf)
