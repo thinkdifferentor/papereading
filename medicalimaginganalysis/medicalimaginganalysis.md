@@ -230,12 +230,20 @@ is performed by labeling each pixel as the class of the nearest prototype). With
 - For existing works, The main reason is that solely focusing on **target objects** in the few-shot setting makes their models hard on learning discriminative features and differentiating ambiguous regions. This paper aim to mining and excluding **non-target regions** like back grounds (BG) & co-existing objects belonging to other classes, namely, distracting objects (DOs).
 - ![Learning Non-target Knowledge_1](./images/Learning%20Non-target%20Knowledge%20for%20Few-shot%20Semantic%20Segmentation_1.png)
 - ![Learning Non-target Knowledge_2](./images/Learning%20Non-target%20Knowledge%20for%20Few-shot%20Semantic%20Segmentation_2.png)
+The DOEM only cares about the DO mask Y_DO in the DO eliminating process. However, a good DO eliminating model requires not only accurate DO masks, but also *good prototype feature embeddings that can differentiate the **target objects** from **DOs** easily*.
+- ![Learning Non-target Knowledge_3](./images/Learning%20Non-target%20Knowledge%20for%20Few-shot%20Semantic%20Segmentation_3.png)
 - PS. the detail of **BGMM, BGEM, FM, DOEM** should go to the paper.
 
 
-## [18 Generalized Few-shot Semantic Segmentation]()
+## [18 Generalized Few-shot Semantic Segmentation](./segmentation/Generalized%20Few-shot%20Semantic%20Segmentation.pdf)
 - Tian Z, Lai X, Jiang L, et al./2022/CVPR/7
-- Considering that the **contextual relation** is essential for semantic segmentation, we propose the Context-Aware Prototype Learning (CAPL) that provides significant performance gain to the baseline by updating the weights of base prototypes with adapted feature. CAPL not only exploits essential **co-occurrence information** from support samples, but also **adapts the model to various contexts** of query images.
+- Considering that the **contextual relation** is essential for semantic segmentation, we propose the Context-Aware Prototype Learning (**CAPL**) that provides significant performance gain to the baseline by updating the weights of base prototypes with adapted feature. CAPL not only exploits essential **co-occurrence information** from support samples, but also **adapts the model to various contexts** of query images.
+- FS-Seg models only learn to predict the foreground masks for the **given novel classes** (from the given support set). GFS-Seg adapts all possible **base and novel classes** (this is why called **Generalized**) to make predictions.
+- Support Contextual Enrichment(**SCE**) is designed to get the baes prototype (**n_b**) from the support sample of novel class which contained base class. 
+- ![Generalized Few-shot Semantic Segmentation_1](./images/Generalized%20Few-shot%20Semantic%20Segmentation_1.png)
+- ![Generalized Few-shot Semantic Segmentation_2](./images/Generalized%20Few-shot%20Semantic%20Segmentation_2.png)
+- ![Generalized Few-shot Semantic Segmentation_3](./images/Generalized%20Few-shot%20Semantic%20Segmentation_3.png)
+- ![Generalized Few-shot Semantic Segmentation_4](./images/Generalized%20Few-shot%20Semantic%20Segmentation_4.png)
 
 
 ## [19 Decoupling Zero-Shot Semantic Segmentation](./segmentation/Decoupling%20Zero-Shot%20Semantic%20Segmentation.pdf)
