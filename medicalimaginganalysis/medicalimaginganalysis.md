@@ -20,6 +20,7 @@
 - [17 Learning Non-target Knowledge for Few-shot Semantic Segmentation](#17-learning-non-target-knowledge-for-few-shot-semantic-segmentation)
 - [18 Generalized Few-shot Semantic Segmentation](#18-generalized-few-shot-semantic-segmentation)
 - [19 Decoupling Zero-Shot Semantic Segmentation](#19-decoupling-zero-shot-semantic-segmentation)
+- [20 Dynamic Prototype Convolution Network for Few-Shot Semantic Segmentation](#20-dynamic-prototype-convolution-network-for-few-shot-semantic-segmentation)
 - [17 C-CAM: Causal CAM for Weakly Supervised Semantic Segmentation on Medical Image](#17-c-cam-causal-cam-for-weakly-supervised-semantic-segmentation-on-medical-image)
 - [18 Self-Supervised Pre-Training of Swin Transformers for 3D Medical Image Analysis](#18-self-supervised-pre-training-of-swin-transformers-for-3d-medical-image-analysis)
 
@@ -218,7 +219,7 @@ is performed by labeling each pixel as the class of the nearest prototype). With
 ## [16 Self-Supervision with Superpixels: Training Few-shot Medical Image Segmentation without Annotation](./segmentation/Self-Supervision%20with%20Superpixels%20Training%20Few-shot%20Medical%20Image%20Segmentation%20without%20Annotation.pdf)
 - Ouyang C, Biffi C, Chen C, et al./2020/ECCV/54
 - Most of the existing Few-shot semantic segmentation (FSS) techniques require abundant (compare traditional segmentation model is **much fewer**) annotated semantic classes for training.To address this problem we make several contributions:(1) A novel self-supervised FSS framework for medical images in order to **eliminate the requirement for annotations** during training. Additionally, **superpixel-based pseudo-labels** are generated to provide supervision;(2) An **adaptive local prototype pooling** module plugged into prototypical networks, to solve the common challenging **foreground-background imbalance** problem in medical image segmentation;
-- The aim of few-shot segmentation is to obtain a model that can segment an **unseen semantic class**(Dtrain's Query set), by just learning from a **few labeled images**(Dtrain's Support set) of this unseen class during inference without retraining the model. Dataset: **Dtrain & Dtest** have the same structurs but the classes of them is totally different eg. **SupSet = {Image, Mask}, QurSet = {Image}**  
+- The aim of few-shot segmentation is to obtain a model that can segment an **unseen semantic class**(Dtrain's Query set), by just learning from a **few labeled images**(Dtrain's Support set) of this unseen class during inference without retraining the model. Dataset: **Dtrain & Dtest** have the same structurs but the classes of them is totally different eg. **SupSet = {Image, Mask}, QurSet = {Image, Mask}**  
 - ![Self-Supervision with Superpixels 1](./images/Self-supervision%20with%20Superpixels_1.png)
 - ![Self-Supervision with Superpixels 2](./images/Self-supervision%20with%20Superpixels_2.png)
 - ![Self-Supervision with Superpixels 3](./images/Self-supervision%20with%20Superpixels_3.png) , ![Self-Supervision with Superpixels 4](./images/Self-supervision%20with%20Superpixels_4.png) 
@@ -230,7 +231,7 @@ is performed by labeling each pixel as the class of the nearest prototype). With
 - For existing works, The main reason is that solely focusing on **target objects** in the few-shot setting makes their models hard on learning discriminative features and differentiating ambiguous regions. This paper aim to mining and excluding **non-target regions** like back grounds (BG) & co-existing objects belonging to other classes, namely, distracting objects (DOs).
 - ![Learning Non-target Knowledge_1](./images/Learning%20Non-target%20Knowledge%20for%20Few-shot%20Semantic%20Segmentation_1.png)
 - ![Learning Non-target Knowledge_2](./images/Learning%20Non-target%20Knowledge%20for%20Few-shot%20Semantic%20Segmentation_2.png)
-The DOEM only cares about the DO mask Y_DO in the DO eliminating process. However, a good DO eliminating model requires not only accurate DO masks, but also *good prototype feature embeddings that can differentiate the **target objects** from **DOs** easily*.
+- The DOEM only cares about the DO mask Y_DO in the DO eliminating process. However, a good DO eliminating model requires not only accurate DO masks, but also *good prototype feature embeddings that can differentiate the **target objects** from **DOs** easily*.
 - ![Learning Non-target Knowledge_3](./images/Learning%20Non-target%20Knowledge%20for%20Few-shot%20Semantic%20Segmentation_3.png)
 - PS. the detail of **BGMM, BGEM, FM, DOEM** should go to the paper.
 
@@ -251,6 +252,18 @@ The DOEM only cares about the DO mask Y_DO in the DO eliminating process. Howeve
 - An intuitive observation is that, given an image for semantic segmentation, we humans can **first group pixels into segments** and **then perform a segment-level semantic labeling process**.  Decoupling the ZS3 have two sub-tasks: 1) a **class-agnostic grouping** task to **group** the pixels into segments (**CAG**). 2)a **zero-shot classification** task on **segments** (**s-ZSC**). The implementation of this architecture is named **ZegFormer**.
 - ![Decoupling Zero-Shot Semantic Segmentation_1](./images/Decoupling%20Zero-Shot%20Semantic%20Segmentation_1.png)
 - ![Decoupling Zero-Shot Semantic Segmentation_2](./images/Decoupling%20Zero-Shot%20Semantic%20Segmentation_2.png)
+
+
+## [20 Dynamic Prototype Convolution Network for Few-Shot Semantic Segmentation](./segmentation/Dynamic%20Prototype%20Convolution%20Network%20for%20Few-Shot%20Semantic%20Segmentation.pdf)
+- Liu J, Bao Y, Xie G S, et al./2022/CVPR/-
+- The key challenge for few-shot semantic segmentation (FSS) is how to tailor a desirable **interaction among support and query** features and/or their prototypes, under the episodic training scenario. Most existing FSS methods implement such support/query interactions by **solely leveraging plain operations** like cosine similarity and feature concatenation, which cannot well capture the intrinsic object details in the query images and cannot do segmentation for fine shapes like holes and slots.
+- ![DPCN_1](./images/DPCN_1.png)
+- ![DPCN_2](./images/DPCN_2.png)
+- **Support Activation Module** (SAM) is deigned to generate pseudo mask for the query images. Opt for **symmetrical and asymmetrical** (5x5，1x5，5x1) windows to account for possible object geometry variances.
+- ![DPCN_3](./images/DPCN_3.png)
+- **Feature Filtering Module** (FFM) is deigned to filter out background information for the query images
+- **Dynamic Convolution Module** (DCM) is firstly proposed to generate dynamic kernels from support foreground, then information interaction is achieved by convolution operations over query features using these kernels. (5x1, 3x3, 5x1)
+- ![DPCN_4](./images/DPCN_4.png)
 
 
 ## [17 C-CAM: Causal CAM for Weakly Supervised Semantic Segmentation on Medical Image](./segmentation/C-CAM%20Causal%20CAM%20for%20Weakly%20Supervised%20Semantic%20Segmentation%20on%20Medical%20Image.pdf)
