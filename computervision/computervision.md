@@ -7,6 +7,8 @@
 - [04 Learning Transferable Visual Models From Natural Language Supervision](#04-learning-transferable-visual-models-from-natural-language-supervision)
 - [05 Masked Autoencoders Are Scalable Vision Learners](#05-masked-autoencoders-are-scalable-vision-learners)
 - [06 Momentum Contrast for Unsupervised Visual Representation Learning](#06-momentum-contrast-for-unsupervised-visual-representation-learning)
+- [07 Dynamic Convolution: Attention over Convolution Kernels](#07-dynamic-convolution-attention-over-convolution-kernels)
+- [08 Deformable Convolutional Networks](#08-deformable-convolutional-networks)
 
 <!-- /TOC -->
 
@@ -94,3 +96,14 @@
 - ![MOCO_4](./images/MOCO_4.png)
 - *Moco aim to provide tons of negetive sample for contrastive learning by constructing dynamic dictionaries to get excellent visual representation. *
 - *A main goal of unsupervised learning is to learn features that are transferrable. ImageNet supervised pre-training is most influential when serving as the initialization for fine-tuning in downstream tasks.*
+
+
+## [07 Dynamic Convolution: Attention over Convolution Kernels](./Dynamic%20Convolution%20Attention%20over%20Convolution%20Kernels.pdf)
+- Chen Y, Dai X, Liu M, et al./2020/CVPR/211
+- Light-weight CNNs suffer performance degradation as their **low computational budgets** constrain both the **depth** (number of convolution layers) and the **width** (number of channels) of CNNs, resulting in **limited representation capability**. This paper is aim to building a **light-weight and efficient neural networks**. Provide better trade-off between network **performance** and **computational** burden.
+- Dynamic Convolution is a new design that **increases model complexity without increasing the network depth or width**. Instead of using a single convolution kernel per layer, dynamic convolution aggregates **multiple parallel convolution kernels** dynamically based upon their **attentions**, which are input dependent. Assembling multiple kernels is not only **computationally efficient** due to the small kernel size, but also has more representation power since these kernels are aggregated in a **non-linear way** via attention.
+- ![Dynamic Convolution_1](./images/Dynamic%20Convolution_1.png)
+- ![Dynamic Convolution_2](./images/Dynamic%20Convolution_2.png)
+
+
+## [08 Deformable Convolutional Networks]()
