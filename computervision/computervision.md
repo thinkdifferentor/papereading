@@ -8,7 +8,7 @@
 - [05 Masked Autoencoders Are Scalable Vision Learners](#05-masked-autoencoders-are-scalable-vision-learners)
 - [06 Momentum Contrast for Unsupervised Visual Representation Learning](#06-momentum-contrast-for-unsupervised-visual-representation-learning)
 - [07 Dynamic Convolution: Attention over Convolution Kernels](#07-dynamic-convolution-attention-over-convolution-kernels)
-- [08 Deformable Convolutional Networks](#08-deformable-convolutional-networks)
+- [08 Squeeze-and-Excitation Networks](#08-squeeze-and-excitation-networks)
 
 <!-- /TOC -->
 
@@ -106,4 +106,10 @@
 - ![Dynamic Convolution_2](./images/Dynamic%20Convolution_2.png)
 
 
-## [08 Deformable Convolutional Networks]()
+## [08 Squeeze-and-Excitation Networks](./Squeeze-and-Excitation%20Networks.pdf)
+- Hu J, Shen L, Sun G./2018/CVPR/13737
+- The goal is to **improve the representational power** of a network by explicitly modelling the interdependencies between the **channels of its convolutional features**. To achieve this, **feature recalibration** is proposed, through which it can learn to use global information to selectively **emphasise** informative features and **suppress** less useful ones.
+- ![SENet_1](./images/SENet_1.png)
+- The features U are first passed through a *squeeze operation*, which aggregates the feature maps across spatial dimensions H × W to produce a **channel descriptor** (1x1xC). This descriptor embeds the global distribution of channel-wise feature responses, enabling information from the **global receptive field** of the network to be leveraged by its lower layers.
+- This is followed by an *excitation operation*, in which **sample-specific activations**, learned for each channel by a **self-gating mechanism** based on channel dependence, govern the excitation of each channel. It's aim to fully **capture channel-wise dependencies (The key point of the work)**.
+- ![SENet_2](./images/SENet_2.png) , ![SENet_3](./images/SENet_3.png)
