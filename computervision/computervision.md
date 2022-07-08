@@ -9,6 +9,7 @@
 - [06 Momentum Contrast for Unsupervised Visual Representation Learning](#06-momentum-contrast-for-unsupervised-visual-representation-learning)
 - [07 Dynamic Convolution: Attention over Convolution Kernels](#07-dynamic-convolution-attention-over-convolution-kernels)
 - [08 Squeeze-and-Excitation Networks](#08-squeeze-and-excitation-networks)
+- [09 Deformable Convolutional Networks](#09-deformable-convolutional-networks)
 
 <!-- /TOC -->
 
@@ -113,3 +114,12 @@
 - The features U are first passed through a *squeeze operation*, which aggregates the feature maps across spatial dimensions H × W to produce a **channel descriptor** (1x1xC). This descriptor embeds the global distribution of channel-wise feature responses, enabling information from the **global receptive field** of the network to be leveraged by its lower layers.
 - This is followed by an *excitation operation*, in which **sample-specific activations**, learned for each channel by a **self-gating mechanism** based on channel dependence, govern the excitation of each channel. It's aim to fully **capture channel-wise dependencies (The key point of the work)**.
 - ![SENet_2](./images/SENet_2.png) , ![SENet_3](./images/SENet_3.png)
+
+
+## [09 Deformable Convolutional Networks](./Deformable%20Convolutional%20Networks.pdf)
+- Dai J, Qi H, Xiong Y, et al./2017/ICCV/3011
+- Donvolutional neural networks (CNNs) are inherently limited to model geometric transformations due to the **fixed geometric structures** (Conv & Pooling) in their building modules.
+- ![Deformable Convolutional Networks_1](./images/Deformable%20Convolutional%20Networks_1.png)
+- ![Deformable Convolutional Networks_2](./images/Deformable%20Convolutional%20Networks_2.png)
+- ![Deformable Convolutional Networks_3](./images/Deformable%20Convolutional%20Networks_3.png)
+- ![Deformable Convolutional Networks_4](./images/Deformable%20Convolutional%20Networks_4.png)
