@@ -1,30 +1,39 @@
 <!-- TOC -->
 
-- [00 A Review of Deep Learning in Medical Imaging: Imaging Traits, Technology Trends, Case Studies With Progress Highlights, and Future Promises](#00-a-review-of-deep-learning-in-medical-imaging-imaging-traits-technology-trends-case-studies-with-progress-highlights-and-future-promises)
-- [01 Survey Study Of Multimodality Medical Image Fusion Methods](#01-survey-study-of-multimodality-medical-image-fusion-methods)
-- [02 Deep Learning Techniques for Medical Image Segmentation: Achievements and Challenges](#02-deep-learning-techniques-for-medical-image-segmentation-achievements-and-challenges)
-- [03 U-Net and Its Variants for Medical Image Segmentation A Review of Theory and Applications](#03-u-net-and-its-variants-for-medical-image-segmentation-a-review-of-theory-and-applications)
-- [04 Fully Convolutional Networks for Semantic Segmentation](#04-fully-convolutional-networks-for-semantic-segmentation)
-- [05 SegNet: A Deep Convolutional Encoder-Decoder Architecture for Image Segmentation](#05-segnet-a-deep-convolutional-encoder-decoder-architecture-for-image-segmentation)
-- [06 U-Net: Convolutional Networks for Biomedical Image Segmentation](#06-u-net-convolutional-networks-for-biomedical-image-segmentation)
-- [07 Unet++: A nested u-net architecture for medical image segmentation](#07-unet-a-nested-u-net-architecture-for-medical-image-segmentation)
-- [08 *Unet 3+: A full-scale connected unet for medical image segmentation](#08-unet-3-a-full-scale-connected-unet-for-medical-image-segmentation)
-- [09 3D U-Net: Learning Dense Volumetric Segmentation from Sparse Annotation](#09-3d-u-net-learning-dense-volumetric-segmentation-from-sparse-annotation)
-- [10 DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution and Fully Connected CRFs](#10-deeplab-semantic-image-segmentation-with-deep-convolutional-nets-atrous-convolution-and-fully-connected-crfs)
-- [11 DeepLabV3: Rethinking Atrous Convolution for Semantic Image Segmentation](#11-deeplabv3-rethinking-atrous-convolution-for-semantic-image-segmentation)
-- [12 DeepLabV3+: Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation](#12-deeplabv3-encoder-decoder-with-atrous-separable-convolution-for-semantic-image-segmentation)
-- [13 Pyramid Scene Parsing Network](#13-pyramid-scene-parsing-network)
-- [14 SG-One: Similarity Guidance Network for One-Shot Semantic Segmentation](#14-sg-one-similarity-guidance-network-for-one-shot-semantic-segmentation)
-- [15 PANet: Few-Shot Image Semantic Segmentation with Prototype Alignment](#15-panet-few-shot-image-semantic-segmentation-with-prototype-alignment)
-- [16 Self-Supervision with Superpixels: Training Few-shot Medical Image Segmentation without Annotation](#16-self-supervision-with-superpixels-training-few-shot-medical-image-segmentation-without-annotation)
-- [17 Learning Non-target Knowledge for Few-shot Semantic Segmentation](#17-learning-non-target-knowledge-for-few-shot-semantic-segmentation)
-- [18 Generalized Few-shot Semantic Segmentation](#18-generalized-few-shot-semantic-segmentation)
-- [19 Decoupling Zero-Shot Semantic Segmentation](#19-decoupling-zero-shot-semantic-segmentation)
-- [20 Dynamic Prototype Convolution Network for Few-Shot Semantic Segmentation](#20-dynamic-prototype-convolution-network-for-few-shot-semantic-segmentation)
-- [17 C-CAM: Causal CAM for Weakly Supervised Semantic Segmentation on Medical Image](#17-c-cam-causal-cam-for-weakly-supervised-semantic-segmentation-on-medical-image)
-- [18 Self-Supervised Pre-Training of Swin Transformers for 3D Medical Image Analysis](#18-self-supervised-pre-training-of-swin-transformers-for-3d-medical-image-analysis)
+- [I. Survey of Medical Image Analysis](#i-survey-of-medical-image-analysis)
+  - [00 A Review of Deep Learning in Medical Imaging: Imaging Traits, Technology Trends, Case Studies With Progress Highlights, and Future Promises](#00-a-review-of-deep-learning-in-medical-imaging-imaging-traits-technology-trends-case-studies-with-progress-highlights-and-future-promises)
+  - [01 Survey Study Of Multimodality Medical Image Fusion Methods](#01-survey-study-of-multimodality-medical-image-fusion-methods)
+  - [02 Deep Learning Techniques for Medical Image Segmentation: Achievements and Challenges](#02-deep-learning-techniques-for-medical-image-segmentation-achievements-and-challenges)
+  - [03 U-Net and Its Variants for Medical Image Segmentation A Review of Theory and Applications](#03-u-net-and-its-variants-for-medical-image-segmentation-a-review-of-theory-and-applications)
+- [II. Unet & Unet based Semantic Segmentation](#ii-unet--unet-based-semantic-segmentation)
+  - [00 SegNet: A Deep Convolutional Encoder-Decoder Architecture for Image Segmentation](#00-segnet-a-deep-convolutional-encoder-decoder-architecture-for-image-segmentation)
+  - [01 U-Net: Convolutional Networks for Biomedical Image Segmentation](#01-u-net-convolutional-networks-for-biomedical-image-segmentation)
+  - [02 Unet++: A nested u-net architecture for medical image segmentation](#02-unet-a-nested-u-net-architecture-for-medical-image-segmentation)
+  - [03 *Unet 3+: A full-scale connected unet for medical image segmentation](#03-unet-3-a-full-scale-connected-unet-for-medical-image-segmentation)
+  - [04 3D U-Net: Learning Dense Volumetric Segmentation from Sparse Annotation](#04-3d-u-net-learning-dense-volumetric-segmentation-from-sparse-annotation)
+  - [05 nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation](#05-nnu-net-a-self-configuring-method-for-deep-learning-based-biomedical-image-segmentation)
+- [III. DeepLab Methods](#iii-deeplab-methods)
+  - [00 DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution and Fully Connected CRFs](#00-deeplab-semantic-image-segmentation-with-deep-convolutional-nets-atrous-convolution-and-fully-connected-crfs)
+  - [01 DeepLabV3: Rethinking Atrous Convolution for Semantic Image Segmentation](#01-deeplabv3-rethinking-atrous-convolution-for-semantic-image-segmentation)
+  - [02 DeepLabV3+: Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation](#02-deeplabv3-encoder-decoder-with-atrous-separable-convolution-for-semantic-image-segmentation)
+- [IV. Few-shot Segmentation](#iv-few-shot-segmentation)
+  - [00 SG-One: Similarity Guidance Network for One-Shot Semantic Segmentation](#00-sg-one-similarity-guidance-network-for-one-shot-semantic-segmentation)
+  - [01 PANet: Few-Shot Image Semantic Segmentation with Prototype Alignment](#01-panet-few-shot-image-semantic-segmentation-with-prototype-alignment)
+  - [02 Self-Supervision with Superpixels: Training Few-shot Medical Image Segmentation without Annotation](#02-self-supervision-with-superpixels-training-few-shot-medical-image-segmentation-without-annotation)
+  - [03 Learning Non-target Knowledge for Few-shot Semantic Segmentation](#03-learning-non-target-knowledge-for-few-shot-semantic-segmentation)
+  - [04 Generalized Few-shot Semantic Segmentation](#04-generalized-few-shot-semantic-segmentation)
+  - [05 Decoupling Zero-Shot Semantic Segmentation](#05-decoupling-zero-shot-semantic-segmentation)
+  - [06 Dynamic Prototype Convolution Network for Few-Shot Semantic Segmentation](#06-dynamic-prototype-convolution-network-for-few-shot-semantic-segmentation)
+- [V. Self-Supervised](#v-self-supervised)
+  - [00 C-CAM: Causal CAM for Weakly Supervised Semantic Segmentation on Medical Image](#00-c-cam-causal-cam-for-weakly-supervised-semantic-segmentation-on-medical-image)
+  - [01 Self-Supervised Pre-Training of Swin Transformers for 3D Medical Image Analysis](#01-self-supervised-pre-training-of-swin-transformers-for-3d-medical-image-analysis)
+- [VI. Others](#vi-others)
+  - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
+  - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
 
 <!-- /TOC -->
+
+# I. Survey of Medical Image Analysis
 
 ## [00 A Review of Deep Learning in Medical Imaging: Imaging Traits, Technology Trends, Case Studies With Progress Highlights, and Future Promises](./survey/A%20Review%20of%20Deep%20Learning%20in%20Medical%20Imaging%20Imaging%20Traits%2C%20Technology%20Trends%2C%20Case%20Studies%20With%20Progress%20Highlights%2C%20and%20Future%20Promises.pdf)
 - Zhou S K, Greenspan H, Davatzikos C, et al./2021/Proceedings of the IEEE/142
@@ -108,24 +117,16 @@ feedback loops into a convolutional layer. The feedback is applied after both co
 - **ENSEMBLE U-NET:** 1) Cascading two or more U-nets: each stage for the different levels of segmentation from coarse to fine; 2) Parallel two or more U-nets: parallel training same U-nets to improved segmentation accuracy.
 
 
-## [04 Fully Convolutional Networks for Semantic Segmentation](./segmentation/Fully%20Convolutional%20Networks%20for%20Semantic%20Segmentation.pdf)
-- Long J, Shelhamer E, Darrell T./2015/CVPR/26993
-- FCN use **classification networks**(AlexNet, VGG, GoogleNet & ResNet) as backbone and just change the fully connection layer to convolutional layer (keep the number of parameters). Then define a skip architecture that combines semantic information from **a deep, coarse layer** with appearance information from **a shallow, fine layer** to produce accurate and detailed segmentations.
-- ![FCN 1](./images/FCN_1.png)
-- ![FCN 2](./images/FCN_2.png)
-- ![FCN 3](./images/FCN_3.png)
-- ![FCN 4](./images/FCN_4.png)
-- ![FCN 5](./images/FCN_5.png)
+# II. Unet & Unet based Semantic Segmentation
 
-
-## [05 SegNet: A Deep Convolutional Encoder-Decoder Architecture for Image Segmentation](./segmentation/SegNet%20A%20Deep%20Convolutional%20Encoder-Decoder%20Architecture%20for%20Image%20Segmentation.pdf)
+## [00 SegNet: A Deep Convolutional Encoder-Decoder Architecture for Image Segmentation](./segmentation/SegNet%20A%20Deep%20Convolutional%20Encoder-Decoder%20Architecture%20for%20Image%20Segmentation.pdf)
 - Badrinarayanan V, Kendall A, Cipolla R./2017/Pattern Analysis And Machine Learning/11224
 - The results of semantic pixel-wise labelling appear coarse. This is primarily because **max pooling and sub-sampling reduce feature map resolution**. Our motivation to design SegNet arises from this need to map low resolution features to input resolution for pixel-wise classification. 
 - The increasingly lossy (boundary detail) image representation is not beneficial for segmentation where boundary delineation is vital. Therefore, it is necessary to capture and store boundary information in the encoder feature maps before sub-sampling is performed. However, it's need tons of memory to store all the encode feature maps in pratical applications. SgeNet store only the max-pooling indeces for each encode feature map. 
 -  ![SegNet](./images/SegNet.png)
 
 
-## [06 U-Net: Convolutional Networks for Biomedical Image Segmentation](./segmentation/U-Net%20Convolutional%20Networks%20for%20Biomedical%20Image%20Segmentation.pdf)
+## [01 U-Net: Convolutional Networks for Biomedical Image Segmentation](./segmentation/U-Net%20Convolutional%20Networks%20for%20Biomedical%20Image%20Segmentation.pdf)
 - Ronneberger O, Fischer P, Brox T./2015/MICCAI/42233
 - The architecture consists of a **contracting path** to capture **context** and a symmetric **expanding path** that enables **precise localization** witch relies on the strong use of **data augmentation** to get more efficient using of the annotated samples.
 - **Sliding-window based segmentation method:**
@@ -137,7 +138,7 @@ feedback loops into a convolutional layer. The feedback is applied after both co
 - ![Weighted Loss](./images/UNet_3.png)
 
 
-## [07 Unet++: A nested u-net architecture for medical image segmentation](./segmentation/Unet%2B%2B%20A%20nested%20u-net%20architecture%20for%20medical%20image%20segmentation.pdf)
+## [02 Unet++: A nested u-net architecture for medical image segmentation](./segmentation/Unet%2B%2B%20A%20nested%20u-net%20architecture%20for%20medical%20image%20segmentation.pdf)
 - Zhou Z, Rahman Siddiquee M M, Tajbakhsh N, et al./2018/DLMIA/2025
 - These encoder-decoder networks used for segmentation share a **key similarity**: skip connections, which combine deep, semantic, coarse-grained feature maps from the decoder sub-network with shallow, low-level, fine-grained feature maps from the encoder sub-network.
 - This is in contrast to the plain skip connections commonly used in U-Net, which directly fast-forward high-resolution feature maps from the encoder to the decoder network, **resulting in the fusion of semantically dissimilar feature maps**.
@@ -146,7 +147,7 @@ feedback loops into a convolutional layer. The feedback is applied after both co
 which bridges the semantic gap between encoder and decoder feature maps; (2) **having dense skip connections on skip pathways** (shown in blue), which improves gradient flow; and (3) **having deep supervision** (shown in red), which enables model pruning and improves or in the worst case achieves comparable performance to using only one loss layer.
 
 
-## [08 *Unet 3+: A full-scale connected unet for medical image segmentation](./segmentation/Unet%203%2B%20A%20full-scale%20connected%20unet%20for%20medical%20image%20segmentation.pdf)
+## [03 *Unet 3+: A full-scale connected unet for medical image segmentation](./segmentation/Unet%203%2B%20A%20full-scale%20connected%20unet%20for%20medical%20image%20segmentation.pdf)
 - Huang H, Lin L, Tong R, et al./2020/ICASSP/291
 - Unet 3+ takes advantage of **full-scale skip connections** and **deep supervisions**. The full-scale skip connections incorporate **low-level details**(rich spatial information, which highlight the boundaries of organs) with **high-level semantics**(embody position information, which locate where the organs are) from feature maps in different scales; while the deep supervision learns **hierarchical representations** from the full-scale aggregated feature maps. The model improve segmentation accuracy specially for organs that appear at **varying scales** and reduce the parameter of networks to get more **efficient computation**. (compare to U-net & U-net++)
 - Main contributions: **(i)** devising a novel UNet 3+ to make full use of the multi-scale features by introducing **full-scale skip connections**, which incorporate low-level details with high-level semantics from feature maps in full scales, but with fewer parameters; **(ii)** developing a **deep supervision to learn hierarchical representations** from the full-scale aggregated feature maps, which optimizes a hybrid loss function to enhance the organ boundary; **(iii)** proposing a **classification-guided module** to reduce over-segmentation on none-organ image by jointly training with an image-level classification;
@@ -156,7 +157,7 @@ which bridges the semantic gap between encoder and decoder feature maps; (2) **h
 - ![U-net3+_3](./images/U-net3%2B_3.png)
 
 
-## [09 3D U-Net: Learning Dense Volumetric Segmentation from Sparse Annotation](./segmentation/3D%20U-Net%20Learning%20Dense%20Volumetric%20Segmentation%20from%20Sparse%20Annotation.pdf)
+## [04 3D U-Net: Learning Dense Volumetric Segmentation from Sparse Annotation](./segmentation/3D%20U-Net%20Learning%20Dense%20Volumetric%20Segmentation%20from%20Sparse%20Annotation.pdf)
 - Çiçek Ö, Abdulkadir A, Lienkamp S S, et al./2016/MICCAI/3934
 - The 3D U-Net network extends the previous u-net architecture from U-Net by **replacing all 2D operations with their 3D counterparts**(3D convolutions, 3D max pooling, and 3D up-convolutional layers). There are two use cases of this model:  (1) In a **semi-automated setup**, the user annotates some slices in the volume to be segmented.
 The network learns from these sparse annotations and provides a dense 3D segmentation. (2) In a **fully-automated setup**, we assume that a representative, sparsely annotated training set exists. Trained on this data set, the network densely segments new volumetric images.
@@ -164,7 +165,17 @@ The network learns from these sparse annotations and provides a dense 3D segment
 - ![3D U-Net](./images/3DUNet.png)
 
 
-## [10 DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution and Fully Connected CRFs](./segmentation/DeepLab%20Semantic%20Image%20Segmentation%20with%20Deep%20Convolutional%20Nets%2C%20Atrous%20Convolution%20and%20Fully%20Connected%20CRFs.pdf)
+## [05 nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation](./segmentation/nnU-Net%20a%20self-configuring%20method%20for%20deep%20learning-based%20biomedical%20image%20segmentation.pdf)
+- Isensee F, Jaeger P F, Kohl S A A, et al./2021/Nature methods/431
+- While semantic segmentation algorithms enable image analysis and quantification in many applications, the design of **respective specialized solutions** is non-trivial and highly dependent on **dataset properties and hardware conditions**. We developed nnU-Net, a deep learning-based segmentation method that **automatically configures itself**, including preprocessing, network architecture, training and post-processing for **any new task**. The key design choices in this process are modeled as a set of **fixed parameters**, **interdependent rules** and **empirical decisions**.
+- Configuration process definenation: 1) **Fixed Parameters:** Collect design decisions that do not require adaptation between 
+datasets and identify a robust common confguration. 2) **Rule-based Parameters:** For as many of the remaining decisions as possible, formulate explicit dependencies between specifc dataset properties (**dataset fingerprint**) and design choices (**pipeline fingerprint**) in the form of heuristic rules to allow for almost-instant adaptation on application. 3) **Empirical Parameters:** Learn only the remaining decisions empirically from the data.
+- ![nnUnet](./images/nnUnet.png)
+
+
+# III. DeepLab Methods
+
+## [00 DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution and Fully Connected CRFs](./segmentation/DeepLab%20Semantic%20Image%20Segmentation%20with%20Deep%20Convolutional%20Nets%2C%20Atrous%20Convolution%20and%20Fully%20Connected%20CRFs.pdf)
 - Chen L C, Papandreou G, Kokkinos I, et al./2017/Pattern Analysis and Machine Intelligence/11453
 - Three **challengens** of  DCNNs to semantic image segmentation: **(1)** reduced feature resolution(caused by repeated combination of max-pooling and downsampling->**atrous convolution**), **(2)** existence of objects at multiple scales(using multiple parallel atrous convolutional layers with different sampling rates, called **ASPP**), and **(3)** reduced localization accuracy due to DCNN invariance (fully connected Conditional Random Field, **CRF**). The DeepLab have three main advantages: *(1) Speed; (2) Accuracy; (3)Simplicity*
 - ![DeepLabV1_1](./images/DeepLabV1_1.png)
@@ -174,7 +185,7 @@ The network learns from these sparse annotations and provides a dense 3D segment
 - ![DeepLabV1_5](./images/DeepLabV1_5.png)
 
 
-## [11 DeepLabV3: Rethinking Atrous Convolution for Semantic Image Segmentation](./segmentation/DeepLabV3%20Rethinking%20Atrous%20Convolution%20for%20Semantic%20Image%20Segmentation.pdf)
+## [01 DeepLabV3: Rethinking Atrous Convolution for Semantic Image Segmentation](./segmentation/DeepLabV3%20Rethinking%20Atrous%20Convolution%20for%20Semantic%20Image%20Segmentation.pdf)
 - Chen L C, Papandreou G, Schroff F, et al./2017/CVPR/4868
 -  Deep Convolutional Neural Networks (DCNNs) for the semantic segmentation task have two challenges: **(1)** reduced feature resolution(**atrous convolution**); **(2)** existence of objects at multiple scales(**atrous convolution & spatial pyramid pooling**). In DeepLab V3, the authors take different strategy to handle these issues.
 - ![DeepLabV3_1](./images/DeepLabV3_2.png)
@@ -182,7 +193,7 @@ The network learns from these sparse annotations and provides a dense 3D segment
 - ![DeepLabV3_3](./images/DeepLabV3_3.png)
 
 
-## [12 DeepLabV3+: Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation](./segmentation/DeepLabV3%2B%20Encoder-Decoder%20with%20Atrous%20Separable%20Convolution%20for%20Semantic%20Image%20Segmentation.pdf)
+## [02 DeepLabV3+: Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation](./segmentation/DeepLabV3%2B%20Encoder-Decoder%20with%20Atrous%20Separable%20Convolution%20for%20Semantic%20Image%20Segmentation.pdf)
 - Chen L C, Zhu Y, Papandreou G, et al./2018/ECCV/6537
 - The former networks are able to **encode multi-scale contextual information** by probing the incoming features with filters or pooling operations at multiple rates and multiple effective fields-of-view, while the latter networks can **capture sharper object boundaries** by gradually recovering the spatial information. DeepLabv3+ extends DeepLabv3 by adding a **simple yet effective decoder module** to refine the
 segmentation results especially along object boundaries and apply the **depthwise separable convolution**(depthwise convolution + pointwise convolution, to reduce the model parameter) to both ASPP and decoder modules.
@@ -192,13 +203,9 @@ segmentation results especially along object boundaries and apply the **depthwis
 - ![DeepLabV3+_3](./images/DeepLabV3%2B_3.png)
 
 
-## [13 Pyramid Scene Parsing Network](./segmentation/Pyramid%20Scene%20Parsing%20Network.pdf)
-- Zhao H, Shi J, Qi X, et al./2017/CVPR/7411
-- Important Observations about FCN in ADE20K: 1) **Mismatched Relationship**: FCN is lack of the ability to **collect contextual information** increases the chance of misclassification. 2) **Confusion Categories**: There are confusing classfication in the ADE20K like field and earth, mountain and hill etc. FCN can not judge them in the segmentation task. This problem can be remedied by utilizing **the relationship between categories**. 3) **Inconspicuous Classes**: Serveral small-size things are hard to find while may be greate importance like streetlights and signboard. However, big objects or stuff may exceed the receptive field of FCN and thus cause discontinuous prediction. To improve performance for remarkably small or large objects, one should **pay much attention to different sub-regions** that contain inconspicuous-category stuff.
-- ![FPN](./images/PSPNet.png)
+# IV. Few-shot Segmentation
 
-
-## [14 SG-One: Similarity Guidance Network for One-Shot Semantic Segmentation](./segmentation/SG-One%20Similarity%20Guidance%20Network%20for%20One-Shot%20Semantic%20Segmentation.pdf)
+## [00 SG-One: Similarity Guidance Network for One-Shot Semantic Segmentation](./segmentation/SG-One%20Similarity%20Guidance%20Network%20for%20One-Shot%20Semantic%20Segmentation.pdf)
 - Zhang X, Wei Y, Yang Y, et al./2020/IEEE Transactions on Cybernetics/177
 - Main Contribution: 1) We propose to produce robust object-related representative vectors using **masked average pooling**(Inspiron next work) for incorporating contextual information without changing the input structure of networks. (2) We produce the **pixel-wise guidance** using **cosine similarities** between representative vectors and query features for predicting the segmentation masks.
 - ![SG-One_1](./images/SG-One_1.png)
@@ -206,7 +213,7 @@ segmentation results especially along object boundaries and apply the **depthwis
 - ![SG-One_4](./images/SG-One_4.png)
   
 
-## [15 PANet: Few-Shot Image Semantic Segmentation with Prototype Alignment](./segmentation/PANet%20Few-Shot%20Image%20Semantic%20Segmentation%20with%20Prototype%20Alignment.pdf)
+## [01 PANet: Few-Shot Image Semantic Segmentation with Prototype Alignment](./segmentation/PANet%20Few-Shot%20Image%20Semantic%20Segmentation%20with%20Prototype%20Alignment.pdf)
 - Wang K, Liew J H, Zou Y, et al./2020/ICCV/302
 - PANet learns **class specific prototype representations** from a few support images within an embedding space and then performs segmentation over the query images through **matching each pixel to the learned prototypes** (Segmentation over the query images
 is performed by labeling each pixel as the class of the nearest prototype). With non-parametric metric learning, PANet offers **high-quality prototypes** that are representative for each semantic class and meanwhile discriminative for different classes.
@@ -216,7 +223,7 @@ is performed by labeling each pixel as the class of the nearest prototype). With
 - ![PANet_3](./images/PANet_3.png) , ![PANet_4](./images/PANet_4.png)
   
 
-## [16 Self-Supervision with Superpixels: Training Few-shot Medical Image Segmentation without Annotation](./segmentation/Self-Supervision%20with%20Superpixels%20Training%20Few-shot%20Medical%20Image%20Segmentation%20without%20Annotation.pdf)
+## [02 Self-Supervision with Superpixels: Training Few-shot Medical Image Segmentation without Annotation](./segmentation/Self-Supervision%20with%20Superpixels%20Training%20Few-shot%20Medical%20Image%20Segmentation%20without%20Annotation.pdf)
 - Ouyang C, Biffi C, Chen C, et al./2020/ECCV/54
 - Most of the existing Few-shot semantic segmentation (FSS) techniques require abundant (compare traditional segmentation model is **much fewer**) annotated semantic classes for training.To address this problem we make several contributions:(1) A novel self-supervised FSS framework for medical images in order to **eliminate the requirement for annotations** during training. Additionally, **superpixel-based pseudo-labels** are generated to provide supervision;(2) An **adaptive local prototype pooling** module plugged into prototypical networks, to solve the common challenging **foreground-background imbalance** problem in medical image segmentation;
 - The aim of few-shot segmentation is to obtain a model that can segment an **unseen semantic class**(Dtrain's Query set), by just learning from a **few labeled images**(Dtrain's Support set) of this unseen class during inference without retraining the model. Dataset: **Dtrain & Dtest** have the same structurs but the classes of them is totally different eg. **SupSet = {Image, Mask}, QurSet = {Image, Mask}**  
@@ -226,7 +233,7 @@ is performed by labeling each pixel as the class of the nearest prototype). With
 - ![Self-Supervision with Superpixels 5](./images/Self-supervision%20with%20Superpixels_5.png)
   
 
-## [17 Learning Non-target Knowledge for Few-shot Semantic Segmentation](./segmentation/Learning%20Non-target%20Knowledge%20for%20Few-shot%20Semantic%20Segmentation.pdf)
+## [03 Learning Non-target Knowledge for Few-shot Semantic Segmentation](./segmentation/Learning%20Non-target%20Knowledge%20for%20Few-shot%20Semantic%20Segmentation.pdf)
 - Liu Y, Liu N, Cao Q, et al./2022/CVPR/-
 - For existing works, The main reason is that solely focusing on **target objects** in the few-shot setting makes their models hard on learning discriminative features and differentiating ambiguous regions. This paper aim to mining and excluding **non-target regions** like back grounds (BG) & co-existing objects belonging to other classes, namely, distracting objects (DOs).
 - ![Learning Non-target Knowledge_1](./images/Learning%20Non-target%20Knowledge%20for%20Few-shot%20Semantic%20Segmentation_1.png)
@@ -236,7 +243,7 @@ is performed by labeling each pixel as the class of the nearest prototype). With
 - PS. the detail of **BGMM, BGEM, FM, DOEM** should go to the paper.
 
 
-## [18 Generalized Few-shot Semantic Segmentation](./segmentation/Generalized%20Few-shot%20Semantic%20Segmentation.pdf)
+## [04 Generalized Few-shot Semantic Segmentation](./segmentation/Generalized%20Few-shot%20Semantic%20Segmentation.pdf)
 - Tian Z, Lai X, Jiang L, et al./2022/CVPR/7
 - Considering that the **contextual relation** is essential for semantic segmentation, we propose the Context-Aware Prototype Learning (**CAPL**) that provides significant performance gain to the baseline by updating the weights of base prototypes with adapted feature. CAPL not only exploits essential **co-occurrence information** from support samples, but also **adapts the model to various contexts** of query images.
 - FS-Seg models only learn to predict the foreground masks for the **given novel classes** (from the given support set). GFS-Seg adapts all possible **base and novel classes** (this is why called **Generalized**) to make predictions.
@@ -247,14 +254,14 @@ is performed by labeling each pixel as the class of the nearest prototype). With
 - ![Generalized Few-shot Semantic Segmentation_4](./images/Generalized%20Few-shot%20Semantic%20Segmentation_4.png)
 
 
-## [19 Decoupling Zero-Shot Semantic Segmentation](./segmentation/Decoupling%20Zero-Shot%20Semantic%20Segmentation.pdf)
+## [05 Decoupling Zero-Shot Semantic Segmentation](./segmentation/Decoupling%20Zero-Shot%20Semantic%20Segmentation.pdf)
 - Ding J, Xue N, Xia G S, et al./2022/CVPR/-
 - An intuitive observation is that, given an image for semantic segmentation, we humans can **first group pixels into segments** and **then perform a segment-level semantic labeling process**.  Decoupling the ZS3 have two sub-tasks: 1) a **class-agnostic grouping** task to **group** the pixels into segments (**CAG**). 2)a **zero-shot classification** task on **segments** (**s-ZSC**). The implementation of this architecture is named **ZegFormer**.
 - ![Decoupling Zero-Shot Semantic Segmentation_1](./images/Decoupling%20Zero-Shot%20Semantic%20Segmentation_1.png)
 - ![Decoupling Zero-Shot Semantic Segmentation_2](./images/Decoupling%20Zero-Shot%20Semantic%20Segmentation_2.png)
 
 
-## [20 Dynamic Prototype Convolution Network for Few-Shot Semantic Segmentation](./segmentation/Dynamic%20Prototype%20Convolution%20Network%20for%20Few-Shot%20Semantic%20Segmentation.pdf)
+## [06 Dynamic Prototype Convolution Network for Few-Shot Semantic Segmentation](./segmentation/Dynamic%20Prototype%20Convolution%20Network%20for%20Few-Shot%20Semantic%20Segmentation.pdf)
 - Liu J, Bao Y, Xie G S, et al./2022/CVPR/-
 - The key challenge for few-shot semantic segmentation (FSS) is how to tailor a desirable **interaction among support and query** features and/or their prototypes, under the episodic training scenario. Most existing FSS methods implement such support/query interactions by **solely leveraging plain operations** like cosine similarity and feature concatenation, which cannot well capture the intrinsic object details in the query images and cannot do segmentation for fine shapes like holes and slots.
 - ![DPCN_1](./images/DPCN_1.png)
@@ -266,7 +273,9 @@ is performed by labeling each pixel as the class of the nearest prototype). With
 - ![DPCN_4](./images/DPCN_4.png)
 
 
-## [17 C-CAM: Causal CAM for Weakly Supervised Semantic Segmentation on Medical Image](./segmentation/C-CAM%20Causal%20CAM%20for%20Weakly%20Supervised%20Semantic%20Segmentation%20on%20Medical%20Image.pdf)
+# V. Self-Supervised 
+
+## [00 C-CAM: Causal CAM for Weakly Supervised Semantic Segmentation on Medical Image](./segmentation/C-CAM%20Causal%20CAM%20for%20Weakly%20Supervised%20Semantic%20Segmentation%20on%20Medical%20Image.pdf)
 - Chen Z, Tian Z, Zhu J, et al./2022/CVPR/-
 -  Main challenges of medical images. **Challenge1:** The object boundary for medical image is more ambiguous than natural image. **Challenge2:** Different organs often occur in the same medical image in training stage. To deal with those challenges, C-CAM(Causality CAM) proposal two cause-effect chains. The **category-causality**(designed to alleviate the problem of **ambiguous boundary**) chain represents the **image content** (cause) affects the **category** (effect). The **anatomy-causality**(designed to solve the co-occurrence problem) chain represents the **anatomical structure** (cause) affects the **organ segmentation** (effect).
 - ![C-CAM_1](./images/C-CAM_1.png)
@@ -277,8 +286,26 @@ is performed by labeling each pixel as the class of the nearest prototype). With
 - ![C-CAM_4](./images/C-CAM_4.png)
 
 
-## [18 Self-Supervised Pre-Training of Swin Transformers for 3D Medical Image Analysis](./segmentation/Self-Supervised%20Pre-Training%20of%20Swin%20Transformers%20for%203D%20Medical%20Image%20Analysis.pdf)
+## [01 Self-Supervised Pre-Training of Swin Transformers for 3D Medical Image Analysis](./segmentation/Self-Supervised%20Pre-Training%20of%20Swin%20Transformers%20for%203D%20Medical%20Image%20Analysis.pdf)
 - Tang Y, Yang D, Li W, et al./2022/CVPR/10
 - The **contrastive learning** is used to differentiate various ROIs of different body compositions, whereas the **inpainting** allows for learning the texture, structure and correspondence of masked regions to their surrounding context. The **rotation** task serves as a mechanism to learn the structural content of images and generates various sub-volumes that can be used for contrastive learning.
 - ![Swin-UNETR_1](./images/Swin-UNETR_1.png)
 - ![Swin-UNETR_2](./images/Swin-UNETR_2.png)
+
+
+# VI. Others
+
+## [00 Fully Convolutional Networks for Semantic Segmentation](./segmentation/Fully%20Convolutional%20Networks%20for%20Semantic%20Segmentation.pdf)
+- Long J, Shelhamer E, Darrell T./2015/CVPR/26993
+- FCN use **classification networks**(AlexNet, VGG, GoogleNet & ResNet) as backbone and just change the fully connection layer to convolutional layer (keep the number of parameters). Then define a skip architecture that combines semantic information from **a deep, coarse layer** with appearance information from **a shallow, fine layer** to produce accurate and detailed segmentations.
+- ![FCN 1](./images/FCN_1.png)
+- ![FCN 2](./images/FCN_2.png)
+- ![FCN 3](./images/FCN_3.png)
+- ![FCN 4](./images/FCN_4.png)
+- ![FCN 5](./images/FCN_5.png)
+
+
+## [01 Pyramid Scene Parsing Network](./segmentation/Pyramid%20Scene%20Parsing%20Network.pdf)
+- Zhao H, Shi J, Qi X, et al./2017/CVPR/7411
+- Important Observations about FCN in ADE20K: 1) **Mismatched Relationship**: FCN is lack of the ability to **collect contextual information** increases the chance of misclassification. 2) **Confusion Categories**: There are confusing classfication in the ADE20K like field and earth, mountain and hill etc. FCN can not judge them in the segmentation task. This problem can be remedied by utilizing **the relationship between categories**. 3) **Inconspicuous Classes**: Serveral small-size things are hard to find while may be greate importance like streetlights and signboard. However, big objects or stuff may exceed the receptive field of FCN and thus cause discontinuous prediction. To improve performance for remarkably small or large objects, one should **pay much attention to different sub-regions** that contain inconspicuous-category stuff.
+- ![FPN](./images/PSPNet.png)

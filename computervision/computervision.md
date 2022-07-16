@@ -105,6 +105,7 @@
 - Dynamic Convolution is a new design that **increases model complexity without increasing the network depth or width**. Instead of using a single convolution kernel per layer, dynamic convolution aggregates **multiple parallel convolution kernels** dynamically based upon their **attentions**, which are input dependent. Assembling multiple kernels is not only **computationally efficient** due to the small kernel size, but also has more representation power since these kernels are aggregated in a **non-linear way** via attention.
 - ![Dynamic Convolution_1](./images/Dynamic%20Convolution_1.png)
 - ![Dynamic Convolution_2](./images/Dynamic%20Convolution_2.png)
+- ![Dynamic Convolution_3](./images/Dynamic%20Convolution_3.png)
 
 
 ## [08 Squeeze-and-Excitation Networks](./Squeeze-and-Excitation%20Networks.pdf)
