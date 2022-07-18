@@ -11,7 +11,7 @@
   - [02 Unet++: A nested u-net architecture for medical image segmentation](#02-unet-a-nested-u-net-architecture-for-medical-image-segmentation)
   - [03 *Unet 3+: A full-scale connected unet for medical image segmentation](#03-unet-3-a-full-scale-connected-unet-for-medical-image-segmentation)
   - [04 3D U-Net: Learning Dense Volumetric Segmentation from Sparse Annotation](#04-3d-u-net-learning-dense-volumetric-segmentation-from-sparse-annotation)
-  - [05 nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation](#05-nnu-net-a-self-configuring-method-for-deep-learning-based-biomedical-image-segmentation)
+  - [05 nnU-Net: A Self-configuring Method for Deep Learning-based Biomedical Image Segmentation](#05-nnu-net-a-self-configuring-method-for-deep-learning-based-biomedical-image-segmentation)
 - [III. DeepLab Methods](#iii-deeplab-methods)
   - [00 DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution and Fully Connected CRFs](#00-deeplab-semantic-image-segmentation-with-deep-convolutional-nets-atrous-convolution-and-fully-connected-crfs)
   - [01 DeepLabV3: Rethinking Atrous Convolution for Semantic Image Segmentation](#01-deeplabv3-rethinking-atrous-convolution-for-semantic-image-segmentation)
@@ -165,12 +165,14 @@ The network learns from these sparse annotations and provides a dense 3D segment
 - ![3D U-Net](./images/3DUNet.png)
 
 
-## [05 nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation](./segmentation/nnU-Net%20a%20self-configuring%20method%20for%20deep%20learning-based%20biomedical%20image%20segmentation.pdf)
+## [05 nnU-Net: A Self-configuring Method for Deep Learning-based Biomedical Image Segmentation](./segmentation/nnU-Net%20a%20self-configuring%20method%20for%20deep%20learning-based%20biomedical%20image%20segmentation.pdf)
 - Isensee F, Jaeger P F, Kohl S A A, et al./2021/Nature methods/431
-- While semantic segmentation algorithms enable image analysis and quantification in many applications, the design of **respective specialized solutions** is non-trivial and highly dependent on **dataset properties and hardware conditions**. We developed nnU-Net, a deep learning-based segmentation method that **automatically configures itself**, including preprocessing, network architecture, training and post-processing for **any new task**. The key design choices in this process are modeled as a set of **fixed parameters**, **interdependent rules** and **empirical decisions**.
+- While semantic segmentation algorithms enable image analysis and quantification in many applications, the design of **respective specialized solutions** is non-trivial and highly dependent on **dataset properties and hardware conditions**. We developed nnU-Net, a deep learning-based segmentation method that **automatically configures itself**, including *preprocessing, network architecture, training and post-processing* for **any new task**. The key design choices in this process are modeled as a set of **fixed parameters**, **interdependent rules** and **empirical decisions**.
 - Configuration process definenation: 1) **Fixed Parameters:** Collect design decisions that do not require adaptation between 
 datasets and identify a robust common confguration. 2) **Rule-based Parameters:** For as many of the remaining decisions as possible, formulate explicit dependencies between specifc dataset properties (**dataset fingerprint**) and design choices (**pipeline fingerprint**) in the form of heuristic rules to allow for almost-instant adaptation on application. 3) **Empirical Parameters:** Learn only the remaining decisions empirically from the data.
+- In this work, we outline a new path between the status quo of primarily **expert-driven** method configuration in biomedical segmentation on one side and primarily **data-driven AutoML** approaches on the other.
 - ![nnUnet](./images/nnUnet.png)
+- More details go to the [**supplementary**](./segmentation/nnU-Net%20a%20self-configuring%20method%20for%20deep%20learning-based%20biomedical%20image%20segmentation%20supplementary.pdf)
 
 
 # III. DeepLab Methods
