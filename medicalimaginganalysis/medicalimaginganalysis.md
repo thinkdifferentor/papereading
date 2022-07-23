@@ -175,7 +175,8 @@ datasets and identify a robust common confguration. 2) **Rule-based Parameters:*
 interpolation; For anisotropic data: smaller than the median to get higher resolution; *4) Intensity normalization* - Z-score, for CT image a global normalization scheme is determined by all training cases.
 - **Empirical parameters**(determined empirically by monitoring validation performance after training): *1) Model selection* -  choose best in three U-Net configurations by cross-validation; *2) Postprocessing*: ‘non-largest component suppression’ triggered by Dice score is improved. 
 - In this work, we outline a new path between the status quo of primarily **expert-driven** method configuration in biomedical segmentation on one side and primarily **data-driven AutoML** approaches on the other.
-- ![nnUnet](./images/nnUnet.png)
+- ![nnUnet 1](./images/nnUnet.png)
+- ![nnUnet 2](./images/nnUnet_2.png)
 - More details go to the [**supplementary**](./segmentation/nnU-Net%20a%20self-configuring%20method%20for%20deep%20learning-based%20biomedical%20image%20segmentation%20supplementary.pdf)
 
 
