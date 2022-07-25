@@ -11,7 +11,8 @@
   - [02 Unet++: A nested u-net architecture for medical image segmentation](#02-unet-a-nested-u-net-architecture-for-medical-image-segmentation)
   - [03 *Unet 3+: A full-scale connected unet for medical image segmentation](#03-unet-3-a-full-scale-connected-unet-for-medical-image-segmentation)
   - [04 3D U-Net: Learning Dense Volumetric Segmentation from Sparse Annotation](#04-3d-u-net-learning-dense-volumetric-segmentation-from-sparse-annotation)
-  - [05 nnU-Net: A Self-configuring Method for Deep Learning-based Biomedical Image Segmentation](#05-nnu-net-a-self-configuring-method-for-deep-learning-based-biomedical-image-segmentation)
+  - [05 V-Net: Fully Convolutional Neural Networks for Volumetric Medical Image Segmentation](#05-v-net-fully-convolutional-neural-networks-for-volumetric-medical-image-segmentation)
+  - [06 nnU-Net: A Self-configuring Method for Deep Learning-based Biomedical Image Segmentation](#06-nnu-net-a-self-configuring-method-for-deep-learning-based-biomedical-image-segmentation)
 - [III. DeepLab Methods](#iii-deeplab-methods)
   - [00 DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution and Fully Connected CRFs](#00-deeplab-semantic-image-segmentation-with-deep-convolutional-nets-atrous-convolution-and-fully-connected-crfs)
   - [01 DeepLabV3: Rethinking Atrous Convolution for Semantic Image Segmentation](#01-deeplabv3-rethinking-atrous-convolution-for-semantic-image-segmentation)
@@ -165,7 +166,14 @@ The network learns from these sparse annotations and provides a dense 3D segment
 - ![3D U-Net](./images/3DUNet.png)
 
 
-## [05 nnU-Net: A Self-configuring Method for Deep Learning-based Biomedical Image Segmentation](./segmentation/nnU-Net%20a%20self-configuring%20method%20for%20deep%20learning-based%20biomedical%20image%20segmentation.pdf)
+## [05 V-Net: Fully Convolutional Neural Networks for Volumetric Medical Image Segmentation](./segmentation/V-Net%20Fully%20Convolutional%20Neural%20Networks%20for%20Volumetric%20Medical%20Image%20Segmentation.pdf)
+- Milletari F, Navab N, Ahmadi S A./2016/3DV/5566
+- Comparing 2D image process, this work propose an approach to **3D image segmentation** based on a **volumetric**, **fully convolutional**, neural network. V-Net is trained **end-to-end** on MRI volumes depicting prostate, and learns to predict segmentation for the whole volume at once with novel objective function named **Dice overlap coefficient**(imbalance of FG & BG) and **residual connection**(converge in short training steps).
+- ![V-Net 1](./images/V-Net_1.png)
+- ![V-Net 2](./images/V-Net_2.png)
+
+
+## [06 nnU-Net: A Self-configuring Method for Deep Learning-based Biomedical Image Segmentation](./segmentation/nnU-Net%20a%20self-configuring%20method%20for%20deep%20learning-based%20biomedical%20image%20segmentation.pdf)
 - Isensee F, Jaeger P F, Kohl S A A, et al./2021/Nature methods/431
 - While semantic segmentation algorithms enable image analysis and quantification in many applications, the design of **respective specialized solutions** is non-trivial and highly dependent on **dataset properties and hardware conditions**. We developed nnU-Net, a deep learning-based segmentation method that **automatically configures itself**, including *preprocessing, network architecture, training and post-processing* for **any new task**. The key design choices in this process are modeled as a set of **fixed parameters**, **interdependent rules** and **empirical decisions**.
 - Configuration process definenation: 1) **Fixed Parameters:** Collect design decisions that do not require adaptation between 
