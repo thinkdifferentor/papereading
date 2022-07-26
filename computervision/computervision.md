@@ -10,6 +10,7 @@
 - [07 Dynamic Convolution: Attention over Convolution Kernels](#07-dynamic-convolution-attention-over-convolution-kernels)
 - [08 Squeeze-and-Excitation Networks](#08-squeeze-and-excitation-networks)
 - [09 Deformable Convolutional Networks](#09-deformable-convolutional-networks)
+- [10 Focal Loss for Dense Object Detection](#10-focal-loss-for-dense-object-detection)
 
 <!-- /TOC -->
 
@@ -124,3 +125,14 @@
 - ![Deformable Convolutional Networks_2](./images/Deformable%20Convolutional%20Networks_2.png)
 - ![Deformable Convolutional Networks_3](./images/Deformable%20Convolutional%20Networks_3.png)
 - ![Deformable Convolutional Networks_4](./images/Deformable%20Convolutional%20Networks_4.png)
+
+
+## [10 Focal Loss for Dense Object Detection](./Focal%20Loss%20for%20Dense%20Object%20Detection.pdf)
+- Lin T Y, Goyal P, Girshick R, et al. /2017/ICCV/14539
+- In object detection task, **one-stage** (SSD\YOLO Variants) detectors that are applied over a **regular**, dense **sampling** of possible object locations have the potential to be **faster and simpler**, but have trailed the accuracy of **two-stage** (R-CNN Variants) detectors thus far. The main reason of it is that the **extreme foreground-background class imbalance** encountered during training of dense detectors.
+- **This imbalance causes two problems**: (1) training is inefficient as most locations are easy negatives that contribute **no useful learning signal**; (2) en masse, the easy negatives can **overwhelm training** and lead to degenerate models. Focal loss **naturally** handles the class imbalance faced by a one-stage detector and allows us to efficiently train on all examples **without sampling** and **without easy negatives overwhelming** the loss and computed gradients.
+- In contrast, rather than down-weighting *outliers* (hard examples), our focal loss is designed to address class imbalance by down-weighting *inliers* (easy examples) such that their contribution to the total loss is small even if their number is large. In other words, the focal loss performs the opposite role of a robust loss: **it focuses training on a sparse set of hard examples**.
+- ![Focal Loss 1](images/Focal%20List_1.png)
+- ![Focal Loss 2](images/Focal%20List_2.png) , ![Focal Loss 6](./images/Focal%20Loss_6.png)
+- ![Focal Loss 3](images/Focal%20List_3.png) , ![Focal Loss 4](images/Focal%20List_4.png)
+- ![Focal Loss 5](images/Focal%20List_5.png)
