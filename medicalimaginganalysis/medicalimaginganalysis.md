@@ -13,6 +13,7 @@
   - [04 3D U-Net: Learning Dense Volumetric Segmentation from Sparse Annotation](#04-3d-u-net-learning-dense-volumetric-segmentation-from-sparse-annotation)
   - [05 V-Net: Fully Convolutional Neural Networks for Volumetric Medical Image Segmentation](#05-v-net-fully-convolutional-neural-networks-for-volumetric-medical-image-segmentation)
   - [06 nnU-Net: A Self-configuring Method for Deep Learning-based Biomedical Image Segmentation](#06-nnu-net-a-self-configuring-method-for-deep-learning-based-biomedical-image-segmentation)
+  - [07 KiU-Net Overcomplete Convolutional Architectures for Biomedical Image and Volumetric Segmentation](#07-kiu-net-overcomplete-convolutional-architectures-for-biomedical-image-and-volumetric-segmentation)
 - [III. DeepLab Methods](#iii-deeplab-methods)
   - [00 DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution and Fully Connected CRFs](#00-deeplab-semantic-image-segmentation-with-deep-convolutional-nets-atrous-convolution-and-fully-connected-crfs)
   - [01 DeepLabV3: Rethinking Atrous Convolution for Semantic Image Segmentation](#01-deeplabv3-rethinking-atrous-convolution-for-semantic-image-segmentation)
@@ -186,6 +187,16 @@ interpolation; For anisotropic data: smaller than the median to get higher resol
 - ![nnUnet 1](./images/nnUnet.png)
 - ![nnUnet 2](./images/nnUnet_2.png)
 - More details go to the [**supplementary**](./segmentation/nnU-Net%20a%20self-configuring%20method%20for%20deep%20learning-based%20biomedical%20image%20segmentation%20supplementary.pdf)
+
+
+## [07 KiU-Net Overcomplete Convolutional Architectures for Biomedical Image and Volumetric Segmentation](./segmentation/KiU-Net%20Overcomplete%20Convolutional%20Architectures%20for%20Biomedical%20Image%20and%20Volumetric%20Segmentation.pdf)
+- Valanarasu J M J, Sindagi V A, Hacihaliloglu I, et al./2021/IEEE trans on Medical Imaging/36
+- U-Net or its variants perform poorly in detecting **smaller structures** and are unable to segment **boundary regions** precisely. The extra focus on learning high level features **causes U-Net based approaches** (with pooling operation) to learn less information about low-level features which are crucial for detecting small structures. This does not cause much decrement in terms of the **overall dice accuracy** for the prediction since the datasets **predominantly** contain images with large structures. 
+- **KiU-Net** which has two branches: (1) an **overcomplete convolutional network**(key component) Kite-Net which learns to capture **fine details and accurate edges** of the input, and (2) U-Net which learns **high level features**. Extension models: **KiU-Net 3D, Res-KiUNet, Dense-KiUNet**. The filters in this type of KiNet architecture learn finer low-level features due to *the decreasing size of receptive field even as we go deeper in the encoder network*.
+- ![KiUNet_1](./images/KiUNet_1.png)
+- ![KiUNet_2](./images/KiUNet_2.png)
+- ![KiUNet_3](./images/KiUNet_3.png)
+- More details of [KiUNet2D](./segmentation/KiU-Net%20Towards%20Accurate%20Segmentation%20of%20Biomedical%20Images%20Using%20Over-Complete%20Representations.pdf)
 
 
 # III. DeepLab Methods
