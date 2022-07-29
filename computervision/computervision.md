@@ -7,10 +7,11 @@
 - [04 Learning Transferable Visual Models From Natural Language Supervision](#04-learning-transferable-visual-models-from-natural-language-supervision)
 - [05 Masked Autoencoders Are Scalable Vision Learners](#05-masked-autoencoders-are-scalable-vision-learners)
 - [06 Momentum Contrast for Unsupervised Visual Representation Learning](#06-momentum-contrast-for-unsupervised-visual-representation-learning)
-- [07 Dynamic Convolution: Attention over Convolution Kernels](#07-dynamic-convolution-attention-over-convolution-kernels)
-- [08 Squeeze-and-Excitation Networks](#08-squeeze-and-excitation-networks)
-- [09 Deformable Convolutional Networks](#09-deformable-convolutional-networks)
-- [10 Focal Loss for Dense Object Detection](#10-focal-loss-for-dense-object-detection)
+- [07 A Simple Framework for Contrastive Learning of Visual Representations](#07-a-simple-framework-for-contrastive-learning-of-visual-representations)
+- [08 Dynamic Convolution: Attention over Convolution Kernels](#08-dynamic-convolution-attention-over-convolution-kernels)
+- [09 Squeeze-and-Excitation Networks](#09-squeeze-and-excitation-networks)
+- [10 Deformable Convolutional Networks](#10-deformable-convolutional-networks)
+- [11 Focal Loss for Dense Object Detection](#11-focal-loss-for-dense-object-detection)
 
 <!-- /TOC -->
 
@@ -100,7 +101,19 @@
 - *A main goal of unsupervised learning is to learn features that are transferrable. ImageNet supervised pre-training is most influential when serving as the initialization for fine-tuning in downstream tasks.*
 
 
-## [07 Dynamic Convolution: Attention over Convolution Kernels](./Dynamic%20Convolution%20Attention%20over%20Convolution%20Kernels.pdf)
+## [07 A Simple Framework for Contrastive Learning of Visual Representations](./A%20Simple%20Framework%20for%20Contrastive%20Learning%20of%20Visual%20Representations.pdf)
+- Chen T, Kornblith S, Norouzi M, et al. /2020/ICML/5373
+- SimCLR is a **sim**ple framework for **C**ontrastive **L**earning of visual **R**epresentations, which almost all individual components of our framework have **appeared** in previous work, although the specific instantiations may be different. The superiority of our framework relative to previous work is **not explained by any single design choice, but by their composition**.  
+- This work show that:
+    - (1) **composition of data augmentations** (In addition, unsupervised contrastive learning benefits from **stronger** data augmentation than supervised learning.) plays a critical role in defining effective predictive tasks. This work conjecture that one serious issue when using only random cropping as data augmentation is that most patches from an image **share a similar color distribution**. Therefore, it is critical to **compose cropping with color distortion** in order to learn generalizable features.
+    - (2) introducing a learnable **nonlinear transformation** (projection) between the representation and the contrastive loss substantially improves the quality of the learned representations, and 
+    - (3) contrastive learning benefits from **larger batch sizes and more training steps** (provide more negative examples) compared to supervised learning and Like supervised learning, contrastive learning benefits from deeper and wider networks.
+    - (4) Representation learning with contrastive cross entropy loss benefits from **normalized embeddings** and an **appropriately adjusted temperature parameter**.
+- ![simCLR_1](./images/simCLR_1.png) , ![simCLR_2](./images/simCLR_2.png)
+- ![simCLR_3](./images/simCLR_3.png)
+
+
+## [08 Dynamic Convolution: Attention over Convolution Kernels](./Dynamic%20Convolution%20Attention%20over%20Convolution%20Kernels.pdf)
 - Chen Y, Dai X, Liu M, et al./2020/CVPR/211
 - Light-weight CNNs suffer performance degradation as their **low computational budgets** constrain both the **depth** (number of convolution layers) and the **width** (number of channels) of CNNs, resulting in **limited representation capability**. This paper is aim to building a **light-weight and efficient neural networks**. Provide better trade-off between network **performance** and **computational** burden.
 - Dynamic Convolution is a new design that **increases model complexity without increasing the network depth or width**. Instead of using a single convolution kernel per layer, dynamic convolution aggregates **multiple parallel convolution kernels** dynamically based upon their **attentions**, which are input dependent. Assembling multiple kernels is not only **computationally efficient** due to the small kernel size, but also has more representation power since these kernels are aggregated in a **non-linear way** via attention.
@@ -109,7 +122,7 @@
 - ![Dynamic Convolution_3](./images/Dynamic%20Convolution_3.png)
 
 
-## [08 Squeeze-and-Excitation Networks](./Squeeze-and-Excitation%20Networks.pdf)
+## [09 Squeeze-and-Excitation Networks](./Squeeze-and-Excitation%20Networks.pdf)
 - Hu J, Shen L, Sun G./2018/CVPR/13737
 - The goal is to **improve the representational power** of a network by explicitly modelling the interdependencies between the **channels of its convolutional features**. To achieve this, **feature recalibration** is proposed, through which it can learn to use global information to selectively **emphasise** informative features and **suppress** less useful ones.
 - ![SENet_1](./images/SENet_1.png)
@@ -118,7 +131,7 @@
 - ![SENet_2](./images/SENet_2.png) , ![SENet_3](./images/SENet_3.png)
 
 
-## [09 Deformable Convolutional Networks](./Deformable%20Convolutional%20Networks.pdf)
+## [10 Deformable Convolutional Networks](./Deformable%20Convolutional%20Networks.pdf)
 - Dai J, Qi H, Xiong Y, et al./2017/ICCV/3011
 - Donvolutional neural networks (CNNs) are inherently limited to model geometric transformations due to the **fixed geometric structures** (Conv & Pooling) in their building modules.
 - ![Deformable Convolutional Networks_1](./images/Deformable%20Convolutional%20Networks_1.png)
@@ -127,7 +140,7 @@
 - ![Deformable Convolutional Networks_4](./images/Deformable%20Convolutional%20Networks_4.png)
 
 
-## [10 Focal Loss for Dense Object Detection](./Focal%20Loss%20for%20Dense%20Object%20Detection.pdf)
+## [11 Focal Loss for Dense Object Detection](./Focal%20Loss%20for%20Dense%20Object%20Detection.pdf)
 - Lin T Y, Goyal P, Girshick R, et al. /2017/ICCV/14539
 - In object detection task, **one-stage** (SSD\YOLO Variants) detectors that are applied over a **regular**, dense **sampling** of possible object locations have the potential to be **faster and simpler**, but have trailed the accuracy of **two-stage** (R-CNN Variants) detectors thus far. The main reason of it is that the **extreme foreground-background class imbalance** encountered during training of dense detectors.
 - **This imbalance causes two problems**: (1) training is inefficient as most locations are easy negatives that contribute **no useful learning signal**; (2) en masse, the easy negatives can **overwhelm training** and lead to degenerate models. Focal loss **naturally** handles the class imbalance faced by a one-stage detector and allows us to efficiently train on all examples **without sampling** and **without easy negatives overwhelming** the loss and computed gradients.
@@ -136,3 +149,5 @@
 - ![Focal Loss 2](images/Focal%20List_2.png) , ![Focal Loss 6](./images/Focal%20Loss_6.png)
 - ![Focal Loss 3](images/Focal%20List_3.png) , ![Focal Loss 4](images/Focal%20List_4.png)
 - ![Focal Loss 5](images/Focal%20List_5.png)
+
+
