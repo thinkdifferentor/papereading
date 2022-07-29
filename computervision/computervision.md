@@ -111,6 +111,10 @@
     - (4) Representation learning with contrastive cross entropy loss benefits from **normalized embeddings** and an **appropriately adjusted temperature parameter**.
 - ![simCLR_1](./images/simCLR_1.png) , ![simCLR_2](./images/simCLR_2.png)
 - ![simCLR_3](./images/simCLR_3.png)
+- [Big Self-Supervised Models are Strong Semi-Supervised Learners](./Big%20Self-Supervised%20Models%20are%20Strong%20Semi-Supervised%20Learners.pdf) propose **SimCLRv2**, which improves upon SimCLR in three major ways:
+    - (1) To fully leverage the power of general pretraining, SimCLRv2 explore **larger ResNet models** (Encoder). Training 152-layer ResNet with 3× wider channels and selective kernels. Obtaining a 29% relative improvement in top-1 accuracy when fine-tuned on 1% of labeled examples.
+    - (2) SimCLRv2 also increase the capacity of the non-linear network projection head (Projector)  by making it deeper from **2-layer to 3 layer**. Instead of throwing away g(·) entirely after pretraining as in SimCLR, SimCLRv2 fine-tuning from the 1st layer of projection head. Obtaining a 14% relative improvement in top-1 accuracy when fine-tuned on 1% of labeled examples.
+    - (3) Motivated by *MOCO*, SimCLRv2 incorporate the **memory mechanism** from MoCo, which designates a memory network (with a **moving average of weights for stabilization**) whose output will be buffered as negative examples. 
 
 
 ## [08 Dynamic Convolution: Attention over Convolution Kernels](./Dynamic%20Convolution%20Attention%20over%20Convolution%20Kernels.pdf)
