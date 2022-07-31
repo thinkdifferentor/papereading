@@ -32,6 +32,7 @@
 - [VI. Others](#vi-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
+  - [02 Generalizable Cross-modality Medical Image Segmentation via Style Augmentation and Dual Normalization](#02-generalizable-cross-modality-medical-image-segmentation-via-style-augmentation-and-dual-normalization)
 
 <!-- /TOC -->
 
@@ -335,3 +336,17 @@ is performed by labeling each pixel as the class of the nearest prototype). With
 - Zhao H, Shi J, Qi X, et al./2017/CVPR/7411
 - Important Observations about FCN in ADE20K: 1) **Mismatched Relationship**: FCN is lack of the ability to **collect contextual information** increases the chance of misclassification. 2) **Confusion Categories**: There are confusing classfication in the ADE20K like field and earth, mountain and hill etc. FCN can not judge them in the segmentation task. This problem can be remedied by utilizing **the relationship between categories**. 3) **Inconspicuous Classes**: Serveral small-size things are hard to find while may be greate importance like streetlights and signboard. However, big objects or stuff may exceed the receptive field of FCN and thus cause discontinuous prediction. To improve performance for remarkably small or large objects, one should **pay much attention to different sub-regions** that contain inconspicuous-category stuff.
 - ![FPN](./images/PSPNet.png)
+
+
+## [02 Generalizable Cross-modality Medical Image Segmentation via Style Augmentation and Dual Normalization](./segmentation/Generalizable%20Cross-modality%20Medical%20Image%20Segmentation%20via%20Style%20Augmentation%20and%20Dual%20Normalization.pdf)
+- Zhou Z, Qi L, Yang X, et al./2022/CVPR/-
+- Generalizable Cross-modality Segmentation: a model was only trained using MR images in **source domain**, and its performance to directly segment CT images in **target domain**. It's clinical potential. 
+- The **distribution shift** between training (or labeled) and test (or unlabeled) data usually **results in** a severe performance degeneration during the deployment of trained segmentation models. The reason for distribution shift typically come from different aspects, e.g., *different acquisition parameters, various imaging methods* or **diverse modalities**.
+- Unsupervised Domain Adaptation (**UDA**) is trained on labeled source domain (i.e., training set) along with unlabeled target domain (i.e., test set), by **reducing their domain gap**. It's assuming that **test or unlabeled data could be observed** (However, the condition is hard to meet).
+- Domain Generalization (**DG**) by training models purely on source domains, aims to **directly generalize** to target domains that *could not be observed during the training process*.
+- ![GCS_1](./images/Generalizable%20Cross-modality%20Segmentation.png)
+- ![GCS_2](./images/Generalizable%20Cross-modality%20Segmentation_2.png)
+- ![GCS_3](./images/Generalizable%20Cross-modality%20Segmentation_3.png)
+- ![GCS_4](./images/Generalizable%20Cross-modality%20Segmentation_4.png)
+- ![GCS_5](./images/Generalizable%20Cross-modality%20Segmentation_5.png),![GCS_6](./images/Generalizable%20Cross-modality%20Segmentation_6.png)
+- ![GCS_7](./images/Generalizable%20Cross-modality%20Segmentation_7.png),![GCS_8](./images/Generalizable%20Cross-modality%20Segmentation_8.png)
