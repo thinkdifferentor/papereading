@@ -12,6 +12,7 @@
 - [09 Squeeze-and-Excitation Networks](#09-squeeze-and-excitation-networks)
 - [10 Deformable Convolutional Networks](#10-deformable-convolutional-networks)
 - [11 Focal Loss for Dense Object Detection](#11-focal-loss-for-dense-object-detection)
+- [12 BEIT: BERT Pre-Training of Image Transformers](#12-beit-bert-pre-training-of-image-transformers)
 
 <!-- /TOC -->
 
@@ -155,3 +156,9 @@
 - ![Focal Loss 5](images/Focal%20List_5.png)
 
 
+## [12 BEIT: BERT Pre-Training of Image Transformers](./BEIT%20%20BERT%20Pre-Training%20of%20Image%20Transformers.pdf)
+- Bao H, Dong L, Wei F./2021/arXiv/290
+- **BEIT** stands for **B**idirectional **E**ncoder representation from **I**mage **T**ransformers. It's a *Masked Image Modeling* like BERT in *Mask Language Modeling*. BEIT first **“tokenize”** the original image into **visual tokens** just like **word token** and predict the visual tokens in the pretext task rather than reconstruction the mask image patch like MAE.
+- There are two modules during visual token learning, namely, **tokenizer** and **decoder**. The tokenizer **q_φ(z|x)** maps image pixels x into discrete tokens z according to a visual codebook (i.e.,vocabulary). The decoder **p_ψ(x|z)** learns to reconstruct the input image x based on the visual tokens z. detail in [Zero-Shot Text-to-Image Generation](./Zero-Shot%20Text-to-Image%20Generation.pdf)
+- ![BEIT_1](./images/BEIT_1.png)
+- ![BEIT_2](./images/BEIT_2.png)
