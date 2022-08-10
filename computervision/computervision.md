@@ -13,6 +13,7 @@
 - [10 Deformable Convolutional Networks](#10-deformable-convolutional-networks)
 - [11 Focal Loss for Dense Object Detection](#11-focal-loss-for-dense-object-detection)
 - [12 BEIT: BERT Pre-Training of Image Transformers](#12-beit-bert-pre-training-of-image-transformers)
+- [13 Context Autoencoder for Self-Supervised Representation Learning](#13-context-autoencoder-for-self-supervised-representation-learning)
 
 <!-- /TOC -->
 
@@ -162,3 +163,10 @@
 - There are two modules during visual token learning, namely, **tokenizer** and **decoder**. The tokenizer **q_φ(z|x)** maps image pixels x into discrete tokens z according to a visual codebook (i.e.,vocabulary). The decoder **p_ψ(x|z)** learns to reconstruct the input image x based on the visual tokens z. detail in [Zero-Shot Text-to-Image Generation](./Zero-Shot%20Text-to-Image%20Generation.pdf)
 - ![BEIT_1](./images/BEIT_1.png)
 - ![BEIT_2](./images/BEIT_2.png)
+
+
+## [13 Context Autoencoder for Self-Supervised Representation Learning](./Context%20Autoencoder%20for%20Self-Supervised%20Representation%20Learning.pdf)
+- Chen X, Ding M, Wang X, et al./2022/arXiv/24
+- The goal is to pretrain an encoder by solving the pretext task: *estimate the masked patches from the visible patches in an image*. In comparison to previous MIM methods that *couple the encoding and pretext task completion roles*, our approach benefits the **separation** of *the representation learning encoding role and the pretext task completion role*, improving the representation learning capacity and accordingly helping more on downstream tasks. 
+- ![CAE_1](./images/CAE_1.png)
+- ![CAE_1](./images/CAE_2.png)
