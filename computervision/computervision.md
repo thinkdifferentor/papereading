@@ -14,6 +14,7 @@
 - [11 Focal Loss for Dense Object Detection](#11-focal-loss-for-dense-object-detection)
 - [12 BEIT: BERT Pre-Training of Image Transformers](#12-beit-bert-pre-training-of-image-transformers)
 - [13 Context Autoencoder for Self-Supervised Representation Learning](#13-context-autoencoder-for-self-supervised-representation-learning)
+- [14 Selective Kernel Networks](#14-selective-kernel-networks)
 
 <!-- /TOC -->
 
@@ -170,3 +171,10 @@
 - The goal is to pretrain an encoder by solving the pretext task: *estimate the masked patches from the visible patches in an image*. In comparison to previous MIM methods that *couple the encoding and pretext task completion roles*, our approach benefits the **separation** of *the representation learning encoding role and the pretext task completion role*, improving the representation learning capacity and accordingly helping more on downstream tasks. 
 - ![CAE_1](./images/CAE_1.png)
 - ![CAE_1](./images/CAE_2.png)
+
+
+## [14 Selective Kernel Networks](./Selective%20Kernel%20Networks.pdf)
+- Li X, Wang W, Hu X, et al./2019/CVPR/1024
+- In **standard** Convolutional Neural Networks (CNNs), the **receptive fields** of artificial neurons in each layer are designed to share the same size. We propose a **dynamic selection mechanism** in CNNs that allows each neuron to adaptively adjust its receptive field size based on **multiple scales** of input information. 
+- ![SK_1](./images/SKNet_1.png)
+- ![SK_2](./images/SKNet_2.png)
