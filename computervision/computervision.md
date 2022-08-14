@@ -176,5 +176,6 @@
 ## [14 Selective Kernel Networks](./Selective%20Kernel%20Networks.pdf)
 - Li X, Wang W, Hu X, et al./2019/CVPR/1024
 - In **standard** Convolutional Neural Networks (CNNs), the **receptive fields** of artificial neurons in each layer are designed to share the same size. We propose a **dynamic selection mechanism** in CNNs that allows each neuron to adaptively adjust its receptive field size based on **multiple scales** of input information. 
+- In SK units, there are three important hyper-parameters which determine the final settings of SK convolutions: the number of **paths M** that determines the number of choices of different kernels to be aggregated, the **group number G** that controls the cardinality of each path, and the **reduction ratio r** that controls the number of parameters in the fuse operator
 - ![SK_1](./images/SKNet_1.png)
 - ![SK_2](./images/SKNet_2.png)
