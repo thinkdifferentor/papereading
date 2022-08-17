@@ -37,6 +37,7 @@
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
   - [02 Generalizable Cross-modality Medical Image Segmentation via Style Augmentation and Dual Normalization](#02-generalizable-cross-modality-medical-image-segmentation-via-style-augmentation-and-dual-normalization)
+  - [03 Learning Topological Interactions for Multi-Class Medical Image Segmentation](#03-learning-topological-interactions-for-multi-class-medical-image-segmentation)
 
 <!-- /TOC -->
 
@@ -384,3 +385,15 @@ an **encoder** that utilizes a sequence of Transformer blocks to convert the inp
 - ![GCS_4](./images/Generalizable%20Cross-modality%20Segmentation_4.png)
 - ![GCS_5](./images/Generalizable%20Cross-modality%20Segmentation_5.png),![GCS_6](./images/Generalizable%20Cross-modality%20Segmentation_6.png)
 - ![GCS_7](./images/Generalizable%20Cross-modality%20Segmentation_7.png),![GCS_8](./images/Generalizable%20Cross-modality%20Segmentation_8.png)
+
+
+## [03 Learning Topological Interactions for Multi-Class Medical Image Segmentation](./segmentation/Learning%20Non-target%20Knowledge%20for%20Few-shot%20Semantic%20Segmentation.pdf)
+- Gupta S, Hu X, Kaan J, et al./2022/arXiv/-
+- Deep Learning based methods are limited in their ability to encode **topological interactions among different classes** (e.g., containment and exclusion). These constraints naturally arise in biomedical images and can be crucial in improving segmentation quality. **topological interaction module** to encode the topological interactions into a deep neural network. The implementation is completely convolution-based and thus can be very efficient. This empowers us to incorporate the **constraints** into *end-to-end training and enrich the feature representation of neural networks*.
+- ![Learning Topological Interactions_1](./images/Learning%20Topological%20Interactions_1.png)
+- ![Learning Topological Interactions_2](./images/Learning%20Topological%20Interactions_2.png)
+- Standard deep neural networks cannot learn **global structural constraints** regarding semantic labels, which can often be critical in biomedical domains. While existing works mostly focus on encoding the topology of a **single label** , limited progress has been made addressing the constraints regarding interactions between **different labels**. Even strong methods (e.g., nnUNet) may fail to preserve the constraints as they **only optimize per-pixel accuracy**.
+- To encode such **interaction constraints** into convolutional neural networks is **challenging**; it is hard to directly encode hard constraints into kernels while **keeping them learnable**. Traditional methods do not apply to deep neural networks, which *do not rely on a global optimization for the inference*. More importantly, the optimization is **not differentiable and thus cannot be incorporated into training**. A desirable solution should be **efficient and learnable**. 
+- The key observation is that a broad class of topological interactions, namely, **enclosing and exclusion**, boils down to **certain impermissible label combinations of adjacent pixels/voxels**. The idea is to go through all pairs of adjacent pixels/voxels and identify the pairs that **violate the desired constraints**. Pixels belonging to these pairs are the ones inducing errors into the topological interaction. We will refer to them as **critical pixels**.
+- ![Learning Topological Interactions_3](./images/Learning%20Topological%20Interactions_3.png)
+- ![Learning Topological Interactions_4](./images/Learning%20Topological%20Interactions_4.png)
