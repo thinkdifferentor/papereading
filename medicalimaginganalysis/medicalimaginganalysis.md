@@ -32,6 +32,7 @@
 - [VI. Transformer based Segmentation](#vi-transformer-based-segmentation)
   - [00 High-Resolution Swin Transformer for Automatic Medical Image Segmentation](#00-high-resolution-swin-transformer-for-automatic-medical-image-segmentation)
   - [01 ScaleFormer: Revisiting the Transformer-based Backbones from a Scale-wise Perspective for Medical Image Segmentation](#01-scaleformer-revisiting-the-transformer-based-backbones-from-a-scale-wise-perspective-for-medical-image-segmentation)
+  - [02 UNETR: Transformers for 3D Medical Image Segmentation](#02-unetr-transformers-for-3d-medical-image-segmentation)
 - [VII. Others](#vii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -342,6 +343,15 @@ an **encoder** that utilizes a sequence of Transformer blocks to convert the inp
 - ![ScaleFormer_3](./images/ScaleFormer_3.png)
 - ![ScaleFormer_4](./images/ScaleFormer_4.png)
 - ![ScaleFormer_5](./images/ScaleFormer_5.png) 
+
+
+## [02 UNETR: Transformers for 3D Medical Image Segmentation](./segmentation/UNETR%20Transformers%20for%203D%20Medical%20Image%20Segmentation.pdf)
+- Hatamizadeh A, Tang Y, Nath V, et al./2022/CVPR/148
+- Despite FCNNs' success, the locality of convolutional layers in FCNNs, limits the capability of learning **long-range spatial dependencies**. Following the successful “U-shaped” network design for the encoder and decoder, the transformer encoder is directly connected to a decoder via skip connections at different resolutions to compute the final semantic segmentation output. 
+- In particular, we reformulate the task of 3D segmentation as a 1D **sequence-to-sequence** prediction problem and use a **transformer** as the encoder to learn contextual information from the embedded input patches. Instead of using transformers in the decoder, our proposed framework uses a **CNN-based decoder**. This is due to the fact that *transformers are unable to properly capture localized information*, despite their great capability of learning global information. 
+- The **95% HD** uses the 95th percentile of the distances between ground truth and prediction surface point sets. As a result, the impact of a very small subset of outliers is minimized when calculating HD. We proposed to use a transformer encoder to increase the model's capability for learning **long-range dependencies** and **effectively capturing global contextual representation** at multiple scales.
+- ![UNETR_1](./images/UNETR_1.png)
+- ![UNETR_2](./images/UNETR_2.png)
 
 
 # VII. Others
