@@ -39,6 +39,7 @@
   - [02 Generalizable Cross-modality Medical Image Segmentation via Style Augmentation and Dual Normalization](#02-generalizable-cross-modality-medical-image-segmentation-via-style-augmentation-and-dual-normalization)
   - [03 Learning Topological Interactions for Multi-Class Medical Image Segmentation](#03-learning-topological-interactions-for-multi-class-medical-image-segmentation)
   - [04 Large-Kernel Attention for 3D Medical Image Segmentation](#04-large-kernel-attention-for-3d-medical-image-segmentation)
+  - [05 Two-Stream UNET Networks for Semantic Segmentation in Medical Images](#05-two-stream-unet-networks-for-semantic-segmentation-in-medical-images)
 
 <!-- /TOC -->
 
@@ -401,8 +402,18 @@ an **encoder** that utilizes a sequence of Transformer blocks to convert the inp
 
 
 ## [04 Large-Kernel Attention for 3D Medical Image Segmentation](./segmentation/Large-Kernel%20Attention%20for%203D%20Medical%20Image%20Segmentation.pdf)
-- Li H, Nan Y, Del Ser J, et al./2022/ariXv/-
+- Li H, Nan Y, Del Ser J, et al./2022/arXiv/-
 - In 3D medical images, organs often **overlap and are complexly connected**, characterized by extensive anatomical variation and low contrast. In addition, **the diversity of tumor shape, location, and appearance**, coupled with the dominance of background voxels, makes accurate 3D medical image segmentation difficult.
 - The advantages of **convolution** and **self-attention** are combined in the proposed LK attention module, including local contextual information, long-range dependence, and channel adaptation. 
 - ![Large-Kernel Attention_1](./images/Large-Kernel%20Attention_1.png)
 - ![Large-Kernel Attention_2](./images/Large-Kernel%20Attention_2.png)
+
+
+## [05 Two-Stream UNET Networks for Semantic Segmentation in Medical Images](./segmentation/Two-Stream%20UNET%20Networks%20for%20Semantic%20Segmentation%20in%20Medical%20Images.pdf)
+- Chen X, Ding K./2022/arXiv/-
+- The deeper and larger models are limited to medical segmentation because of the following challenges:
+    1. **Properties of medical datasets**. *Size of medical image datasets are tiny*. Privacy of patient information and labelling cost restrict to build large scale image datasets. Also, due to clinical applications, *the number of categories is small*, in general less than five and even only one. As a result, on average, size of the medical datasets is only one tenth or less than that of natural images.
+    2. **Properties of medical images themselves**. There are two challenges to train deeper models on medical images. First, medical images have *similar intensities of pixels*. Second, some factors of *medical acquisition* such as sampling artifacts, spatial aliasing, and some of the dedicated noise of modalities cause the indistinct and disconnected boundary's structures. a question arises: *can we design a new architecture, in which multiple low-level features are fed into CNNs models and they can work on these multiple features*?
+- GVF is the **vector field** that is produced by a process that smooths and diffuses an input vector field. It is usually used to create a vector field from images that points to **object edges** from a distance. If we consider semantic segmentation as pixel **moving to boundary task**, the **VS is trained to learn how pixels move to the object boundary**, and the **SS is train to learn to recognize objects**. It is obvious that it is an exact process of the image semantic segmentation task. 
+- There are two major reasons that two-stream networks are **well-suited** for medical image segmentation: **(1) Each objects (organs) in medical images have their-owned shape. and (2) The relationship among the location of the objects are fixed.**
+- ![Two-Stream UNET Networks_1](./images/Two-Stream%20UNET%20Networks_1.png)
