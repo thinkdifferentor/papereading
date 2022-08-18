@@ -38,6 +38,7 @@
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
   - [02 Generalizable Cross-modality Medical Image Segmentation via Style Augmentation and Dual Normalization](#02-generalizable-cross-modality-medical-image-segmentation-via-style-augmentation-and-dual-normalization)
   - [03 Learning Topological Interactions for Multi-Class Medical Image Segmentation](#03-learning-topological-interactions-for-multi-class-medical-image-segmentation)
+  - [04 Large-Kernel Attention for 3D Medical Image Segmentation](#04-large-kernel-attention-for-3d-medical-image-segmentation)
 
 <!-- /TOC -->
 
@@ -397,3 +398,11 @@ an **encoder** that utilizes a sequence of Transformer blocks to convert the inp
 - The key observation is that a broad class of topological interactions, namely, **enclosing and exclusion**, boils down to **certain impermissible label combinations of adjacent pixels/voxels**. The idea is to go through all pairs of adjacent pixels/voxels and identify the pairs that **violate the desired constraints**. Pixels belonging to these pairs are the ones inducing errors into the topological interaction. We will refer to them as **critical pixels**.
 - ![Learning Topological Interactions_3](./images/Learning%20Topological%20Interactions_3.png)
 - ![Learning Topological Interactions_4](./images/Learning%20Topological%20Interactions_4.png)
+
+
+## [04 Large-Kernel Attention for 3D Medical Image Segmentation](./segmentation/Large-Kernel%20Attention%20for%203D%20Medical%20Image%20Segmentation.pdf)
+- Li H, Nan Y, Del Ser J, et al./2022/ariXv/-
+- In 3D medical images, organs often **overlap and are complexly connected**, characterized by extensive anatomical variation and low contrast. In addition, **the diversity of tumor shape, location, and appearance**, coupled with the dominance of background voxels, makes accurate 3D medical image segmentation difficult.
+- The advantages of **convolution** and **self-attention** are combined in the proposed LK attention module, including local contextual information, long-range dependence, and channel adaptation. 
+- ![Large-Kernel Attention_1](./images/Large-Kernel%20Attention_1.png)
+- ![Large-Kernel Attention_2](./images/Large-Kernel%20Attention_2.png)
