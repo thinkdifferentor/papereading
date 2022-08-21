@@ -33,6 +33,7 @@
   - [00 High-Resolution Swin Transformer for Automatic Medical Image Segmentation](#00-high-resolution-swin-transformer-for-automatic-medical-image-segmentation)
   - [01 ScaleFormer: Revisiting the Transformer-based Backbones from a Scale-wise Perspective for Medical Image Segmentation](#01-scaleformer-revisiting-the-transformer-based-backbones-from-a-scale-wise-perspective-for-medical-image-segmentation)
   - [02 UNETR: Transformers for 3D Medical Image Segmentation](#02-unetr-transformers-for-3d-medical-image-segmentation)
+  - [03 HRFormer: High-Resolution Transformer for Dense Prediction](#03-hrformer-high-resolution-transformer-for-dense-prediction)
 - [VII. Others](#vii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -355,6 +356,17 @@ an **encoder** that utilizes a sequence of Transformer blocks to convert the inp
 - The **95% HD** uses the 95th percentile of the distances between ground truth and prediction surface point sets. As a result, the impact of a very small subset of outliers is minimized when calculating HD. We proposed to use a transformer encoder to increase the model's capability for learning **long-range dependencies** and **effectively capturing global contextual representation** at multiple scales.
 - ![UNETR_1](./images/UNETR_1.png)
 - ![UNETR_2](./images/UNETR_2.png)
+
+
+## [03 HRFormer: High-Resolution Transformer for Dense Prediction](./segmentation/HRformer%20High-resolution%20vision%20transformer%20for%20dense%20predict.pdf)
+- Yuan Y, Fu R, Huang L, et al./2021/NIPS/53
+- In contrast to the original Vision Transformer that produces **low-resolution representations** and has **high memory and computational cost**, HRFormer take advantage of the multi-resolution parallel design introduced in high-resolution convolutional networks (**HRNet**), along with **local-window self-attention** that performs self-attention over **small non-overlapping image windows**, for improving the **memory and computation efficiency**. In addition, we introduce a convolution into the **FFN to exchange information**(no-overlapping) across the disconnected image windows. The Vision Transformer only outputs a **single-scale feature representation**, and thus lacks the capability to handle multi-scale variation.
+- First, HRFormer adopts convolution in both the stem and **the first stage** as several concurrent studies also suggest that *convolution performs better in the early stages*. Second, HRFormer **maintains a high-resolution stream** through the entire process with **parallel medium- and low-resolution streams** helping boost high-resolution representations. With feature maps of **different resolutions**, thus HRFormer is capable to model the multi-scale variation. Third, HRFormer mixes the **short-range and long-range attention** via exchanging multi-resolution feature information with the multi-scale fusion module.
+- ![HRFormer_1](./images/HRFormer_1.png)
+- ![HRFormer_2](./images/HRFormer_2.png)
+- ![HRFormer_3](./images/HRFormer_3.png)
+- In the development of high-resolution convolutional neural networks, the community has developed three main paths including: **(i)** applying dilated convolutions to remove some down-sample layers, **(ii)** recovering high-resolution representations from low-resolution representations with decoders, and **(iii)** maintaining high-resolution representations throughout the network.
+- The benefits of 3×3 depth-wise convolution are twofold: **one is enhancing the locality and the other one is enabling the interactions across windows**. based on the combination of the local window self-attention and the FFN with 3 × 3 depth-wise convolution, we can build the HRFormer block that **improves the memory and computation efficiency significantly**.
 
 
 # VII. Others
