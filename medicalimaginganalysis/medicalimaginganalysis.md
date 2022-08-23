@@ -34,6 +34,7 @@
   - [01 ScaleFormer: Revisiting the Transformer-based Backbones from a Scale-wise Perspective for Medical Image Segmentation](#01-scaleformer-revisiting-the-transformer-based-backbones-from-a-scale-wise-perspective-for-medical-image-segmentation)
   - [02 UNETR: Transformers for 3D Medical Image Segmentation](#02-unetr-transformers-for-3d-medical-image-segmentation)
   - [03 HRFormer: High-Resolution Transformer for Dense Prediction](#03-hrformer-high-resolution-transformer-for-dense-prediction)
+  - [04 CRIS: CLIP-Driven Referring Image Segmentation](#04-cris-clip-driven-referring-image-segmentation)
 - [VII. Others](#vii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -368,6 +369,14 @@ an **encoder** that utilizes a sequence of Transformer blocks to convert the inp
 - In the development of high-resolution convolutional neural networks, the community has developed three main paths including: **(i)** applying dilated convolutions to remove some down-sample layers, **(ii)** recovering high-resolution representations from low-resolution representations with decoders, and **(iii)** maintaining high-resolution representations throughout the network.
 - The benefits of 3×3 depth-wise convolution are twofold: **one is enhancing the locality and the other one is enabling the interactions across windows**. based on the combination of the local window self-attention and the FFN with 3 × 3 depth-wise convolution, we can build the HRFormer block that **improves the memory and computation efficiency significantly**.
 
+
+## [04 CRIS: CLIP-Driven Referring Image Segmentation]()
+-  
+
+
+Referring image segmentation(text-to-pixel not text-to-image feature learning) aims to segment a referent via a natural linguistic expression. Due to the distinct data properties between text and image, it is challenging for a network to well align text and pixel-level features. Existing approaches use pretrained models to facilitate learning, yet separately transfer the language/vision knowledge from pretrained models, ignoring the multi-modal corresponding information.
+Unlike semantic and instance segmentation, which requires segmenting the visual entities belonging to a pre-determined set of categories, referring image segmentation is not limited to indicating specific categories but finding a particular region according to the input language expression.
+Direct usage of the CLIP can be sub-optimal for pixel-level prediction tasks, e.g., referring image segmentation, duo to the discrepancy between image-level and pixel-level prediction. The former focuses on the global information of an input image, while the latter needs to learn fine-grained visual representations for each spatial activation.
 
 # VII. Others
 

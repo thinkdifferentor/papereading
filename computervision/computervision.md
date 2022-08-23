@@ -16,6 +16,7 @@
 - [13 Context Autoencoder for Self-Supervised Representation Learning](#13-context-autoencoder-for-self-supervised-representation-learning)
 - [14 Selective Kernel Networks](#14-selective-kernel-networks)
 - [15 Deep High-Resolution Representation Learning for Visual Recognition](#15-deep-high-resolution-representation-learning-for-visual-recognition)
+- [16 Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift](#16-batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift)
 
 <!-- /TOC -->
 
@@ -187,5 +188,13 @@
 - **HRNet** maintains **high-resolution representations** through the whole process. There are two key characteristics: (i) *Connect the high-to-low resolution convolution streams in parallel* and (ii) repeatedly *exchange the information across resolutions*. The benefit is that the resulting representation is **semantically richer and spatially more precise**. 
 - Reasons: (i. **Connection Aspect**) HRNet connects high-to-low resolution convolution streams in **parallel** rather than in **series**. Thus, our approach is able to maintain the high resolution *instead of recovering high resolution* from low resolution, and accordingly the learned representation is potentially spatially more precise.  (ii. **Fusion Aspect**) Most existing fusion schemes aggregate high-resolution low-level and high-level representations obtained by upsampling low-resolution representations. Instead, we repeat multi-resolution fusions to boost the high-resolution representations with the help of the low-resolution representations, and vice versa.
 - ![HRNet_1](./images/HRNet_1.png)
-- ![HRNet_2](./images/HRNet_1.png)
-- ![HRNet_3](./images/HRNet_1.png)
+- ![HRNet_2](./images/HRNet_2.png)
+- ![HRNet_3](./images/HRNet_3.png)
+
+
+## [16 Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift](./Batch%20Normalization%20Accelerating%20Deep%20Network%20Training%20by%20Reducing%20Internal%20Covariate%20Shift.pdf)
+- Ioffe S, Szegedy C. /ICML/2015/39226
+- Training Deep Neural Networks is complicated by the fact that **the distribution of each layer’s inputs changes during training**, as **the parameters of the previous layers change**. This **slows down** the training by requiring lower learning rates and careful parameter initialization, and makes it no toriously hard to train models with saturating nonlinearities. This phenomenon called **internal covariate shift**.
+- Batch Normalization allows us to use much **higher learning rates** and be **less careful about initialization**. It also acts as a **regularizer**, in some cases eliminating the need for Dropout. 
+- ![BN_1](./images/BN_1.png)
+- ![BN_2](./images/BN_2.png)
