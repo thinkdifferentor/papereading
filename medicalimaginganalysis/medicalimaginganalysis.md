@@ -42,6 +42,7 @@
   - [03 Learning Topological Interactions for Multi-Class Medical Image Segmentation](#03-learning-topological-interactions-for-multi-class-medical-image-segmentation)
   - [04 Large-Kernel Attention for 3D Medical Image Segmentation](#04-large-kernel-attention-for-3d-medical-image-segmentation)
   - [05 Two-Stream UNET Networks for Semantic Segmentation in Medical Images](#05-two-stream-unet-networks-for-semantic-segmentation-in-medical-images)
+  - [06 CRIS: CLIP-Driven Referring Image Segmentation](#06-cris-clip-driven-referring-image-segmentation)
 
 <!-- /TOC -->
 
@@ -438,3 +439,13 @@ Direct usage of the CLIP can be sub-optimal for pixel-level prediction tasks, e.
 - GVF is the **vector field** that is produced by a process that smooths and diffuses an input vector field. It is usually used to create a vector field from images that points to **object edges** from a distance. If we consider semantic segmentation as pixel **moving to boundary task**, the **VS is trained to learn how pixels move to the object boundary**, and the **SS is train to learn to recognize objects**. It is obvious that it is an exact process of the image semantic segmentation task. 
 - There are two major reasons that two-stream networks are **well-suited** for medical image segmentation: **(1) Each objects (organs) in medical images have their-owned shape. and (2) The relationship among the location of the objects are fixed.**
 - ![Two-Stream UNET Networks_1](./images/Two-Stream%20UNET%20Networks_1.png)
+
+
+## [06 CRIS: CLIP-Driven Referring Image Segmentation](./segmentation/CRIS%20CLIP-Driven%20Referring%20Image%20Segmentation.pdf)
+- Wang Z, Lu Y, Li Q, et al./CVPR/2022/3
+- Referring image segmentation(**text-to-pixel not text-to-image feature learning**) aims to **segment a referent via a natural linguistic expression**. Due to **the distinct data** properties between text and image, it is challenging for a network to **well align text and pixel-level features**. Existing approaches use pretrained models to facilitate learning, yet **separately** transfer the **language/vision knowledge** from pretrained models, **ignoring the multi-modal corresponding information**.
+- Unlike semantic and instance segmentation, which requires segmenting the visual entities **belonging to a pre-determined set of categories**, referring image segmentation is **not limited to indicating specific categories** but finding a particular region according to the **input language expression**.
+- Direct usage of the CLIP can be **sub-optimal for pixel-level prediction tasks**, e.g., referring image segmentation, duo to the **discrepancy between image-level and pixel-level prediction**. The former focuses on **the global information** of an input image, while the latter needs to learn **fine-grained visual representations** for each spatial activation.
+- Firstly, **visual-language decoder** that captures **long-range dependencies** of pixel-level features through the self-attention operation and adaptively propagate fine-structured textual features into pixel-level features through the cross-attention operation. Secondly, we introduce the **text-to-pixel contrastive learning**, which can **align linguistic features and the corresponding pixel-level features**, meanwhile **distinguishing irrelevant pixel-level features in the multi-modal embedding space**.
+- ![CRIS_1](./images/CRIS_1.png)
+- ![CRIS_2](./images/CRIS_2.png)
