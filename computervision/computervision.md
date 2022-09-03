@@ -18,6 +18,7 @@
 - [15 Deep High-Resolution Representation Learning for Visual Recognition](#15-deep-high-resolution-representation-learning-for-visual-recognition)
 - [16 Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift](#16-batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift)
 - [17 Interleaved Group Convolutions for Deep Neural Networks](#17-interleaved-group-convolutions-for-deep-neural-networks)
+- [18 MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications](#18-mobilenets-efficient-convolutional-neural-networks-for-mobile-vision-applications)
 
 <!-- /TOC -->
 
@@ -206,3 +207,13 @@
 - One representative advantage: **Wider** than a regular convolution with **the number of parameters and the computation complexity preserved**. Various design dimensions have been considered, ranging from **small kernels**, **identity mappings** or **general multi-branch structures** for easing the training of very deep networks, and multi-branch structures for increasing the width. Our interest is **to reduce the redundancy of convolutional kernels**. The redundancy comes from two extents: **the spatial extent**(small kernels etc.) and **the channel extent** (group convolutions, channel-wise convolutions , separable filter etc.). This work belongs to the kernel design in the channel extent.
 - IGCV block contains two group convolutions: primary group convolution and secondary group convolution. Primary group convolutions to handle **spatial correlation**; Secondary group convolution to **blend the channels across partitions** outputted by primary group convolution and simply adopt 1 × 1 convolution kernels.
 - ![IGCV](./images/IGCV.png)
+
+
+## [18 MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications](./MobileNets%20Efficient%20Convolutional%20Neural%20Networks%20for%20Mobile%20Vision%20Applications.pdf)
+- Howard A G, Zhu M, Chen B, et al./2017/arXiv/14535
+- MobileNets are based on a streamlined architecture that uses **depthwise separable convolutions** to build light weight deep neural networks. MobileNets using **width multiplier** and **resolution multiplier** by trading off a reasonable amount of **accuracy to reduce size and latency**. In many real world applications such as robotics, self-driving car and augmented reality, the recognition tasks need to be carried out in a timely fashion on a **computationally limited platform**. Although the base MobileNet architecture is already small and low latency, many times a specific use case or application may require the model to be smaller and faster. 
+- The role of the **width multiplier** α is to thin a network uniformly at each layer. For a given layer and width multiplier α, the number of **input channels** M becomes αM and the number of **output channels** N becomes αN. 
+- The second hyper-parameter to reduce the computational cost of a neural network is a **resolution multiplier** ρ. We apply this to the **input image** and the **internal representation of every layer** is subsequently reduced by the same multiplier.
+- ![MobileNetv1_1](./images/MobileNetv1_1.png)
+- ![MobileNetv1_2](./images/MobileNetv1_2.png)
+- ![MobileNetv1_3](./images/MobileNetv1_3.png)
