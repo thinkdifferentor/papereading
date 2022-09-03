@@ -29,6 +29,7 @@
 - [V. Self-Supervised based Segmentation](#v-self-supervised-based-segmentation)
   - [00 C-CAM: Causal CAM for Weakly Supervised Semantic Segmentation on Medical Image](#00-c-cam-causal-cam-for-weakly-supervised-semantic-segmentation-on-medical-image)
   - [01 Self-Supervised Pre-Training of Swin Transformers for 3D Medical Image Analysis](#01-self-supervised-pre-training-of-swin-transformers-for-3d-medical-image-analysis)
+  - [02 Class-Balanced Pixel-Level Self-Labeling for Domain Adaptive Semantic Segmentation](#02-class-balanced-pixel-level-self-labeling-for-domain-adaptive-semantic-segmentation)
 - [VI. Transformer based Segmentation](#vi-transformer-based-segmentation)
   - [00 High-Resolution Swin Transformer for Automatic Medical Image Segmentation](#00-high-resolution-swin-transformer-for-automatic-medical-image-segmentation)
   - [01 ScaleFormer: Revisiting the Transformer-based Backbones from a Scale-wise Perspective for Medical Image Segmentation](#01-scaleformer-revisiting-the-transformer-based-backbones-from-a-scale-wise-perspective-for-medical-image-segmentation)
@@ -42,7 +43,6 @@
   - [03 Learning Topological Interactions for Multi-Class Medical Image Segmentation](#03-learning-topological-interactions-for-multi-class-medical-image-segmentation)
   - [04 Large-Kernel Attention for 3D Medical Image Segmentation](#04-large-kernel-attention-for-3d-medical-image-segmentation)
   - [05 Two-Stream UNET Networks for Semantic Segmentation in Medical Images](#05-two-stream-unet-networks-for-semantic-segmentation-in-medical-images)
-  - [06 CRIS: CLIP-Driven Referring Image Segmentation](#06-cris-clip-driven-referring-image-segmentation)
 
 <!-- /TOC -->
 
@@ -330,6 +330,18 @@ is performed by labeling each pixel as the class of the nearest prototype). With
 - ![Swin-UNETR_2](./images/Swin-UNETR_2.png)
 
 
+## [02 Class-Balanced Pixel-Level Self-Labeling for Domain Adaptive Semantic Segmentation](./segmentation/Class-Balanced%20Pixel-Level%20Self-Labeling%20for%20Domain%20Adaptive%20Semantic%20Segmentation.pdf)
+- Li R, Li S, He C, et al./2022/CVPR/2
+- **Domain adaptive semantic segmentation** aims to learn a model with the supervision of **source domain data**, and produce satisfactory dense predictions on **unlabeled target domain**. One popular solution to this challenging task is **self-training**, which selects **high-scoring predictions** on target samples as **pseudo labels** for training. However, the produced pseudo labels often contain much **noise** because *the model is biased to source domain as well as majority categories*. To address the above issues, we propose to directly explore the **intrinsic pixel distributions of target domain data**, instead of heavily relying on the source domain. 
+- However, the performance of deep models trained in one main often drops largely when they are applied to unseen domains. A natural way to improve the generalization ability of segmentation model is to **collect data from as many scenarios as possible**. However, it is very **costly** to annotate pixel-wise labels for a large amount of images . More effective and practical approaches are required to address the **domain shifts** of semantic segmentation.
+- **Unsupervised Domain Adaptation** (UDA) provides an important way to **transfer** the knowledge learned from one labeled source domain to another unlabeled target domain. Most previous works of UDA bridge the domain gap by **aligning data distributions** at the *image level , feature level or output level* , through adversarial training or auxiliary style transfer networks. However, these techniques will increase the model complexity and make the training process unstable, which **impedes their reproducibility and robustness**. Another important approach is **self-training**, which alternatively generates pseudo labels by selecting high-scoring predictions on target domain and provides supervision for the next round of training. **On one hand**, the segmentation model tends to be **biased** to source domain so that the pseudo labels produced on target domain are error-prone; **on the other hand**, highly-confident predictions may only provide very limited supervision information for the model training. 
+- Our idea comes from the fact that *pixel-wise cluster assignments could reveal the intrinsic distributions of pixels in target domain*, and provide useful supervision for model training. Compared to conventional label generation methods that are often biased towards source domain, cluster assignment in target domain is more **reliable** as it explores inherent data distribution.
+- ![CPSL_1](./images/CPSL_1.png)
+- P_SL can be regarded as the **weight map** to modulate the softmax probability map P_ST. The cluster assignment P_SL exploits the inherent data distribution of target domain, thus it is highly complementary to the classifier-based pseudo label P_ST which heavily relies on source domain. **On one hand**, the label noise was reduced and the bias to source domain was calibrated by exploring pixel-level intrinsic structures of target domain images. **On the other hand**, CPSL captured inherent class distribution of target domain, which effectively avoided gradual dominance of majority classes.
+- ![CPSL_2](./images/CPSL_2.png)
+
+
+
 # VI. Transformer based Segmentation
 
 ## [00 High-Resolution Swin Transformer for Automatic Medical Image Segmentation](./segmentation/High-Resolution%20Swin%20Transformer%20for%20Automatic%20Medical%20Image%20Segmentation.pdf)
@@ -371,13 +383,15 @@ an **encoder** that utilizes a sequence of Transformer blocks to convert the inp
 - The benefits of 3×3 depth-wise convolution are twofold: **one is enhancing the locality and the other one is enabling the interactions across windows**. based on the combination of the local window self-attention and the FFN with 3 × 3 depth-wise convolution, we can build the HRFormer block that **improves the memory and computation efficiency significantly**.
 
 
-## [04 CRIS: CLIP-Driven Referring Image Segmentation]()
--  
-
-
-Referring image segmentation(text-to-pixel not text-to-image feature learning) aims to segment a referent via a natural linguistic expression. Due to the distinct data properties between text and image, it is challenging for a network to well align text and pixel-level features. Existing approaches use pretrained models to facilitate learning, yet separately transfer the language/vision knowledge from pretrained models, ignoring the multi-modal corresponding information.
-Unlike semantic and instance segmentation, which requires segmenting the visual entities belonging to a pre-determined set of categories, referring image segmentation is not limited to indicating specific categories but finding a particular region according to the input language expression.
-Direct usage of the CLIP can be sub-optimal for pixel-level prediction tasks, e.g., referring image segmentation, duo to the discrepancy between image-level and pixel-level prediction. The former focuses on the global information of an input image, while the latter needs to learn fine-grained visual representations for each spatial activation.
+## [04 CRIS: CLIP-Driven Referring Image Segmentation](./segmentation/CRIS%20CLIP-Driven%20Referring%20Image%20Segmentation.pdf)
+- Wang Z, Lu Y, Li Q, et al./CVPR/2022/3
+- Referring image segmentation(**text-to-pixel not text-to-image feature learning**) aims to **segment a referent via a natural linguistic expression**. Due to **the distinct data** properties between text and image, it is challenging for a network to **well align text and pixel-level features**. Existing approaches use pretrained models to facilitate learning, yet **separately** transfer the **language/vision knowledge** from pretrained models, **ignoring the multi-modal corresponding information**.
+- Unlike semantic and instance segmentation, which requires segmenting the visual entities **belonging to a pre-determined set of categories**, referring image segmentation is **not limited to indicating specific categories** but finding a particular region according to the **input language expression**.
+- Direct usage of the CLIP can be **sub-optimal for pixel-level prediction tasks**, e.g., referring image segmentation, duo to the **discrepancy between image-level and pixel-level prediction**. The former focuses on **the global information** of an input image, while the latter needs to learn **fine-grained visual representations** for each spatial activation.
+- Firstly, **visual-language decoder** that captures **long-range dependencies** of pixel-level features through the self-attention operation and adaptively propagate fine-structured textual features into pixel-level features through the cross-attention operation. Secondly, we introduce the **text-to-pixel contrastive learning**, which can **align linguistic features and the corresponding pixel-level features**, meanwhile **distinguishing irrelevant pixel-level features in the multi-modal embedding space**.
+- ![CRIS_1](./images/CRIS_1.png)
+- ![CRIS_2](./images/CRIS_2.png)
+ 
 
 # VII. Others
 
@@ -441,11 +455,3 @@ Direct usage of the CLIP can be sub-optimal for pixel-level prediction tasks, e.
 - ![Two-Stream UNET Networks_1](./images/Two-Stream%20UNET%20Networks_1.png)
 
 
-## [06 CRIS: CLIP-Driven Referring Image Segmentation](./segmentation/CRIS%20CLIP-Driven%20Referring%20Image%20Segmentation.pdf)
-- Wang Z, Lu Y, Li Q, et al./CVPR/2022/3
-- Referring image segmentation(**text-to-pixel not text-to-image feature learning**) aims to **segment a referent via a natural linguistic expression**. Due to **the distinct data** properties between text and image, it is challenging for a network to **well align text and pixel-level features**. Existing approaches use pretrained models to facilitate learning, yet **separately** transfer the **language/vision knowledge** from pretrained models, **ignoring the multi-modal corresponding information**.
-- Unlike semantic and instance segmentation, which requires segmenting the visual entities **belonging to a pre-determined set of categories**, referring image segmentation is **not limited to indicating specific categories** but finding a particular region according to the **input language expression**.
-- Direct usage of the CLIP can be **sub-optimal for pixel-level prediction tasks**, e.g., referring image segmentation, duo to the **discrepancy between image-level and pixel-level prediction**. The former focuses on **the global information** of an input image, while the latter needs to learn **fine-grained visual representations** for each spatial activation.
-- Firstly, **visual-language decoder** that captures **long-range dependencies** of pixel-level features through the self-attention operation and adaptively propagate fine-structured textual features into pixel-level features through the cross-attention operation. Secondly, we introduce the **text-to-pixel contrastive learning**, which can **align linguistic features and the corresponding pixel-level features**, meanwhile **distinguishing irrelevant pixel-level features in the multi-modal embedding space**.
-- ![CRIS_1](./images/CRIS_1.png)
-- ![CRIS_2](./images/CRIS_2.png)
