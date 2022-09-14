@@ -20,6 +20,7 @@
 - [17 Interleaved Group Convolutions for Deep Neural Networks](#17-interleaved-group-convolutions-for-deep-neural-networks)
 - [18 MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications](#18-mobilenets-efficient-convolutional-neural-networks-for-mobile-vision-applications)
 - [19 MobileNetV2: Inverted Residuals and Linear Bottlenecks](#19-mobilenetv2-inverted-residuals-and-linear-bottlenecks)
+- [20 Searching for MobileNetV3](#20-searching-for-mobilenetv3)
 
 <!-- /TOC -->
 
@@ -233,3 +234,15 @@
 - ![MobileNetV2_3](./images/MobileNetV2_3.png)
 - ![MobileNetV2_4](./images/MobileNetV2_4.png)
 - ![MobileNetV2_5](./images/MobileNetV2_5.png)
+
+
+## [20 Searching for MobileNetV3](./Searching%20for%20MobileNetV3.pdf)
+- Howard A, Sandler M, Chu G, et al./2019/ICCV/2660
+- MobileNetV3 is tuned to mobile phone CPUs through a combination of hardware-aware **network architecture search (NAS)** complemented by the **NetAdapt algorithm** and then subsequently improved through **novel architecture advances**. 
+- Depthwise separable convolutions are defined by two separate layers: light weight depthwise convolution for **spatial filtering** and heavier 1x1 pointwise convolutions for **feature generation**.
+- For MobileNetV3 we use platform-aware NAS to search for the **global network structures** by optimizing each network block. We then use the NetAdapt algorithm to search **per layer for the number of filters**. *These techniques are complementary and can be combined to effectively find optimized models for a given hardware platform*.
+- ![MobileNetV3_1](./images/MobileNetV3_1.png)
+- ![MobileNetV3_2](./images/MobileNetV3_2.png)
+- ![MobileNetV3_3](./images/MobileNetV3_3.png)
+- ![MobileNetV3_4](./images/MobileNetV3_4.png)
+- ![MobileNetV3_5](./images/MobileNetV3_5.png)
