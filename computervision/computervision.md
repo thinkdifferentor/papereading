@@ -19,6 +19,7 @@
 - [16 Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift](#16-batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift)
 - [17 Interleaved Group Convolutions for Deep Neural Networks](#17-interleaved-group-convolutions-for-deep-neural-networks)
 - [18 MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications](#18-mobilenets-efficient-convolutional-neural-networks-for-mobile-vision-applications)
+- [19 MobileNetV2: Inverted Residuals and Linear Bottlenecks](#19-mobilenetv2-inverted-residuals-and-linear-bottlenecks)
 
 <!-- /TOC -->
 
@@ -217,3 +218,18 @@
 - ![MobileNetv1_1](./images/MobileNetv1_1.png)
 - ![MobileNetv1_2](./images/MobileNetv1_2.png)
 - ![MobileNetv1_3](./images/MobileNetv1_3.png)
+
+
+## [19 MobileNetV2: Inverted Residuals and Linear Bottlenecks](./MobileNetV2%20Inverted%20Residuals%20and%20Linear%20Bottlenecks.pdf)
+- Sandler M, Howard A, Zhu M, et al./2018/CVPR/11002
+- Our main contribution is a novel layer module: the **inverted residual** with **linear bottleneck**. This module takes as an input a low-dimensional compressed representation which is first **expanded to high dimension** and **filtered with a lightweight depthwise convolution**. Features are subsequently **projected back to a low-dimensional representation** with a linear convolution. 
+- It has been long assumed that **manifolds of interest** in neural networks could be embedded in low-dimensional subspaces. In other words, when we look at all individual d-channel pixels of a deep convolutional layer, the information encoded in those values actually lie in some manifold, which in turn is embeddable into a low-dimensional subspace. 
+- However, this intuition breaks down when we recall that deep convolutional neural networks actually have **non-linear per coordinate transformations**, such as ReLU. In other words, deep networks only have the power of a **linear classifier** on the non-zero volume part of the output domain. On the other hand, when ReLU **collapses** the channel, it inevitably loses information in that channel. However if we have lots of channels, and there is a a structure in the activation manifold that information might still be preserved in the other channels. 
+- To summarize, we have highlighted two properties that are indicative of the requirement that the **manifold of interest should lie in a low-dimensional subspace of the higher-dimensional activation space**: 
+    - 1.If the manifold of interest remains non-zero volume after ReLU transformation, it corresponds to a linear transformation; 
+    - 2.ReLU is capable of preserving complete information about the input manifold, but only if the input manifold lies in a low-dimensional subspace of the input space.
+- ![MobileNetV2_1](./images/MobileNetV2_1.png)
+- ![MobileNetV2_2](./images/MobileNetV2_2.png)
+- ![MobileNetV2_3](./images/MobileNetV2_3.png)
+- ![MobileNetV2_4](./images/MobileNetV2_4.png)
+- ![MobileNetV2_5](./images/MobileNetV2_5.png)
