@@ -18,9 +18,10 @@
 - [15 Deep High-Resolution Representation Learning for Visual Recognition](#15-deep-high-resolution-representation-learning-for-visual-recognition)
 - [16 Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift](#16-batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift)
 - [17 Interleaved Group Convolutions for Deep Neural Networks](#17-interleaved-group-convolutions-for-deep-neural-networks)
-- [18 MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications](#18-mobilenets-efficient-convolutional-neural-networks-for-mobile-vision-applications)
-- [19 MobileNetV2: Inverted Residuals and Linear Bottlenecks](#19-mobilenetv2-inverted-residuals-and-linear-bottlenecks)
-- [20 Searching for MobileNetV3](#20-searching-for-mobilenetv3)
+- [18 IGCV2: Interleaved Structured Sparse Convolutional Neural Networks](#18-igcv2-interleaved-structured-sparse-convolutional-neural-networks)
+- [19 MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications](#19-mobilenets-efficient-convolutional-neural-networks-for-mobile-vision-applications)
+- [20 MobileNetV2: Inverted Residuals and Linear Bottlenecks](#20-mobilenetv2-inverted-residuals-and-linear-bottlenecks)
+- [21 Searching for MobileNetV3](#21-searching-for-mobilenetv3)
 
 <!-- /TOC -->
 
@@ -211,7 +212,20 @@
 - ![IGCV](./images/IGCV.png)
 
 
-## [18 MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications](./MobileNets%20Efficient%20Convolutional%20Neural%20Networks%20for%20Mobile%20Vision%20Applications.pdf)
+## [18 IGCV2: Interleaved Structured Sparse Convolutional Neural Networks](./Interleaved%20Structured%20Sparse%20Convolutional%20Neural%20Networks.pdf)
+- Xie G, Wang J, Zhang T, et al./2018/CVPR/112
+- IGCV2 study the problem of designing efficient convolutional neural network architectures with the interest in **eliminating the redundancy** in convolution kernels. The efforts include (i) **network compression**: compress the pretrained model by **decomposing the convolutional kernel matrix** or **removing connections or channels** to eliminate redundancy and (ii) **architecture design**: design **small kernels, sparse kernels or use the product of less-redundant kernels** to approach single kernel and **train the networks from scratch**. IGCV2 present the complementary condition and the balance condition to guide the design of structured sparse kernels, obtaining a balance among three aspects: **model size, computation complexity and classification accuracy**.
+- Most existing technologies design **efficient and effective convolutional kernels** using various forms with redundancy eliminated, by learning from scratch or approximating pre-trained models. We roughly divide them into low-precision kernels, sparse kernels, low-rank kernels, product of low-rank kernels, product of structured sparse kernels:
+  1. **Low-precision kernels**. There exist redundancies in the weights in convolutional kernels represented by float numbers. Include **quantization, binarization, trinarization**.
+  2. **Sparse kernels**. Sparse kernels, or namely **sparse connections**, mean that some weights are nearly zero. The efforts along this path mainly lie in how to perform optimization, and the technologies include non-structure sparsity regularization, and structure sparsity regularization. The scheme of structure sparsity regularization is more friendly for hardware acceleration and storage.
+  3. **Low-rank kernels**. **Small filters**, e.g., 3 × 3 kernels replacing 5 × 5 kernels, reduce the ranks in the spatial domain. Channel pruning and Filter pruning.
+  4. **Composition from low-rank kernels**. Using a pair of 1×3 and 3 × 1 kernels to approximate a 3 × 3 kernel is an example of using the product of two small (low-rank) filters.
+  5. **Composition from sparse kernels**. Interleaved group convolution consists of two group convolutions, each of which corresponds to a structured-sparse kernel. *Xception can be viewed as an extreme case of interleaved group convolutions*.
+- ![IGCV2_1](./images/IGCV2_1.png)
+- ![IGCV2_2](./images/IGCV2_2.png)
+
+
+## [19 MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications](./MobileNets%20Efficient%20Convolutional%20Neural%20Networks%20for%20Mobile%20Vision%20Applications.pdf)
 - Howard A G, Zhu M, Chen B, et al./2017/arXiv/14535
 - MobileNets are based on a streamlined architecture that uses **depthwise separable convolutions** to build light weight deep neural networks. MobileNets using **width multiplier** and **resolution multiplier** by trading off a reasonable amount of **accuracy to reduce size and latency**. In many real world applications such as robotics, self-driving car and augmented reality, the recognition tasks need to be carried out in a timely fashion on a **computationally limited platform**. Although the base MobileNet architecture is already small and low latency, many times a specific use case or application may require the model to be smaller and faster. 
 - The role of the **width multiplier** α is to thin a network uniformly at each layer. For a given layer and width multiplier α, the number of **input channels** M becomes αM and the number of **output channels** N becomes αN. 
@@ -221,7 +235,7 @@
 - ![MobileNetv1_3](./images/MobileNetv1_3.png)
 
 
-## [19 MobileNetV2: Inverted Residuals and Linear Bottlenecks](./MobileNetV2%20Inverted%20Residuals%20and%20Linear%20Bottlenecks.pdf)
+## [20 MobileNetV2: Inverted Residuals and Linear Bottlenecks](./MobileNetV2%20Inverted%20Residuals%20and%20Linear%20Bottlenecks.pdf)
 - Sandler M, Howard A, Zhu M, et al./2018/CVPR/11002
 - Our main contribution is a novel layer module: the **inverted residual** with **linear bottleneck**. This module takes as an input a low-dimensional compressed representation which is first **expanded to high dimension** and **filtered with a lightweight depthwise convolution**. Features are subsequently **projected back to a low-dimensional representation** with a linear convolution. 
 - It has been long assumed that **manifolds of interest** in neural networks could be embedded in low-dimensional subspaces. In other words, when we look at all individual d-channel pixels of a deep convolutional layer, the information encoded in those values actually lie in some manifold, which in turn is embeddable into a low-dimensional subspace. 
@@ -236,7 +250,7 @@
 - ![MobileNetV2_5](./images/MobileNetV2_5.png)
 
 
-## [20 Searching for MobileNetV3](./Searching%20for%20MobileNetV3.pdf)
+## [21 Searching for MobileNetV3](./Searching%20for%20MobileNetV3.pdf)
 - Howard A, Sandler M, Chu G, et al./2019/ICCV/2660
 - MobileNetV3 is tuned to mobile phone CPUs through a combination of hardware-aware **network architecture search (NAS)** complemented by the **NetAdapt algorithm** and then subsequently improved through **novel architecture advances**. 
 - Depthwise separable convolutions are defined by two separate layers: light weight depthwise convolution for **spatial filtering** and heavier 1x1 pointwise convolutions for **feature generation**.
