@@ -22,6 +22,7 @@
 - [19 MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications](#19-mobilenets-efficient-convolutional-neural-networks-for-mobile-vision-applications)
 - [20 MobileNetV2: Inverted Residuals and Linear Bottlenecks](#20-mobilenetv2-inverted-residuals-and-linear-bottlenecks)
 - [21 Searching for MobileNetV3](#21-searching-for-mobilenetv3)
+- [22 ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices](#22-shufflenet-an-extremely-efficient-convolutional-neural-network-for-mobile-devices)
 
 <!-- /TOC -->
 
@@ -260,3 +261,13 @@
 - ![MobileNetV3_3](./images/MobileNetV3_3.png)
 - ![MobileNetV3_4](./images/MobileNetV3_4.png)
 - ![MobileNetV3_5](./images/MobileNetV3_5.png)
+
+
+## [22 ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices](./ShuffleNet%20An%20Extremely%20Efficient%20Convolutional%20Neural%20Network%20for%20Mobile.pdf)
+- Zhang X, Zhou X, Lin M, et al./2018/CVPR/4508
+- The new architecture, ShuffleNet, utilizes two new operations, **pointwise group convolution** and **channel shuffle**, to greatly *reduce computation cost while maintaining accuracy*. Many existing works focus on **pruning, compressing, or low-bit representing** a “basic” network architecture. Here we aim to explore a highly efficient basic architecture specially designed for our desired computing ranges.
+- This work notice that state-of-the-art basic architectures become less efficient in extremely small networks because of **the costly dense 1 × 1 convolutions**. ShuffleNet propose using **pointwise group convolution to reduce computation complexity of 1 × 1 convolutions**. *To overcome the side effects brought by group convolutions*, we come up with a novel **channel shuffle operation to help the information flowing across feature channe**.
+- ![ShuffleNet_1](./images/ShuffleNet_1.png)
+- In tiny networks, **expensive pointwise convolutions (95%) result in limited number of channels to meet the complexity constraint**, which might significantly **damage the accuracy**. In ShuffleNet, with an **increase in group number** (thus wider feature maps), input channels for **each convolutional filter become fewer**, **which may harm representation capability**.
+- ![ShuffleNet_2](./images/ShuffleNet_2.png)
+- ![ShuffleNet_3](./images/ShuffleNet_3.png)
