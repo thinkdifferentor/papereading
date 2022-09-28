@@ -41,6 +41,7 @@
 - [VII. Domain Adaptation](#vii-domain-adaptation)
   - [00 Open Compound Domain Adaptation](#00-open-compound-domain-adaptation)
   - [01 Source-Free Open Compound Domain Adaptation in Semantic Segmentation](#01-source-free-open-compound-domain-adaptation-in-semantic-segmentation)
+  - [03 ML-BPM: Multi-teacher Learning with Bidirectional Photometric Mixing for Open Compound Domain Adaptation in Semantic Segmentation](#03-ml-bpm-multi-teacher-learning-with-bidirectional-photometric-mixing-for-open-compound-domain-adaptation-in-semantic-segmentation)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -440,6 +441,15 @@ randomly exchanges the styles among patches by the instance normalization and de
 - ![SF_OCDA_2](./images/SF_OCDA_2.png)
 - ![SF_OCDA_3](./images/SF_OCDA_3.png)
 
+
+## [03 ML-BPM: Multi-teacher Learning with Bidirectional Photometric Mixing for Open Compound Domain Adaptation in Semantic Segmentation](./domainadaptation/ML-BPM%20Multi-teacher%20Learning%20with%20Bidirectional%20Photometric%20Mixing%20for%20Open%20Compound%20Domain%20Adaptation%20in%20Semantic%20Segmentation.pdf)
+- Pan F, Hur S, Lee S, et al./2022/arXiv/-
+- Current OCDA for semantic segmentation methods adopt **manual domain separation** and employ a **single model** to simultaneously adapt to all the target subdomains. However, *adapting to a target subdomain might hinder the model from adapting to other dissimilar target subdomains*, which leads to limited performance.
+- multi-teacher framework with bidirectional photometric mixing (**ML-BPM**) to **separately adapt to every target subdomain**. First, we present an **automatic domain separation** to find the **optimal number of subdomains**. On this basis, we propose a **multi-teacher framework** in which **each teacher model** uses **bidirectional photometric mixing** to adapt to **one target subdomain**. Furthermore, we conduct an **adaptive distillation** to learn a student model and apply **consistency regularization** to improve the student generalization.
+- In UDA, adversarial learning is used actively to **align input-level style** using **image translation**, **feature distribution**, or **structured output**. The purpose of domain generalization (DG) is to
+train a model – **solely using source domain data** – such that it can perform **reliable predictions on unseen domain**. Even though DG for semantic segmentation has achieve obvious progress, their performance is inevitably lower than several UDA methods due to the absence of the target images, which is capable ofproviding abundant domain-specific information.
+- ![ML-BPM_1](./images/ML_BPM_1.png)
+- ![ML-BPM_2](./images/ML_BPM_2.png)
 
 # VIII. Others
 
