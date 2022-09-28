@@ -5,6 +5,7 @@
   - [01 Survey Study Of Multimodality Medical Image Fusion Methods](#01-survey-study-of-multimodality-medical-image-fusion-methods)
   - [02 Deep Learning Techniques for Medical Image Segmentation: Achievements and Challenges](#02-deep-learning-techniques-for-medical-image-segmentation-achievements-and-challenges)
   - [03 U-Net and Its Variants for Medical Image Segmentation A Review of Theory and Applications](#03-u-net-and-its-variants-for-medical-image-segmentation-a-review-of-theory-and-applications)
+  - [04 A brief review of domain adaptation](#04-a-brief-review-of-domain-adaptation)
 - [II. Unet & Unet based Semantic Segmentation](#ii-unet--unet-based-semantic-segmentation)
   - [00 SegNet: A Deep Convolutional Encoder-Decoder Architecture for Image Segmentation](#00-segnet-a-deep-convolutional-encoder-decoder-architecture-for-image-segmentation)
   - [01 U-Net: Convolutional Networks for Biomedical Image Segmentation](#01-u-net-convolutional-networks-for-biomedical-image-segmentation)
@@ -128,6 +129,10 @@ feedback loops into a convolutional layer. The feedback is applied after both co
 - **ADVERSARIAL U-NET:** An adversarial model is a setup in which two networks compete against each other in order to improve their performance.  The key difference in adversarial U-nets is that the goal of the generator is not to produce new images but rather **transformed images**. 
 - ![ADVERSARIAL U-NET](./images/U-Net%20and%20Its%20Variants%20for%20Medical%20Image%20Segmentation_3.png)
 - **ENSEMBLE U-NET:** 1) Cascading two or more U-nets: each stage for the different levels of segmentation from coarse to fine; 2) Parallel two or more U-nets: parallel training same U-nets to improved segmentation accuracy.
+
+
+## [04 A brief review of domain adaptation](./survey/A%20brief%20review%20of%20domain%20adaptation.pdf)
+- Farahani A, Voghoei S, Rasheed K, et al./2021/Advances in Data Science and Information Engineering/56
 
 
 # II. Unet & Unet based Semantic Segmentation
