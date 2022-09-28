@@ -42,6 +42,7 @@
   - [00 Open Compound Domain Adaptation](#00-open-compound-domain-adaptation)
   - [01 Source-Free Open Compound Domain Adaptation in Semantic Segmentation](#01-source-free-open-compound-domain-adaptation-in-semantic-segmentation)
   - [03 ML-BPM: Multi-teacher Learning with Bidirectional Photometric Mixing for Open Compound Domain Adaptation in Semantic Segmentation](#03-ml-bpm-multi-teacher-learning-with-bidirectional-photometric-mixing-for-open-compound-domain-adaptation-in-semantic-segmentation)
+  - [04 Discover, Hallucinate, and Adapt: Open Compound Domain Adaptation for Semantic Segmentation](#04-discover-hallucinate-and-adapt-open-compound-domain-adaptation-for-semantic-segmentation)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -450,6 +451,20 @@ randomly exchanges the styles among patches by the instance normalization and de
 train a model – **solely using source domain data** – such that it can perform **reliable predictions on unseen domain**. Even though DG for semantic segmentation has achieve obvious progress, their performance is inevitably lower than several UDA methods due to the absence of the target images, which is capable ofproviding abundant domain-specific information.
 - ![ML-BPM_1](./images/ML_BPM_1.png)
 - ![ML-BPM_2](./images/ML_BPM_2.png)
+
+
+## [04 Discover, Hallucinate, and Adapt: Open Compound Domain Adaptation for Semantic Segmentation](./domainadaptation/Discover%2C%20Hallucinate%2C%20and%20Adapt%20Open%20Compound%20Domain%20Adaptation%20for%20Semantic%20Segmentation.pdf)
+- Park K, Woo S, Shin I, et al./2020/NIPS/16
+- **Three main design principles: discover, hallucinate, and adapt**. The scheme first **clusters compound target data based on *style***, discovering multiple latent domains (**discover**). Then, it
+hallucinates **multiple latent target domains in source by using image-translation** (**hallucinate**). This step ensures *the latent domains in the source and the target to be paired*. Finally, **target-to-source alignment** is learned separately between domains(**adapt**). The **key idea** is simple and intuitive: *decompose a hard OCDA problem into multiple easy UDA problems*. We can then *ease the optimization difficulties of OCDA and also benefit from the various well-developed UDA techniques*.
+- A naive way to perform OCDA is to apply the current UDA methods directly, viewing the compound target as a **uni-modal distribution**. As expected, this method has a fundamental limitation; **It induces a biased alignment,** where only the target data that are close to source aligns well. However, the compound target includes **various domains that are both close to and far from the source**.
+- **Discover**: Multiple Latent Target Domains Discovery. The key motivation of the discovery step is to **make implicit multiple target domains explicit**. 
+**Hallucinate**: Latent Target Domains Hallucination in Source  (**image-translation**). By using image-translation, the hallucination step **reduces the domain gap between the source and the
+target in a pixel-level**. Those **translated source images** are closely aligned with the compound target images, easing the optimization difficulties of OCDA. Moreover, various latent data distributions can be covered by the segmentation model, as the translated source data which **changes the classifier boundary is used for training**.
+**Adapt**: Domain-wise Adversaries. given **K target latent domains** and **translated K source domains** the model attempts to learn domain-invariant features (ranslated source and latent targets are both a **uni-modal** now). One might attempt to apply the existing state-of-the-art UDA methods. However, as the latent multi-mode structure is not fully exploited and  it gets the sub-optimal in inferior stage. Therefore, this work propose to utilize K different discriminators to achieve (latent) domainwise adversaries.
+- ![DHA_1](./images/DHA_1.png)
+- ![DHA_2](./images/DHA_2.png)
+
 
 # VIII. Others
 
