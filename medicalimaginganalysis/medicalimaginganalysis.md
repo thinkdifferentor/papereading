@@ -40,6 +40,7 @@
   - [04 CRIS: CLIP-Driven Referring Image Segmentation](#04-cris-clip-driven-referring-image-segmentation)
 - [VII. Domain Adaptation](#vii-domain-adaptation)
   - [00 Open Compound Domain Adaptation](#00-open-compound-domain-adaptation)
+  - [01 Source-Free Open Compound Domain Adaptation in Semantic Segmentation](#01-source-free-open-compound-domain-adaptation-in-semantic-segmentation)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -426,6 +427,18 @@ according to their distances (*domain gap*) to the source domain, to be used for
 - ![OCDA_3](./images/OCDA_3.png)
 - ![OCDA_4](./images/OCDA_4.png)
 - ![OCDA_5](./images/OCDA_5.png)
+
+
+## [01 Source-Free Open Compound Domain Adaptation in Semantic Segmentation](./domainadaptation/Source-Free%20Open%20Compound%20Domain%20Adaptation%20in%20Semantic%20Segmentation.pdf)
+- Zhao Y, Zhong Z, Luo Z, et al./2022/IEEE Transactions on Circuits and Systems for Video Technology/13
+- - SF-OCDA is more challenging than the traditional domain adaptation but it is more practical.
+It jointly considers (1) the issues of **data privacy and data storage** and (2) the scenario of **multiple target domains and unseen open domains**. In SF-OCDA, only **the source pre-trained model and the target data** are available to learn the target model. The model is evaluated on the samples from the **target and unseen open domains**. To solve this problem, we present an effective framework by separating the training process into two stages: (1) **pre-training a generalized source model** and (2) **adapting a target model with self-supervised learning**.
+- **Cross-Patch Style Swap (CPSS)** to **diversify samples(**augment the samples with various image styles**)** with **various patch styles** in the feature-level, which can benefit the training of both stages. First, CPSS can significantly improve the **generalization ability** of the source model, providing more **accurate pseudo-labels** for the latter stage. Second, CPSS can **reduce the influence of noisy pseudo-labels** and also **avoid the model overfitting** to the target domain during self-supervised learning, consistently **boosting the performance on the target and open domains**. Specifically, CPSS first extracts the styles of patches in feature maps and then
+randomly exchanges the styles among patches by the instance normalization and de-normalization. Additional, *CPSS is a lightweight module without learnable parameters, which can be readily injected into existing segmentation models*.
+- Unsupervised Domain Adaptation (UDA), which aims to transfer the knowledge of **labeled synthetic data to unlabeled real-world data by align the domain gap between the source and the target domain**. In OCDA, the unlabeled target domain is a compound of multiple homogeneous domains without domain labels, given a **labeled (synthetic) source domain S** and an **unlabeled (real) compound target domain T** . The goal is to train a model that can accurately predict semantic labels for instances from **the compound and open target domains**.
+- ![SF_OCDA_1](./images/SF_OCDA_1.png)
+- ![SF_OCDA_2](./images/SF_OCDA_2.png)
+- ![SF_OCDA_3](./images/SF_OCDA_3.png)
 
 
 # VIII. Others
