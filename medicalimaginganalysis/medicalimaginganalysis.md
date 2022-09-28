@@ -6,6 +6,7 @@
   - [02 Deep Learning Techniques for Medical Image Segmentation: Achievements and Challenges](#02-deep-learning-techniques-for-medical-image-segmentation-achievements-and-challenges)
   - [03 U-Net and Its Variants for Medical Image Segmentation A Review of Theory and Applications](#03-u-net-and-its-variants-for-medical-image-segmentation-a-review-of-theory-and-applications)
   - [04 A brief review of domain adaptation](#04-a-brief-review-of-domain-adaptation)
+  - [05 Domain Adaptation for Medical Image Analysis: A Survey](#05-domain-adaptation-for-medical-image-analysis-a-survey)
 - [II. Unet & Unet based Semantic Segmentation](#ii-unet--unet-based-semantic-segmentation)
   - [00 SegNet: A Deep Convolutional Encoder-Decoder Architecture for Image Segmentation](#00-segnet-a-deep-convolutional-encoder-decoder-architecture-for-image-segmentation)
   - [01 U-Net: Convolutional Networks for Biomedical Image Segmentation](#01-u-net-convolutional-networks-for-biomedical-image-segmentation)
@@ -133,6 +134,11 @@ feedback loops into a convolutional layer. The feedback is applied after both co
 
 ## [04 A brief review of domain adaptation](./survey/A%20brief%20review%20of%20domain%20adaptation.pdf)
 - Farahani A, Voghoei S, Rasheed K, et al./2021/Advances in Data Science and Information Engineering/56
+
+
+## [05 Domain Adaptation for Medical Image Analysis: A Survey](./survey/Domain%20Adaptation%20for%20Medical%20Image%20Analysis%20A%20Survey.pdf)
+- Guan H, Liu M./2021/IEEE Transactions on Biomedical Engineering/78
+- 
 
 
 # II. Unet & Unet based Semantic Segmentation
