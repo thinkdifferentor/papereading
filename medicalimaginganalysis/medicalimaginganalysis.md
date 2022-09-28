@@ -38,7 +38,9 @@
   - [02 UNETR: Transformers for 3D Medical Image Segmentation](#02-unetr-transformers-for-3d-medical-image-segmentation)
   - [03 HRFormer: High-Resolution Transformer for Dense Prediction](#03-hrformer-high-resolution-transformer-for-dense-prediction)
   - [04 CRIS: CLIP-Driven Referring Image Segmentation](#04-cris-clip-driven-referring-image-segmentation)
-- [VII. Others](#vii-others)
+- [VII. Domain Adaptation](#vii-domain-adaptation)
+  - [00 Open Compound Domain Adaptation](#00-open-compound-domain-adaptation)
+- [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
   - [02 Generalizable Cross-modality Medical Image Segmentation via Style Augmentation and Dual Normalization](#02-generalizable-cross-modality-medical-image-segmentation-via-style-augmentation-and-dual-normalization)
@@ -404,7 +406,29 @@ an **encoder** that utilizes a sequence of Transformer blocks to convert the inp
 - ![CRIS_2](./images/CRIS_2.png)
  
 
-# VII. Others
+# VII. Domain Adaptation
+
+## [00 Open Compound Domain Adaptation](./domainadaptation/Open%20Compound%20Domain%20Adaptation.pdf)
+- Liu Z, Miao Z, Pan X, et al./2020/CVPR/72
+- Whether the target contains a single homogeneous domain or multiple heterogeneous domains, existing works always assume that **there exist clear distinctions between the domains**, which is often not true in practice.
+- open compound domain adaptation (OCDA) problem, in which the target is a compound of **multiple homogeneous domains without domain labels**, reflecting realistic data collection from **mixed and novel situations**. The task is to learn a model from **labeled source domain data** and **adapt it to unlabeled compound target domain data** which could differ from the source domain on various factors.  At the inference stage, OCDA tests the model not only **in the compound target domain** but also **in open domains** that have previously unseen during training.
+- We propose a novel approach based on two technical **insights** into OCDA:
+1) a **curriculum domain adaptation strategy** to bootstrap generalization across domain distinction in a data-driven self-organizing fashion and 2) a **memory module** to increase the model's agility towards novel domains. Instance-specific curriculum domain adaptation for **handling the target of mixed domains** and memory augmented features for **handling open domains**.
+- **curriculum domain adaptation strategy** first train a neural network to 1) discriminate between classes in the labeled source domain and to 2) capture domain invariance from the easy target instanceswhich differ the least from labeled source domain data. Once the network can no longer differentiate between the source domain and the easy target domain data, we feed the network harder target instances, which are further away from the source domain.
+- **memory module** insight is to prepare our model for open domains during inference with a memory module that effectively augments the representations of an input for classification. It allows knowledge transfer from the source domain so that the network can dynamically *balance the input-conveyed information and the memory-transferred knowledge* for more classification agility towards previously unseen domains.
+- **Disentangling Domain Characteristics**：We separate characteristics specific to domains from
+those discriminative between classes. They allow us to construct a curriculum for increment domain adaptation. *The class encoder places instances in the same class in a cluster, while the domain encoder places instances according to their common appearances, regardless of their classes*.
+- **Curriculum Domain Adaptation：**We rank all the instances in the compound target domain
+according to their distances (*domain gap*) to the source domain, to be used for curriculum domain adaptation
+- **Memory Module for Open Domains：**Existing domain adaptation methods often use the features v_direct extracted directly from the input for adaptation. When the input comes from a *new domain that significantly differs from the seen domains during training*, this representatsentation becomes inadequate and could **fool the classifier**. This module contain **Class Memory，Enhancer and Domain Indicator which aim to get Source-Enhanced Representation.** All of these choices help cope with domain mismatch when the input is significantly different from the source domain.
+- ![OCDA_1](./images/OCDA_1.png)
+- ![OCDA_2](./images/OCDA_2.png)
+- ![OCDA_3](./images/OCDA_3.png)
+- ![OCDA_4](./images/OCDA_4.png)
+- ![OCDA_5](./images/OCDA_5.png)
+
+
+# VIII. Others
 
 ## [00 Fully Convolutional Networks for Semantic Segmentation](./segmentation/Fully%20Convolutional%20Networks%20for%20Semantic%20Segmentation.pdf)
 - Long J, Shelhamer E, Darrell T./2015/CVPR/26993
