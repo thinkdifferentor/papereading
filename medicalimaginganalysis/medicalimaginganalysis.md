@@ -43,6 +43,7 @@
   - [01 Source-Free Open Compound Domain Adaptation in Semantic Segmentation](#01-source-free-open-compound-domain-adaptation-in-semantic-segmentation)
   - [03 ML-BPM: Multi-teacher Learning with Bidirectional Photometric Mixing for Open Compound Domain Adaptation in Semantic Segmentation](#03-ml-bpm-multi-teacher-learning-with-bidirectional-photometric-mixing-for-open-compound-domain-adaptation-in-semantic-segmentation)
   - [04 Discover, Hallucinate, and Adapt: Open Compound Domain Adaptation for Semantic Segmentation](#04-discover-hallucinate-and-adapt-open-compound-domain-adaptation-for-semantic-segmentation)
+  - [05 Cluster, Split, Fuse, and Update: Meta-Learning for Open Compound Domain Adaptive Semantic Segmentation](#05-cluster-split-fuse-and-update-meta-learning-for-open-compound-domain-adaptive-semantic-segmentation)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -464,6 +465,16 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 **Adapt**: Domain-wise Adversaries. given **K target latent domains** and **translated K source domains** the model attempts to learn domain-invariant features (ranslated source and latent targets are both a **uni-modal** now). One might attempt to apply the existing state-of-the-art UDA methods. However, as the latent multi-mode structure is not fully exploited and  it gets the sub-optimal in inferior stage. Therefore, this work propose to utilize K different discriminators to achieve (latent) domainwise adversaries.
 - ![DHA_1](./images/DHA_1.png)
 - ![DHA_2](./images/DHA_2.png)
+
+
+## [05 Cluster, Split, Fuse, and Update: Meta-Learning for Open Compound Domain Adaptive Semantic Segmentation](./domainadaptation/Cluster%2C%20Split%2C%20Fuse%2C%20and%20Update%20Meta-Learning%20for%20Open%20Compound%20Domain%20Adaptive%20Semantic%20Segmentation.pdf)
+- Gong R, Chen Y, Paudel D P, et al./2021/CVPR/14
+- **Meta-learning** based approach to **OCDA** for semantic segmentation, **MOCDA**, by *modeling the unlabeled target domain continuously,* which consists of four key steps. First, we **cluster** target domain into multiple sub-target domains by *image styles*, extracted in an unsupervised manner. Then, different sub-target domains are **split** into independent branches, for which *batch normalization parameters* are learnt to treat them independently. A *meta-learner* is thereafter deployed to learn to **fuse** sub-target domain-specific predictions, conditioned upon the style code. Meanwhile, we learn to online **update** the model by *modela-gnostic meta-learning* (MAML) algorithm, thus to further improve generalization.
+- The method developed in OCDA does **not fully exploit the same assumption** for the task of **image segmentation**. This work  show that the homogeneous sub-domain assumption can be exploited effectively also for image segmentation.
+- The **Cluster module** extracts and clusters the *style code( extracted by unsupervised image translation framework, MUNIT)* from the target domain images automatically, dividing the target domain into *multiple sub-target domains*. The **Split module** adopts the compound-domain specific batch normalization (*CDBN*) layer to *process different sub-target domain images using different branches*. The **Fuse module** exploits a hypernetwork to *predict the weights corresponding to each branch* adaptively, conditioned on *the style code of the input image*. The final output of the network is the weighted combination of the outputs of different branches. The MAML method is utilized to train the Fuse module, so as to make the model be adapted quickly in Update module. Finally, the **Update module** is *carried out online during the inference time with one-gradient step*, which is found to be beneficial for open domains.
+- MOCDA model is trained in the multi-stage way, consisting of three steps: **i)** training the MUNIT model for style code extraction and clustering, **ii)** training with the CDBN layer in split module, **iii)** the CDBN layer is frozen, adding the hyper-network and the fuse module, and training the hypernetwork H and fine-tuning the semantic segmentation network G with MAML strategy. **iv)** Then during testing stage, our whole model, except for CDBN layer, is online updated with the MAML strategy.
+- ![MOCDA_1](./images/MOCDA_1.png)
+- ![MOCDA_2](./images/MOCDA_2.png) , ![MOCDA_3](./images/MOCDA_3.png)
 
 
 # VIII. Others
