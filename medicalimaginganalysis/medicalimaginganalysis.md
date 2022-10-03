@@ -41,9 +41,10 @@
 - [VII. Domain Adaptation](#vii-domain-adaptation)
   - [00 Open Compound Domain Adaptation](#00-open-compound-domain-adaptation)
   - [01 Source-Free Open Compound Domain Adaptation in Semantic Segmentation](#01-source-free-open-compound-domain-adaptation-in-semantic-segmentation)
-  - [03 ML-BPM: Multi-teacher Learning with Bidirectional Photometric Mixing for Open Compound Domain Adaptation in Semantic Segmentation](#03-ml-bpm-multi-teacher-learning-with-bidirectional-photometric-mixing-for-open-compound-domain-adaptation-in-semantic-segmentation)
-  - [04 Discover, Hallucinate, and Adapt: Open Compound Domain Adaptation for Semantic Segmentation](#04-discover-hallucinate-and-adapt-open-compound-domain-adaptation-for-semantic-segmentation)
-  - [05 Cluster, Split, Fuse, and Update: Meta-Learning for Open Compound Domain Adaptive Semantic Segmentation](#05-cluster-split-fuse-and-update-meta-learning-for-open-compound-domain-adaptive-semantic-segmentation)
+  - [02 ML-BPM: Multi-teacher Learning with Bidirectional Photometric Mixing for Open Compound Domain Adaptation in Semantic Segmentation](#02-ml-bpm-multi-teacher-learning-with-bidirectional-photometric-mixing-for-open-compound-domain-adaptation-in-semantic-segmentation)
+  - [03 Discover, Hallucinate, and Adapt: Open Compound Domain Adaptation for Semantic Segmentation](#03-discover-hallucinate-and-adapt-open-compound-domain-adaptation-for-semantic-segmentation)
+  - [04 Cluster, Split, Fuse, and Update: Meta-Learning for Open Compound Domain Adaptive Semantic Segmentation](#04-cluster-split-fuse-and-update-meta-learning-for-open-compound-domain-adaptive-semantic-segmentation)
+  - [05 Amplitude Spectrum Transformation for Open Compound Domain Adaptive Semantic Segmentation](#05-amplitude-spectrum-transformation-for-open-compound-domain-adaptive-semantic-segmentation)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -444,7 +445,7 @@ randomly exchanges the styles among patches by the instance normalization and de
 - ![SF_OCDA_3](./images/SF_OCDA_3.png)
 
 
-## [03 ML-BPM: Multi-teacher Learning with Bidirectional Photometric Mixing for Open Compound Domain Adaptation in Semantic Segmentation](./domainadaptation/ML-BPM%20Multi-teacher%20Learning%20with%20Bidirectional%20Photometric%20Mixing%20for%20Open%20Compound%20Domain%20Adaptation%20in%20Semantic%20Segmentation.pdf)
+## [02 ML-BPM: Multi-teacher Learning with Bidirectional Photometric Mixing for Open Compound Domain Adaptation in Semantic Segmentation](./domainadaptation/ML-BPM%20Multi-teacher%20Learning%20with%20Bidirectional%20Photometric%20Mixing%20for%20Open%20Compound%20Domain%20Adaptation%20in%20Semantic%20Segmentation.pdf)
 - Pan F, Hur S, Lee S, et al./2022/arXiv/-
 - Current OCDA for semantic segmentation methods adopt **manual domain separation** and employ a **single model** to simultaneously adapt to all the target subdomains. However, *adapting to a target subdomain might hinder the model from adapting to other dissimilar target subdomains*, which leads to limited performance.
 - multi-teacher framework with bidirectional photometric mixing (**ML-BPM**) to **separately adapt to every target subdomain**. First, we present an **automatic domain separation** to find the **optimal number of subdomains**. On this basis, we propose a **multi-teacher framework** in which **each teacher model** uses **bidirectional photometric mixing** to adapt to **one target subdomain**. Furthermore, we conduct an **adaptive distillation** to learn a student model and apply **consistency regularization** to improve the student generalization.
@@ -454,7 +455,7 @@ train a model – **solely using source domain data** – such that it can perfo
 - ![ML-BPM_2](./images/ML_BPM_2.png)
 
 
-## [04 Discover, Hallucinate, and Adapt: Open Compound Domain Adaptation for Semantic Segmentation](./domainadaptation/Discover%2C%20Hallucinate%2C%20and%20Adapt%20Open%20Compound%20Domain%20Adaptation%20for%20Semantic%20Segmentation.pdf)
+## [03 Discover, Hallucinate, and Adapt: Open Compound Domain Adaptation for Semantic Segmentation](./domainadaptation/Discover%2C%20Hallucinate%2C%20and%20Adapt%20Open%20Compound%20Domain%20Adaptation%20for%20Semantic%20Segmentation.pdf)
 - Park K, Woo S, Shin I, et al./2020/NIPS/16
 - **Three main design principles: discover, hallucinate, and adapt**. The scheme first **clusters compound target data based on *style***, discovering multiple latent domains (**discover**). Then, it
 hallucinates **multiple latent target domains in source by using image-translation** (**hallucinate**). This step ensures *the latent domains in the source and the target to be paired*. Finally, **target-to-source alignment** is learned separately between domains(**adapt**). The **key idea** is simple and intuitive: *decompose a hard OCDA problem into multiple easy UDA problems*. We can then *ease the optimization difficulties of OCDA and also benefit from the various well-developed UDA techniques*.
@@ -467,7 +468,7 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - ![DHA_2](./images/DHA_2.png)
 
 
-## [05 Cluster, Split, Fuse, and Update: Meta-Learning for Open Compound Domain Adaptive Semantic Segmentation](./domainadaptation/Cluster%2C%20Split%2C%20Fuse%2C%20and%20Update%20Meta-Learning%20for%20Open%20Compound%20Domain%20Adaptive%20Semantic%20Segmentation.pdf)
+## [04 Cluster, Split, Fuse, and Update: Meta-Learning for Open Compound Domain Adaptive Semantic Segmentation](./domainadaptation/Cluster%2C%20Split%2C%20Fuse%2C%20and%20Update%20Meta-Learning%20for%20Open%20Compound%20Domain%20Adaptive%20Semantic%20Segmentation.pdf)
 - Gong R, Chen Y, Paudel D P, et al./2021/CVPR/14
 - **Meta-learning** based approach to **OCDA** for semantic segmentation, **MOCDA**, by *modeling the unlabeled target domain continuously,* which consists of four key steps. First, we **cluster** target domain into multiple sub-target domains by *image styles*, extracted in an unsupervised manner. Then, different sub-target domains are **split** into independent branches, for which *batch normalization parameters* are learnt to treat them independently. A *meta-learner* is thereafter deployed to learn to **fuse** sub-target domain-specific predictions, conditioned upon the style code. Meanwhile, we learn to online **update** the model by *modela-gnostic meta-learning* (MAML) algorithm, thus to further improve generalization.
 - The method developed in OCDA does **not fully exploit the same assumption** for the task of **image segmentation**. This work  show that the homogeneous sub-domain assumption can be exploited effectively also for image segmentation.
@@ -475,6 +476,20 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - MOCDA model is trained in the multi-stage way, consisting of three steps: **i)** training the MUNIT model for style code extraction and clustering, **ii)** training with the CDBN layer in split module, **iii)** the CDBN layer is frozen, adding the hyper-network and the fuse module, and training the hypernetwork H and fine-tuning the semantic segmentation network G with MAML strategy. **iv)** Then during testing stage, our whole model, except for CDBN layer, is online updated with the MAML strategy.
 - ![MOCDA_1](./images/MOCDA_1.png)
 - ![MOCDA_2](./images/MOCDA_2.png) , ![MOCDA_3](./images/MOCDA_3.png)
+
+
+## [05 Amplitude Spectrum Transformation for Open Compound Domain Adaptive Semantic Segmentation](./domainadaptation/Amplitude%20Spectrum%20Transformation%20for%20Open%20Compound%20Domain%20Adaptive%20Semantic%20Segmentation.pdf)
+- Kundu J N, Kulkarni A R, Bhambri S, et al./2022/AAAI/1
+- **Hypothesize** of this work: *an improved disentanglement of domain-related and task-related factors of dense intermediate layer features can greatly aid OCDA*. Prior-arts attempt this indirectly by employing **adversarial domain discriminators** on the spatial CNN output. However, We find that latent features derived from the **Fourier-based amplitude spectrum** of deep CNN features hold a more tractable mapping with domain discrimination.
+- During adaptation, we employ the AST auto-encoder for two purposes. **First**, carefully mined **source-target instance pairs** undergo a simulation of cross-domain feature stylization (ASTSim) at a particular layer by altering the AST-latent. **Second**, AST operating at a later layer is tasked to **normalize (AST-Norm) the domain content** by fixing its latent to a mean prototype. Our simplified adaptation technique is not only **clustering-free** but also free from **complex adversarial alignment**.
+- This work propose a **novel feature-space Amplitude Spectrum Transformation (AST-latent)**, based on a thorough analysis of **domain discriminability (DDM)**, for improved **disentanglement and manipulability** of domain characteristics. And provide insights into the usage of AST in two ways **AST-Sim** and **AST-Norm**, and propose a novel ***Simulate-then-Normalize*** strategy for effective OCDA.
+- **Observation 1**. An ERM-network trained on **multi-domain data** for dense semantic segmentation tends to *learn increasingly more domain-specific features, in the deeper layer*.
+**Remarks**. This is because the increase in **feature dimensions** for deeper layers allows more room to learn **unregularized domain-specific** hypotheses. employ **adversarial domain alignment**, aim to **minimize the DDM of deeper layer features** as a major part of the adaptation process.
+- **Observation 2**. *Domain discriminability (and thus DDM) is easily identifiable and manipulatable in the latent Zk space*. Zk be a latent representation space where the multi-domain samples are easily separable based on their domain label.
+**Remarks**. One can relate the latent AST representation as a similar measure to represent complex domain discriminating clues that are difficult to extract via multi-layer convolutional discriminator.
+- ![AST_1](./images/AST_1.png)
+- ![AST_2](./images/AST_2.png)
+- ![AST_3](./images/AST_3.png)
 
 
 # VIII. Others
