@@ -162,7 +162,33 @@ feedback loops into a convolutional layer. The feedback is applied after both co
 
 ## [05 Domain Adaptation for Medical Image Analysis: A Survey](./survey/Domain%20Adaptation%20for%20Medical%20Image%20Analysis%20A%20Survey.pdf)
 - Guan H, Liu M./2021/IEEE Transactions on Biomedical Engineering/78
-- 
+- we summarize different categories of DA methods for medical image analysis based on six problem settings:
+    1. **Model Type**: Shallow DA（human-engineered imaging features and conventional machine learning models） & Deep DA（end-to-end learning and task-oriented manner）;
+    2. **Label Availability**: Supervised DA（small number of labeled data） & Semi-Supervised DA（small number of labeled data as well as redundant unlabeled data） & Unsupervised DA（unlabeled target data）;
+    3. **Modality Difference**: Single-Modality DA（the source and target domains share the same data modality） & Cross-Modality DA（the modalities of source and target domains are different with various scanning technologies）;
+    4. **Number of Sources**: Single-Source DA（assumption that there is only one source domain） & Multi-Source DA（data heterogeneity among different source domains）;
+    5. **Adaptation Step**: One-Step DA（adaption between source and target domains is accomplished in one step due to a relatively close relationship between them） & Multi-Step DA（data heterogeneity between source and target domains is significant）;
+- For medical image based learning tasks, domain adaptation can be performed at two levels, **feature-level** and **image-level**. Generally, *feature-level methods are more suitable for classification or regression problems*. *Image-level adaptation methods are often suitable for segmentation tasks to preserve more original structure information of pixels/voxels*.
+- Two commonly-used strategies in **shallow DA methods**: 1) instance weighting, and 2) feature transformation.
+    1. **Instance weighting** is one of the most popular strategies adopted by shallow DA methods for medical image analysis. In this strategy, *samples/instances in the source domain are assigned with different weights according to their relevance with target samples/instances.* Generally, source instances that are more relevant to the target instances will be assigned larger weights. After instance weighting, a learning model is trained on the re-weighted source samples, thus reducing domain shift between the source and target domains.
+    2. **Feature transformation** strategy focuses on *transforming source and target samples from their original feature spaces to a new shared feature representation space*. The goal of feature transformation for DA is to construct a **common/shared feature space** for the source and target domains to reduce their distribution gap, based on various techniques such as low-rank representation . Then, a learning model can be trained on the new feature space, which is less affected by the domain shift in the original feature space between the two domains.
+- Challenges of Data Adaptation for Medical Image Analysis:
+    1. 3D/4D Volumetric Representation
+    2. Limited Training Data
+    3. Inter-Modality Heterogeneity
+- Future Research Trends:
+    1. Task-Specific 3D/4D Models for Domain Adaptation (task-specific ROIs can help filter out these redundant/noisy regions)
+    2. Unsupervised Domain Adaptation (domain generalization and zero/few-shot learning)
+    3. **Multi-Modality Domain Adaptation**
+    4. Multi-Source/Multi-Target Domain Adaptation
+    5. **Source-Free Domain Adaptation** (handle multi-site/domain medical image data in accordance with corresponding data privacy policies, Federal Learning)
+- ![Domain Adaptation for Medical Image Analysis_1](./images/Domain%20Adaptation%20for%20Medical%20Image%20Analysis_1.png)
+- ![Domain Adaptation for Medical Image Analysis_2](./images/Domain%20Adaptation%20for%20Medical%20Image%20Analysis_2.png)
+- ![Domain Adaptation for Medical Image Analysis_3](./images/Domain%20Adaptation%20for%20Medical%20Image%20Analysis_3.png)
+- ![Domain Adaptation for Medical Image Analysis_4](./images/Domain%20Adaptation%20for%20Medical%20Image%20Analysis_4.png)
+- ![Domain Adaptation for Medical Image Analysis_5](./images/Domain%20Adaptation%20for%20Medical%20Image%20Analysis_5.png)
+- ![Domain Adaptation for Medical Image Analysis_6](./images/Domain%20Adaptation%20for%20Medical%20Image%20Analysis_6.png)
+- ![Domain Adaptation for Medical Image Analysis_7](./images/Domain%20Adaptation%20for%20Medical%20Image%20Analysis_7.png)
 
 
 # II. Unet & Unet based Semantic Segmentation
