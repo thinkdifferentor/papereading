@@ -45,6 +45,7 @@
   - [03 Discover, Hallucinate, and Adapt: Open Compound Domain Adaptation for Semantic Segmentation](#03-discover-hallucinate-and-adapt-open-compound-domain-adaptation-for-semantic-segmentation)
   - [04 Cluster, Split, Fuse, and Update: Meta-Learning for Open Compound Domain Adaptive Semantic Segmentation](#04-cluster-split-fuse-and-update-meta-learning-for-open-compound-domain-adaptive-semantic-segmentation)
   - [05 Amplitude Spectrum Transformation for Open Compound Domain Adaptive Semantic Segmentation](#05-amplitude-spectrum-transformation-for-open-compound-domain-adaptive-semantic-segmentation)
+  - [06 Open Set Domain Adaptation](#06-open-set-domain-adaptation)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -141,6 +142,22 @@ feedback loops into a convolutional layer. The feedback is applied after both co
 
 ## [04 A brief review of domain adaptation](./survey/A%20brief%20review%20of%20domain%20adaptation.pdf)
 - Farahani A, Voghoei S, Rasheed K, et al./2021/Advances in Data Science and Information Engineering/56
+- Classical machine learning assumes that ***the training and test sets come from the same distributions***. Therefore, a model learned from the labeled training data is expected to perform well on the test data. However, This assumption may not always hold in real-world applications where the training and the test data fall from **different distributions**, due to many factors, e.g., collecting the training and test sets from different sources, or having an out-dated training set due to the change of data over time.
+- In this case, there would be a discrepancy across domain distributions, and naively applying the trained model on the new dataset may cause degradation in the performance. *Domain adaptation is a sub-field within machine learning that aims to cope with these types of problems by aligning the disparity between domains such that the trained model can be generalized into the domain of interest*.
+- ***Domain adaptation is a special case of transfer learning***. These two closely related problem settings are sub-discipline of machine learning which aim to improve the performance of a target model with **insufficient or lack of annotated data** by using the knowledge from another **related domain with adequate labeled data**. Transfer learning refers to a class of machine learning problems where either the **tasks and/or domains** may change between source and target while in domain adaptations **only domains differ and tasks remain unchanged**.
+- Semi-supervised classification addresses the problem of having insufficient labeled data. This problem setting employs **abundant unlabeled samples and a small amount of annotated samples** to train a model. In this approach, both labeled and unlabeled data samples are assumed to be drawn from the **equivalent distributions**. In contrast, transfer learning and domain adaptation relax this assumption to allow domains to be from **distinct distributions**.
+- Multi-task learning, is another related task that *aims to improve generalization performance in multiple related tasks by simultaneously training them*. Since related tasks are assumed to utilize **common information**, Multi-task learning tends to learn the **underlying structure of data and share the common representations** across all tasks.
+- Multi-view learning aims to *learn from multi-view data or multiple sets of distinctive features*. The intuition behind this type of learning is that the **multi-view data contains complementary information**, and a model can learn more **comprehensive and compact representation** to improve the generalization performance.
+- Domain generalization, also tends to *train a model on multiple annotated source domains which can be generalized into an unseen target domain*. In domain generalization, **target samples are not available at the training time**. However, domain adaptation requires the target data during training to **align the shift across domains**. Generally, the performance of the former is lower than that of the latter because the latter get use of **target domain infomation**.
+- Based on the category gap, domain adaptation can be divided into four main categories: ***closed set, open set, partial, and universal domain adaptation***.
+    1. Closed set domain adaptation refers to the situation where both source and target domains **share the same classes** while there still exists a **domain gap** between domains;
+    2. Open set domain adaptation, related domains **share some labels** in the common label set and also they may have private labels. Open set domain adaptation is suitable when there are **multiple source domains** where each includes a subset of target classes. Domain adaptation techniques aim to utilize all the source domain information contained in the **shared classes** to boost the model's performance in the target domain;
+    3. Partial domain adaptation refers to the situation where the **target label set is a subset of the source label set**. In this setting, the available source domain can be considered as a generic domain that consists of an abundant number of classes, and the target is only a subset of the source label set with fewer classes;
+    4. Universal domain adaptation (UDA), generalizes the above scenarios. In contrast to the above settings, which require prior knowledge about the source and target label sets, **universal domain adaptation is not restricted to any prior knowledge**.
+- Domain shift mainly can be categorized into three classes: ***prior shift, covariate shift, and concept shift***.
+    1. Prior shift or class imbalance considers the situation where *posterior distributions are equivalent and prior distributions of classes are different between domains*. To solve a domain adaptation problem with a prior shift, we need labeled data in both source and target domains.
+    2. Covariate shift refers to a situation where *marginal probability distributions differ, while conditional probability distributions remain constant across domains*. Sample selection bias and missing data are two causes for the covariate shift. Most of the proposed domain adaptation techniques aim to solve this class of domain gap.
+    3. Concept shift, also known as data drift, is a scenario where *data distributions remain unchanged, while conditional distributions differ between domains*. Concept shift also requires labeled data in both domains to estimate the ratio of conditional distributions.
 
 
 ## [05 Domain Adaptation for Medical Image Analysis: A Survey](./survey/Domain%20Adaptation%20for%20Medical%20Image%20Analysis%20A%20Survey.pdf)
@@ -491,6 +508,10 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - ![AST_2](./images/AST_2.png)
 - ![AST_3](./images/AST_3.png)
 
+
+## [06 Open Set Domain Adaptation]()
+- Panareda Busto P, Gall J./2017/ICCV/413
+- 
 
 # VIII. Others
 
