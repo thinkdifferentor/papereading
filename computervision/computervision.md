@@ -1,32 +1,45 @@
 <!-- TOC -->
 
-- [00 Generative Adversarial Nets](#00-generative-adversarial-nets)
-- [01 Self-supervised Visual Feature Learning with Deep Neural Networks: A Survey](#01-self-supervised-visual-feature-learning-with-deep-neural-networks-a-survey)
-- [02 An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale](#02-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale)
-- [03 Swin Transformer Hierarchical Vision Transformer using Shifted Windows](#03-swin-transformer-hierarchical-vision-transformer-using-shifted-windows)
-- [04 Learning Transferable Visual Models From Natural Language Supervision](#04-learning-transferable-visual-models-from-natural-language-supervision)
-- [05 Masked Autoencoders Are Scalable Vision Learners](#05-masked-autoencoders-are-scalable-vision-learners)
-- [06 Momentum Contrast for Unsupervised Visual Representation Learning](#06-momentum-contrast-for-unsupervised-visual-representation-learning)
-- [07 A Simple Framework for Contrastive Learning of Visual Representations](#07-a-simple-framework-for-contrastive-learning-of-visual-representations)
-- [08 Dynamic Convolution: Attention over Convolution Kernels](#08-dynamic-convolution-attention-over-convolution-kernels)
-- [09 Squeeze-and-Excitation Networks](#09-squeeze-and-excitation-networks)
-- [10 Deformable Convolutional Networks](#10-deformable-convolutional-networks)
-- [11 Focal Loss for Dense Object Detection](#11-focal-loss-for-dense-object-detection)
-- [12 BEIT: BERT Pre-Training of Image Transformers](#12-beit-bert-pre-training-of-image-transformers)
-- [13 Context Autoencoder for Self-Supervised Representation Learning](#13-context-autoencoder-for-self-supervised-representation-learning)
-- [14 Selective Kernel Networks](#14-selective-kernel-networks)
-- [15 Deep High-Resolution Representation Learning for Visual Recognition](#15-deep-high-resolution-representation-learning-for-visual-recognition)
-- [16 Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift](#16-batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift)
-- [17 Interleaved Group Convolutions for Deep Neural Networks](#17-interleaved-group-convolutions-for-deep-neural-networks)
-- [18 IGCV2: Interleaved Structured Sparse Convolutional Neural Networks](#18-igcv2-interleaved-structured-sparse-convolutional-neural-networks)
-- [19 MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications](#19-mobilenets-efficient-convolutional-neural-networks-for-mobile-vision-applications)
-- [20 MobileNetV2: Inverted Residuals and Linear Bottlenecks](#20-mobilenetv2-inverted-residuals-and-linear-bottlenecks)
-- [21 Searching for MobileNetV3](#21-searching-for-mobilenetv3)
-- [22 ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices](#22-shufflenet-an-extremely-efficient-convolutional-neural-network-for-mobile-devices)
+- [I. Generative Adversarial Nets Series](#i-generative-adversarial-nets-series)
+  - [00 Generative Adversarial Nets](#00-generative-adversarial-nets)
+  - [01 Conditional Generative Adversarial Nets](#01-conditional-generative-adversarial-nets)
+  - [02 Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks](#02-unsupervised-representation-learning-with-deep-convolutional-generative-adversarial-networks)
+  - [03 Image-to-Image Translation with Conditional Adversarial Networks](#03-image-to-image-translation-with-conditional-adversarial-networks)
+  - [04 Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks](#04-unpaired-image-to-image-translation-using-cycle-consistent-adversarial-networks)
+  - [05 StackGAN: Text to Photo-realistic Image Synthesis with Stacked Generative Adversarial Networks](#05-stackgan-text-to-photo-realistic-image-synthesis-with-stacked-generative-adversarial-networks)
+  - [06 Progressive Growing of GANs for Improved Quality, Stability, and Variation](#06-progressive-growing-of-gans-for-improved-quality-stability-and-variation)
+  - [07 Large Scale GAN Training for High Fidelity Natural Image Synthesis](#07-large-scale-gan-training-for-high-fidelity-natural-image-synthesis)
+  - [08 A Style-Based Generator Architecture for Generative Adversarial Networks](#08-a-style-based-generator-architecture-for-generative-adversarial-networks)
+- [II. Contrastive Learning](#ii-contrastive-learning)
+  - [[00 ]](#00-)
+  - [01 Self-supervised Visual Feature Learning with Deep Neural Networks: A Survey](#01-self-supervised-visual-feature-learning-with-deep-neural-networks-a-survey)
+  - [02 An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale](#02-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale)
+  - [03 Swin Transformer Hierarchical Vision Transformer using Shifted Windows](#03-swin-transformer-hierarchical-vision-transformer-using-shifted-windows)
+  - [04 Learning Transferable Visual Models From Natural Language Supervision](#04-learning-transferable-visual-models-from-natural-language-supervision)
+  - [05 Masked Autoencoders Are Scalable Vision Learners](#05-masked-autoencoders-are-scalable-vision-learners)
+  - [06 Momentum Contrast for Unsupervised Visual Representation Learning](#06-momentum-contrast-for-unsupervised-visual-representation-learning)
+  - [07 A Simple Framework for Contrastive Learning of Visual Representations](#07-a-simple-framework-for-contrastive-learning-of-visual-representations)
+  - [08 Dynamic Convolution: Attention over Convolution Kernels](#08-dynamic-convolution-attention-over-convolution-kernels)
+  - [09 Squeeze-and-Excitation Networks](#09-squeeze-and-excitation-networks)
+  - [10 Deformable Convolutional Networks](#10-deformable-convolutional-networks)
+  - [11 Focal Loss for Dense Object Detection](#11-focal-loss-for-dense-object-detection)
+  - [12 BEIT: BERT Pre-Training of Image Transformers](#12-beit-bert-pre-training-of-image-transformers)
+  - [13 Context Autoencoder for Self-Supervised Representation Learning](#13-context-autoencoder-for-self-supervised-representation-learning)
+  - [14 Selective Kernel Networks](#14-selective-kernel-networks)
+  - [15 Deep High-Resolution Representation Learning for Visual Recognition](#15-deep-high-resolution-representation-learning-for-visual-recognition)
+  - [16 Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift](#16-batch-normalization-accelerating-deep-network-training-by-reducing-internal-covariate-shift)
+  - [17 Interleaved Group Convolutions for Deep Neural Networks](#17-interleaved-group-convolutions-for-deep-neural-networks)
+  - [18 IGCV2: Interleaved Structured Sparse Convolutional Neural Networks](#18-igcv2-interleaved-structured-sparse-convolutional-neural-networks)
+  - [19 MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications](#19-mobilenets-efficient-convolutional-neural-networks-for-mobile-vision-applications)
+  - [20 MobileNetV2: Inverted Residuals and Linear Bottlenecks](#20-mobilenetv2-inverted-residuals-and-linear-bottlenecks)
+  - [21 Searching for MobileNetV3](#21-searching-for-mobilenetv3)
+  - [22 ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices](#22-shufflenet-an-extremely-efficient-convolutional-neural-network-for-mobile-devices)
 
 <!-- /TOC -->
 
-## [00 Generative Adversarial Nets](./Generative%20Adversarial%20Nets.pdf)
+# I. Generative Adversarial Nets Series
+
+## [00 Generative Adversarial Nets](./generativeadversarialnets/Generative%20Adversarial%20Nets.pdf)
 - Goodfellow I, Pouget-Abadie J, Mirza M, et al./NIPS/2014/44268
 - We propose a new framework for estimating generative models via an **adversarial** process, in which we simultaneously train two models: a **generative model G** that captures the data distribution, and a **discriminative model D** that estimates the probability that a sample came from the training data rather than G. The training procedure for G is to **maximize the probability of D making a mistake**.
 - We train D to **maximize** the probability of assigning the correct label to both training examples and samples from G. We simultaneously train G to **minimize** log(1 − D(G(z))). In other words, D and G play the following **two-player minimax game** with value function V (G, D): ![GAN_1](./images/GAN_1.png)
@@ -36,11 +49,77 @@
 - ![GAN_3](./images/GAN_3.png)
 - In practice, equation 1 may not provide sufficient gradient for G to learn well. Early in learning, when G is poor, D can reject samples with high confidence because they are clearly different from the training data. In this case, log(1 − D(G(z))) saturates. Rather than training G to minimize log(1 − D(G(z))) we can train G to **maximize** log D(G(z)). This objective function results in the same fixed point of the dynamics of G and D but provides much stronger gradients early in learning. (**New problem**: D(G(z)) might close to zero and log D(G(z)) close to infinit)
 
+
+## [01 Conditional Generative Adversarial Nets](./generativeadversarialnets/Conditional%20Generative%20Adversarial%20Nets.pdf)
+- cGAN introduce the conditional version of generative adversarial nets, which can be constructed by simply feeding the data, y, wish to **condition on to both the generator and discriminator**. This model can generate MNIST digits conditioned on **class labels** and learn a multi-modal model by **automated image tagging**. 
+- ![cGAN_1](./images/cGAN_1.png)
+- ![cGAN_2](./images/cGAN_2.png)
+- ![cGAN_3](./images/cGAN_3.png)
+
+
+## [02 Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks](./generativeadversarialnets/Unsupervised%20Representation%20Learning%20with%20Deep%20Convolutional%20Generative%20Adversarial%20Networks.pdf)
+- This work hope to help bridge the gap between the **success of CNNs** for supervised learning and unsupervised learning. DCGAN introduce a class of CNNs called deep convolutional generative adversarial networks (DCGANs), **that have certain architectural constraints**, and demonstrate that they are a strong candidate for unsupervised learning.
+- ![DCGAN](./images/DCGAN.png)
+- Architecture **guidelines** for stable Deep Convolutional GANs:
+    1. Replace any pooling layers with strided convolutions (discriminator) and fractional-strided convolutions (generator).
+    2. Use batchnorm in both the generator and the discriminator.
+    3. Remove fully connected hidden layers for deeper architectures.
+    4. Use ReLU activation in generator for all layers except for the output, which uses Tanh.
+    5. Use LeakyReLU activation in the discriminator for all layers.
+
+
+## [03 Image-to-Image Translation with Conditional Adversarial Networks](./generativeadversarialnets/Image-to-Image%20Translation%20with%20Conditional%20Adversarial%20Networks.pdf)
+- This work investigate **conditional adversarial networks** as a general-purpose solution to **image-to-image translation problems**. These networks not only **learn the mapping** from input image to output image, but also **learn a loss function (the Discriminator)** to train this mapping. This makes it possible to apply the **same generic approach** to problems that traditionally would require very different loss formulations.
+- ![pixel2pixel_1](./images/pixel2pixel_1.png)
+- ![pixel2pixel_2](./images/pixel2pixel_2.png)
+- ![pixel2pixel_5](./images/pixel2pixel_5.png)
+- ![pixel2pixel_3](./images/pixel2pixel_3.png), ![pixel2pixel_4](./images/pixel2pixel_4.png)
+  
+
+## [04 Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks](./generativeadversarialnets/Unpaired%20Image-to-Image%20Translation%20using%20Cycle-Consistent%20Adversarial%20Networks.pdf)
+- **CycleGAN** present an approach for learning to translate an image from a source domain X to a target domain Y in the **absence of paired examples**. Our goal is to learn a **mapping G** : X → Y such that the distribution of images from **G(X) is indistinguishable from the distribution Y** using an adversarial loss. Because this mapping is highly under-constrained, we couple it with an **inverse mapping F** : Y → X and introduce a **cycle consistency loss** to enforce **F(G(X)) ≈ X** (and vice versa).
+- ![CycleGAN_1](./images/CycleGAN_1.png)
+- ![CycleGAN_2](./images/CycleGAN_2.png)
+- ![CycleGAN_3](./images/CycleGAN_3.png), ![CycleGAN_4](./images/CycleGAN_4.png)
+
+
+## [05 StackGAN: Text to Photo-realistic Image Synthesis with Stacked Generative Adversarial Networks](./generativeadversarialnets/StackGAN%20Text%20to%20Photo-realistic%20Image%20Synthesis%20with%20Stacked%20Generative%20Adversarial%20Networks.pdf)
+- Synthesizing high-quality images from **text descriptions** (like CLIP & DALL) is a challenging problem in computer vision and has many practical applications. Samples generated by existing textto-image approaches can **roughly** reflect the meaning of the given descriptions, but they fail to contain necessary **details and vivid** object parts. 
+- StackGAN generate 256×256 photo-realistic images conditioned on text descriptions. We *decompose the hard problem into more manageable sub-problems* through a sketch-refinement process. The Stage-I GAN sketches the **primitive shape and colors** of the object based on the given text description, yielding Stage-I low-resolution images. The Stage-II GAN takes Stage-I results and text descriptions as inputs, and generates **high-resolution images** with photo-realistic details.
+- To improve the **diversity of the synthesized images and stabilize the training** of the conditional-GAN, we introduce a novel **Conditioning Augmentation** technique that encourages smoothness in the latent conditioning manifold.
+- ![StackGAN_1](./image/../images/StackGAN_1.png)
+- ![StackGAN_2](./image/../images/StackGAN_2.png)
+- ![StackGAN_3](./image/../images/StackGAN_3.png), ![StackGAN_4](./image/../images/StackGAN_4.png)
+
+
+## [06 Progressive Growing of GANs for Improved Quality, Stability, and Variation](./generativeadversarialnets/Progressive%20Growing%20of%20GANs%20for%20Improved%20Quality%2C%20Stability%2C%20and%20Variation.pdf)
+- The key idea is to ***grow both the generator and discriminator progressively: starting from a low resolution, we add new layers that model increasingly fine details as training progresses***. This both speeds the **training up and greatly stabilizes** it, allowing us to produce images of unprecedented quality.
+- ![PGGAN_1](./images/PGGAN_1.png)
+- ![PGGAN_2](./images/PGGAN_2.png)
+
+
+## [07 Large Scale GAN Training for High Fidelity Natural Image Synthesis](./generativeadversarialnets/Large%20Scale%20GAN%20Training%20for%20High%20Fidelity%20Natural%20Image%20Synthesis.pdf)
+- Generative Adversarial Networks at the largest scale yet attempted, and study the instabilities specific to such scale. We find that applying **orthogonal regularization** to the generator renders it amenable to a simple ***“truncation trick”*** allowing fine control over the **trade-off between sample fidelity and variety** by reducing the variance of the Generator’s input. **BigGAN** lead to models which set the new state of the art in **class-conditional image synthesis.**
+- ![BigGAN_1](./images/BigGAN_1.png)
+
+
+## [08 A Style-Based Generator Architecture for Generative Adversarial Networks](./generativeadversarialnets/A%20Style-Based%20Generator%20Architecture%20for%20Generative%20Adversarial%20Networks.pdf)
+- **StyleGAN** propose an alternative generator architecture for generative adversarial networks, borrowing from **style transfer literature**. The new architecture leads to an automatically
+learned, unsupervised **separation (Disentangles)** of **high-level attributes**(e.g., pose and identity when trained on human faces) and **stochastic variation** in the generated images (e.g., freckles,
+hair), and it enables intuitive, scale-specific control of the synthesis. 
+- The new generator improves the state-of-the-art in terms of traditional distribution quality metrics, leads to demonstrably better **interpolation properties**, and also **better disentangles** the latent factors of variation.
+- ![StyleGAN_1](./images/StyleGAN_1.png)
+- ![StyleGAN_2](./images/StyleGAN_2.png)
+
+
+# II. Contrastive Learning
  
- ## [01 Self-supervised Visual Feature Learning with Deep Neural Networks: A Survey](./Self-supervised%20Visual%20Feature%20Learning%20with%20Deep%20Neural%20Networks%20A%20Survey.pdf)
- - Jing L, Tian Y./2019/Pattern Analysis and Machine Intelligence/752.
- - ![Self-supervised Visual Feature Learning with Deep Neural Networks_1](./images/Self-supervised%20Visual%20Feature%20Learning%20with%20Deep%20Neural%20Networks_1.png)
- - The pre-trained models and fine-tuned for other tasks for two main reasons: (1) the parameters learned from large-scale diverse datasets provide a good starting point, therefore, networks training on other tasks can **converge faster**, (2) the network trained on large-scale datasets already learned the hierarchy features which can help to **reduce over-fitting problem** during the training of other tasks, especially when datasets of other tasks are **small or training labels are scarce**.
+## [00 ]
+ 
+## [01 Self-supervised Visual Feature Learning with Deep Neural Networks: A Survey](./Self-supervised%20Visual%20Feature%20Learning%20with%20Deep%20Neural%20Networks%20A%20Survey.pdf)
+- Jing L, Tian Y./2019/Pattern Analysis and Machine Intelligence/752.
+- ![Self-supervised Visual Feature Learning with Deep Neural Networks_1](./images/Self-supervised%20Visual%20Feature%20Learning%20with%20Deep%20Neural%20Networks_1.png)
+- The pre-trained models and fine-tuned for other tasks for two main reasons: (1) the parameters learned from large-scale diverse datasets provide a good starting point, therefore, networks training on other tasks can **converge faster**, (2) the network trained on large-scale datasets already learned the hierarchy features which can help to **reduce over-fitting problem** during the training of other tasks, especially when datasets of other tasks are **small or training labels are scarce**.
 - The pretext tasks share two common properties: (1) visual features of images or videos need to **be captured by ConvNets** to solve the pretext tasks, (2) pseudo labels for the pretext task can be **automatically generated** based on the attributes of images or videos. After the training on the pretext task is finished, **ConvNet models** that can capture visual **features** for images or videos are obtained.
 - ![Self-supervised Visual Feature Learning with Deep Neural Networks_2](./images/Self-supervised%20Visual%20Feature%20Learning%20with%20Deep%20Neural%20Networks_2.png)
 - **Some Important Definition:**
