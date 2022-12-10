@@ -7,11 +7,11 @@
   - [03 U-Net and Its Variants for Medical Image Segmentation A Review of Theory and Applications](#03-u-net-and-its-variants-for-medical-image-segmentation-a-review-of-theory-and-applications)
   - [04 A brief review of domain adaptation](#04-a-brief-review-of-domain-adaptation)
   - [05 Domain Adaptation for Medical Image Analysis: A Survey](#05-domain-adaptation-for-medical-image-analysis-a-survey)
-- [II. Unet & Unet based Semantic Segmentation](#ii-unet--unet-based-semantic-segmentation)
+- [II. Unet \& Unet based Semantic Segmentation](#ii-unet--unet-based-semantic-segmentation)
   - [00 SegNet: A Deep Convolutional Encoder-Decoder Architecture for Image Segmentation](#00-segnet-a-deep-convolutional-encoder-decoder-architecture-for-image-segmentation)
   - [01 U-Net: Convolutional Networks for Biomedical Image Segmentation](#01-u-net-convolutional-networks-for-biomedical-image-segmentation)
   - [02 Unet++: A nested u-net architecture for medical image segmentation](#02-unet-a-nested-u-net-architecture-for-medical-image-segmentation)
-  - [03 *Unet 3+: A full-scale connected unet for medical image segmentation](#03-unet-3-a-full-scale-connected-unet-for-medical-image-segmentation)
+  - [03 \*Unet 3+: A full-scale connected unet for medical image segmentation](#03-unet-3-a-full-scale-connected-unet-for-medical-image-segmentation)
   - [04 3D U-Net: Learning Dense Volumetric Segmentation from Sparse Annotation](#04-3d-u-net-learning-dense-volumetric-segmentation-from-sparse-annotation)
   - [05 V-Net: Fully Convolutional Neural Networks for Volumetric Medical Image Segmentation](#05-v-net-fully-convolutional-neural-networks-for-volumetric-medical-image-segmentation)
   - [06 nnU-Net: A Self-configuring Method for Deep Learning-based Biomedical Image Segmentation](#06-nnu-net-a-self-configuring-method-for-deep-learning-based-biomedical-image-segmentation)
@@ -46,6 +46,7 @@
   - [04 Cluster, Split, Fuse, and Update: Meta-Learning for Open Compound Domain Adaptive Semantic Segmentation](#04-cluster-split-fuse-and-update-meta-learning-for-open-compound-domain-adaptive-semantic-segmentation)
   - [05 Amplitude Spectrum Transformation for Open Compound Domain Adaptive Semantic Segmentation](#05-amplitude-spectrum-transformation-for-open-compound-domain-adaptive-semantic-segmentation)
   - [06 Open Set Domain Adaptation](#06-open-set-domain-adaptation)
+  - [07 Learning to Adapt Structured Output Space for Semantic Segmentation](#07-learning-to-adapt-structured-output-space-for-semantic-segmentation)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -538,6 +539,17 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 ## [06 Open Set Domain Adaptation]()
 - Panareda Busto P, Gall J./2017/ICCV/413
 - 
+
+
+## [07 Learning to Adapt Structured Output Space for Semantic Segmentation](./domainadaptation/Learning%20to%20Adapt%20Structured%20Output%20Space%20for%20Semantic%20Segmentation.pdf)
+- Tsai Y H, Hung W C, Schulter S, et al./2018/CVPR/1039
+- **AdaSeg** propose an **adversarial learning** method for domain adaptation in the context of semantic segmentation. Considering *semantic segmentations as structured outputs that contain spatial similarities between the source and target domains*, we adopt adversarial learning in the **output space** （**Not feature**）. To further enhance the adapted model, we construct a **multi-level adversarial network** to effectively **perform output space domain adaptation** at **different feature levels（Close to output layer）**.
+- Different from the image classification task, **feature adaptation for semantic segmentation may suffer from the complexity of high-dimensional features** that needs to encode diverse visual cues, including **appearance, shape and context**. This motivates us to develop an effective method for **adapting pixel-level prediction** tasks rather than using feature adaptation. In semantic segmentation, we note that the **output space contains rich information, both spatially and locally**. For instance, even if images from two domains are very different in appearance, their segmentation outputs share a significant amount of similarities.
+- **AdapSet consists of two parts**: 1) a segmentation model to predict output results, and 2) a discriminator to distinguish whether the input is from the source or target segmentation output. With an adversarial loss, the proposed segmentation model aims to fool the discriminator, with the goal of *generating similar distributions in the output space for either source or target images*.
+- *With an adversarial loss on the **target prediction**, the network propagates gradients from Di to G, which would encourage G to generate similar segmentation distributions in the target domain to the source prediction.*
+- *The ultimate goal is to minimize the segmentation loss in G for source images, while maximizing the probability of target predictions being considered as source predictions.*
+- ![AdaptSeg](./images/AdaptSegNet_1.png)
+
 
 # VIII. Others
 
