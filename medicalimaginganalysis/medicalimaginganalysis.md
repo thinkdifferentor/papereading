@@ -47,6 +47,9 @@
   - [05 Amplitude Spectrum Transformation for Open Compound Domain Adaptive Semantic Segmentation](#05-amplitude-spectrum-transformation-for-open-compound-domain-adaptive-semantic-segmentation)
   - [06 Open Set Domain Adaptation](#06-open-set-domain-adaptation)
   - [07 Learning to Adapt Structured Output Space for Semantic Segmentation](#07-learning-to-adapt-structured-output-space-for-semantic-segmentation)
+  - [08 Constructing Self-motivated Pyramid Curriculums for Cross-Domain Semantic Segmentation: A Non-Adversarial Approach](#08-constructing-self-motivated-pyramid-curriculums-for-cross-domain-semantic-segmentation-a-non-adversarial-approach)
+  - [09 Synergistic Image and Feature Adaptation: Towards Cross-Modality Domain Adaptation for Medical Image Segmentation](#09-synergistic-image-and-feature-adaptation-towards-cross-modality-domain-adaptation-for-medical-image-segmentation)
+  - [10 Unsupervised Cross-Modality Domain Adaptation of ConvNets for Biomedical Image Segmentations with Adversarial Loss](#10-unsupervised-cross-modality-domain-adaptation-of-convnets-for-biomedical-image-segmentations-with-adversarial-loss)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -461,6 +464,9 @@ an **encoder** that utilizes a sequence of Transformer blocks to convert the inp
 - Liu Z, Miao Z, Pan X, et al./2020/CVPR/72
 - Whether the target contains a single homogeneous domain or multiple heterogeneous domains, existing works always assume that **there exist clear distinctions between the domains**, which is often not true in practice.
 - open compound domain adaptation (OCDA) problem, in which the target is a compound of **multiple homogeneous domains without domain labels**, reflecting realistic data collection from **mixed and novel situations**. The task is to learn a model from **labeled source domain data** and **adapt it to unlabeled compound target domain data** which could differ from the source domain on various factors.  At the inference stage, OCDA tests the model not only **in the compound target domain** but also **in open domains** that have previously unseen during training.
+- Unlike existing curriculum adaptation methods that rely on some **holistic measure** of instance difficulty, we schedule the learning of unlabeled instances in the compound target domain according to their **individual gaps** to the labeled source domain, so that we solve an incrementally harder domain adaptation problem till we cover the entire target domain.
+- We first extract **domain-specific feature representations (assuming that all the factors not covered by this class-discriminative encoder reflect domain characteristics.)** from the data and then rank the target instances according to their distances to the source domain in that feature space, ***assuming that such features do not contribute to and even distract the network from learning discriminative features for classification***. We use a **class-confusion loss** to distill the domain-specific factors and formulate it as a conventional cross-entropy loss with a randomized class label twist.
+- Intuitively, if ***the input is close enough to the source domain, the feature extracted from itself can most likely already result in accurate classification***. Consequently, this **memory-augmented network** is more agile at handling open domains than its vanilla counterpart.
 - We propose a novel approach based on two technical **insights** into OCDA:
 1) a **curriculum domain adaptation strategy** to bootstrap generalization across domain distinction in a data-driven self-organizing fashion and 2) a **memory module** to increase the model's agility towards novel domains. Instance-specific curriculum domain adaptation for **handling the target of mixed domains** and memory augmented features for **handling open domains**.
 - **curriculum domain adaptation strategy** first train a neural network to 1) discriminate between classes in the labeled source domain and to 2) capture domain invariance from the easy target instanceswhich differ the least from labeled source domain data. Once the network can no longer differentiate between the source domain and the easy target domain data, we feed the network harder target instances, which are further away from the source domain.
@@ -536,9 +542,12 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - ![AST_3](./images/AST_3.png)
 
 
-## [06 Open Set Domain Adaptation]()
-- Panareda Busto P, Gall J./2017/ICCV/413
-- 
+## [06 Open Set Domain Adaptation](./domainadaptation/Open%20Compound%20Domain%20Adaptation.pdf)
+- Panareda Busto P, Gall J./2017/ICCV/446
+- all available evaluation protocols for domain adaptation describe a ***closed set*** recognition task, where both domains, namely source and target, contain exactly the same object classes. In this work, we also explore the field of domain adaptation in ***open sets***, which is a more realistic scenario where only a few categories of interest are shared between source and target data. Therefore, we propose a method that fits in both closed and open set scenarios. The approach learns a mapping from the source to the target domain by jointly solving an **assignment problem** that labels those target instances that potentially belong to the categories of interest present in the source dataset.
+- ![OSDA_1](./images/OSDA_1.png)
+- Overview of the proposed approach for ***unsupervised open set domain adaptation***. **(a)** The source domain contains some labelled images, indicated by the colours red, blue and green, and some images belonging to unknown classes (grey). For the target domain, we do not have any labels but the shapes indicate if they belong to one of the three categories or an unknown category (circle). **(b)** In the first step, we assign class labels to some target samples, leaving outliers unlabelled. **(c)** By minimising the distance between the samples of the source and the target domain that are labelled by the same category, we learn a mapping from the source to the target domain. The image shows the samples in the source domain after the transformation. ***This process iterates between (b) and (c) until it converges to a local minimum***. **(d)** In order to label all samples in the target domain either by one of the three classes (red, green, blue) or as unknown (grey), we learn a classifier on the source samples that have been mapped to the target domain (c) and apply it to the samples of the target domain (a). In this image, two samples with unknown classes are wrongly classified as red or green.
+- ![OSDA_2](./images/OSDA_2.png)
 
 
 ## [07 Learning to Adapt Structured Output Space for Semantic Segmentation](./domainadaptation/Learning%20to%20Adapt%20Structured%20Output%20Space%20for%20Semantic%20Segmentation.pdf)
@@ -549,6 +558,35 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - *With an adversarial loss on the **target prediction**, the network propagates gradients from Di to G, which would encourage G to generate similar segmentation distributions in the target domain to the source prediction.*
 - *The ultimate goal is to minimize the segmentation loss in G for source images, while maximizing the probability of target predictions being considered as source predictions.*
 - ![AdaptSeg](./images/AdaptSegNet_1.png)
+
+
+## [08 Constructing Self-motivated Pyramid Curriculums for Cross-Domain Semantic Segmentation: A Non-Adversarial Approach](./domainadaptation/Constructing%20Self-motivated%20Pyramid%20Curriculums%20for%20Cross-Domain%20Semantic%20Segmentation%20A%20Non-Adversarial%20Approach%20.pdf)
+- Lian Q, Lv F, Duan L, et al./2019/ICCV/142
+- Self-motivated pyramid curriculum domain adaptation (PyCDA) draws on an insight **connecting two existing works: curriculum domain adaptation and self-training**. Inspired by the former, PyCDA constructs a **pyramid curriculum** which contains various properties about the target domain. 
+- the **self-training** alternates between two sub-tasks: 1) estimating **pseudo labels** for the target domain’s pixels and 2) **updating the weights** of the segmentation network by using both the source labels and the pseudo target labels. the **curriculum adaptation** first 1) **constructs a curriculum**, i.e., infers properties of the target domain in the form of frequency distributions of the class labels over an image (or image region) and then 2) **updates the network’s weights** using the source labels and the target domain’s properties. *the second steps of the two works share exactly the same form in math — a cross-entropy loss between a frequency distribution / pseudo label and a differentiable function of the network’s predictions.*
+- ![PyCDA](./images/PyCDA.png)
+
+
+## [09 Synergistic Image and Feature Adaptation: Towards Cross-Modality Domain Adaptation for Medical Image Segmentation](./domainadaptation/Synergistic%20Image%20and%20Feature%20Adaptation%20Towards%20Cross-Modality%20Domain%20Adaptation%20for%20Medical%20Image%20Segmentation%20.pdf)
+- Chen C, Dou Q, Chen H, et al./2019/AAAI/206
+- SIFA is an elegant learning diagram which *presents synergistic fusion of adaptations from both **image and feature perspectives***. In particular, we simultaneously **transform the appearance of images across domains** and **enhance domain-invariance of the extracted features** towards the segmentation task. *The feature encoder layers are shared by both perspectives to grasp their mutual benefits during the end-to-end learning procedure*. Without using any annotation from the target domain, the learning of our unified model is **guided by adversarial losses, with multiple discriminators** employed from various aspects.
+- One stream is the ***image adaptation***, by aligning the *image appearance* between domains with the pixel-to-pixel transformation. In this way, the domain shift is addressed at **input level** to DCNNs. 
+- The other stream for unsupervised domain adaptation follows the ***feature adaptation***, which aims to *extract domaininvariant features* with DCNNs, regardless of the appearance difference between input domains. Most methods within this stream discriminate **feature distributions** of source/target domains in an adversarial learning scenario. Furthermore, considering the high-dimensions of plain feature spaces, some recent works connected the discriminator to more **compact spaces** (*semantic prediction space and reconstructed image space*). 
+- **The major contributions of this paper are as follows**:
+    - We present the SIFA, a novel unsupervised domain adaptation framework, that exploits synergistic image and feature adaptations to tackle domain shift via complementary perspectives.
+    - We enhance feature adaptation by using discriminators in two aspects, i.e., semantic prediction space and generated image space. Both compact spaces help to further enhance domain-invariance of the extracted features.
+- ![SIFA_1](./images/SIFA_1.png)
+- ![SIFA_2](./images/SIFA_2.png)
+
+
+## [10 Unsupervised Cross-Modality Domain Adaptation of ConvNets for Biomedical Image Segmentations with Adversarial Loss](./domainadaptation/Unsupervised%20Cross-Modality%20Domain%20Adaptation%20of%20ConvNets%20for%20Biomedical%20Image%20Segmentations%20with%20Adversarial%20Loss.pdf)
+- Dou Q, Ouyang C, Chen C, et al./2018/arXiv/241
+- a plug-and-play **domain adaptation module (DAM)** to map the target input to features which are aligned with source domain feature space. A **domain critic module (DCM)** is set up for discriminating the feature space of both domains. We optimize the DAM and DCM via an **adversarial loss** without using any target domain label.
+- In transfer learning, the **last several layers** of the network are usually **fine-tuned** for a new task with new label space. The **supporting assumption** is that *early layers in the network extract low-level features (such as edge filters and color blobs) which are common for vision tasks. Those upper layers are more task-specific and learn high-level features for the classifier*.
+- **This work’s hypothesis** is that *the distribution changes between the cross-modality domains are primarily low-level characteristics (e.g., gray-scale values) rather than high-level (e.g., geometric structures)*. The higher layers are closely in correlation with the class labels which can be **shared across different domains**. In this regard, we propose to *reuse the feature extractors learned in higher layers* (**frozen**) of the ConvNet, whereas the earlier layers (**replaced**) are *updated to conduct distribution mappings in feature space* for our unsupervised domain adaptation. For our problem, we train the DAM, *aiming that the ConvNet can generate source-like feature maps from target input*. Hence, the ConvNet is equivalent to a generator from GAN’s perspective.
+- In practice, we **select several layers from the frozen higher layers**, and refer their corresponding feature maps as the set of F_H()*.* Similarly, we denote the **selected feature maps of DAM** by M_A() with the A being the selected layer set. *The aim of DCM is that minimize the distance between **(F_H(x_s),M_A(x_s))** and **(F_H(x_t),M_A(x_t))** domain distributions*.
+- Github: [https://github.com/carrenD/Medical-Cross-Modality-Domain-Adaptation](https://github.com/carrenD/Medical-Cross-Modality-Domain-Adaptation)
+
 
 
 # VIII. Others
