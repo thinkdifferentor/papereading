@@ -57,6 +57,7 @@
   - [03 Learning Topological Interactions for Multi-Class Medical Image Segmentation](#03-learning-topological-interactions-for-multi-class-medical-image-segmentation)
   - [04 Large-Kernel Attention for 3D Medical Image Segmentation](#04-large-kernel-attention-for-3d-medical-image-segmentation)
   - [05 Two-Stream UNET Networks for Semantic Segmentation in Medical Images](#05-two-stream-unet-networks-for-semantic-segmentation-in-medical-images)
+  - [06 Style and Content Disentanglement in Generative Adversarial Networks](#06-style-and-content-disentanglement-in-generative-adversarial-networks)
 
 <!-- /TOC -->
 
@@ -585,6 +586,7 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - In transfer learning, the **last several layers** of the network are usually **fine-tuned** for a new task with new label space. The **supporting assumption** is that *early layers in the network extract low-level features (such as edge filters and color blobs) which are common for vision tasks. Those upper layers are more task-specific and learn high-level features for the classifier*.
 - **This work’s hypothesis** is that *the distribution changes between the cross-modality domains are primarily low-level characteristics (e.g., gray-scale values) rather than high-level (e.g., geometric structures)*. The higher layers are closely in correlation with the class labels which can be **shared across different domains**. In this regard, we propose to *reuse the feature extractors learned in higher layers* (**frozen**) of the ConvNet, whereas the earlier layers (**replaced**) are *updated to conduct distribution mappings in feature space* for our unsupervised domain adaptation. For our problem, we train the DAM, *aiming that the ConvNet can generate source-like feature maps from target input*. Hence, the ConvNet is equivalent to a generator from GAN’s perspective.
 - In practice, we **select several layers from the frozen higher layers**, and refer their corresponding feature maps as the set of F_H()*.* Similarly, we denote the **selected feature maps of DAM** by M_A() with the A being the selected layer set. *The aim of DCM is that minimize the distance between **(F_H(x_s),M_A(x_s))** and **(F_H(x_t),M_A(x_t))** domain distributions*.
+- ![MCMDA](./images/Unsupervised%20Cross-Modality%20Domain%20Adaptation%20of%20ConvNets.png)
 - Github: [https://github.com/carrenD/Medical-Cross-Modality-Domain-Adaptation](https://github.com/carrenD/Medical-Cross-Modality-Domain-Adaptation)
 
 
@@ -651,3 +653,11 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - ![Two-Stream UNET Networks_1](./images/Two-Stream%20UNET%20Networks_1.png)
 
 
+## [06 Style and Content Disentanglement in Generative Adversarial Networks](./disentanglement/Style%20and%20Content%20Disentanglement%20in%20Generative%20Adversarial%20Networks.pdf)
+- Kazemi H, Iranmanesh S M, Nasrabadi N./2019/WACV/52
+- Disentangling factors of variation within data has become a very challenging problem for image generation tasks. Current frameworks for training a Generative Adversarial Network (GAN), learn to disentangle the representations of the data in an unsupervised fashion and capture the most significant factors of the data variations. However, these approaches **ignore the principle of content and style disentanglement in image generation, which means their learned latent code may alter the content and style of the generated images at the same time**.
+- We assume that **the representation of an image can be decom posed into a content code that represents the geometrical information of the data, and a style code that captures textural properties**. The proposed SC-GAN has two components: **a content code** which is the input to the generator, and **a style code** which modifies the scene style through modification of the Adaptive Instance Normalization (AdaIN) layers’ parameters.
+- The proposed SC-GAN takes a **random code z** = (zc, zs) composes of a content code zc and a style code zs as input, and synthesizes an output image, G(z). However, **the network needs a mechanism to learn relating the content of the generated image to the content code and its style to the style code.** In particular, the content of the generated image is supposed to be intact as long as zc remains unaltered, despite the value of zs, and vice versa.
+- Total Loss = Content Consistency Loss + Style Consistency Loss + Content Diversity Loss + Style Diversity Loss + MinMax Loss
+- ![SC_GAN_1](./images/SC-Net_1.png)
+- The major experiments network: ![SC_GAN_2](./images/SC-Net_2.png)
