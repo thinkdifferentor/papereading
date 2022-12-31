@@ -59,6 +59,7 @@
   - [05 Two-Stream UNET Networks for Semantic Segmentation in Medical Images](#05-two-stream-unet-networks-for-semantic-segmentation-in-medical-images)
   - [06 Style and Content Disentanglement in Generative Adversarial Networks](#06-style-and-content-disentanglement-in-generative-adversarial-networks)
   - [07 Content and Style Disentanglement for Artistic Style Transfer](#07-content-and-style-disentanglement-for-artistic-style-transfer)
+  - [08 DRANet: Disentangling Representation and Adaptation Networks for Unsupervised Cross-Domain Adaptation](#08-dranet-disentangling-representation-and-adaptation-networks-for-unsupervised-cross-domain-adaptation)
 
 <!-- /TOC -->
 
@@ -592,6 +593,8 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 
 
 
+
+
 # VIII. Others
 
 ## [00 Fully Convolutional Networks for Semantic Segmentation](./segmentation/Fully%20Convolutional%20Networks%20for%20Semantic%20Segmentation.pdf)
@@ -671,3 +674,9 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - ![Content and Style Disentanglement for Artistic Style Transfer](./images/Content%20and%20Style%20Disentanglement%20for%20Artistic%20Style%20Transfer.png)
 
 
+## [08 DRANet: Disentangling Representation and Adaptation Networks for Unsupervised Cross-Domain Adaptation](./disentanglement/DRANet%20Disentangling%20Representation%20and%20Adaptation%20Networks%20for%20Unsupervised%20Cross-Domain%20Adaptation.pdf)
+- Lee S, Cho S, Im S./2021/CVPR/25
+- Unlike the existing domain adaptation methods that **learn associated features sharing a domain**, DRANet **preserves the distinctiveness of each domain’s characteristics**. Our model encodes individual representations of **content (scene structure) and style (artistic appearance)** from both source and target images. Then, it adapts the domain by **incorporating the transferred style factor** into the content factor along with learnable weights specified for each domain. This learning framework allows **bi-/multi-directional domain adaptation** with a single encoder-decoder network and aligns their domain shift. Additionally, we propose a **content-adaptive domain transfer module** (The key idea of this module is to search the target features whose content component is most similar to the source features. Then, the domain transfer is conducted by reflecting more style information from more suitable target features) that helps retain scene structure while transferring style
+- ![DRANet_1](./images/DRANet_1.png)
+- Our intuition behind the network design is that **different domains may have different distributions for their contents and styles**, which cannot be effectively handled by the linear separation of latent vectors. Thus, to handle such difference, our network adopts the **non-linear separation and domain-specific scale parameters** that are dedicated to handle such inter-domain difference.
+- ![DRANet_2](./images/DRANet_2.png)
