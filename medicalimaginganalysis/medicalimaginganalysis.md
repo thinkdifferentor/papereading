@@ -58,6 +58,7 @@
   - [04 Large-Kernel Attention for 3D Medical Image Segmentation](#04-large-kernel-attention-for-3d-medical-image-segmentation)
   - [05 Two-Stream UNET Networks for Semantic Segmentation in Medical Images](#05-two-stream-unet-networks-for-semantic-segmentation-in-medical-images)
   - [06 Style and Content Disentanglement in Generative Adversarial Networks](#06-style-and-content-disentanglement-in-generative-adversarial-networks)
+  - [07 Content and Style Disentanglement for Artistic Style Transfer](#07-content-and-style-disentanglement-for-artistic-style-transfer)
 
 <!-- /TOC -->
 
@@ -661,3 +662,12 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - Total Loss = Content Consistency Loss + Style Consistency Loss + Content Diversity Loss + Style Diversity Loss + MinMax Loss
 - ![SC_GAN_1](./images/SC-Net_1.png)
 - The major experiments network: ![SC_GAN_2](./images/SC-Net_2.png)
+
+
+## [07 Content and Style Disentanglement for Artistic Style Transfer](./disentanglement/Style%20and%20Content%20Disentanglement%20in%20Generative%20Adversarial%20Networks.pdf)
+- Kotovenko D, Sanakoyeu A, Lang S, et al./2019/ICCV/102
+- Artists rarely paint in a single style throughout their career. More often they change styles or develop variations of it. In addition, artworks in different styles and even within one style depict real content differently. To produce artistically convincing stylizations, style transfer models must be able to reflect these **changes and variations**.
+- We present a novel approach which captures particularities of style and the variations within and separates style and content. This is achieved by introducing two novel losses: **a fixpoint triplet style loss** to learn subtle variations within one style or between different styles and **a disentanglement loss** to ensure that the stylization is not conditioned on the real input photo.
+- ![Content and Style Disentanglement for Artistic Style Transfer](./images/Content%20and%20Style%20Disentanglement%20for%20Artistic%20Style%20Transfer.png)
+
+
