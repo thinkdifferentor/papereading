@@ -52,6 +52,7 @@
   - [10 Unsupervised Cross-Modality Domain Adaptation of ConvNets for Biomedical Image Segmentations with Adversarial Loss](#10-unsupervised-cross-modality-domain-adaptation-of-convnets-for-biomedical-image-segmentations-with-adversarial-loss)
   - [11 Universal Domain Adaptation](#11-universal-domain-adaptation)
   - [12 CyCADA: Cycle-Consistent Adversarial Domain Adaptation](#12-cycada-cycle-consistent-adversarial-domain-adaptation)
+  - [13 Unsupervised Domain Adaptation with Dual-Scheme Fusion Network for Medical Image Segmentation](#13-unsupervised-domain-adaptation-with-dual-scheme-fusion-network-for-medical-image-segmentation)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -612,6 +613,13 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - ![CycADA_3](./images/CycADA_3.png)
 
 
+## [13 Unsupervised Domain Adaptation with Dual-Scheme Fusion Network for Medical Image Segmentation](./domainadaptation/Unsupervised%20Domain%20Adaptation%20with%20Dual-Scheme%20Fusion%20Network%20for%20Medical%20Image%20Segmentation%20.pdf)
+- Zou D, Zhu Q, Yan P./2020/IJCAI/33
+- This **imbalanced source-to-target** one way pass may not eliminate the domain gap, which limits the performance of the pre-trained model. This paper propose an Dual-Scheme Fusion Network (DSFN) for unsupervised domain adaptation. By building both **source-to-target and target-to-source** connections, this **balanced** joint information flow helps reduce the domain gap to further improve the network performance. The mechanism is further applied to **the inference stage**, where both the original input target image and the generated source images are segmented with the proposed joint network. The results are **fused** to obtain more robust segmentation.
+- For the fusion strategy: **averaging** the prediction probabilities of these two results
+- ![DSFN_1](./images/DSFN_1.png)
+- ![DSFN_2](./images/DSFN_2.png)
+- ![DSFN_3](./images/DSFN_3.png)
 
 
 
