@@ -50,6 +50,7 @@
   - [08 Constructing Self-motivated Pyramid Curriculums for Cross-Domain Semantic Segmentation: A Non-Adversarial Approach](#08-constructing-self-motivated-pyramid-curriculums-for-cross-domain-semantic-segmentation-a-non-adversarial-approach)
   - [09 Synergistic Image and Feature Adaptation: Towards Cross-Modality Domain Adaptation for Medical Image Segmentation](#09-synergistic-image-and-feature-adaptation-towards-cross-modality-domain-adaptation-for-medical-image-segmentation)
   - [10 Unsupervised Cross-Modality Domain Adaptation of ConvNets for Biomedical Image Segmentations with Adversarial Loss](#10-unsupervised-cross-modality-domain-adaptation-of-convnets-for-biomedical-image-segmentations-with-adversarial-loss)
+  - [11 Universal Domain Adaptation](#11-universal-domain-adaptation)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -592,7 +593,14 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - Github: [https://github.com/carrenD/Medical-Cross-Modality-Domain-Adaptation](https://github.com/carrenD/Medical-Cross-Modality-Domain-Adaptation)
 
 
-
+## [11 Universal Domain Adaptation](./domainadaptation/Universal%20Domain%20Adaptation.pdf)
+- You K, Long M, Cao Z, et al./2019/CVPR/259
+- Existing domain adaptation methods rely on **rich prior knowledge about the relationship between the label sets of source and target domains**, which greatly limits their application in the wild. **Universal Domain Adaptation (UDA) that requires no prior knowledge on the label sets**. 
+- For a given source label set and a target label set, they may contain a common label set and hold a private label set respectively, bringing up an additional ***category gap***. UDA requires a model to either **(1) classify the target sample correctly if it is associated with a label in the common label set**, or **(2) mark it as “unknown” otherwise**.
+- To solve the universal domain adaptation problem, this work propose Universal Adaptation Network (UAN). It quantifies sample-level transferability to **discover the common label set and the label sets private to each domain**, thereby **promoting the adaptation in the automatically discovered common label set and recognizing the “unknown” samples successfully**.
+- ![UDA_1](./images/UDA_1.png)
+- If the source label set is large enough to contain the target label set, partial domain adaptation methods are good choices; if the source label set is contained in the target label set or common classes are known, open set domain adaptation methods are good choices. In a general scenario, however, we cannot select the proper domain adaptation method because no prior knowledge about the target domain label set is given.
+- ![UDA_2](./images/UDA_2.png)
 
 
 # VIII. Others
@@ -667,7 +675,7 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - The major experiments network: ![SC_GAN_2](./images/SC-Net_2.png)
 
 
-## [07 Content and Style Disentanglement for Artistic Style Transfer](./disentanglement/Style%20and%20Content%20Disentanglement%20in%20Generative%20Adversarial%20Networks.pdf)
+## [07 Content and Style Disentanglement for Artistic Style Transfer](./disentanglement/Content%20and%20Style%20Disentanglement%20for%20Artistic%20Style%20Transfer.pdf)
 - Kotovenko D, Sanakoyeu A, Lang S, et al./2019/ICCV/102
 - Artists rarely paint in a single style throughout their career. More often they change styles or develop variations of it. In addition, artworks in different styles and even within one style depict real content differently. To produce artistically convincing stylizations, style transfer models must be able to reflect these **changes and variations**.
 - We present a novel approach which captures particularities of style and the variations within and separates style and content. This is achieved by introducing two novel losses: **a fixpoint triplet style loss** to learn subtle variations within one style or between different styles and **a disentanglement loss** to ensure that the stylization is not conditioned on the real input photo.
