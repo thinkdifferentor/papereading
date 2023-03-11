@@ -51,6 +51,7 @@
   - [09 Synergistic Image and Feature Adaptation: Towards Cross-Modality Domain Adaptation for Medical Image Segmentation](#09-synergistic-image-and-feature-adaptation-towards-cross-modality-domain-adaptation-for-medical-image-segmentation)
   - [10 Unsupervised Cross-Modality Domain Adaptation of ConvNets for Biomedical Image Segmentations with Adversarial Loss](#10-unsupervised-cross-modality-domain-adaptation-of-convnets-for-biomedical-image-segmentations-with-adversarial-loss)
   - [11 Universal Domain Adaptation](#11-universal-domain-adaptation)
+  - [12 CyCADA: Cycle-Consistent Adversarial Domain Adaptation](#12-cycada-cycle-consistent-adversarial-domain-adaptation)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -601,6 +602,17 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - ![UDA_1](./images/UDA_1.png)
 - If the source label set is large enough to contain the target label set, partial domain adaptation methods are good choices; if the source label set is contained in the target label set or common classes are known, open set domain adaptation methods are good choices. In a general scenario, however, we cannot select the proper domain adaptation method because no prior knowledge about the target domain label set is given.
 - ![UDA_2](./images/UDA_2.png)
+
+
+## [12 CyCADA: Cycle-Consistent Adversarial Domain Adaptation](./domainadaptation/CyCADA%20Cycle-Consistent%20Adversarial%20Domain%20Adaptation.pdf)
+- Hoffman J, Tzeng E, Park T, et al./2018/ICML/2481
+- While **feature space** methods are difficult to interpret and sometimes fail to **capture pixel-level and low-level domain shifts**, **image space** methods sometimes fail to **incorporate high level semantic knowledge** relevant for the end task. CyCADA propose a model which adapts between domains using both **generative image space alignment and latent representation space alignment**.
+- ![CycADA_1](./images/CycADA_1.png)
+- ![CycADA_2](./images/CycADA_2.png)
+- ![CycADA_3](./images/CycADA_3.png)
+
+
+
 
 
 # VIII. Others
