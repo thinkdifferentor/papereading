@@ -53,6 +53,7 @@
   - [11 Universal Domain Adaptation](#11-universal-domain-adaptation)
   - [12 CyCADA: Cycle-Consistent Adversarial Domain Adaptation](#12-cycada-cycle-consistent-adversarial-domain-adaptation)
   - [13 Unsupervised Domain Adaptation with Dual-Scheme Fusion Network for Medical Image Segmentation](#13-unsupervised-domain-adaptation-with-dual-scheme-fusion-network-for-medical-image-segmentation)
+  - [Generalizable Cross-modality Medical Image Segmentation via Style Augmentation and Dual Normalization](#generalizable-cross-modality-medical-image-segmentation-via-style-augmentation-and-dual-normalization)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -620,6 +621,21 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - ![DSFN_1](./images/DSFN_1.png)
 - ![DSFN_2](./images/DSFN_2.png)
 - ![DSFN_3](./images/DSFN_3.png)
+
+
+## [Generalizable Cross-modality Medical Image Segmentation via Style Augmentation and Dual Normalization](./domainadaptation/Generalizable%20Cross-modality%20Medical%20Image%20Segmentation%20via%20Style%20Augmentation%20and%20Dual%20Normalization.pdf)
+- Zhou Z, Qi L, Yang X, et al. /2022/CVPR/6
+- This paper propose a novel **dual-normalization model** by leveraging the **augmented source-similar and source-dissimilar images** during our generalizable segmentation. This work fouse on **cross-modality** DG problem.(cross-center and cross-modality, the later is more challenging with larger domain shift.)
+- To be specifc, given a single source domain, aiming to simulate the **possible appearance change** in unseen target domains, we frst utilize **a nonlinear transformation** to augment source-similar and source-dissimilar images. Then, to **suffciently exploit these two types of augmentations**, our proposed dualnormalization based model employs a **shared backbone yet independent batch normalization layer** for separate normalization. Afterward, we put forward a **style-based selection scheme** to automatically choose the appropriate path **in the test stage**.
+- We notice that in medical images, modality discrepancy usually manifests in **gray-scale distribution discrepancy**. Being aware of this fact, we wish to simulate possible appearance changes in **unseen target domains**. (*DN can preserve domain style information after model training.*)
+- ![SADN_1](./images/SADN_1.png)
+- ![SADN_2](./images/SADN_2.png)
+- ![SADN_3](./images/SADN_3.png)
+- ![SADN_4](./images/SADN_4.png)
+
+
+
+
 
 
 
