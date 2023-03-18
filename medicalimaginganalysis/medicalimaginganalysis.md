@@ -54,6 +54,7 @@
   - [12 CyCADA: Cycle-Consistent Adversarial Domain Adaptation](#12-cycada-cycle-consistent-adversarial-domain-adaptation)
   - [13 Unsupervised Domain Adaptation with Dual-Scheme Fusion Network for Medical Image Segmentation](#13-unsupervised-domain-adaptation-with-dual-scheme-fusion-network-for-medical-image-segmentation)
   - [Generalizable Cross-modality Medical Image Segmentation via Style Augmentation and Dual Normalization](#generalizable-cross-modality-medical-image-segmentation-via-style-augmentation-and-dual-normalization)
+  - [Data augmentation using learned transformations for one-shot medical image segmentation](#data-augmentation-using-learned-transformations-for-one-shot-medical-image-segmentation)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -634,7 +635,13 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - ![SADN_4](./images/SADN_4.png)
 
 
-
+## [Data augmentation using learned transformations for one-shot medical image segmentation](./domainadaptation/Data%20augmentation%20using%20learned%20transformations%20for%20one-shot%20medical%20image%20segmentation.pdf)
+- Zhao A, Balakrishnan G, Durand F, et al./2019/CVPR/381
+- The problem of limited labeled data is exacerbated by **differences in image acquisition procedures across machines and institutions**, which can produce wide variations in **resolution, image noise, and tissue appearance**. **Hand-engineered and Hand-tuned data** augmentation functions have **limited ability to emulate real variations**, and can be **highly sensitive to the choice of parameters**.
+- *This novel approach to data augmentation leverages unlabeled images. Using **learning-based registration methods**, we model the set of **spatial and appearance transformations** between images in the dataset. These models **capture the anatomical and imaging diversity** in the unlabeled images. We **synthesize new examples** by sampling transformations and applying them to a single labeled example.
+- ![DALT_1](./images/DALT_1.png)
+- ![DALT_2](./images/DALT_2.png)
+- ![DALT_3](./images/DALT_3.png)
 
 
 
