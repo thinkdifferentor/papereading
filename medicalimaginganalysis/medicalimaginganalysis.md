@@ -55,6 +55,7 @@
   - [13 Unsupervised Domain Adaptation with Dual-Scheme Fusion Network for Medical Image Segmentation](#13-unsupervised-domain-adaptation-with-dual-scheme-fusion-network-for-medical-image-segmentation)
   - [Generalizable Cross-modality Medical Image Segmentation via Style Augmentation and Dual Normalization](#generalizable-cross-modality-medical-image-segmentation-via-style-augmentation-and-dual-normalization)
   - [Data augmentation using learned transformations for one-shot medical image segmentation](#data-augmentation-using-learned-transformations-for-one-shot-medical-image-segmentation)
+  - [Models Genesis: Generic Autodidactic Models for 3D Medical Image Analysis](#models-genesis-generic-autodidactic-models-for-3d-medical-image-analysis)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -644,6 +645,23 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - ![DALT_3](./images/DALT_3.png)
 
 
+## [Models Genesis: Generic Autodidactic Models for 3D Medical Image Analysis](./domainadaptation/Models%20Genesis%20Generic%20Autodidactic%20Models%20for%203D%20Medical%20Image%20Analysis.pdf)
+- Zhou Z, Sodha V, Rahman Siddiquee M M, et al./2019/MICCAI/226
+- Transfer learning from natural image to medical image has established as one of the most practical paradigms in deep learning for medical image analysis. However, to fit this paradigm, 3D imaging tasks in the most prominent imaging modalities (e.g., CT and MRI) have to be reformulated and solved in 2D, **losing rich 3D anatomical information and inevitably compromising the performance**.
+- *Given the marked differences between natural images and medical images, we hypothesize that **transfer learning can yield more powerful (application-specific) target models if the source models are built directly from medical images**.
+- This performance is attributable to the following **key observation**: *medical imaging protocols typically focus on particular parts of the body for specific clinical purposes, resulting in images of similar anatomy*. The sophisticated yet recurrent anatomy offers **consistent patterns** for self-supervised learning to discover **common representation** of a particular body part (like Lungs, Brain etc).
+- Learning from scratch simply in 3D may not necessarily yield performance better than fine-tuning state-of-the-art ImageNet models. But this model consistently top any 2D approaches including fine-tuning the models pre-trained from ImageNet as well as fine-tuning the 2D versions of our Models Genesis, **confirming the importance of 3D anatomical information and significance** of our Models Genesis for 3D medical imaging.
+- ![Models Genesis](./images/Models%20Genesis_1.png)
+- Models Genesis learn from scratch on **unlabeled images**, with an objective to yield a **common visual representation** that is generalizable and transferable across diseases, organs, and modalities. In Models Genesis, an encoder-decoder is trained using a series of self-supervised schemes. Once trained, the encoder alone can be fine-tuned for **target classification tasks**; while the encoder and decoder together can be for **target segmentation tasks**.
+- **Four novel transformations**: (*Similar to MAE with masking image patch, this work using image transformations*)
+    1. Learning **appearance** via non-linear transformation (B´ezier Curve). Restoring image patches distorted with non-linear transformation focuses Models Genesis on learning organ appearance; 
+    2. Learning **texture** via local pixel shuffling. To recover from local pixel shuffling, Models Genesis must memorize local boundaries and texture; 
+    3. Learning **context** via out-painting and in-painting. Out-painting compels Models Genesis to learn global geometry and spatial layout of organs via extrapolating, while in-painting requires Models Genesis to appreciate local continuities of organs via interpolating.
+- **Four unique properties**:
+    1. Autodidactic—requiring no manual labeling.
+    2. Eclectic—learning from multiple perspectives.(appearance, texture, context, etc.)
+    3. Scalable—eliminating proxy-task-specific heads. (any favorable transformation can be easily amended into our framework)
+    4. Generic—yielding diverse applications. (learned general purpose image representation that can be leveraged for a wide range of target tasks)
 
 
 # VIII. Others
