@@ -57,6 +57,7 @@
   - [15 Data augmentation using learned transformations for one-shot medical image segmentation](#15-data-augmentation-using-learned-transformations-for-one-shot-medical-image-segmentation)
   - [16 Models Genesis: Generic Autodidactic Models for 3D Medical Image Analysis](#16-models-genesis-generic-autodidactic-models-for-3d-medical-image-analysis)
   - [17 Synchronous Medical Image Augmentation framework for deep learning-based image segmentation](#17-synchronous-medical-image-augmentation-framework-for-deep-learning-based-image-segmentation)
+  - [CyCMIS: Cycle-consistent Cross-domain Medical Image Segmentation via diverse image augmentation](#cycmis-cycle-consistent-cross-domain-medical-image-segmentation-via-diverse-image-augmentation)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -685,6 +686,16 @@ target in a pixel-level**. Those **translated source images** are closely aligne
     3. **image-label pair generation**： the corresponding segmentation labels of the synthesized image are simultaneously generated.
 - ![SMIA_4](./images/SMIA_4.png)
 - ![SMIA_5](./images/SMIA_5.png)
+
+
+## [CyCMIS: Cycle-consistent Cross-domain Medical Image Segmentation via diverse image augmentation](./domainadaptation/CyCMIS%20Cycle-consistent%20Cross-domain%20Medical%20Image%20Segmentation%20via%20diverse%20image%20augmentation.pdf)
+- Wang R, Zheng G./2022/Medical Image Analysis/10
+- **CyCMIS** integrate **online diverse image translation** via *disentangled representation learning* and **semantic consistency regularization** into one network. Different from learning one-to-one mapping, our method characterizes the complex relationship between domains as **many-to-many mapping**. where images are embedded onto two spaces: a **domain-invariant content space** and a **domain-specific attribute space**. 
+- A novel diverse **inter-domain semantic consistency loss** is then proposed to regularize the cross-domain segmentation process. We additionally introduce an **intra-domain semantic consistency loss** to encourage the segmentation consistency between the original input and the image after cross-cycle reconstruction.
+- The identified **limitations of existing methods** include: (1) most of them **do not preserve semantic information** in the process of image translation such that any error generated in **the cross-domain image synthesis stage** will be passed to **the image segmentation stage**; and (2) **the cross-domain image synthesis stage** cannot benefit from the **high-level semantic information** obtained from **the image segmentation stage**.
+- ![CyCMIS_1](./images/CyCMIS_1.png)
+- ![CyCMIS_2](./images/CyCMIS_2.png)
+- ![CyCMIS_3](./images/CyCMIS_3.png)
 
 
 
