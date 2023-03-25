@@ -59,6 +59,7 @@
   - [17 Synchronous Medical Image Augmentation framework for deep learning-based image segmentation](#17-synchronous-medical-image-augmentation-framework-for-deep-learning-based-image-segmentation)
   - [CyCMIS: Cycle-consistent Cross-domain Medical Image Segmentation via diverse image augmentation](#cycmis-cycle-consistent-cross-domain-medical-image-segmentation-via-diverse-image-augmentation)
   - [Source free domain adaptation for medical image segmentation with fourier style mining](#source-free-domain-adaptation-for-medical-image-segmentation-with-fourier-style-mining)
+  - [FDA: Fourier Domain Adaptation for Semantic Segmentation](#fda-fourier-domain-adaptation-for-semantic-segmentation)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -705,6 +706,18 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - Previous SFDA imply utilize the well-trained source model to **generate pseudo labels and retrain a target model** (self-training). But these methods ignore the **distribution information stored in BN statistics of the source model**, which could provide valuable information for the domain adaptation. FSM module can **mine out** the latent style information stored in the source segmentation model and generate the source-like images optimized from the input noise images. (Different from previous style transfer methods,this method does not require these source images under privacy concerns, and only utilizes BN statistics of the source segmentation model to mine out the source style information)
 - **Note**: *shallow features contain appearance information while deep features focus on semantic information*; *As low-frequency components in Fourier Transform can represent the style information*; *Input & Feature & Output Space*.
 - ![SF_FSM_1](./images/SF_FSM_1.png)
+
+
+## [FDA: Fourier Domain Adaptation for Semantic Segmentation](./domainadaptation/FDA%20Fourier%20Domain%20Adaptation%20for%20Semantic%20Segmentation.pdf)
+- Yang Y, Soatto S./2020/CVPR/451
+- FDA describe a simple method for unsupervised domain adaptation, whereby the discrepancy between the source and target distributions is reduced by **swapping the low-frequency spectrum of one with the other**. This method does not require any training to perform the domain alignment (**without adversarial training**), just a simple **Fourier Transform and its inverse**(just one free parameter).
+- ![FDA_1](./images/FDA_1.png)
+- ![FDA_2](./images/FDA_2.png)
+- **Notes**: increasing β will decrease the domain gap but introduce artifacts (exhibits visible artifacts); Ref Advent: this is ineffective in regions with low entropy, **Charbonnier** penalizes high entropy predictions more than the low entropy ones for η > 0.5 (to pay more attention to effective regions)
+- ![FDA_3](./images/FDA_3.png)
+- ![FDA_4](./images/FDA_4.png), ![FDA_5](./images/FDA_5.png)
+- ![FDA_6](./images/FDA_6.png)
+
 
 
 # VIII. Others
