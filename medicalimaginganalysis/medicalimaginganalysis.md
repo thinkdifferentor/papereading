@@ -58,6 +58,7 @@
   - [16 Models Genesis: Generic Autodidactic Models for 3D Medical Image Analysis](#16-models-genesis-generic-autodidactic-models-for-3d-medical-image-analysis)
   - [17 Synchronous Medical Image Augmentation framework for deep learning-based image segmentation](#17-synchronous-medical-image-augmentation-framework-for-deep-learning-based-image-segmentation)
   - [CyCMIS: Cycle-consistent Cross-domain Medical Image Segmentation via diverse image augmentation](#cycmis-cycle-consistent-cross-domain-medical-image-segmentation-via-diverse-image-augmentation)
+  - [Source free domain adaptation for medical image segmentation with fourier style mining](#source-free-domain-adaptation-for-medical-image-segmentation-with-fourier-style-mining)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -697,6 +698,13 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - ![CyCMIS_2](./images/CyCMIS_2.png)
 - ![CyCMIS_3](./images/CyCMIS_3.png)
 
+
+## [Source free domain adaptation for medical image segmentation with fourier style mining](./domainadaptation/Source%20free%20domain%20adaptation%20for%20medical%20image%20segmentation%20with%20fourier%20style%20mining.pdf)
+- Yang C, Guo X, Chen Z, et al./2022/Medical Image Analysis/6
+- Our framework is composed of two stages: In **the generation stage**, we design a **Fourier Style Mining (FSM) generator** to inverse source-like images through statistic information of the pretrained source model and **mutual Fourier Transform**. These generated source-like images can provide source data distribution and benefit the domain alignment. In **the adaptation stage**, we design a **Contrastive Domain Distillation (CDD) module** to achieve feature-level adaptation, including a domain distillation loss to transfer relation knowledge and a domain contrastive loss to narrow down the domain gap by a self-supervised paradigm. Besides, a **Compact-Aware Domain Consistency (CADC) module** is proposed to enhance consistency learning by filtering out noisy pseudo labels with shape compactness metric, thus achieving output-level adaptation.
+- Previous SFDA imply utilize the well-trained source model to **generate pseudo labels and retrain a target model** (self-training). But these methods ignore the **distribution information stored in BN statistics of the source model**, which could provide valuable information for the domain adaptation. FSM module can **mine out** the latent style information stored in the source segmentation model and generate the source-like images optimized from the input noise images. (Different from previous style transfer methods,this method does not require these source images under privacy concerns, and only utilizes BN statistics of the source segmentation model to mine out the source style information)
+- **Note**: *shallow features contain appearance information while deep features focus on semantic information*; *As low-frequency components in Fourier Transform can represent the style information*; *Input & Feature & Output Space*.
+- ![SF_FSM_1](./images/SF_FSM_1.png)
 
 
 # VIII. Others
