@@ -53,9 +53,10 @@
   - [11 Universal Domain Adaptation](#11-universal-domain-adaptation)
   - [12 CyCADA: Cycle-Consistent Adversarial Domain Adaptation](#12-cycada-cycle-consistent-adversarial-domain-adaptation)
   - [13 Unsupervised Domain Adaptation with Dual-Scheme Fusion Network for Medical Image Segmentation](#13-unsupervised-domain-adaptation-with-dual-scheme-fusion-network-for-medical-image-segmentation)
-  - [Generalizable Cross-modality Medical Image Segmentation via Style Augmentation and Dual Normalization](#generalizable-cross-modality-medical-image-segmentation-via-style-augmentation-and-dual-normalization)
-  - [Data augmentation using learned transformations for one-shot medical image segmentation](#data-augmentation-using-learned-transformations-for-one-shot-medical-image-segmentation)
-  - [Models Genesis: Generic Autodidactic Models for 3D Medical Image Analysis](#models-genesis-generic-autodidactic-models-for-3d-medical-image-analysis)
+  - [14 Generalizable Cross-modality Medical Image Segmentation via Style Augmentation and Dual Normalization](#14-generalizable-cross-modality-medical-image-segmentation-via-style-augmentation-and-dual-normalization)
+  - [15 Data augmentation using learned transformations for one-shot medical image segmentation](#15-data-augmentation-using-learned-transformations-for-one-shot-medical-image-segmentation)
+  - [16 Models Genesis: Generic Autodidactic Models for 3D Medical Image Analysis](#16-models-genesis-generic-autodidactic-models-for-3d-medical-image-analysis)
+  - [17 Synchronous Medical Image Augmentation framework for deep learning-based image segmentation](#17-synchronous-medical-image-augmentation-framework-for-deep-learning-based-image-segmentation)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -367,7 +368,7 @@ is performed by labeling each pixel as the class of the nearest prototype). With
 
 ## [05 Decoupling Zero-Shot Semantic Segmentation](./segmentation/Decoupling%20Zero-Shot%20Semantic%20Segmentation.pdf)
 - Ding J, Xue N, Xia G S, et al./2022/CVPR/-
-- An intuitive observation is that, given an image for semantic segmentation, we humans can **first group pixels into segments** and **then perform a segment-level semantic labeling process**.  Decoupling the ZS3 have two sub-tasks: 1) a **class-agnostic grouping** task to **group** the pixels into segments (**CAG**). 2)a **zero-shot classification** task on **segments** (**s-ZSC**). The implementation of this architecture is named **ZegFormer**.
+- An intuitive observation is that, given an image for semantic segmentation, we humans can **first group pixels into segments** and **then perform a segment-level semantic labeling process**.  Decoupling the ZS3 have two sub-tasks: 1) a **class-agnostic grouping** task to **group** the pixels into segments (**CAG**). 2) a **zero-shot classification** task on **segments** (**s-ZSC**). The implementation of this architecture is named **ZegFormer**.
 - ![Decoupling Zero-Shot Semantic Segmentation_1](./images/Decoupling%20Zero-Shot%20Semantic%20Segmentation_1.png)
 - ![Decoupling Zero-Shot Semantic Segmentation_2](./images/Decoupling%20Zero-Shot%20Semantic%20Segmentation_2.png)
 
@@ -625,7 +626,7 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - ![DSFN_3](./images/DSFN_3.png)
 
 
-## [Generalizable Cross-modality Medical Image Segmentation via Style Augmentation and Dual Normalization](./domainadaptation/Generalizable%20Cross-modality%20Medical%20Image%20Segmentation%20via%20Style%20Augmentation%20and%20Dual%20Normalization.pdf)
+## [14 Generalizable Cross-modality Medical Image Segmentation via Style Augmentation and Dual Normalization](./domainadaptation/Generalizable%20Cross-modality%20Medical%20Image%20Segmentation%20via%20Style%20Augmentation%20and%20Dual%20Normalization.pdf)
 - Zhou Z, Qi L, Yang X, et al. /2022/CVPR/6
 - This paper propose a novel **dual-normalization model** by leveraging the **augmented source-similar and source-dissimilar images** during our generalizable segmentation. This work fouse on **cross-modality** DG problem.(cross-center and cross-modality, the later is more challenging with larger domain shift.)
 - To be specifc, given a single source domain, aiming to simulate the **possible appearance change** in unseen target domains, we frst utilize **a nonlinear transformation** to augment source-similar and source-dissimilar images. Then, to **suffciently exploit these two types of augmentations**, our proposed dualnormalization based model employs a **shared backbone yet independent batch normalization layer** for separate normalization. Afterward, we put forward a **style-based selection scheme** to automatically choose the appropriate path **in the test stage**.
@@ -636,7 +637,7 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - ![SADN_4](./images/SADN_4.png)
 
 
-## [Data augmentation using learned transformations for one-shot medical image segmentation](./domainadaptation/Data%20augmentation%20using%20learned%20transformations%20for%20one-shot%20medical%20image%20segmentation.pdf)
+## [15 Data augmentation using learned transformations for one-shot medical image segmentation](./domainadaptation/Data%20augmentation%20using%20learned%20transformations%20for%20one-shot%20medical%20image%20segmentation.pdf)
 - Zhao A, Balakrishnan G, Durand F, et al./2019/CVPR/381
 - The problem of limited labeled data is exacerbated by **differences in image acquisition procedures across machines and institutions**, which can produce wide variations in **resolution, image noise, and tissue appearance**. **Hand-engineered and Hand-tuned data** augmentation functions have **limited ability to emulate real variations**, and can be **highly sensitive to the choice of parameters**.
 - *This novel approach to data augmentation leverages unlabeled images. Using **learning-based registration methods**, we model the set of **spatial and appearance transformations** between images in the dataset. These models **capture the anatomical and imaging diversity** in the unlabeled images. We **synthesize new examples** by sampling transformations and applying them to a single labeled example.
@@ -645,7 +646,7 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - ![DALT_3](./images/DALT_3.png)
 
 
-## [Models Genesis: Generic Autodidactic Models for 3D Medical Image Analysis](./domainadaptation/Models%20Genesis%20Generic%20Autodidactic%20Models%20for%203D%20Medical%20Image%20Analysis.pdf)
+## [16 Models Genesis: Generic Autodidactic Models for 3D Medical Image Analysis](./domainadaptation/Models%20Genesis%20Generic%20Autodidactic%20Models%20for%203D%20Medical%20Image%20Analysis.pdf)
 - Zhou Z, Sodha V, Rahman Siddiquee M M, et al./2019/MICCAI/226
 - Transfer learning from natural image to medical image has established as one of the most practical paradigms in deep learning for medical image analysis. However, to fit this paradigm, 3D imaging tasks in the most prominent imaging modalities (e.g., CT and MRI) have to be reformulated and solved in 2D, **losing rich 3D anatomical information and inevitably compromising the performance**.
 - *Given the marked differences between natural images and medical images, we hypothesize that **transfer learning can yield more powerful (application-specific) target models if the source models are built directly from medical images**.
@@ -662,6 +663,29 @@ target in a pixel-level**. Those **translated source images** are closely aligne
     2. Eclectic—learning from multiple perspectives.(appearance, texture, context, etc.)
     3. Scalable—eliminating proxy-task-specific heads. (any favorable transformation can be easily amended into our framework)
     4. Generic—yielding diverse applications. (learned general purpose image representation that can be leveraged for a wide range of target tasks)
+
+
+## [17 Synchronous Medical Image Augmentation framework for deep learning-based image segmentation](./domainadaptation/Synchronous%20Medical%20Image%20Augmentation%20framework%20for%20deep%20learning-based%20image%20segmentation.pdf)
+- Chen J, Yang N, Pan Y, et al./2023/Computerized Medical Imaging and Graphics/-
+-  In this paper, we focus on the **medical image augmentation** for DL-based image segmentation and the **synchronization between augmented image samples and their labels**. *SMIA includes two modules based on stochastic transformation and synthesis, and provides diverse and annotated training sets for DL models.* In **the transform-based SMIA module**, for each medical image sample and its tissue segments, a subset of SMIA factors with a random number of factors and stochastic parameter values are selected to simultaneously generate augmented samples and the paired tissue segments. In **the synthesis-based SMIA module**, we randomly replace the original tissues with the augmented tissues using an equivalent replacement method to synthesize new medical images, which can well maintain the original medical implications.
+- Image augmentation of DL-based medical image seg mentation still **faces multiple challenges**.
+    1. *Unique characteristics of medical images*. Compared with images in other fields, medical images have multiple unique character istics, such as **scaling sensitivity, position sensitivity, and motion sensitivity** for partial tissues, which has **important medical significance**. Changing the size of organs and tissues during image augmenta tion will affect medical characteristics. some existing image augmen tation methods applied in other fields **cannot** be directly applied to all medical images. 
+    2. *Image-label pairs for image segmentation DL model training.* Unlike medical image classification tasks, as the training datasets of medical image segmentation DL models, we need to extract all **target tissues in the training samples to form an image-label pair**, and use them as the segmentation labels and ground truths. 
+    3. *Imbalance of medical sample categories*. Owing to the uncertainty of patient visits, many medical images from clinical ap plications have an imbalance in the number of samples between normal and diseased samples or between different diseases.
+- ![SMIA_1](./images/SMIA_1.png)
+- ![SMIA_2](./images/SMIA_2.png)
+- The transform-based SMIA module:
+    1. **medical image and tissue preparation**: extract each target tissue with its position information from the original image to get (X_i,Y_i), where Y_i = {y_i1, y_i2, ..., y_in}, generate a tissue image for each segmented tissue, in which there is only one tissue without background.
+    2. **stochastic IAF combination**: randomly select any number of IAFs from the IAF library to form a stochastic IAF combination. Repeat this step 𝐾 times to generate 𝐾 stochastic IAF combinations.
+    3. **synchronous augmentation**: perform transformation operations on 𝑋𝑖 and generate a new augmented sample 𝑋′𝑖 and perform the same transformation operations on each tissue segment of 𝑌′𝑖.
+- ![SMIA_3](./images/SMIA_3.png)
+- The synthesis-based SMIA module:
+    1. **tissue extraction and augmentation**：extract the target tissues from each medical image and transform them (using transform-based SMIA)to generate an **augmented tissue database**.
+    2. **medical image synthesis**：tissues in a medical image are randomly replaced (equivalent replacement) by the augmented ones to synthesize a new medical image.
+    3. **image-label pair generation**： the corresponding segmentation labels of the synthesized image are simultaneously generated.
+- ![SMIA_4](./images/SMIA_4.png)
+- ![SMIA_5](./images/SMIA_5.png)
+
 
 
 # VIII. Others
