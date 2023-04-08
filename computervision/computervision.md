@@ -44,6 +44,7 @@
   - [18 MobileNetV2: Inverted Residuals and Linear Bottlenecks](#18-mobilenetv2-inverted-residuals-and-linear-bottlenecks)
   - [19 Searching for MobileNetV3](#19-searching-for-mobilenetv3)
   - [20 ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices](#20-shufflenet-an-extremely-efficient-convolutional-neural-network-for-mobile-devices)
+  - [21 Randaugment: Practical automated data augmentation with a reduced search space](#21-randaugment-practical-automated-data-augmentation-with-a-reduced-search-space)
 
 <!-- /TOC -->
 
@@ -420,3 +421,10 @@ hair), and it enables intuitive, scale-specific control of the synthesis.
 - In tiny networks, **expensive pointwise convolutions (95%) result in limited number of channels to meet the complexity constraint**, which might significantly **damage the accuracy**. In ShuffleNet, with an **increase in group number** (thus wider feature maps), input channels for **each convolutional filter become fewer**, **which may harm representation capability**.
 - ![ShuffleNet_2](./images/ShuffleNet_2.png)
 - ![ShuffleNet_3](./images/ShuffleNet_3.png)
+
+
+## [21 Randaugment: Practical automated data augmentation with a reduced search space](./Randaugment%20Practical%20automated%20data%20augmentation%20with%20a%20reduced%20search%20space.pdf)
+- Cubuk E D, Zoph B, Shlens J, et al./2022/CVPR/1839
+- An obstacle to a large-scale adoption of automated augmentation is that they require a **separate and expensive** search phase. A common way to overcome the expense of the search phase was to use **a smaller proxy task**. However, it was **not clear if the optimized hyperparameters found on the proxy task are also optimal for the actual task**.
+- We find that while previous work required a search for both **magnitude and probability of each operation independently**, it is sufficient to only search for a **single distortion magnitude that jointly controls all operations**. We hence propose a **simplified search space** that vastly reduces the computational expense of automated augmentation, and permits the **removal of a separate proxy task**.
+- ![RandomAug](./images/RandomAUG.png)
