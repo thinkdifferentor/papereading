@@ -60,6 +60,7 @@
   - [CyCMIS: Cycle-consistent Cross-domain Medical Image Segmentation via diverse image augmentation](#cycmis-cycle-consistent-cross-domain-medical-image-segmentation-via-diverse-image-augmentation)
   - [Source free domain adaptation for medical image segmentation with fourier style mining](#source-free-domain-adaptation-for-medical-image-segmentation-with-fourier-style-mining)
   - [FDA: Fourier Domain Adaptation for Semantic Segmentation](#fda-fourier-domain-adaptation-for-semantic-segmentation)
+  - [RDA: Robust Domain Adaptation via Fourier Adversarial Attacking](#rda-robust-domain-adaptation-via-fourier-adversarial-attacking)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -718,6 +719,13 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - ![FDA_4](./images/FDA_4.png), ![FDA_5](./images/FDA_5.png)
 - ![FDA_6](./images/FDA_6.png)
 
+
+## [RDA: Robust Domain Adaptation via Fourier Adversarial Attacking](./domainadaptation/RDA%20Robust%20Domain%20Adaptation%20via%20Fourier%20Adversarial%20Attacking.pdf)
+- Huang J, Guan D, Xiao A, et al./2021/ICCV/31
+- Unsupervised domain adaptation (UDA) involves a supervised loss in a labeled source domain and an unsupervised loss in an unlabeled target domain, which often faces more severe **overfitting** (than classical supervised learning) as **the supervised source loss has clear domain gap and the unsupervised target loss is often noisy due to the lack of annotations**.
+- This paper presents RDA, a robust domain adaptation technique that introduces adversarial attacking to **mitigate overfitting in UDA**. We achieve robust domain adaptation by a novel **Fourier adversarial attacking** (FAA) method that allows **large magnitude of perturbation noises but has minimal modification of image semantics**, the former is critical to the effectiveness of its **generated adversarial samples** due to the existence of ‘domain gaps’. Specifically, FAA decomposes images into multiple **frequency components (FCs)** and **generates adversarial samples** by just perturbating certain FCs that capture little semantic in formation. With FAA-generated samples, the training can continue the **‘random walk’ and drift into an area with a flat loss landscape** (avoid overfitting), leading to more robust domain adaptation.
+- ![RDA_1](./images/RDA.png)
+- ![RDA_2](./images/RDA_2.png)
 
 
 # VIII. Others
