@@ -61,6 +61,7 @@
   - [Source free domain adaptation for medical image segmentation with fourier style mining](#source-free-domain-adaptation-for-medical-image-segmentation-with-fourier-style-mining)
   - [FDA: Fourier Domain Adaptation for Semantic Segmentation](#fda-fourier-domain-adaptation-for-semantic-segmentation)
   - [RDA: Robust Domain Adaptation via Fourier Adversarial Attacking](#rda-robust-domain-adaptation-via-fourier-adversarial-attacking)
+  - [Domain Generalisation via Domain Adaptation: An Adversarial Fourier Amplitude Approach](#domain-generalisation-via-domain-adaptation-an-adversarial-fourier-amplitude-approach)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -726,6 +727,14 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - This paper presents RDA, a robust domain adaptation technique that introduces adversarial attacking to **mitigate overfitting in UDA**. We achieve robust domain adaptation by a novel **Fourier adversarial attacking** (FAA) method that allows **large magnitude of perturbation noises but has minimal modification of image semantics**, the former is critical to the effectiveness of its **generated adversarial samples** due to the existence of ‘domain gaps’. Specifically, FAA decomposes images into multiple **frequency components (FCs)** and **generates adversarial samples** by just perturbating certain FCs that capture little semantic in formation. With FAA-generated samples, the training can continue the **‘random walk’ and drift into an area with a flat loss landscape** (avoid overfitting), leading to more robust domain adaptation.
 - ![RDA_1](./images/RDA.png)
 - ![RDA_2](./images/RDA_2.png)
+
+
+## [Domain Generalisation via Domain Adaptation: An Adversarial Fourier Amplitude Approach](./domainadaptation/Domain%20Generalisation%20via%20Domain%20Adaptation%20An%20Adversarial%20Fourier%20Amplitude%20Approach.pdf)
+- Kim M, Li D, Hospedales T./2023/ICLR/-
+- We tackle the domain generalisation (DG) problem by posing it as a domain adaptation (DA) task where we **adversarially synthesise the worst-case ‘target’ domain and adapt a model to that worst-case domain**, thereby improving the model’s robustness.
+- To synthesise data that is challenging yet **semantics-preserving**, we **generate Fourier amplitude images** and **combine them with source domain phase images**, exploiting the widely believed conjecture from signal processing that **amplitude spectra mainly determines image style, while phase data mainly captures image semantics**.
+- ![DGVDA_1](./images/DGVDA.png)
+- ![DGVDA_2](./images/DGVDA_2.png)
 
 
 # VIII. Others
