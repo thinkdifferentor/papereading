@@ -57,11 +57,12 @@
   - [15 Data augmentation using learned transformations for one-shot medical image segmentation](#15-data-augmentation-using-learned-transformations-for-one-shot-medical-image-segmentation)
   - [16 Models Genesis: Generic Autodidactic Models for 3D Medical Image Analysis](#16-models-genesis-generic-autodidactic-models-for-3d-medical-image-analysis)
   - [17 Synchronous Medical Image Augmentation framework for deep learning-based image segmentation](#17-synchronous-medical-image-augmentation-framework-for-deep-learning-based-image-segmentation)
-  - [CyCMIS: Cycle-consistent Cross-domain Medical Image Segmentation via diverse image augmentation](#cycmis-cycle-consistent-cross-domain-medical-image-segmentation-via-diverse-image-augmentation)
-  - [Source free domain adaptation for medical image segmentation with fourier style mining](#source-free-domain-adaptation-for-medical-image-segmentation-with-fourier-style-mining)
-  - [FDA: Fourier Domain Adaptation for Semantic Segmentation](#fda-fourier-domain-adaptation-for-semantic-segmentation)
-  - [RDA: Robust Domain Adaptation via Fourier Adversarial Attacking](#rda-robust-domain-adaptation-via-fourier-adversarial-attacking)
-  - [Domain Generalisation via Domain Adaptation: An Adversarial Fourier Amplitude Approach](#domain-generalisation-via-domain-adaptation-an-adversarial-fourier-amplitude-approach)
+  - [18 CyCMIS: Cycle-consistent Cross-domain Medical Image Segmentation via diverse image augmentation](#18-cycmis-cycle-consistent-cross-domain-medical-image-segmentation-via-diverse-image-augmentation)
+  - [19 Source free domain adaptation for medical image segmentation with fourier style mining](#19-source-free-domain-adaptation-for-medical-image-segmentation-with-fourier-style-mining)
+  - [20 FDA: Fourier Domain Adaptation for Semantic Segmentation](#20-fda-fourier-domain-adaptation-for-semantic-segmentation)
+  - [21 RDA: Robust Domain Adaptation via Fourier Adversarial Attacking](#21-rda-robust-domain-adaptation-via-fourier-adversarial-attacking)
+  - [22 Domain Generalisation via Domain Adaptation: An Adversarial Fourier Amplitude Approach](#22-domain-generalisation-via-domain-adaptation-an-adversarial-fourier-amplitude-approach)
+  - [23 DLTTA: Dynamic Learning Rate for Test-Time Adaptation on Cross-Domain Medical Images](#23-dltta-dynamic-learning-rate-for-test-time-adaptation-on-cross-domain-medical-images)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -692,7 +693,7 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - ![SMIA_5](./images/SMIA_5.png)
 
 
-## [CyCMIS: Cycle-consistent Cross-domain Medical Image Segmentation via diverse image augmentation](./domainadaptation/CyCMIS%20Cycle-consistent%20Cross-domain%20Medical%20Image%20Segmentation%20via%20diverse%20image%20augmentation.pdf)
+## [18 CyCMIS: Cycle-consistent Cross-domain Medical Image Segmentation via diverse image augmentation](./domainadaptation/CyCMIS%20Cycle-consistent%20Cross-domain%20Medical%20Image%20Segmentation%20via%20diverse%20image%20augmentation.pdf)
 - Wang R, Zheng G./2022/Medical Image Analysis/10
 - **CyCMIS** integrate **online diverse image translation** via *disentangled representation learning* and **semantic consistency regularization** into one network. Different from learning one-to-one mapping, our method characterizes the complex relationship between domains as **many-to-many mapping**. where images are embedded onto two spaces: a **domain-invariant content space** and a **domain-specific attribute space**. 
 - A novel diverse **inter-domain semantic consistency loss** is then proposed to regularize the cross-domain segmentation process. We additionally introduce an **intra-domain semantic consistency loss** to encourage the segmentation consistency between the original input and the image after cross-cycle reconstruction.
@@ -702,7 +703,7 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - ![CyCMIS_3](./images/CyCMIS_3.png)
 
 
-## [Source free domain adaptation for medical image segmentation with fourier style mining](./domainadaptation/Source%20free%20domain%20adaptation%20for%20medical%20image%20segmentation%20with%20fourier%20style%20mining.pdf)
+## [19 Source free domain adaptation for medical image segmentation with fourier style mining](./domainadaptation/Source%20free%20domain%20adaptation%20for%20medical%20image%20segmentation%20with%20fourier%20style%20mining.pdf)
 - Yang C, Guo X, Chen Z, et al./2022/Medical Image Analysis/6
 - Our framework is composed of two stages: In **the generation stage**, we design a **Fourier Style Mining (FSM) generator** to inverse source-like images through statistic information of the pretrained source model and **mutual Fourier Transform**. These generated source-like images can provide source data distribution and benefit the domain alignment. In **the adaptation stage**, we design a **Contrastive Domain Distillation (CDD) module** to achieve feature-level adaptation, including a domain distillation loss to transfer relation knowledge and a domain contrastive loss to narrow down the domain gap by a self-supervised paradigm. Besides, a **Compact-Aware Domain Consistency (CADC) module** is proposed to enhance consistency learning by filtering out noisy pseudo labels with shape compactness metric, thus achieving output-level adaptation.
 - Previous SFDA imply utilize the well-trained source model to **generate pseudo labels and retrain a target model** (self-training). But these methods ignore the **distribution information stored in BN statistics of the source model**, which could provide valuable information for the domain adaptation. FSM module can **mine out** the latent style information stored in the source segmentation model and generate the source-like images optimized from the input noise images. (Different from previous style transfer methods,this method does not require these source images under privacy concerns, and only utilizes BN statistics of the source segmentation model to mine out the source style information)
@@ -710,7 +711,7 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - ![SF_FSM_1](./images/SF_FSM_1.png)
 
 
-## [FDA: Fourier Domain Adaptation for Semantic Segmentation](./domainadaptation/FDA%20Fourier%20Domain%20Adaptation%20for%20Semantic%20Segmentation.pdf)
+## [20 FDA: Fourier Domain Adaptation for Semantic Segmentation](./domainadaptation/FDA%20Fourier%20Domain%20Adaptation%20for%20Semantic%20Segmentation.pdf)
 - Yang Y, Soatto S./2020/CVPR/451
 - FDA describe a simple method for unsupervised domain adaptation, whereby the discrepancy between the source and target distributions is reduced by **swapping the low-frequency spectrum of one with the other**. This method does not require any training to perform the domain alignment (**without adversarial training**), just a simple **Fourier Transform and its inverse**(just one free parameter).
 - ![FDA_1](./images/FDA_1.png)
@@ -721,7 +722,7 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - ![FDA_6](./images/FDA_6.png)
 
 
-## [RDA: Robust Domain Adaptation via Fourier Adversarial Attacking](./domainadaptation/RDA%20Robust%20Domain%20Adaptation%20via%20Fourier%20Adversarial%20Attacking.pdf)
+## [21 RDA: Robust Domain Adaptation via Fourier Adversarial Attacking](./domainadaptation/RDA%20Robust%20Domain%20Adaptation%20via%20Fourier%20Adversarial%20Attacking.pdf)
 - Huang J, Guan D, Xiao A, et al./2021/ICCV/31
 - Unsupervised domain adaptation (UDA) involves a supervised loss in a labeled source domain and an unsupervised loss in an unlabeled target domain, which often faces more severe **overfitting** (than classical supervised learning) as **the supervised source loss has clear domain gap and the unsupervised target loss is often noisy due to the lack of annotations**.
 - This paper presents RDA, a robust domain adaptation technique that introduces adversarial attacking to **mitigate overfitting in UDA**. We achieve robust domain adaptation by a novel **Fourier adversarial attacking** (FAA) method that allows **large magnitude of perturbation noises but has minimal modification of image semantics**, the former is critical to the effectiveness of its **generated adversarial samples** due to the existence of ‘domain gaps’. Specifically, FAA decomposes images into multiple **frequency components (FCs)** and **generates adversarial samples** by just perturbating certain FCs that capture little semantic in formation. With FAA-generated samples, the training can continue the **‘random walk’ and drift into an area with a flat loss landscape** (avoid overfitting), leading to more robust domain adaptation.
@@ -729,12 +730,24 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - ![RDA_2](./images/RDA_2.png)
 
 
-## [Domain Generalisation via Domain Adaptation: An Adversarial Fourier Amplitude Approach](./domainadaptation/Domain%20Generalisation%20via%20Domain%20Adaptation%20An%20Adversarial%20Fourier%20Amplitude%20Approach.pdf)
+## [22 Domain Generalisation via Domain Adaptation: An Adversarial Fourier Amplitude Approach](./domainadaptation/Domain%20Generalisation%20via%20Domain%20Adaptation%20An%20Adversarial%20Fourier%20Amplitude%20Approach.pdf)
 - Kim M, Li D, Hospedales T./2023/ICLR/-
 - We tackle the domain generalisation (DG) problem by posing it as a domain adaptation (DA) task where we **adversarially synthesise the worst-case ‘target’ domain and adapt a model to that worst-case domain**, thereby improving the model’s robustness.
 - To synthesise data that is challenging yet **semantics-preserving**, we **generate Fourier amplitude images** and **combine them with source domain phase images**, exploiting the widely believed conjecture from signal processing that **amplitude spectra mainly determines image style, while phase data mainly captures image semantics**.
 - ![DGVDA_1](./images/DGVDA.png)
 - ![DGVDA_2](./images/DGVDA_2.png)
+
+
+## [23 DLTTA: Dynamic Learning Rate for Test-Time Adaptation on Cross-Domain Medical Images](./domainadaptation/DLTTA%20Dynamic%20Learning%20Rate%20for%20Test-Time%20Adaptation%20on%20Cross-Domain%20Medical%20Images.pdf)
+- Yang H, Chen C, Jiang M, et al./2022/IEEE Transactions on Medical Imaging/4
+- Previous TTA methods have a common limitation of using a **fixed learning rate for all the test samples**. Such a practice would be sub-optimal for TTA, because test data may arrive sequentially therefore **the scale of distribution shift would change frequently**.
+- DLTTA, which **dynamically modulates the amount of weights update** for each test image to account for the differences in their distribution shift. Specifically,our DLTTA is equipped with a **memory bank** based estimation scheme to effectively measure **the discrepancy of a given test sample**. Based on this estimated discrepancy, a dynamic learning rate adjustment strategy is then developed to achieve a suitable degree of adaptation for each test sample.
+- UDA setting is still problematic for real-world model deployment due to two important reasons. **Firstly**, it is not efficient, if realistic, to wait for the **accumulation of sufficient amount of test samples** (e.g., thousands of instances), since the test data usually arrive sequentially one by one, or batch by batch. However, immediate prediction on a single test sample or a batch of instances is highly desired in clinical practice for timely diagnosis and treatment for patients. **Secondly**, accessing the training dataset at test time is practically difficult, because data sharing across hospitals is prohibitive due to the **privacy concern** for medical data. (TTA Setting Motivation)
+- This work's **insight** is to achieve dynamic learning rate adjustment according to a estimated distribution shift. *How to measure the discrepancy solely based on the model parameters and the current test sample in an unsupervised way is challenging and remains unsolved yet*.
+- Our proposed **memory bank-based** discrepancy measurement captures **both the model progress and the distribution variation of test data**, thus can provide more up-to-date discrepancy estimation for effective dynamic learning rate adjustment of test-time adaptation.
+- ![DLTTA_1](./images/DLTTA_1.png)
+- ![DLTTA_2](./images/DLTTA_2.png)
+
 
 
 # VIII. Others
