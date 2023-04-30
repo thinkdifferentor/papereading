@@ -63,6 +63,8 @@
   - [21 RDA: Robust Domain Adaptation via Fourier Adversarial Attacking](#21-rda-robust-domain-adaptation-via-fourier-adversarial-attacking)
   - [22 Domain Generalisation via Domain Adaptation: An Adversarial Fourier Amplitude Approach](#22-domain-generalisation-via-domain-adaptation-an-adversarial-fourier-amplitude-approach)
   - [23 DLTTA: Dynamic Learning Rate for Test-Time Adaptation on Cross-Domain Medical Images](#23-dltta-dynamic-learning-rate-for-test-time-adaptation-on-cross-domain-medical-images)
+  - [24 Exploring Domain-Invariant Parameters for Source Free Domain Adaptation](#24-exploring-domain-invariant-parameters-for-source-free-domain-adaptation)
+  - [24 Continual Test-Time Domain Adaptation](#24-continual-test-time-domain-adaptation)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -747,6 +749,23 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - Our proposed **memory bank-based** discrepancy measurement captures **both the model progress and the distribution variation of test data**, thus can provide more up-to-date discrepancy estimation for effective dynamic learning rate adjustment of test-time adaptation.
 - ![DLTTA_1](./images/DLTTA_1.png)
 - ![DLTTA_2](./images/DLTTA_2.png)
+
+
+## [24 Exploring Domain-Invariant Parameters for Source Free Domain Adaptation](./domainadaptation/Exploring%20Domain-Invariant%20Parameters%20for%20Source%20Free%20Domain%20Adaptation.pdf)
+- Wang F, Han Z, Gong Y, et al./2022/CVPR/15
+- Most existing methods focus on *learning the domain-invariant representations depending solely on the target data*, leading to the obtained representations are **target-specific**. In this way, they cannot fully address the distribution shift problem across domains. 
+- The fascinating **insight**: *rather than attempting to learn domain-invariant representations, it is better to explore the domain-invariant parameters of the source model*. The motivation behind this insight is clear: *the domain-invariant representations are dominated by only partial parameters of an available deep source model*. 
+- the Domain-Invariant Parameter Exploring (DIPE) approach to capture such **domain-invariant parameters in the source model to generate domain-invariant representations**. (**domain-invariant and domain-specific parameters**)
+- The **fundamental challenge of SFDA** is that the domain-invariant presentations are challenging to be explored directly depending solely on the target data. In this paper, **a novel insight**: In SFDA, *exploring domain-invariant parameters stored in the source model is more feasible than exploring domain-invariant representations directly*. (from Lottery Ticket Hypothesis)
+- ![DIPE_1](./images/DIPE_1.png)
+- ![DIPE_2](./images/DIPE_2.png)
+- ![DIPE_3](./images/DIPE_3.png)
+
+
+## [24 Continual Test-Time Domain Adaptation](./domainadaptation/Continual%20Test-Time%20Domain%20Adaptation.pdf)
+- Wang Q, Fink O, Van Gool L, et al./2022/CVPR/68
+- 
+
 
 
 
