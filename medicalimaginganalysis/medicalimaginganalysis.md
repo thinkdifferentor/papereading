@@ -764,8 +764,11 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 
 ## [24 Continual Test-Time Domain Adaptation](./domainadaptation/Continual%20Test-Time%20Domain%20Adaptation.pdf)
 - Wang Q, Fink O, Van Gool L, et al./2022/CVPR/68
-- 
-
+- Test-time domain adaptation aims to adapt a **source pretrained model** to a target domain **without using any source data**. Existing works mainly consider the case where the target domain is **static**. However, real-world machine perception systems are running in non-stationary and **continually changing environments** where the target domain distribution can change over time.
+- Existing methods, which are mostly based on **self-training and entropy regularization**, can suffer from these non-stationary environments. Due to the distribution shift over time in the target domain, pseudo-labels become unreliable. The noisy pseudo labels can further lead to **error accumulation and catastrophic forgetting**.
+- to reduce the **error accumulation** by using **weight-averaged and augmentation-averaged predictions** which are often more accurate; to avoid **catastrophic forgetting**, we propose to **stochastically restore a small part of the neurons** to the source pre-trained weights during each iteration to help preserve source knowledge in the long-term.
+- ![CTTDA_1](./images/CTTDA_1.png)
+- ![CTTDA_2](./images/CTTDA_2.png)
 
 
 
