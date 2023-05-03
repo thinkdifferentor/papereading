@@ -65,6 +65,7 @@
   - [23 DLTTA: Dynamic Learning Rate for Test-Time Adaptation on Cross-Domain Medical Images](#23-dltta-dynamic-learning-rate-for-test-time-adaptation-on-cross-domain-medical-images)
   - [24 Exploring Domain-Invariant Parameters for Source Free Domain Adaptation](#24-exploring-domain-invariant-parameters-for-source-free-domain-adaptation)
   - [24 Continual Test-Time Domain Adaptation](#24-continual-test-time-domain-adaptation)
+  - [25 Shallow Features Guide Unsupervised Domain Adaptation for Semantic Segmentation at Class Boundaries](#25-shallow-features-guide-unsupervised-domain-adaptation-for-semantic-segmentation-at-class-boundaries)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -769,6 +770,23 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - to reduce the **error accumulation** by using **weight-averaged and augmentation-averaged predictions** which are often more accurate; to avoid **catastrophic forgetting**, we propose to **stochastically restore a small part of the neurons** to the source pre-trained weights during each iteration to help preserve source knowledge in the long-term.
 - ![CTTDA_1](./images/CTTDA_1.png)
 - ![CTTDA_2](./images/CTTDA_2.png)
+
+
+## [25 Shallow Features Guide Unsupervised Domain Adaptation for Semantic Segmentation at Class Boundaries](./domainadaptation/Shallow%20Features%20Guide%20Unsupervised%20Domain%20Adaptation%20for%20Semantic%20Segmentation%20at%20Class%20Boundaries.pdf)
+- Cardace A, Ramirez P Z, Salti S, et al./2022/WACV/8
+- Domain shift is particularly noticeable along **class boundaries**, invalidating one of the main goals of semantic segmentation that consists in **obtaining sharp segmentation masks**. 
+- ![SFG_1](./images/SFG_1.png)
+- In this work, we specifically address this core problem in the context of Unsupervised Domain Adaptation and present a novel **low-level adaptation strategy** that allows us to **obtain sharp predictions**. Moreover, inspired by recent self-training techniques, we introduce an **effective data augmentation** that **alleviates the noise** typically present at semantic boundaries when employing pseudo-labels for self-training.
+- ![SFG_2](./images/SFG_2.png)
+- Given an RGB input image, the network learns to **extract semantic edges** from shallow features. From the same feature map, a 2D **displacement map** is estimated in order to guide the warping of down-sampled deep features, which lacks of fine-grained details.(*refine the bi-linearly up-sampled coarse feature map*)
+- we enforce the auxiliary semantic edge detection task for the very **first layers of the network** only by the **Canny edge detector** applied directly on **semantic annotations** for the source domain and on **pseudo-labels** for the target domain. **rather than**, as in typical multi-task learning settings at a deeper level, where features are more **task-dependent** (shared feature representation, which naturally leads to aligned distributions).
+- Our intuition is that, due to **the unavoidable side-effect of the down-sample operations** in the forward pass, the representation of those elements in **final feature representation** whose receptive field includes regions at class boundaries in the original image, contains **ambiguous** semantic information. Indeed, when Ac is bi-linearly up-sampled, patches that receive contributions from ambiguous coarse patches **inherit such ambiguity**.
+- ![SFG_3](./images/SFG_3.png)
+- Although selecting source objects(**self-training with augmented source images**) may be useful to reduce the unbalanced distributions of classes, it is a sub-optimal choice since the network would be still trained to identify shapes and details peculiar to the source domain, which are different to those found at inference time for the target images. 
+
+
+
+
 
 
 
