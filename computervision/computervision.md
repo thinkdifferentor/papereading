@@ -45,6 +45,7 @@
   - [19 Searching for MobileNetV3](#19-searching-for-mobilenetv3)
   - [20 ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices](#20-shufflenet-an-extremely-efficient-convolutional-neural-network-for-mobile-devices)
   - [21 Randaugment: Practical automated data augmentation with a reduced search space](#21-randaugment-practical-automated-data-augmentation-with-a-reduced-search-space)
+  - [22 Spatial Transformer Networks](#22-spatial-transformer-networks)
 
 <!-- /TOC -->
 
@@ -428,3 +429,13 @@ hair), and it enables intuitive, scale-specific control of the synthesis.
 - An obstacle to a large-scale adoption of automated augmentation is that they require a **separate and expensive** search phase. A common way to overcome the expense of the search phase was to use **a smaller proxy task**. However, it was **not clear if the optimized hyperparameters found on the proxy task are also optimal for the actual task**.
 - We find that while previous work required a search for both **magnitude and probability of each operation independently**, it is sufficient to only search for a **single distortion magnitude that jointly controls all operations**. We hence propose a **simplified search space** that vastly reduces the computational expense of automated augmentation, and permits the **removal of a separate proxy task**.
 - ![RandomAug](./images/RandomAUG.png)
+
+
+## [22 Spatial Transformer Networks](./Spatial%20Transformer%20Networks.pdf)
+- Jaderberg M, Simonyan K, Zisserman A./2015/NIPS/7240
+- Convolutional Neural Networks define an exceptionally powerful class of models, but are still limited by the lack of ability to be **spatially invariant** to the input data in a computationally and parameter efficient manner. In this work we introduce a new **learnable module**, the Spatial Transformer, which explicitly **allows the spatial manipulation of data within the network**. 
+- This differentiable module can be inserted into existing convolutional architectures, giving neural networks the ability to actively spatially transform feature maps, **conditional on the feature map itself** , without any e**xtra training supervision or modification to the optimisation process**(trained with standard back-propagation, allowing for end-to-end training).
+- Due to the typically small spatial support for max-pooling (e.g. 2 × 2 pixels) this spatial invariance is only realised over a **deep hierarchy of max-pooling and convolutions**, and the **intermediate feature maps** (convolutional layer activations) in a CNN are not actually invariant to large transformations of the input data.
+- Unlike pooling layers, **where the receptive fields are fixed and local**, the spatial transformer module is a **dynamic mechanism** that can actively spatially transform an image (or a feature map) by **producing an appropriate transformation** for each input sample. 
+- ![STN_1](./images/STN_1.png)
+- ![STN_2](./images/STN_2.png)
