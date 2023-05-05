@@ -66,6 +66,7 @@
   - [24 Exploring Domain-Invariant Parameters for Source Free Domain Adaptation](#24-exploring-domain-invariant-parameters-for-source-free-domain-adaptation)
   - [24 Continual Test-Time Domain Adaptation](#24-continual-test-time-domain-adaptation)
   - [25 Shallow Features Guide Unsupervised Domain Adaptation for Semantic Segmentation at Class Boundaries](#25-shallow-features-guide-unsupervised-domain-adaptation-for-semantic-segmentation-at-class-boundaries)
+  - [26 Bidirectional Learning for Domain Adaptation of Semantic Segmentation](#26-bidirectional-learning-for-domain-adaptation-of-semantic-segmentation)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -785,7 +786,14 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - Although selecting source objects(**self-training with augmented source images**) may be useful to reduce the unbalanced distributions of classes, it is a sub-optimal choice since the network would be still trained to identify shapes and details peculiar to the source domain, which are different to those found at inference time for the target images. 
 
 
-
+## [26 Bidirectional Learning for Domain Adaptation of Semantic Segmentation](./domainadaptation/Bidirectional%20Learning%20for%20Domain%20Adaptation%20of%20Semantic%20Segmentation.pdf)
+- Li Y, Yuan L, Vasconcelos N. /2019/CVPR/520
+- Existing domain adaptation techniques either work on **limited datasets**, or yield **not so good performance** compared with supervised learning. Using the bidirectional learning(“translation-to-segmentation” and “segmentation-to-translation”), **the image translation model** and **the segmentation adaptation model** can be learned **alternatively** and **promote** to each other. Furthermore, we propose a **self-supervised learning algorithm** to learn a better segmentation adaptation model and in return improve the image translation model. 
+- *How to allow one of both modules providing positive feedbacks to the other is the key to success*. **better segmentation adaptation model** would contribute to **better translation model** through our backward direction learning.
+- domain adaptation for semantic segmentation has made good progress by separating it into **two sequential steps**: image-to-image translation model and add a discriminator on top of the features of the segmentation model. the segmentation model very relies on the quality of image-to-image translation. *Once the image-to-image translation fails, nothing can be done to make it up in the following stages*.
+- a **perceptual loss**, which measures the distance of features obtained from a **pre-trained network** on object recognition, is used in the image translation network to improve the quality of translated result.
+- ![BDL_1](./images/BDL.png)
+- ![BDL_2](./images/BDL_2.png)
 
 
 
