@@ -67,6 +67,7 @@
   - [24 Continual Test-Time Domain Adaptation](#24-continual-test-time-domain-adaptation)
   - [25 Shallow Features Guide Unsupervised Domain Adaptation for Semantic Segmentation at Class Boundaries](#25-shallow-features-guide-unsupervised-domain-adaptation-for-semantic-segmentation-at-class-boundaries)
   - [26 Bidirectional Learning for Domain Adaptation of Semantic Segmentation](#26-bidirectional-learning-for-domain-adaptation-of-semantic-segmentation)
+  - [26 Cross-domain Contrastive Learning for Unsupervised Domain Adaptation](#26-cross-domain-contrastive-learning-for-unsupervised-domain-adaptation)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -794,6 +795,20 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - a **perceptual loss**, which measures the distance of features obtained from a **pre-trained network** on object recognition, is used in the image translation network to improve the quality of translated result.
 - ![BDL_1](./images/BDL.png)
 - ![BDL_2](./images/BDL_2.png)
+
+
+
+## [26 Cross-domain Contrastive Learning for Unsupervised Domain Adaptation](./domainadaptation/Cross-domain%20Contrastive%20Learning%20for%20Unsupervised%20Domain%20Adaptation.pdf)
+- Wang R, Wu Z, Weng Z, et al./2022/ IEEE Transactions on Multimedia/48
+- Most existing UDA methods learn **domain-invariant feature representations** by **minimizing feature distances across domains**. In this work, we build upon
+contrastive self-supervised learning to align features so as to reduce the domain discrepancy between training and testing sets. In this work, we build upon **contrastive self-supervised learning** to align features so as to reduce the domain discrepancy between training and testing sets.
+- Exploring the **same set of categories shared by both domains**, we introduce a simple yet effective framework CDCL, for domain alignment. In particular, given an anchor image from one domain, we minimize its distances to cross-domain samples from the same class relative to those from different categories. Since target labels are unavailable, we use a **clustering-based approach** with carefully initialized centers to **produce pseudo labels**. 
+- In this paper, we ask the following **question**: can we leverage contrastive learning that produces decent feature representations in a variety of downstream tasks for domain alignment in unsupervised domain adaptation? (In domain adaptation, it is not clear how to form **positive and negative pairs** in order to align feature distributions)
+- More specifically, we **hypothesize** that *samples within the same category are close to each other while samples from different classes lie far apart, regardless of which domain they come from*. 
+- The **intuition** is that the weight vectors in the classifier layer of a pre-trained model can be regarded as prototypical features of each class learned on the source domain. In particular, we first remove the bias of the fully-connected layer and perform normalization for the classifier.
+- [CDCL_1](./images/CDCL_1.png)
+- [CDCL_2](./images/CDCL_2.png)
+
 
 
 
