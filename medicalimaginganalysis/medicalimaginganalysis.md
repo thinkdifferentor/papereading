@@ -68,6 +68,7 @@
   - [25 Shallow Features Guide Unsupervised Domain Adaptation for Semantic Segmentation at Class Boundaries](#25-shallow-features-guide-unsupervised-domain-adaptation-for-semantic-segmentation-at-class-boundaries)
   - [26 Bidirectional Learning for Domain Adaptation of Semantic Segmentation](#26-bidirectional-learning-for-domain-adaptation-of-semantic-segmentation)
   - [26 Cross-domain Contrastive Learning for Unsupervised Domain Adaptation](#26-cross-domain-contrastive-learning-for-unsupervised-domain-adaptation)
+  - [27 FedDG: Federated Domain Generalization on Medical Image Segmentation via Episodic Learning in Continuous Frequency Space](#27-feddg-federated-domain-generalization-on-medical-image-segmentation-via-episodic-learning-in-continuous-frequency-space)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -806,8 +807,22 @@ contrastive self-supervised learning to align features so as to reduce the domai
 - In this paper, we ask the following **question**: can we leverage contrastive learning that produces decent feature representations in a variety of downstream tasks for domain alignment in unsupervised domain adaptation? (In domain adaptation, it is not clear how to form **positive and negative pairs** in order to align feature distributions)
 - More specifically, we **hypothesize** that *samples within the same category are close to each other while samples from different classes lie far apart, regardless of which domain they come from*. 
 - The **intuition** is that the weight vectors in the classifier layer of a pre-trained model can be regarded as prototypical features of each class learned on the source domain. In particular, we first remove the bias of the fully-connected layer and perform normalization for the classifier.
-- [CDCL_1](./images/CDCL_1.png)
-- [CDCL_2](./images/CDCL_2.png)
+- ![CDCL_1](./images/CDCL_1.png)
+- ![CDCL_2](./images/CDCL_2.png)
+
+
+## [27 FedDG: Federated Domain Generalization on Medical Image Segmentation via Episodic Learning in Continuous Frequency Space](./domainadaptation/Feddg%20Federated%20domain%20generalization%20on%20medical%20image%20segmentation%20via%20episodic%20learning%20in%20continuous%20frequency%20space%20.pdf)
+- Liu Q, Chen C, Qin J, et al./2021/CVPR/167
+- Federated learning allows distributed medical institutions to collaboratively learn a shared prediction model with privacy protection. While at clinical deployment, the models trained in federated learning can still suffer from performance drop when applied to **completely unseen hospitals outside the federation**.
+- Although FL has witnessed some pilot progress on medical image segmentation tasks, all existing works only focus on improving model performance on the internal clients, while neglecting model generalizability onto unseen domains outside the federation.
+- To solve this FedDG problem, our insight is to enable each client to access multi-source data distributions in a privacy-protecting way. (**continuous frequency space interpolation mechanism, FFT**); This is *notably important* for medical image segmentation applications where generalization errors often come from imprecise predictions at ambiguous boundary of anatomies.(**boundary-oriented episodic learning paradigm**)
+- **Challenges of FedDG**: 
+  - **First**, the multi-source data in FL are stored distributedly and the learning at each client can only access its individual local distribution, which constrains to make full use of the multi-source distributions to learn generalizable parameters. 
+  - **Second**, though FL has collaborated multi-source data, the medical images acquired from different clinical sites can present large heterogeneity. This leads to distinct distributions among the collaborative datasets, which is insufficient to ensure domain invariance in a more continuous distribution space to attain good generalizability in complex clinical environments. 
+  - **Third**, the structure of medical anatomises usually present high ambiguity around its boundary region, raising challenge for previous DG techniques that typically lacks assurance for the domain-invariance of features in such ambiguous region.
+- **Boundary-oriented meta optimization:** The idea is to regularize the **boundary-related and background-related** features of these data to respectively cluster to a compact space regardless of their distributions while reducing the clusters overlap. **This is crucial**, since if the model cannot project their features around boundary area with distribution-independent class-specific cohesion and separation, the predictions will **suffer from ambiguous decision boundaries** and still be **sensitive to the distribution** shift when deployed to unseen domains outside federation.
+- ![FedDG_1](./images/FedDG_1.png)
+- ![FedDG_2](./images/FedDG_2.png)
 
 
 
