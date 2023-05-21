@@ -70,6 +70,7 @@
   - [26 Cross-domain Contrastive Learning for Unsupervised Domain Adaptation](#26-cross-domain-contrastive-learning-for-unsupervised-domain-adaptation)
   - [27 FedDG: Federated Domain Generalization on Medical Image Segmentation via Episodic Learning in Continuous Frequency Space](#27-feddg-federated-domain-generalization-on-medical-image-segmentation-via-episodic-learning-in-continuous-frequency-space)
   - [28 Semantic-Aware Domain Generalized Segmentation](#28-semantic-aware-domain-generalized-segmentation)
+  - [29 RobustNet: Improving Domain Generalization in Urban-Scene Segmentation via Instance Selective Whitening](#29-robustnet-improving-domain-generalization-in-urban-scene-segmentation-via-instance-selective-whitening)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -836,8 +837,17 @@ contrastive self-supervised learning to align features so as to reduce the domai
 - ![SADGS_3](./images/SADGS_3.png)
 
 
-
-
+## [29 RobustNet: Improving Domain Generalization in Urban-Scene Segmentation via Instance Selective Whitening](./domainadaptation/RobustNet%20Improving%20Domain%20Generalization%20in%20Urban-Scene%20Segmentation%20via%20Instance%20Selective%20Whitening.pdf)
+- Choi S, Jung S, Yun H, et al./2021/CVPR/105
+- To address DGSS, this paper proposes a novel **instance selective whitening loss** to improve the robustness of the segmentation networks for unseen domains. Our approach **disentangles the domain-specific style and domain-invariant content** encoded in higher-order statistics (i.e., feature covariance) of the feature representations and **selectively removes only the style information** causing domain shift.
+- Existing DG  learning of a shared representation across **multiple source domains** to improving the robustness of the model. However, *collecting such multi-domain datasets is costly and labor-intensive, and furthermore, the performance highly depends on the number of source datasets*.
+- - Our method **selectively removes** only those **feature covariances that respond sensitively to photometric augmentation** such as color transformation. (*feature covariance ( or feature correlations (i.e., a gram matrix or covariance matrix)) contains domain-specific style such as texture and color*)
+- The **whitening transformation** that removes feature correlation and makes each feature have unit variance, has been known to help to remove the style information from the feature representations
+- this is the first attempt to apply whitening to DG.
+- ![RobustNet_1](./images/RobustNet_1.png)
+- ![RobustNet_2](./images/RobustNet_2.png)
+- ![RobustNet_3](./images/RobustNet_3.png)
+- ![RobustNet_4](./images/RobustNet_4.png)
 
 
 
