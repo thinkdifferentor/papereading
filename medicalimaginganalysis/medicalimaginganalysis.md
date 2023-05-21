@@ -71,6 +71,7 @@
   - [27 FedDG: Federated Domain Generalization on Medical Image Segmentation via Episodic Learning in Continuous Frequency Space](#27-feddg-federated-domain-generalization-on-medical-image-segmentation-via-episodic-learning-in-continuous-frequency-space)
   - [28 Semantic-Aware Domain Generalized Segmentation](#28-semantic-aware-domain-generalized-segmentation)
   - [29 RobustNet: Improving Domain Generalization in Urban-Scene Segmentation via Instance Selective Whitening](#29-robustnet-improving-domain-generalization-in-urban-scene-segmentation-via-instance-selective-whitening)
+  - [30 FSDR: Frequency Space Domain Randomization for Domain Generalization](#30-fsdr-frequency-space-domain-randomization-for-domain-generalization)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -848,6 +849,19 @@ contrastive self-supervised learning to align features so as to reduce the domai
 - ![RobustNet_2](./images/RobustNet_2.png)
 - ![RobustNet_3](./images/RobustNet_3.png)
 - ![RobustNet_4](./images/RobustNet_4.png)
+
+
+## [30 FSDR: Frequency Space Domain Randomization for Domain Generalization](./domainadaptation/FSDR%20Frequency%20Space%20Domain%20Randomization%20for%20Domain%20Generalization.pdf)
+- Huang J, Guan D, Xiao A, et al./2021/CVPR/94
+- It has been studied widely by **domain randomization that transfers source images to different styles** in **spatial space** for learning **domain-agnostic features** for DGSS problem. However, most existing randomization methods use **GANs that often lack of controls and even alter semantic structures** of images undesirably.
+- Inspired by the idea of JPEG that converts spatial images into **multiple frequency components** (FCs), we propose Frequency Space Domain Randomization (FSDR) that randomizes images in frequency space by **keeping domain-invariant FCs (DIFs) and randomizing domain-variant FCs (DVFs)** only.
+- FSDR has two **unique features**: 1. it decomposes images into DIFs and DVFs which allows explicit access and manipulation of them and more **controllable randomization**; 2. it has **minimal effects on semantic structures of images and domain-invariant features**. 
+- FSDR thus overcomes the constraints of most existing domain randomization methods which work over **the full spectrum of images in the spatial space and tend to modify domain-invariant features undesirably**. 
+- **Domain Generalization**: single-source DG & multi-source DG; **Domain Adaptation**: adversarial training(feature or output space) & image translation & self-training. Domain Generalization & Domain Adaptation -> **domain-invariant feature or encoder (high generalizability feature)**.
+- ![FSDR_1](./images/FSDR_1.png)
+- ![FSDR_2](./images/FSDR_2.png)
+- ![FSDR_3](./images/FSDR_3.png)
+- ![FSDR_4](./images/FSDR_4.png)
 
 
 
