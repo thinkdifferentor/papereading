@@ -69,6 +69,7 @@
   - [26 Bidirectional Learning for Domain Adaptation of Semantic Segmentation](#26-bidirectional-learning-for-domain-adaptation-of-semantic-segmentation)
   - [26 Cross-domain Contrastive Learning for Unsupervised Domain Adaptation](#26-cross-domain-contrastive-learning-for-unsupervised-domain-adaptation)
   - [27 FedDG: Federated Domain Generalization on Medical Image Segmentation via Episodic Learning in Continuous Frequency Space](#27-feddg-federated-domain-generalization-on-medical-image-segmentation-via-episodic-learning-in-continuous-frequency-space)
+  - [28 Semantic-Aware Domain Generalized Segmentation](#28-semantic-aware-domain-generalized-segmentation)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -823,6 +824,18 @@ contrastive self-supervised learning to align features so as to reduce the domai
 - **Boundary-oriented meta optimization:** The idea is to regularize the **boundary-related and background-related** features of these data to respectively cluster to a compact space regardless of their distributions while reducing the clusters overlap. **This is crucial**, since if the model cannot project their features around boundary area with distribution-independent class-specific cohesion and separation, the predictions will **suffer from ambiguous decision boundaries** and still be **sensitive to the distribution** shift when deployed to unseen domains outside federation.
 - ![FedDG_1](./images/FedDG_1.png)
 - ![FedDG_2](./images/FedDG_2.png)
+
+
+## [28 Semantic-Aware Domain Generalized Segmentation](./domainadaptation/Semantic-Aware%20Domain%20Generalized%20Segmentation.pdf)
+- Peng D, Lei Y, Hayat M, et al./2022/CVPR/21
+- for DGSS, existing approaches to tackle this problem standardize data into a **unified distribution**. We **argue** that while such a **standardization promotes global normalization**, the resulting features are not discriminative enough to get clear segmentation boundaries.
+- Semantic-Aware Normalization (SAN) and Semantic-Aware Whitening (SAW).  SAN focuses on **category-level center alignment** between features from different image styles, while SAW enforces **distributed alignment for the already center-aligned features**. With the help of SAN and SAW, we encourage both **intra-category compactness and inter-category separability**.
+-  Existing methods tackle DGSS using **two main approaches**: (1) **Domain Randomization** which aims to increase the variety of training data by augmenting the source images to multiple domain styles. However, this is limiting since the augmentation schemes used are unable to cover different scenarios that may occur in the target domain.  (2) **Normalization and Whitening** which utilizes predefined Instance Normalization (IN) or Instance Whitening (IW) to standardize the feature distribution of different samples. *Nevertheless, such global alignment strategy lacks the consideration of local feature distribution consistency*.
+- ![SADGS_1](./images/SADGS_1.png)
+- ![SADGS_2](./images/SADGS_2.png)
+- ![SADGS_3](./images/SADGS_3.png)
+
+
 
 
 
