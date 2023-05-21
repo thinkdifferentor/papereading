@@ -73,6 +73,7 @@
   - [29 RobustNet: Improving Domain Generalization in Urban-Scene Segmentation via Instance Selective Whitening](#29-robustnet-improving-domain-generalization-in-urban-scene-segmentation-via-instance-selective-whitening)
   - [30 FSDR: Frequency Space Domain Randomization for Domain Generalization](#30-fsdr-frequency-space-domain-randomization-for-domain-generalization)
   - [31 Domain Randomization and Pyramid Consistency: Simulation-to-Real Generalization without Accessing Target Domain Data](#31-domain-randomization-and-pyramid-consistency-simulation-to-real-generalization-without-accessing-target-domain-data)
+  - [Two at Once: Enhancing Learning and Generalization Capacities via IBN-Net](#two-at-once-enhancing-learning-and-generalization-capacities-via-ibn-net)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -875,6 +876,20 @@ gap by generating synthetic data with sufficient variation that the network view
 - ![DRPC_1](./images/DRPC_1.png)
 - ![DRPC_2](./images/DRPC_2.png)
 - ![DRPC_3](./images/DRPC_3.png)
+
+
+## [Two at Once: Enhancing Learning and Generalization Capacities via IBN-Net](./domainadaptation/Two%20at%20Once%20Enhancing%20Learning%20and%20Generalization%20Capacities%20via%20IBN-Net.pdf)
+- Pan X, Luo P, Shi J, et al./2018/ECCV/545
+- IBN-Net(a new CNN architecture) carefully integrates **Instance Normalization (IN) and Batch Normalization (BN)** as building blocks, and can be wrapped into many advanced deep networks to improve their performances(**Plug and play**).  This work disclose that **IN learns features that are invariant to appearance changes**, such as colors, styles, and virtuality/reality, while **BN is essential for preserving content related information**.
+- BN as a key component to **improve their learning capacity in high-level vision tasks** such as image recognition. IN was often combined with CNNs to remove **variance of images on low-level vision tasks** such as image style transfer. But the different characteristics of their learned features and the impact of their combination have not been disclosed in existing works. In contrast, IBN-Net shows that combining them in an appropriate manner improves both **learning and generalization** capacities.
+- Firstly, to reduce feature variance caused by appearance in shallow layers while not interfering the content discrimination in deep layers, we only **add IN layers to the shallow half of the CNNs**. Secondly, to also preserve image content information in shallow layers, we replace **the original BN layers to IN for a half of features and BN for the other half**.
+- There are two **limitations in the above CNN architectures**. **Firstly**, the limited basic modules(convolutions, BNs, ReLUs, and poolings) prevent them from gaining more appealing properties (vulnerable by appearance variations). **Secondly**, the design goal of these models is to achieve strong modeling capacity on a single task of a single domain, while their capacities to generalize to new domains are still limited.
+- A natural solution to solve the appearance gap is by using transfer learning. However, this requires human annotations of the target domain, and the performances of the finetuned models would then drop when they are applied on the source domain. Basically, **the appearance gap is not eliminated** in the CNN model.
+- ![IBN_1](./images/IBN_1.png)
+- ![IBN_2](./images/IBN_2.png)
+- ![IBN_3](./images/IBN_3.png)
+
+
 
 
 # VIII. Others
