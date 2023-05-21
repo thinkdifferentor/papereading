@@ -72,6 +72,7 @@
   - [28 Semantic-Aware Domain Generalized Segmentation](#28-semantic-aware-domain-generalized-segmentation)
   - [29 RobustNet: Improving Domain Generalization in Urban-Scene Segmentation via Instance Selective Whitening](#29-robustnet-improving-domain-generalization-in-urban-scene-segmentation-via-instance-selective-whitening)
   - [30 FSDR: Frequency Space Domain Randomization for Domain Generalization](#30-fsdr-frequency-space-domain-randomization-for-domain-generalization)
+  - [31 Domain Randomization and Pyramid Consistency: Simulation-to-Real Generalization without Accessing Target Domain Data](#31-domain-randomization-and-pyramid-consistency-simulation-to-real-generalization-without-accessing-target-domain-data)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -844,7 +845,7 @@ contrastive self-supervised learning to align features so as to reduce the domai
 - Existing DG  learning of a shared representation across **multiple source domains** to improving the robustness of the model. However, *collecting such multi-domain datasets is costly and labor-intensive, and furthermore, the performance highly depends on the number of source datasets*.
 - - Our method **selectively removes** only those **feature covariances that respond sensitively to photometric augmentation** such as color transformation. (*feature covariance ( or feature correlations (i.e., a gram matrix or covariance matrix)) contains domain-specific style such as texture and color*)
 - The **whitening transformation** that removes feature correlation and makes each feature have unit variance, has been known to help to remove the style information from the feature representations
-- this is the first attempt to apply whitening to DG.
+- this is the **first attempt** to apply whitening to DG.
 - ![RobustNet_1](./images/RobustNet_1.png)
 - ![RobustNet_2](./images/RobustNet_2.png)
 - ![RobustNet_3](./images/RobustNet_3.png)
@@ -863,6 +864,17 @@ contrastive self-supervised learning to align features so as to reduce the domai
 - ![FSDR_3](./images/FSDR_3.png)
 - ![FSDR_4](./images/FSDR_4.png)
 
+
+## [31 Domain Randomization and Pyramid Consistency: Simulation-to-Real Generalization without Accessing Target Domain Data](./domainadaptation/Domain%20Randomization%20and%20Pyramid%20Consistency%20Simulation-to-Real%20Generalization%20without%20Accessing%20Target%20Domain%20Data.pdf)
+- Yue X, Zhang Y, Zhao S, et al./2019/CVPR/235
+- we propose a new approach of **domain randomization** and **pyramid consistency** to learn a model with high generalizability. **First**, we propose to randomize the synthetic images with the styles of real images in terms of visual appearances using **auxiliary datasets**(like ImageNet), in order to effectively learn domain-invariant representations. **Second**, we further enforce **pyramid consistency across different “stylized” images** and within an image, in order to learn domain-invariant and scale-invariant features, respectively. 
+- Our **main idea** is to randomize the labeled synthetic images to the styles of real images. We further enforce the semantic segmentation network to generate consistent predictions, in a pyramid form, over these domains. Our **conjecture** is that if the network is exposed to a sufficient number of domains in the training stage, it should **interpolate** well to new real world target domains. In contrast, the domain adaptation work can be seen as **extrapolating** from a single source domain to a single target domain. 
+- Domain randomization (DR) is a **complementary** class of techniques for domain adaptation. The **goal** is to close the reality
+gap by generating synthetic data with sufficient variation that the network views real-world data as just another variation. The type of domain randomization we proposed in this paper can also be considered as **a type of data augmentation**.
+- this is the **first work** to explore domain randomization for the semantic segmentation problem.
+- ![DRPC_1](./images/DRPC_1.png)
+- ![DRPC_2](./images/DRPC_2.png)
+- ![DRPC_3](./images/DRPC_3.png)
 
 
 # VIII. Others
