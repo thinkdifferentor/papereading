@@ -78,6 +78,7 @@
   - [34 WildNet: Learning Domain Generalized Semantic Segmentation From the Wild](#34-wildnet-learning-domain-generalized-semantic-segmentation-from-the-wild)
   - [35 DIRL: Domain-Invariant Representation Learning for Generalizable Semantic Segmentation](#35-dirl-domain-invariant-representation-learning-for-generalizable-semantic-segmentation)
   - [36 Intra-Source Style Augmentation for Improved Domain Generalization](#36-intra-source-style-augmentation-for-improved-domain-generalization)
+  - [37 Global and Local Texture Randomization for Synthetic-to-Real Semantic Segmentation](#37-global-and-local-texture-randomization-for-synthetic-to-real-semantic-segmentation)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -931,7 +932,15 @@ gap by generating synthetic data with sufficient variation that the network view
 - To the best of our knowledge, our approach is the first GAN inversion method which can be effectively applied as data augmentation for the semantic segmentation of complex scenes.
 
 
-
+## [37 Global and Local Texture Randomization for Synthetic-to-Real Semantic Segmentation](./domainadaptation/Global%20and%20Local%20Texture%20Randomization%20for%20Synthetic-to-Real%20Semantic%20Segmentation.pdf)
+- Peng D, Lei Y, Liu L, et al./2021/TIP/60
+- Global Texture Randomization (**GTR**) aims to **alleviate the reliance of the network on texture while promoting the learning of the domain-invariant cues**. In addition, we find the texture difference is not always occurred in **entire image and may only appear in some local areas**. Therefore, we further propose a Local Texture Randomization (**LTR**) mechanism to generate diverse local regions for partially stylizing the source images. Finally, we implement a regularization of Consistency between GTR and LTR (CGL) aiming to **harmonize the two proposed mechanisms during training**. Besides, a strategy namely Texture Complexity based Painting Selection(**TCPS**) is proposed to **ensure the selected paintings are reliable enough** for the above texture randomization mechanisms.
+- ![GTR_1](./images/GTR_1.png)
+- ![GTR_2](./images/GTR_2.png)
+- ![GTR_3](./images/GTR_3.png)
+- ![GTR_4](./images/GTR_4.png)
+- ![GTR_5](./images/GTR_5.png)
+- ![GTR_6](./images/GTR_6.png) , ![GTR_7](./images/GTR_7.png)
 
 
 
