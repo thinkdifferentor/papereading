@@ -73,9 +73,9 @@
   - [29 RobustNet: Improving Domain Generalization in Urban-Scene Segmentation via Instance Selective Whitening](#29-robustnet-improving-domain-generalization-in-urban-scene-segmentation-via-instance-selective-whitening)
   - [30 FSDR: Frequency Space Domain Randomization for Domain Generalization](#30-fsdr-frequency-space-domain-randomization-for-domain-generalization)
   - [31 Domain Randomization and Pyramid Consistency: Simulation-to-Real Generalization without Accessing Target Domain Data](#31-domain-randomization-and-pyramid-consistency-simulation-to-real-generalization-without-accessing-target-domain-data)
-  - [Two at Once: Enhancing Learning and Generalization Capacities via IBN-Net](#two-at-once-enhancing-learning-and-generalization-capacities-via-ibn-net)
-  - [Switchable Whitening for Deep Representation Learning](#switchable-whitening-for-deep-representation-learning)
-  - [](#)
+  - [32 Two at Once: Enhancing Learning and Generalization Capacities via IBN-Net](#32-two-at-once-enhancing-learning-and-generalization-capacities-via-ibn-net)
+  - [33 Switchable Whitening for Deep Representation Learning](#33-switchable-whitening-for-deep-representation-learning)
+  - [34 WildNet: Learning Domain Generalized Semantic Segmentation From the Wild](#34-wildnet-learning-domain-generalized-semantic-segmentation-from-the-wild)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -880,7 +880,7 @@ gap by generating synthetic data with sufficient variation that the network view
 - ![DRPC_3](./images/DRPC_3.png)
 
 
-## [Two at Once: Enhancing Learning and Generalization Capacities via IBN-Net](./domainadaptation/Two%20at%20Once%20Enhancing%20Learning%20and%20Generalization%20Capacities%20via%20IBN-Net.pdf)
+## [32 Two at Once: Enhancing Learning and Generalization Capacities via IBN-Net](./domainadaptation/Two%20at%20Once%20Enhancing%20Learning%20and%20Generalization%20Capacities%20via%20IBN-Net.pdf)
 - Pan X, Luo P, Shi J, et al./2018/ECCV/545
 - IBN-Net(a new CNN architecture) carefully integrates **Instance Normalization (IN) and Batch Normalization (BN)** as building blocks, and can be wrapped into many advanced deep networks to improve their performances(**Plug and play**).  This work disclose that **IN learns features that are invariant to appearance changes**, such as colors, styles, and virtuality/reality, while **BN is essential for preserving content related information**.
 - BN as a key component to **improve their learning capacity in high-level vision tasks** such as image recognition. IN was often combined with CNNs to remove **variance of images on low-level vision tasks** such as image style transfer. But the different characteristics of their learned features and the impact of their combination have not been disclosed in existing works. In contrast, IBN-Net shows that combining them in an appropriate manner improves both **learning and generalization** capacities.
@@ -892,7 +892,7 @@ gap by generating synthetic data with sufficient variation that the network view
 - ![IBN_3](./images/IBN_3.png)
 
 
-## [Switchable Whitening for Deep Representation Learning](./domainadaptation/Switchable%20Whitening%20for%20Deep%20Representation%20Learning.pdf)
+## [33 Switchable Whitening for Deep Representation Learning](./domainadaptation/Switchable%20Whitening%20for%20Deep%20Representation%20Learning.pdf)
 - Pan X, Zhan X, Shi J, et al./2019/ICCV/68
 - Unlike existing works that design normalization techniques for **specific tasks**, we propose Switchable Whitening (SW), which provides a general form **unifying** different whitening methods as well as standardization methods.  
 - SW learns to switch among these operations in an **end-to-end** manner. It has several advantages. **First, SW adaptively selects appropriate whitening or standardization statistics for different tasks, making it well suited for a wide range of tasks without manual design**. Second, by integrating the benefits of different normalizers, SW shows consistent improvements over its counterparts in various challenging benchmarks. Third, SW serves as a useful tool for understanding the characteristics of whitening and standardization techniques.
@@ -902,11 +902,15 @@ gap by generating synthetic data with sufficient variation that the network view
 - ![SW_2](./images/SW_2.png)
 
 
+## [34 WildNet: Learning Domain Generalized Semantic Segmentation From the Wild](./domainadaptation/WildNet%20Learning%20Domain%20Generalized%20Semantic%20Segmentation%20From%20the%20Wild.pdf)
+- Lee S, Seong H, Lee S, et al./2022/CVPR/21
+- In domain generalization, **the low generalization ability for unseen target domains is clearly due to overfitting to the source domain**. To address this problem, previous works have focused on generalizing the domain by **removing or diversifying the styles of the source domain**. These **alleviated overfitting to the source-style but overlooked overfitting to the source-content**.
+- In this paper, we propose to diversify both **the content and style of the source domain** with the help of the wild. Our main idea is for networks to naturally learn domain-generalized semantic information from the wild. To this end, we diversify styles by augmenting source features to resemble wild styles and enable networks to adapt to a variety of styles.
+- Although some previous works utilized various styles from the wild, e.g., ImageNet for real styles and Painter by Numbers for unreal styles, **they overlooked that the high generalization ability comes from learning not only various styles but also various contents**. In contrast to previous studies, our main idea is to **naturally** learn domain-generalized semantic information by leveraging a variety of contents and styles from the wild, **without** forcing whitening on domain specific styles.
+- ![WildNet](./images/WildNet.png)
 
 
 
-
-## []()
 
 
 
