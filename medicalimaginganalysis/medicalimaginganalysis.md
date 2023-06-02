@@ -77,6 +77,7 @@
   - [33 Switchable Whitening for Deep Representation Learning](#33-switchable-whitening-for-deep-representation-learning)
   - [34 WildNet: Learning Domain Generalized Semantic Segmentation From the Wild](#34-wildnet-learning-domain-generalized-semantic-segmentation-from-the-wild)
   - [35 DIRL: Domain-Invariant Representation Learning for Generalizable Semantic Segmentation](#35-dirl-domain-invariant-representation-learning-for-generalizable-semantic-segmentation)
+  - [36 Intra-Source Style Augmentation for Improved Domain Generalization](#36-intra-source-style-augmentation-for-improved-domain-generalization)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -918,10 +919,16 @@ gap by generating synthetic data with sufficient variation that the network view
 - ![DIRL_1](./images/DIRL_1.png)
 - ![DIRL_2](./images/DIRL_2.png)
 - ![DIRL_3](./images/DIRL_3.png)
+- **To the best of our knowledge**, this is the first work to explore feature sensitivity to the domain-specific style.
 
 
-
-
+## [36 Intra-Source Style Augmentation for Improved Domain Generalization](./domainadaptation/Intra-Source%20Style%20Augmentation%20for%20Improved%20Domain%20Generalization.pdf)
+- Li Y, Zhang D, Keuper M, et al./2023/WACV/-
+- **intra-source style augmentation (ISSA)** is based on a novel **masked noise encoder** for StyleGAN2 inversion. The model learns to faithfully reconstruct the image preserving its semantic layout through noise prediction. **Random masking of the estimated noise enables the style mixing capability of our model**, i.e. it allows to alter the global appearance without affecting the semantic layout of an image. Using the proposed masked noise encoder to randomize **style and content** combinations in the training set, ISSA effectively increases the **diversity of training data and reduces spurious correlation**.
+- ISSA is **model-agnostic** and **straightforwardly** applicable with CNNs and Transformers. intra-source style augmentation (ISSA) strategy for semantic segmentation, aiming to improve the style diversity in the training set **without extra labeling effort or using extra data sources** (single source domain, we make use of the styles extracted within the source domain and mix them up).
+- ![ISSA_1](./images/ISSA_1.png)
+- **M** stands for random noise masking, regularization for the encoder training. Without it, the noise map overtakes the latent codes in encoding the image style, so that the latter cannot make any perceivable changes on the reconstructed image, thus making style mixing impossible.
+- To the best of our knowledge, our approach is the first GAN inversion method which can be effectively applied as data augmentation for the semantic segmentation of complex scenes.
 
 
 

@@ -1,3 +1,0 @@
-However, most existing works learn the shared feature space within **multi-source domains** but **ignore the characteristic of the feature itself** (e.g., the feature sensitivity to the domain-specific style).   
-
-The guidance reflects in two folds: 1) **Feature re-calibration** that introduces the Prior Guided Attention Module (PGAM) to **emphasize the insensitive features and suppress the sensitive features**. 2): **Feature whiting** that proposes the Guided Feature Whiting (GFW) to **remove the feature correlations which are sensitive to the domain-specific style**.
