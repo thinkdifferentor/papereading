@@ -76,6 +76,7 @@
   - [32 Two at Once: Enhancing Learning and Generalization Capacities via IBN-Net](#32-two-at-once-enhancing-learning-and-generalization-capacities-via-ibn-net)
   - [33 Switchable Whitening for Deep Representation Learning](#33-switchable-whitening-for-deep-representation-learning)
   - [34 WildNet: Learning Domain Generalized Semantic Segmentation From the Wild](#34-wildnet-learning-domain-generalized-semantic-segmentation-from-the-wild)
+  - [35 DIRL: Domain-Invariant Representation Learning for Generalizable Semantic Segmentation](#35-dirl-domain-invariant-representation-learning-for-generalizable-semantic-segmentation)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -908,6 +909,27 @@ gap by generating synthetic data with sufficient variation that the network view
 - In this paper, we propose to diversify both **the content and style of the source domain** with the help of the wild. Our main idea is for networks to naturally learn domain-generalized semantic information from the wild. To this end, we diversify styles by augmenting source features to resemble wild styles and enable networks to adapt to a variety of styles.
 - Although some previous works utilized various styles from the wild, e.g., ImageNet for real styles and Painter by Numbers for unreal styles, **they overlooked that the high generalization ability comes from learning not only various styles but also various contents**. In contrast to previous studies, our main idea is to **naturally** learn domain-generalized semantic information by leveraging a variety of contents and styles from the wild, **without** forcing whitening on domain specific styles.
 - ![WildNet](./images/WildNet.png)
+
+
+## [35 DIRL: Domain-Invariant Representation Learning for Generalizable Semantic Segmentation](./domainadaptation/DIRL%20Domain-Invariant%20Representation%20Learning%20for%20Generalizable%20Semantic.pdf)
+- Xu Q, Yao L, Jiang Z, et al./2022/AAAI/8
+- However, most existing works learn the shared feature space within **multi-source domains** but **ignore the characteristic of the feature itself** (e.g., the feature sensitivity to the domain-specific style).
+- The guidance reflects in two folds: 1) **Feature re-calibration** that introduces the Prior Guided Attention Module (PGAM) to **emphasize the insensitive features and suppress the sensitive features**. 2): **Feature whiting** that proposes the Guided Feature Whiting (GFW) to **remove the feature correlations which are sensitive to the domain-specific style**.
+- ![DIRL_1](./images/DIRL_1.png)
+- ![DIRL_2](./images/DIRL_2.png)
+- ![DIRL_3](./images/DIRL_3.png)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
