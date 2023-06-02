@@ -74,6 +74,8 @@
   - [30 FSDR: Frequency Space Domain Randomization for Domain Generalization](#30-fsdr-frequency-space-domain-randomization-for-domain-generalization)
   - [31 Domain Randomization and Pyramid Consistency: Simulation-to-Real Generalization without Accessing Target Domain Data](#31-domain-randomization-and-pyramid-consistency-simulation-to-real-generalization-without-accessing-target-domain-data)
   - [Two at Once: Enhancing Learning and Generalization Capacities via IBN-Net](#two-at-once-enhancing-learning-and-generalization-capacities-via-ibn-net)
+  - [Switchable Whitening for Deep Representation Learning](#switchable-whitening-for-deep-representation-learning)
+  - [](#)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -889,6 +891,22 @@ gap by generating synthetic data with sufficient variation that the network view
 - ![IBN_2](./images/IBN_2.png)
 - ![IBN_3](./images/IBN_3.png)
 
+
+## [Switchable Whitening for Deep Representation Learning](./domainadaptation/Switchable%20Whitening%20for%20Deep%20Representation%20Learning.pdf)
+- Pan X, Zhan X, Shi J, et al./2019/ICCV/68
+- Unlike existing works that design normalization techniques for **specific tasks**, we propose Switchable Whitening (SW), which provides a general form **unifying** different whitening methods as well as standardization methods.  
+- SW learns to switch among these operations in an **end-to-end** manner. It has several advantages. **First, SW adaptively selects appropriate whitening or standardization statistics for different tasks, making it well suited for a wide range of tasks without manual design**. Second, by integrating the benefits of different normalizers, SW shows consistent improvements over its counterparts in various challenging benchmarks. Third, SW serves as a useful tool for understanding the characteristics of whitening and standardization techniques.
+- ![SW_1](./images/SW_1.png)
+- SW provides a general form that integrates different **whitening techniques** (e.g. BW, IW), as well as **standardization techniques** (e.g. BN, IN and LN). **SW controls the ratio of each technique by learning their importance weights**. It is able to select appropriate normalizers with respect to various vision tasks.
+- SW serves as a useful tool for analyzing the characteristics of these whitening or standardization techniques. This work answers two questions: *(1) Is IW beneficial for high level vision tasks like classification and domain adaptation?* *(2) Is standardization still necessary when whitening is presented?* Our experiments suggest that (1) IW works extremely well for handling **image appearance diversity and reducing domain gap**, giving rise to better performance in high-level vision tasks; (2) Using BW+IW in SW performs comparably well compared to using all the normalizers mentioned above in SW, indicating that **full whitening generally works well, and the requirement for standardization is marginal when whitening is presented**.
+- ![SW_2](./images/SW_2.png)
+
+
+
+
+
+
+## []()
 
 
 
