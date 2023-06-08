@@ -64,21 +64,22 @@
   - [22 Domain Generalisation via Domain Adaptation: An Adversarial Fourier Amplitude Approach](#22-domain-generalisation-via-domain-adaptation-an-adversarial-fourier-amplitude-approach)
   - [23 DLTTA: Dynamic Learning Rate for Test-Time Adaptation on Cross-Domain Medical Images](#23-dltta-dynamic-learning-rate-for-test-time-adaptation-on-cross-domain-medical-images)
   - [24 Exploring Domain-Invariant Parameters for Source Free Domain Adaptation](#24-exploring-domain-invariant-parameters-for-source-free-domain-adaptation)
-  - [24 Continual Test-Time Domain Adaptation](#24-continual-test-time-domain-adaptation)
-  - [25 Shallow Features Guide Unsupervised Domain Adaptation for Semantic Segmentation at Class Boundaries](#25-shallow-features-guide-unsupervised-domain-adaptation-for-semantic-segmentation-at-class-boundaries)
-  - [26 Bidirectional Learning for Domain Adaptation of Semantic Segmentation](#26-bidirectional-learning-for-domain-adaptation-of-semantic-segmentation)
-  - [26 Cross-domain Contrastive Learning for Unsupervised Domain Adaptation](#26-cross-domain-contrastive-learning-for-unsupervised-domain-adaptation)
-  - [27 FedDG: Federated Domain Generalization on Medical Image Segmentation via Episodic Learning in Continuous Frequency Space](#27-feddg-federated-domain-generalization-on-medical-image-segmentation-via-episodic-learning-in-continuous-frequency-space)
-  - [28 Semantic-Aware Domain Generalized Segmentation](#28-semantic-aware-domain-generalized-segmentation)
-  - [29 RobustNet: Improving Domain Generalization in Urban-Scene Segmentation via Instance Selective Whitening](#29-robustnet-improving-domain-generalization-in-urban-scene-segmentation-via-instance-selective-whitening)
-  - [30 FSDR: Frequency Space Domain Randomization for Domain Generalization](#30-fsdr-frequency-space-domain-randomization-for-domain-generalization)
-  - [31 Domain Randomization and Pyramid Consistency: Simulation-to-Real Generalization without Accessing Target Domain Data](#31-domain-randomization-and-pyramid-consistency-simulation-to-real-generalization-without-accessing-target-domain-data)
-  - [32 Two at Once: Enhancing Learning and Generalization Capacities via IBN-Net](#32-two-at-once-enhancing-learning-and-generalization-capacities-via-ibn-net)
-  - [33 Switchable Whitening for Deep Representation Learning](#33-switchable-whitening-for-deep-representation-learning)
-  - [34 WildNet: Learning Domain Generalized Semantic Segmentation From the Wild](#34-wildnet-learning-domain-generalized-semantic-segmentation-from-the-wild)
-  - [35 DIRL: Domain-Invariant Representation Learning for Generalizable Semantic Segmentation](#35-dirl-domain-invariant-representation-learning-for-generalizable-semantic-segmentation)
-  - [36 Intra-Source Style Augmentation for Improved Domain Generalization](#36-intra-source-style-augmentation-for-improved-domain-generalization)
-  - [37 Global and Local Texture Randomization for Synthetic-to-Real Semantic Segmentation](#37-global-and-local-texture-randomization-for-synthetic-to-real-semantic-segmentation)
+  - [25 Continual Test-Time Domain Adaptation](#25-continual-test-time-domain-adaptation)
+  - [26 Shallow Features Guide Unsupervised Domain Adaptation for Semantic Segmentation at Class Boundaries](#26-shallow-features-guide-unsupervised-domain-adaptation-for-semantic-segmentation-at-class-boundaries)
+  - [27 Bidirectional Learning for Domain Adaptation of Semantic Segmentation](#27-bidirectional-learning-for-domain-adaptation-of-semantic-segmentation)
+  - [28 Cross-domain Contrastive Learning for Unsupervised Domain Adaptation](#28-cross-domain-contrastive-learning-for-unsupervised-domain-adaptation)
+  - [29 FedDG: Federated Domain Generalization on Medical Image Segmentation via Episodic Learning in Continuous Frequency Space](#29-feddg-federated-domain-generalization-on-medical-image-segmentation-via-episodic-learning-in-continuous-frequency-space)
+  - [30 Semantic-Aware Domain Generalized Segmentation](#30-semantic-aware-domain-generalized-segmentation)
+  - [31 RobustNet: Improving Domain Generalization in Urban-Scene Segmentation via Instance Selective Whitening](#31-robustnet-improving-domain-generalization-in-urban-scene-segmentation-via-instance-selective-whitening)
+  - [32 FSDR: Frequency Space Domain Randomization for Domain Generalization](#32-fsdr-frequency-space-domain-randomization-for-domain-generalization)
+  - [33 Domain Randomization and Pyramid Consistency: Simulation-to-Real Generalization without Accessing Target Domain Data](#33-domain-randomization-and-pyramid-consistency-simulation-to-real-generalization-without-accessing-target-domain-data)
+  - [34 Two at Once: Enhancing Learning and Generalization Capacities via IBN-Net](#34-two-at-once-enhancing-learning-and-generalization-capacities-via-ibn-net)
+  - [35 Switchable Whitening for Deep Representation Learning](#35-switchable-whitening-for-deep-representation-learning)
+  - [36 WildNet: Learning Domain Generalized Semantic Segmentation From the Wild](#36-wildnet-learning-domain-generalized-semantic-segmentation-from-the-wild)
+  - [37 DIRL: Domain-Invariant Representation Learning for Generalizable Semantic Segmentation](#37-dirl-domain-invariant-representation-learning-for-generalizable-semantic-segmentation)
+  - [38 Intra-Source Style Augmentation for Improved Domain Generalization](#38-intra-source-style-augmentation-for-improved-domain-generalization)
+  - [39 Global and Local Texture Randomization for Synthetic-to-Real Semantic Segmentation](#39-global-and-local-texture-randomization-for-synthetic-to-real-semantic-segmentation)
+  - [40 Tent: Fully test-time adaptation by entropy minimization](#40-tent-fully-test-time-adaptation-by-entropy-minimization)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -776,7 +777,7 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - ![DIPE_3](./images/DIPE_3.png)
 
 
-## [24 Continual Test-Time Domain Adaptation](./domainadaptation/Continual%20Test-Time%20Domain%20Adaptation.pdf)
+## [25 Continual Test-Time Domain Adaptation](./domainadaptation/Continual%20Test-Time%20Domain%20Adaptation.pdf)
 - Wang Q, Fink O, Van Gool L, et al./2022/CVPR/68
 - Test-time domain adaptation aims to adapt a **source pretrained model** to a target domain **without using any source data**. Existing works mainly consider the case where the target domain is **static**. However, real-world machine perception systems are running in non-stationary and **continually changing environments** where the target domain distribution can change over time.
 - Existing methods, which are mostly based on **self-training and entropy regularization**, can suffer from these non-stationary environments. Due to the distribution shift over time in the target domain, pseudo-labels become unreliable. The noisy pseudo labels can further lead to **error accumulation and catastrophic forgetting**.
@@ -785,7 +786,7 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - ![CTTDA_2](./images/CTTDA_2.png)
 
 
-## [25 Shallow Features Guide Unsupervised Domain Adaptation for Semantic Segmentation at Class Boundaries](./domainadaptation/Shallow%20Features%20Guide%20Unsupervised%20Domain%20Adaptation%20for%20Semantic%20Segmentation%20at%20Class%20Boundaries.pdf)
+## [26 Shallow Features Guide Unsupervised Domain Adaptation for Semantic Segmentation at Class Boundaries](./domainadaptation/Shallow%20Features%20Guide%20Unsupervised%20Domain%20Adaptation%20for%20Semantic%20Segmentation%20at%20Class%20Boundaries.pdf)
 - Cardace A, Ramirez P Z, Salti S, et al./2022/WACV/8
 - Domain shift is particularly noticeable along **class boundaries**, invalidating one of the main goals of semantic segmentation that consists in **obtaining sharp segmentation masks**. 
 - ![SFG_1](./images/SFG_1.png)
@@ -798,7 +799,7 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - Although selecting source objects(**self-training with augmented source images**) may be useful to reduce the unbalanced distributions of classes, it is a sub-optimal choice since the network would be still trained to identify shapes and details peculiar to the source domain, which are different to those found at inference time for the target images. 
 
 
-## [26 Bidirectional Learning for Domain Adaptation of Semantic Segmentation](./domainadaptation/Bidirectional%20Learning%20for%20Domain%20Adaptation%20of%20Semantic%20Segmentation.pdf)
+## [27 Bidirectional Learning for Domain Adaptation of Semantic Segmentation](./domainadaptation/Bidirectional%20Learning%20for%20Domain%20Adaptation%20of%20Semantic%20Segmentation.pdf)
 - Li Y, Yuan L, Vasconcelos N. /2019/CVPR/520
 - Existing domain adaptation techniques either work on **limited datasets**, or yield **not so good performance** compared with supervised learning. Using the bidirectional learning(“translation-to-segmentation” and “segmentation-to-translation”), **the image translation model** and **the segmentation adaptation model** can be learned **alternatively** and **promote** to each other. Furthermore, we propose a **self-supervised learning algorithm** to learn a better segmentation adaptation model and in return improve the image translation model. 
 - *How to allow one of both modules providing positive feedbacks to the other is the key to success*. **better segmentation adaptation model** would contribute to **better translation model** through our backward direction learning.
@@ -809,7 +810,7 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 
 
 
-## [26 Cross-domain Contrastive Learning for Unsupervised Domain Adaptation](./domainadaptation/Cross-domain%20Contrastive%20Learning%20for%20Unsupervised%20Domain%20Adaptation.pdf)
+## [28 Cross-domain Contrastive Learning for Unsupervised Domain Adaptation](./domainadaptation/Cross-domain%20Contrastive%20Learning%20for%20Unsupervised%20Domain%20Adaptation.pdf)
 - Wang R, Wu Z, Weng Z, et al./2022/ IEEE Transactions on Multimedia/48
 - Most existing UDA methods learn **domain-invariant feature representations** by **minimizing feature distances across domains**. In this work, we build upon
 contrastive self-supervised learning to align features so as to reduce the domain discrepancy between training and testing sets. In this work, we build upon **contrastive self-supervised learning** to align features so as to reduce the domain discrepancy between training and testing sets.
@@ -821,7 +822,7 @@ contrastive self-supervised learning to align features so as to reduce the domai
 - ![CDCL_2](./images/CDCL_2.png)
 
 
-## [27 FedDG: Federated Domain Generalization on Medical Image Segmentation via Episodic Learning in Continuous Frequency Space](./domainadaptation/Feddg%20Federated%20domain%20generalization%20on%20medical%20image%20segmentation%20via%20episodic%20learning%20in%20continuous%20frequency%20space%20.pdf)
+## [29 FedDG: Federated Domain Generalization on Medical Image Segmentation via Episodic Learning in Continuous Frequency Space](./domainadaptation/Feddg%20Federated%20domain%20generalization%20on%20medical%20image%20segmentation%20via%20episodic%20learning%20in%20continuous%20frequency%20space%20.pdf)
 - Liu Q, Chen C, Qin J, et al./2021/CVPR/167
 - Federated learning allows distributed medical institutions to collaboratively learn a shared prediction model with privacy protection. While at clinical deployment, the models trained in federated learning can still suffer from performance drop when applied to **completely unseen hospitals outside the federation**.
 - Although FL has witnessed some pilot progress on medical image segmentation tasks, all existing works only focus on improving model performance on the internal clients, while neglecting model generalizability onto unseen domains outside the federation.
@@ -835,7 +836,7 @@ contrastive self-supervised learning to align features so as to reduce the domai
 - ![FedDG_2](./images/FedDG_2.png)
 
 
-## [28 Semantic-Aware Domain Generalized Segmentation](./domainadaptation/Semantic-Aware%20Domain%20Generalized%20Segmentation.pdf)
+## [30 Semantic-Aware Domain Generalized Segmentation](./domainadaptation/Semantic-Aware%20Domain%20Generalized%20Segmentation.pdf)
 - Peng D, Lei Y, Hayat M, et al./2022/CVPR/21
 - for DGSS, existing approaches to tackle this problem standardize data into a **unified distribution**. We **argue** that while such a **standardization promotes global normalization**, the resulting features are not discriminative enough to get clear segmentation boundaries.
 - Semantic-Aware Normalization (SAN) and Semantic-Aware Whitening (SAW).  SAN focuses on **category-level center alignment** between features from different image styles, while SAW enforces **distributed alignment for the already center-aligned features**. With the help of SAN and SAW, we encourage both **intra-category compactness and inter-category separability**.
@@ -845,7 +846,7 @@ contrastive self-supervised learning to align features so as to reduce the domai
 - ![SADGS_3](./images/SADGS_3.png)
 
 
-## [29 RobustNet: Improving Domain Generalization in Urban-Scene Segmentation via Instance Selective Whitening](./domainadaptation/RobustNet%20Improving%20Domain%20Generalization%20in%20Urban-Scene%20Segmentation%20via%20Instance%20Selective%20Whitening.pdf)
+## [31 RobustNet: Improving Domain Generalization in Urban-Scene Segmentation via Instance Selective Whitening](./domainadaptation/RobustNet%20Improving%20Domain%20Generalization%20in%20Urban-Scene%20Segmentation%20via%20Instance%20Selective%20Whitening.pdf)
 - Choi S, Jung S, Yun H, et al./2021/CVPR/105
 - To address DGSS, this paper proposes a novel **instance selective whitening loss** to improve the robustness of the segmentation networks for unseen domains. Our approach **disentangles the domain-specific style and domain-invariant content** encoded in higher-order statistics (i.e., feature covariance) of the feature representations and **selectively removes only the style information** causing domain shift.
 - Existing DG  learning of a shared representation across **multiple source domains** to improving the robustness of the model. However, *collecting such multi-domain datasets is costly and labor-intensive, and furthermore, the performance highly depends on the number of source datasets*.
@@ -858,7 +859,7 @@ contrastive self-supervised learning to align features so as to reduce the domai
 - ![RobustNet_4](./images/RobustNet_4.png)
 
 
-## [30 FSDR: Frequency Space Domain Randomization for Domain Generalization](./domainadaptation/FSDR%20Frequency%20Space%20Domain%20Randomization%20for%20Domain%20Generalization.pdf)
+## [32 FSDR: Frequency Space Domain Randomization for Domain Generalization](./domainadaptation/FSDR%20Frequency%20Space%20Domain%20Randomization%20for%20Domain%20Generalization.pdf)
 - Huang J, Guan D, Xiao A, et al./2021/CVPR/94
 - It has been studied widely by **domain randomization that transfers source images to different styles** in **spatial space** for learning **domain-agnostic features** for DGSS problem. However, most existing randomization methods use **GANs that often lack of controls and even alter semantic structures** of images undesirably.
 - Inspired by the idea of JPEG that converts spatial images into **multiple frequency components** (FCs), we propose Frequency Space Domain Randomization (FSDR) that randomizes images in frequency space by **keeping domain-invariant FCs (DIFs) and randomizing domain-variant FCs (DVFs)** only.
@@ -871,7 +872,7 @@ contrastive self-supervised learning to align features so as to reduce the domai
 - ![FSDR_4](./images/FSDR_4.png)
 
 
-## [31 Domain Randomization and Pyramid Consistency: Simulation-to-Real Generalization without Accessing Target Domain Data](./domainadaptation/Domain%20Randomization%20and%20Pyramid%20Consistency%20Simulation-to-Real%20Generalization%20without%20Accessing%20Target%20Domain%20Data.pdf)
+## [33 Domain Randomization and Pyramid Consistency: Simulation-to-Real Generalization without Accessing Target Domain Data](./domainadaptation/Domain%20Randomization%20and%20Pyramid%20Consistency%20Simulation-to-Real%20Generalization%20without%20Accessing%20Target%20Domain%20Data.pdf)
 - Yue X, Zhang Y, Zhao S, et al./2019/CVPR/235
 - we propose a new approach of **domain randomization** and **pyramid consistency** to learn a model with high generalizability. **First**, we propose to randomize the synthetic images with the styles of real images in terms of visual appearances using **auxiliary datasets**(like ImageNet), in order to effectively learn domain-invariant representations. **Second**, we further enforce **pyramid consistency across different “stylized” images** and within an image, in order to learn domain-invariant and scale-invariant features, respectively. 
 - Our **main idea** is to randomize the labeled synthetic images to the styles of real images. We further enforce the semantic segmentation network to generate consistent predictions, in a pyramid form, over these domains. Our **conjecture** is that if the network is exposed to a sufficient number of domains in the training stage, it should **interpolate** well to new real world target domains. In contrast, the domain adaptation work can be seen as **extrapolating** from a single source domain to a single target domain. 
@@ -883,19 +884,19 @@ gap by generating synthetic data with sufficient variation that the network view
 - ![DRPC_3](./images/DRPC_3.png)
 
 
-## [32 Two at Once: Enhancing Learning and Generalization Capacities via IBN-Net](./domainadaptation/Two%20at%20Once%20Enhancing%20Learning%20and%20Generalization%20Capacities%20via%20IBN-Net.pdf)
+## [34 Two at Once: Enhancing Learning and Generalization Capacities via IBN-Net](./domainadaptation/Two%20at%20Once%20Enhancing%20Learning%20and%20Generalization%20Capacities%20via%20IBN-Net.pdf)
 - Pan X, Luo P, Shi J, et al./2018/ECCV/545
 - IBN-Net(a new CNN architecture) carefully integrates **Instance Normalization (IN) and Batch Normalization (BN)** as building blocks, and can be wrapped into many advanced deep networks to improve their performances(**Plug and play**).  This work disclose that **IN learns features that are invariant to appearance changes**, such as colors, styles, and virtuality/reality, while **BN is essential for preserving content related information**.
 - BN as a key component to **improve their learning capacity in high-level vision tasks** such as image recognition. IN was often combined with CNNs to remove **variance of images on low-level vision tasks** such as image style transfer. But the different characteristics of their learned features and the impact of their combination have not been disclosed in existing works. In contrast, IBN-Net shows that combining them in an appropriate manner improves both **learning and generalization** capacities.
 - Firstly, to reduce feature variance caused by appearance in shallow layers while not interfering the content discrimination in deep layers, we only **add IN layers to the shallow half of the CNNs**. Secondly, to also preserve image content information in shallow layers, we replace **the original BN layers to IN for a half of features and BN for the other half**.
 - There are two **limitations in the above CNN architectures**. **Firstly**, the limited basic modules(convolutions, BNs, ReLUs, and poolings) prevent them from gaining more appealing properties (vulnerable by appearance variations). **Secondly**, the design goal of these models is to achieve strong modeling capacity on a single task of a single domain, while their capacities to generalize to new domains are still limited.
-- A natural solution to solve the appearance gap is by using transfer learning. However, this requires human annotations of the target domain, and the performances of the finetuned models would then drop when they are applied on the source domain. Basically, **the appearance gap is not eliminated** in the CNN model.
+- A natural solution to solve the appearance gap is by using transfer learning. However, this requires human annotations of the target domain, and the performances of the fine-tuned models would then drop when they are applied on the source domain. Basically, **the appearance gap is not eliminated** in the CNN model.
 - ![IBN_1](./images/IBN_1.png)
 - ![IBN_2](./images/IBN_2.png)
 - ![IBN_3](./images/IBN_3.png)
 
 
-## [33 Switchable Whitening for Deep Representation Learning](./domainadaptation/Switchable%20Whitening%20for%20Deep%20Representation%20Learning.pdf)
+## [35 Switchable Whitening for Deep Representation Learning](./domainadaptation/Switchable%20Whitening%20for%20Deep%20Representation%20Learning.pdf)
 - Pan X, Zhan X, Shi J, et al./2019/ICCV/68
 - Unlike existing works that design normalization techniques for **specific tasks**, we propose Switchable Whitening (SW), which provides a general form **unifying** different whitening methods as well as standardization methods.  
 - SW learns to switch among these operations in an **end-to-end** manner. It has several advantages. **First, SW adaptively selects appropriate whitening or standardization statistics for different tasks, making it well suited for a wide range of tasks without manual design**. Second, by integrating the benefits of different normalizers, SW shows consistent improvements over its counterparts in various challenging benchmarks. Third, SW serves as a useful tool for understanding the characteristics of whitening and standardization techniques.
@@ -905,7 +906,7 @@ gap by generating synthetic data with sufficient variation that the network view
 - ![SW_2](./images/SW_2.png)
 
 
-## [34 WildNet: Learning Domain Generalized Semantic Segmentation From the Wild](./domainadaptation/WildNet%20Learning%20Domain%20Generalized%20Semantic%20Segmentation%20From%20the%20Wild.pdf)
+## [36 WildNet: Learning Domain Generalized Semantic Segmentation From the Wild](./domainadaptation/WildNet%20Learning%20Domain%20Generalized%20Semantic%20Segmentation%20From%20the%20Wild.pdf)
 - Lee S, Seong H, Lee S, et al./2022/CVPR/21
 - In domain generalization, **the low generalization ability for unseen target domains is clearly due to overfitting to the source domain**. To address this problem, previous works have focused on generalizing the domain by **removing or diversifying the styles of the source domain**. These **alleviated overfitting to the source-style but overlooked overfitting to the source-content**.
 - In this paper, we propose to diversify both **the content and style of the source domain** with the help of the wild. Our main idea is for networks to naturally learn domain-generalized semantic information from the wild. To this end, we diversify styles by augmenting source features to resemble wild styles and enable networks to adapt to a variety of styles.
@@ -913,7 +914,7 @@ gap by generating synthetic data with sufficient variation that the network view
 - ![WildNet](./images/WildNet.png)
 
 
-## [35 DIRL: Domain-Invariant Representation Learning for Generalizable Semantic Segmentation](./domainadaptation/DIRL%20Domain-Invariant%20Representation%20Learning%20for%20Generalizable%20Semantic.pdf)
+## [37 DIRL: Domain-Invariant Representation Learning for Generalizable Semantic Segmentation](./domainadaptation/DIRL%20Domain-Invariant%20Representation%20Learning%20for%20Generalizable%20Semantic.pdf)
 - Xu Q, Yao L, Jiang Z, et al./2022/AAAI/8
 - However, most existing works learn the shared feature space within **multi-source domains** but **ignore the characteristic of the feature itself** (e.g., the feature sensitivity to the domain-specific style).
 - The guidance reflects in two folds: 1) **Feature re-calibration** that introduces the Prior Guided Attention Module (PGAM) to **emphasize the insensitive features and suppress the sensitive features**. 2): **Feature whiting** that proposes the Guided Feature Whiting (GFW) to **remove the feature correlations which are sensitive to the domain-specific style**.
@@ -923,7 +924,7 @@ gap by generating synthetic data with sufficient variation that the network view
 - **To the best of our knowledge**, this is the first work to explore feature sensitivity to the domain-specific style.
 
 
-## [36 Intra-Source Style Augmentation for Improved Domain Generalization](./domainadaptation/Intra-Source%20Style%20Augmentation%20for%20Improved%20Domain%20Generalization.pdf)
+## [38 Intra-Source Style Augmentation for Improved Domain Generalization](./domainadaptation/Intra-Source%20Style%20Augmentation%20for%20Improved%20Domain%20Generalization.pdf)
 - Li Y, Zhang D, Keuper M, et al./2023/WACV/-
 - **intra-source style augmentation (ISSA)** is based on a novel **masked noise encoder** for StyleGAN2 inversion. The model learns to faithfully reconstruct the image preserving its semantic layout through noise prediction. **Random masking of the estimated noise enables the style mixing capability of our model**, i.e. it allows to alter the global appearance without affecting the semantic layout of an image. Using the proposed masked noise encoder to randomize **style and content** combinations in the training set, ISSA effectively increases the **diversity of training data and reduces spurious correlation**.
 - ISSA is **model-agnostic** and **straightforwardly** applicable with CNNs and Transformers. intra-source style augmentation (ISSA) strategy for semantic segmentation, aiming to improve the style diversity in the training set **without extra labeling effort or using extra data sources** (single source domain, we make use of the styles extracted within the source domain and mix them up).
@@ -932,7 +933,7 @@ gap by generating synthetic data with sufficient variation that the network view
 - To the best of our knowledge, our approach is the first GAN inversion method which can be effectively applied as data augmentation for the semantic segmentation of complex scenes.
 
 
-## [37 Global and Local Texture Randomization for Synthetic-to-Real Semantic Segmentation](./domainadaptation/Global%20and%20Local%20Texture%20Randomization%20for%20Synthetic-to-Real%20Semantic%20Segmentation.pdf)
+## [39 Global and Local Texture Randomization for Synthetic-to-Real Semantic Segmentation](./domainadaptation/Global%20and%20Local%20Texture%20Randomization%20for%20Synthetic-to-Real%20Semantic%20Segmentation.pdf)
 - Peng D, Lei Y, Liu L, et al./2021/TIP/60
 - Global Texture Randomization (**GTR**) aims to **alleviate the reliance of the network on texture while promoting the learning of the domain-invariant cues**. In addition, we find the texture difference is not always occurred in **entire image and may only appear in some local areas**. Therefore, we further propose a Local Texture Randomization (**LTR**) mechanism to generate diverse local regions for partially stylizing the source images. Finally, we implement a regularization of Consistency between GTR and LTR (CGL) aiming to **harmonize the two proposed mechanisms during training**. Besides, a strategy namely Texture Complexity based Painting Selection(**TCPS**) is proposed to **ensure the selected paintings are reliable enough** for the above texture randomization mechanisms.
 - ![GTR_1](./images/GTR_1.png)
@@ -943,7 +944,21 @@ gap by generating synthetic data with sufficient variation that the network view
 - ![GTR_6](./images/GTR_6.png) , ![GTR_7](./images/GTR_7.png)
 
 
-
+## [40 Tent: Fully test-time adaptation by entropy minimization](./domainadaptation/Tent%20Fully%20test-time%20adaptation%20by%20entropy%20minimization.pdf)
+- Wang D, Shelhamer E, Liu S, et al./2021/ICLR/370
+- A model must adapt itself to generalize to new and different data during testing. In this setting of **fully test-time adaptation** the model has **only the test data and its own parameters**. We propose to adapt by test entropy minimization (Tent): we **optimize the model for confidence as measured by the entropy of its predictions**. In minimizing entropy, the model **adapts itself to feedback from its own predictions**.This is **truly self-supervised self-improvement**.
+- Real-world usage motivates fully test-time adaptation by **data, computation, and task needs**:
+  1. Availability. A model might be distributed without source data for bandwidth, privacy, or profit.
+  2. Efficiency. It might not be computationally practical to (re-)process source data during testing.
+  3. Accuracy. A model might be too inaccurate without adaptation to serve its purpose.
+- **Entropy is related to error**, as more confident predictions are all-in-all more correct. **Entropy is related to shifts due to corruption**, as more corruption results in more entropy, with a strong rank correlation to the loss for image classification as the level of corruption increases.
+- ![Tent_1](./images/Tent_1.png)
+- ![Tent_2](./images/Tent_2.png)
+- ![Tent_3](./images/Tent_3.png)
+- Test-time Entropy:  ![Tent_4](./images/Tent_4.png)
+- The model parameters θ are a natural choice for test-time optimization. However, θ is the only representation of the training/source data in our setting, and altering θ could **cause the model to diverge from its training**. Furthermore, f can be nonlinear and θ can be high dimensional, making **optimization too sensitive and inefficient for test-time usage**. For stability and efficiency, we instead only update **feature modulations that are linear (scales and shifts), and low-dimensional (channel-wise)**.
+- ![Tent_5](./images/Tent_5.png)
+- ![Tent_6](./images/Tent_6.png)
 
 
 
