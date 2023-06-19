@@ -82,7 +82,8 @@
   - [40 Test-Time Training with Self-Supervision for Generalization under Distribution Shifts](#40-test-time-training-with-self-supervision-for-generalization-under-distribution-shifts)
   - [41 Tent: Fully test-time adaptation by entropy minimization](#41-tent-fully-test-time-adaptation-by-entropy-minimization)
   - [42 Autoencoder based self-supervised test-time adaptation for medical image analysis](#42-autoencoder-based-self-supervised-test-time-adaptation-for-medical-image-analysis)
-  - [43 Causality-Inspired Single-Source Domain Generalization for Medical Image Segmentation](#43-causality-inspired-single-source-domain-generalization-for-medical-image-segmentation)
+  - [43 Generalizing Deep Learning for Medical Image Segmentation to Unseen Domains via Deep Stacked Transformation](#43-generalizing-deep-learning-for-medical-image-segmentation-to-unseen-domains-via-deep-stacked-transformation)
+  - [44 Causality-Inspired Single-Source Domain Generalization for Medical Image Segmentation](#44-causality-inspired-single-source-domain-generalization-for-medical-image-segmentation)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -981,7 +982,24 @@ gap by generating synthetic data with sufficient variation that the network view
 - 
 
 
-## [43 Causality-Inspired Single-Source Domain Generalization for Medical Image Segmentation](./domainadaptation/Causality-Inspired%20Single-Source%20Domain%20Generalization%20for%20Medical%20Image%20Segmentation.pdf)
+## [43 Generalizing Deep Learning for Medical Image Segmentation to Unseen Domains via Deep Stacked Transformation](./domainadaptation/Generalizing%20Deep%20Learning%20for%20Medical%20Image%20Segmentation%20to%20Unseen%20Domains%20via%20Deep%20Stacked%20Transformation.pdf)
+- Zhang L, Wang X, Yang D, et al./2020/IEEE Transactions on Medical Imaging/241
+- Common **transfer learning** and **domain adaptation** techniques are proposed to address Domain Shift. However, these solutions **require data** (and annotations) from the target domain to **retrain the model**, and is therefore restrictive in practice for widespread model deployment. Ideally, we wish to have a trained (locked) model that **can work uniformly well across unseen domains without further training**.    
+- In this paper, we propose a deep stacked transformation approach for **single source domain generalization**. Specifically, **a series of n=9 stacked transformations are applied to each image during network training**. The underlying **assumption** is that the “expected” domain shift for a specific medical imaging modality could be **simulated** by applying extensive data augmentation on a single source domain, and consequently, a deep model trained on the **augmented “big” data** (BigAug) could generalize well on unseen domains.
+- **Transfer learning** is able to overcome some of the aforementioned issues by only requiring a small amount of annotated data in the unseen domain; however, *it is limited in use due to the lack of pre-trained models developed on a large amount of medical imaging data*.
+- **Domain Adaptation**: the assumption of a known target domain requires specific image samples need to be collected (or even labeled) and a new model needs to be retrained before deployment. *It is not feasible to obtain a pair of source and target domain images to implement the domain adaptation for every new application*.
+- ![BigAug_1](./images/BigAug_1.png)
+- two parameters: 1) the probability p to apply the function and 2) the magnitude m of the function. Image processing functions are mainly used to alter the three
+aspects (**image quality, appearance, and spatial configuration**) of medical images.
+- 1) **Image Quality**: *sharpness*, *blurriness*, and *noise level* are often associated with different image qualities in medical imaging.
+- 2) **Image Appearance**: The appearance difference of medical imaging is related to the statistical characteristics of image intensities, such as variations of *brightness and contrast, and intensity perturbation*, which result from different scanners and scanning protocols.
+- 3) **Spatial variations** may include *rotation* (e.g., caused by different patient orientations during scanning), *scaling* (e.g., variation of organ/lesion size), and
+*deformation* (e.g., caused by organ motion or abnormality)
+- ![BigAug_2](./images/BigAug_2.png)
+- As far as we know, we are the first to investigate data augmentation for unseen domain generalization in medical imaging deep learning.
+
+
+## [44 Causality-Inspired Single-Source Domain Generalization for Medical Image Segmentation](./domainadaptation/Causality-Inspired%20Single-Source%20Domain%20Generalization%20for%20Medical%20Image%20Segmentation.pdf)
 - Ouyang C, Chen C, Li S, et al./2022/IEEE Transactions on Medical Imaging/27
 - For the **single-source domain generalization problem**, we propose a simple **causality-inspired data augmentation** approach to expose a segmentation model to **synthesized domain-shifted training examples**. 
 - Specifically, **1)** to make the deep model robust to discrepancies in **image intensities and textures**, we employ **a family of randomly-weighted shallow networks**. They augment training images using diverse appearance transformations. **2)** Further we show that **spurious correlations among objects in an image are detrimental to domain robustness**. These correlations might be taken by the network as domain-specific clues for making predictions, and they may break on unseen domains. We remove these spurious correlations via causal intervention. This is achieved by resampling the appearances of potentially correlated objects independently.
@@ -994,6 +1012,7 @@ network might take these objects in the background as clues for recognizing the 
 - **Cutout** strengthens robustness against the feature missing caused by domain shift, by partially occluding training images. **Mixup** regularizes decision boundaries by interpolating among training samples. **RandConv** drives the network to learn shape information, which is domain-invariant, by randomly altering image textures using linear filtering.
 - ![SSDG_2](./images/SSDG_2.png)
 - ![SSDG_3](./images/SSDG_3.png) , ![SSDG_4](./images/SSDG_4.png)
+
 
 
 
