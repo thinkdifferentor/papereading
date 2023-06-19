@@ -1,0 +1,1 @@
+Cutout strengthens robustness against the feature missing caused by domain shift, by partially occluding training images. Mixup regularizes decision boundaries by interpolating among training samples. RandConv drives the network to learn shape information, which is domain-invariant, by randomly altering image textures using linear filtering.
