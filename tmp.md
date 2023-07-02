@@ -1,4 +1,4 @@
-Transfer learning is able to overcome some of the aforementioned issues by only requiring a small amount of annotated data in the unseen domain; however, it is limited in use due to the lack of pre-trained models developed on a large amount of medical imaging data.s
 
+How to train a model that generalizes to an arbitrary domain with only the training samples, but not the corresponding domain information, as these domain information may not be available in the real world. Our paper builds upon this set-up and aims to offer a solution that allows the model to be robustly trained without domain information and to empirically perform well on unseen domains.   
 
-Domain Adaptation: the assumption of a known target domain requires specific image samples need to be collected (or even labeled) and a new model needs to be retrained before deployment. It is not feasible to obtain a pair of source and target domain images to implement the adversarial domain adaptation for every new application.
+This approach discards the representations associated with the higher gradients at each epoch, and forces the model to predict with remaining information.

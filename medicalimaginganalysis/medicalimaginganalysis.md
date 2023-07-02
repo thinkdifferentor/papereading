@@ -84,6 +84,7 @@
   - [42 Autoencoder based self-supervised test-time adaptation for medical image analysis](#42-autoencoder-based-self-supervised-test-time-adaptation-for-medical-image-analysis)
   - [43 Generalizing Deep Learning for Medical Image Segmentation to Unseen Domains via Deep Stacked Transformation](#43-generalizing-deep-learning-for-medical-image-segmentation-to-unseen-domains-via-deep-stacked-transformation)
   - [44 Causality-Inspired Single-Source Domain Generalization for Medical Image Segmentation](#44-causality-inspired-single-source-domain-generalization-for-medical-image-segmentation)
+  - [45 Self-Challenging Improves Cross-Domain Generalization](#45-self-challenging-improves-cross-domain-generalization)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -1014,8 +1015,12 @@ network might take these objects in the background as clues for recognizing the 
 - ![SSDG_3](./images/SSDG_3.png) , ![SSDG_4](./images/SSDG_4.png)
 
 
-
-
+## [45 Self-Challenging Improves Cross-Domain Generalization](./domainadaptation/Self-Challenging%20Improves%20Cross-Domain%20Generalization.pdf)
+- Huang Z, Wang H, Xing E P, et al. /2020/ECCV/383
+- Convolutional Neural Networks (CNN) conduct image classification by **activating dominant features that correlated with labels**. Representation Self-Challenging (RSC) iteratively challenges (**discards** the representations associated with the higher gradients at each epoch) the dominant features activated on the training data, and forces the network to activate remaining features that correlates with labels. This process appears to activate feature representations applicable to out-of-domain data **without prior knowledge of new domain and without learning extra network parameters**. 
+- The experiments endorse the **simple, effective, and architecture-agnostic** nature of our RSC method.
+- *How to train a model that generalizes to an arbitrary domain with only the training samples, but not the corresponding domain information, as these domain information may not be available in the real world.* Our paper builds upon DG set-up and aims to offer a solution that allows the model to be robustly trained without domain information and to empirically perform well on unseen domains.     
+- ![RSC](./images/RSC_1.png)
 
 
 # VIII. Others
