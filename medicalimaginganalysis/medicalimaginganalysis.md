@@ -86,6 +86,7 @@
   - [44 Causality-Inspired Single-Source Domain Generalization for Medical Image Segmentation](#44-causality-inspired-single-source-domain-generalization-for-medical-image-segmentation)
   - [45 Self-Challenging Improves Cross-Domain Generalization](#45-self-challenging-improves-cross-domain-generalization)
   - [46 Domain Generalization by Solving Jigsaw Puzzles](#46-domain-generalization-by-solving-jigsaw-puzzles)
+  - [47 Learning to Diversify for Single Domain Generalization](#47-learning-to-diversify-for-single-domain-generalization)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -1031,7 +1032,11 @@ network might take these objects in the background as clues for recognizing the 
 - ![JiGen](./images/JiGen.png)
 
 
-
+## [47 Learning to Diversify for Single Domain Generalization](./domainadaptation/Learning%20to%20Adapt%20Structured%20Output%20Space%20for%20Semantic%20Segmentation.pdf)
+- Wang Z, Luo Y, Qiu R, et al./2021/ICCV/100
+- Domain generalization (DG) aims to generalize a model trained on **multiple source domains** to a distributionally different target domain. In contrast to the conventional DG that *strictly requires the availability of multiple source domains*, this paper considers a more **realistic yet challenging** scenario, namely Single Domain Generalization (Single-DG), where only one source domain is available for training.
+- In this scenario, the limited diversity may jeopardize the model generalization on unseen target domains. To tackle this problem, we propose a **style-complement module** to enhance the generalization power of the model by synthesizing images from diverse distributions that are complementary to the source ones. More specifically, we adopt a tractable upper bound of mutual information (MI) between the generated and source samples and perform a **two-step optimization iteratively**: (1) by **minimizing** the MI upper bound approximation for each sample pair, *the generated images are forced to be diversified from the source samples*; (2) subsequently, we **maximize** the MI between the samples from the same semantic category, which assists the network to *learn discriminative features from diversestyled images*.
+- ![L2D](./images/L2D.png)
 
 
 # VIII. Others
