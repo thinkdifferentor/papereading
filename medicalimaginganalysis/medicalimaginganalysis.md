@@ -85,6 +85,7 @@
   - [43 Generalizing Deep Learning for Medical Image Segmentation to Unseen Domains via Deep Stacked Transformation](#43-generalizing-deep-learning-for-medical-image-segmentation-to-unseen-domains-via-deep-stacked-transformation)
   - [44 Causality-Inspired Single-Source Domain Generalization for Medical Image Segmentation](#44-causality-inspired-single-source-domain-generalization-for-medical-image-segmentation)
   - [45 Self-Challenging Improves Cross-Domain Generalization](#45-self-challenging-improves-cross-domain-generalization)
+  - [46 Domain Generalization by Solving Jigsaw Puzzles](#46-domain-generalization-by-solving-jigsaw-puzzles)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -1021,6 +1022,16 @@ network might take these objects in the background as clues for recognizing the 
 - The experiments endorse the **simple, effective, and architecture-agnostic** nature of our RSC method.
 - *How to train a model that generalizes to an arbitrary domain with only the training samples, but not the corresponding domain information, as these domain information may not be available in the real world.* Our paper builds upon DG set-up and aims to offer a solution that allows the model to be robustly trained without domain information and to empirically perform well on unseen domains.     
 - ![RSC](./images/RSC_1.png)
+
+
+## [46 Domain Generalization by Solving Jigsaw Puzzles](./domainadaptation/Domain%20Generalization%20by%20Solving%20Jigsaw%20Puzzles.pdf)
+- Carlucci F M, D'Innocente A, Bucci S, et al./2019/CVPR/688
+- Human adaptability relies crucially on the ability to learn and merge knowledge both from **supervised and unsupervised learning**: *the parents point out few important concepts, but then the children fill in the gaps on their own. This is particularly effective, because supervised learning can never be exhaustive and thus learning autonomously allows to discover **invariances** and **regularities** that help to generalize*.
+- In this paper we propose to apply a similar approach to the task of object recognition across domains: our model learns the semantic labels in a supervised fashion, and broadens its understanding of the data by learning from self-supervised signals how to solve a jigsaw puzzle on the same images. This secondary task helps the network to learn the concepts of spatial correlation while acting as a regularizer for the classification task.
+- ![JiGen](./images/JiGen.png)
+
+
+
 
 
 # VIII. Others
