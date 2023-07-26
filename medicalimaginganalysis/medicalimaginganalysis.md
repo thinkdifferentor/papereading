@@ -982,7 +982,10 @@ gap by generating synthetic data with sufficient variation that the network view
 
 ## [42 Autoencoder based self-supervised test-time adaptation for medical image analysis](./domainadaptation/Autoencoder%20based%20self-supervised%20test-time%20adaptation%20for%20medical%20image%20analysis.pdf)
 - He Y, Carass A, Zuo L, et al./2021/Medical Image Analysis/42
-- 
+- Here, we ask whether we can design a model that, once distributed to users, can quickly adapt itself to each new site without expensive retraining or access to the source training data?  
+- **Our model includes three parts**: 1) a task model (T) which performs medical image analysis tasks of synthesis or segmentation, 2) a set of autoencoders (AEs) which are used as a similarity measurement, 3) a set of adaptors (As) which are used to transform test image and features to be similar to the source. The task model and autoencoders are trained on labeled source training data and kept fixed during deployment. 
+- ![Autoencoder_TTA_1](./images/Autoencoder_TTA_1.png)
+- ![Autoencoder_TTA_2](./images/Autoencoder_TTA_2.png)
 
 
 ## [43 Generalizing Deep Learning for Medical Image Segmentation to Unseen Domains via Deep Stacked Transformation](./domainadaptation/Generalizing%20Deep%20Learning%20for%20Medical%20Image%20Segmentation%20to%20Unseen%20Domains%20via%20Deep%20Stacked%20Transformation.pdf)
