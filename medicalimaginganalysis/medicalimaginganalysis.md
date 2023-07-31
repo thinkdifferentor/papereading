@@ -83,6 +83,7 @@
   - [14 Self-Challenging Improves Cross-Domain Generalization](#14-self-challenging-improves-cross-domain-generalization)
   - [15 Domain Generalization by Solving Jigsaw Puzzles](#15-domain-generalization-by-solving-jigsaw-puzzles)
   - [16 Generalizable Cross-modality Medical Image Segmentation via Style Augmentation and Dual Normalization](#16-generalizable-cross-modality-medical-image-segmentation-via-style-augmentation-and-dual-normalization)
+  - [17 Meta-causal Learning for Single Domain Generalization](#17-meta-causal-learning-for-single-domain-generalization)
 - [VII. Test Time Adaptation](#vii-test-time-adaptation)
   - [00 DLTTA: Dynamic Learning Rate for Test-Time Adaptation on Cross-Domain Medical Images](#00-dltta-dynamic-learning-rate-for-test-time-adaptation-on-cross-domain-medical-images)
   - [01 Continual Test-Time Domain Adaptation](#01-continual-test-time-domain-adaptation)
@@ -1010,7 +1011,13 @@ network might take these objects in the background as clues for recognizing the 
 - ![GCS_7](./images/Generalizable%20Cross-modality%20Segmentation_7.png),![GCS_8](./images/Generalizable%20Cross-modality%20Segmentation_8.png)
 
 
-
+## [17 Meta-causal Learning for Single Domain Generalization](./domaingeneralization/Meta-causal%20Learning%20for%20Single%20Domain%20Generalization.pdf)
+- Chen J, Gao Z, Wu X, et al./2023/CVPR/2
+- Existing methods focus on **expanding the distribution** of the training domain to cover the target domains and learning adaptive data normalization, but **without estimating the domain shift** between the source and target domains. This work proposed a new learning paradigm **simulate-analyze-reduce**, which first simulates the domain shift by building an auxiliary domain as the target domain, then learns to analyze the causes of domain shift, and finally learns to reduce the domain shift for model adaptation.
+- Under this paradigm, we propose a meta-causal learning method to learn meta-knowledge, that is, how to infer the causes of domain shift between the auxiliary and source domains **during training**. We use the meta-knowledge to analyze the shift between the target and source domains **during testing**.
+- ![MCL_1](./images/MCL_1.png)
+- ![MCL_2](./images/MCL_2.png)
+- ![MCL_3](./images/MCL_3.png)
 
 
 
