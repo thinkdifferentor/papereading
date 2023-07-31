@@ -7,7 +7,7 @@
   - [03 U-Net and Its Variants for Medical Image Segmentation A Review of Theory and Applications](#03-u-net-and-its-variants-for-medical-image-segmentation-a-review-of-theory-and-applications)
   - [04 A brief review of domain adaptation](#04-a-brief-review-of-domain-adaptation)
   - [05 Domain Adaptation for Medical Image Analysis: A Survey](#05-domain-adaptation-for-medical-image-analysis-a-survey)
-- [II. Unet \& Unet based Semantic Segmentation](#ii-unet--unet-based-semantic-segmentation)
+- [II. Semantic Segmentation Architecture](#ii-semantic-segmentation-architecture)
   - [00 SegNet: A Deep Convolutional Encoder-Decoder Architecture for Image Segmentation](#00-segnet-a-deep-convolutional-encoder-decoder-architecture-for-image-segmentation)
   - [01 U-Net: Convolutional Networks for Biomedical Image Segmentation](#01-u-net-convolutional-networks-for-biomedical-image-segmentation)
   - [02 Unet++: A nested u-net architecture for medical image segmentation](#02-unet-a-nested-u-net-architecture-for-medical-image-segmentation)
@@ -16,11 +16,15 @@
   - [05 V-Net: Fully Convolutional Neural Networks for Volumetric Medical Image Segmentation](#05-v-net-fully-convolutional-neural-networks-for-volumetric-medical-image-segmentation)
   - [06 nnU-Net: A Self-configuring Method for Deep Learning-based Biomedical Image Segmentation](#06-nnu-net-a-self-configuring-method-for-deep-learning-based-biomedical-image-segmentation)
   - [07 KiU-Net Overcomplete Convolutional Architectures for Biomedical Image and Volumetric Segmentation](#07-kiu-net-overcomplete-convolutional-architectures-for-biomedical-image-and-volumetric-segmentation)
-- [III. DeepLab Methods](#iii-deeplab-methods)
-  - [00 DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution and Fully Connected CRFs](#00-deeplab-semantic-image-segmentation-with-deep-convolutional-nets-atrous-convolution-and-fully-connected-crfs)
-  - [01 DeepLabV3: Rethinking Atrous Convolution for Semantic Image Segmentation](#01-deeplabv3-rethinking-atrous-convolution-for-semantic-image-segmentation)
-  - [02 DeepLabV3+: Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation](#02-deeplabv3-encoder-decoder-with-atrous-separable-convolution-for-semantic-image-segmentation)
-- [IV. Few-shot Segmentation](#iv-few-shot-segmentation)
+  - [08 DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution and Fully Connected CRFs](#08-deeplab-semantic-image-segmentation-with-deep-convolutional-nets-atrous-convolution-and-fully-connected-crfs)
+  - [09 DeepLabV3: Rethinking Atrous Convolution for Semantic Image Segmentation](#09-deeplabv3-rethinking-atrous-convolution-for-semantic-image-segmentation)
+  - [10 DeepLabV3+: Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation](#10-deeplabv3-encoder-decoder-with-atrous-separable-convolution-for-semantic-image-segmentation)
+  - [11 High-Resolution Swin Transformer for Automatic Medical Image Segmentation](#11-high-resolution-swin-transformer-for-automatic-medical-image-segmentation)
+  - [12 ScaleFormer: Revisiting the Transformer-based Backbones from a Scale-wise Perspective for Medical Image Segmentation](#12-scaleformer-revisiting-the-transformer-based-backbones-from-a-scale-wise-perspective-for-medical-image-segmentation)
+  - [13 UNETR: Transformers for 3D Medical Image Segmentation](#13-unetr-transformers-for-3d-medical-image-segmentation)
+  - [14 HRFormer: High-Resolution Transformer for Dense Prediction](#14-hrformer-high-resolution-transformer-for-dense-prediction)
+  - [15 CRIS: CLIP-Driven Referring Image Segmentation](#15-cris-clip-driven-referring-image-segmentation)
+- [III. Few-shot Segmentation](#iii-few-shot-segmentation)
   - [00 SG-One: Similarity Guidance Network for One-Shot Semantic Segmentation](#00-sg-one-similarity-guidance-network-for-one-shot-semantic-segmentation)
   - [01 PANet: Few-Shot Image Semantic Segmentation with Prototype Alignment](#01-panet-few-shot-image-semantic-segmentation-with-prototype-alignment)
   - [02 Self-Supervision with Superpixels: Training Few-shot Medical Image Segmentation without Annotation](#02-self-supervision-with-superpixels-training-few-shot-medical-image-segmentation-without-annotation)
@@ -28,17 +32,12 @@
   - [04 Generalized Few-shot Semantic Segmentation](#04-generalized-few-shot-semantic-segmentation)
   - [05 Decoupling Zero-Shot Semantic Segmentation](#05-decoupling-zero-shot-semantic-segmentation)
   - [06 Dynamic Prototype Convolution Network for Few-Shot Semantic Segmentation](#06-dynamic-prototype-convolution-network-for-few-shot-semantic-segmentation)
-- [V. Self-Supervised based Segmentation](#v-self-supervised-based-segmentation)
+  - [07 Zero-Shot Day-Night Domain Adaptation with a Physics Prior](#07-zero-shot-day-night-domain-adaptation-with-a-physics-prior)
+- [IV. Self-Supervised based Segmentation](#iv-self-supervised-based-segmentation)
   - [00 C-CAM: Causal CAM for Weakly Supervised Semantic Segmentation on Medical Image](#00-c-cam-causal-cam-for-weakly-supervised-semantic-segmentation-on-medical-image)
   - [01 Self-Supervised Pre-Training of Swin Transformers for 3D Medical Image Analysis](#01-self-supervised-pre-training-of-swin-transformers-for-3d-medical-image-analysis)
   - [02 Class-Balanced Pixel-Level Self-Labeling for Domain Adaptive Semantic Segmentation](#02-class-balanced-pixel-level-self-labeling-for-domain-adaptive-semantic-segmentation)
-- [VI. Transformer based Segmentation](#vi-transformer-based-segmentation)
-  - [00 High-Resolution Swin Transformer for Automatic Medical Image Segmentation](#00-high-resolution-swin-transformer-for-automatic-medical-image-segmentation)
-  - [01 ScaleFormer: Revisiting the Transformer-based Backbones from a Scale-wise Perspective for Medical Image Segmentation](#01-scaleformer-revisiting-the-transformer-based-backbones-from-a-scale-wise-perspective-for-medical-image-segmentation)
-  - [02 UNETR: Transformers for 3D Medical Image Segmentation](#02-unetr-transformers-for-3d-medical-image-segmentation)
-  - [03 HRFormer: High-Resolution Transformer for Dense Prediction](#03-hrformer-high-resolution-transformer-for-dense-prediction)
-  - [04 CRIS: CLIP-Driven Referring Image Segmentation](#04-cris-clip-driven-referring-image-segmentation)
-- [VII. Domain Adaptation](#vii-domain-adaptation)
+- [V. Domain Adaptation](#v-domain-adaptation)
   - [00 Open Compound Domain Adaptation](#00-open-compound-domain-adaptation)
   - [01 Source-Free Open Compound Domain Adaptation in Semantic Segmentation](#01-source-free-open-compound-domain-adaptation-in-semantic-segmentation)
   - [02 ML-BPM: Multi-teacher Learning with Bidirectional Photometric Mixing for Open Compound Domain Adaptation in Semantic Segmentation](#02-ml-bpm-multi-teacher-learning-with-bidirectional-photometric-mixing-for-open-compound-domain-adaptation-in-semantic-segmentation)
@@ -62,44 +61,47 @@
   - [20 FDA: Fourier Domain Adaptation for Semantic Segmentation](#20-fda-fourier-domain-adaptation-for-semantic-segmentation)
   - [21 RDA: Robust Domain Adaptation via Fourier Adversarial Attacking](#21-rda-robust-domain-adaptation-via-fourier-adversarial-attacking)
   - [22 Domain Generalisation via Domain Adaptation: An Adversarial Fourier Amplitude Approach](#22-domain-generalisation-via-domain-adaptation-an-adversarial-fourier-amplitude-approach)
-  - [23 DLTTA: Dynamic Learning Rate for Test-Time Adaptation on Cross-Domain Medical Images](#23-dltta-dynamic-learning-rate-for-test-time-adaptation-on-cross-domain-medical-images)
+  - [23 Cross-domain Contrastive Learning for Unsupervised Domain Adaptation](#23-cross-domain-contrastive-learning-for-unsupervised-domain-adaptation)
   - [24 Exploring Domain-Invariant Parameters for Source Free Domain Adaptation](#24-exploring-domain-invariant-parameters-for-source-free-domain-adaptation)
-  - [25 Continual Test-Time Domain Adaptation](#25-continual-test-time-domain-adaptation)
+  - [25 Bidirectional Learning for Domain Adaptation of Semantic Segmentation](#25-bidirectional-learning-for-domain-adaptation-of-semantic-segmentation)
   - [26 Shallow Features Guide Unsupervised Domain Adaptation for Semantic Segmentation at Class Boundaries](#26-shallow-features-guide-unsupervised-domain-adaptation-for-semantic-segmentation-at-class-boundaries)
-  - [27 Bidirectional Learning for Domain Adaptation of Semantic Segmentation](#27-bidirectional-learning-for-domain-adaptation-of-semantic-segmentation)
-  - [28 Cross-domain Contrastive Learning for Unsupervised Domain Adaptation](#28-cross-domain-contrastive-learning-for-unsupervised-domain-adaptation)
-  - [29 FedDG: Federated Domain Generalization on Medical Image Segmentation via Episodic Learning in Continuous Frequency Space](#29-feddg-federated-domain-generalization-on-medical-image-segmentation-via-episodic-learning-in-continuous-frequency-space)
-  - [30 Semantic-Aware Domain Generalized Segmentation](#30-semantic-aware-domain-generalized-segmentation)
-  - [31 RobustNet: Improving Domain Generalization in Urban-Scene Segmentation via Instance Selective Whitening](#31-robustnet-improving-domain-generalization-in-urban-scene-segmentation-via-instance-selective-whitening)
-  - [32 FSDR: Frequency Space Domain Randomization for Domain Generalization](#32-fsdr-frequency-space-domain-randomization-for-domain-generalization)
-  - [33 Domain Randomization and Pyramid Consistency: Simulation-to-Real Generalization without Accessing Target Domain Data](#33-domain-randomization-and-pyramid-consistency-simulation-to-real-generalization-without-accessing-target-domain-data)
-  - [34 Two at Once: Enhancing Learning and Generalization Capacities via IBN-Net](#34-two-at-once-enhancing-learning-and-generalization-capacities-via-ibn-net)
-  - [35 Switchable Whitening for Deep Representation Learning](#35-switchable-whitening-for-deep-representation-learning)
-  - [36 WildNet: Learning Domain Generalized Semantic Segmentation From the Wild](#36-wildnet-learning-domain-generalized-semantic-segmentation-from-the-wild)
-  - [37 DIRL: Domain-Invariant Representation Learning for Generalizable Semantic Segmentation](#37-dirl-domain-invariant-representation-learning-for-generalizable-semantic-segmentation)
-  - [38 Intra-Source Style Augmentation for Improved Domain Generalization](#38-intra-source-style-augmentation-for-improved-domain-generalization)
-  - [39 Global and Local Texture Randomization for Synthetic-to-Real Semantic Segmentation](#39-global-and-local-texture-randomization-for-synthetic-to-real-semantic-segmentation)
-  - [40 Test-Time Training with Self-Supervision for Generalization under Distribution Shifts](#40-test-time-training-with-self-supervision-for-generalization-under-distribution-shifts)
-  - [41 Tent: Fully test-time adaptation by entropy minimization](#41-tent-fully-test-time-adaptation-by-entropy-minimization)
-  - [42 Autoencoder based self-supervised test-time adaptation for medical image analysis](#42-autoencoder-based-self-supervised-test-time-adaptation-for-medical-image-analysis)
-  - [43 Generalizing Deep Learning for Medical Image Segmentation to Unseen Domains via Deep Stacked Transformation](#43-generalizing-deep-learning-for-medical-image-segmentation-to-unseen-domains-via-deep-stacked-transformation)
-  - [44 Causality-Inspired Single-Source Domain Generalization for Medical Image Segmentation](#44-causality-inspired-single-source-domain-generalization-for-medical-image-segmentation)
-  - [45 Self-Challenging Improves Cross-Domain Generalization](#45-self-challenging-improves-cross-domain-generalization)
-  - [46 Domain Generalization by Solving Jigsaw Puzzles](#46-domain-generalization-by-solving-jigsaw-puzzles)
-  - [47 Learning to Diversify for Single Domain Generalization](#47-learning-to-diversify-for-single-domain-generalization)
-  - [48 Zero-Shot Day-Night Domain Adaptation with a Physics Prior](#48-zero-shot-day-night-domain-adaptation-with-a-physics-prior)
+- [VI. Domain Generalization](#vi-domain-generalization)
+  - [00 FedDG: Federated Domain Generalization on Medical Image Segmentation via Episodic Learning in Continuous Frequency Space](#00-feddg-federated-domain-generalization-on-medical-image-segmentation-via-episodic-learning-in-continuous-frequency-space)
+  - [01 Semantic-Aware Domain Generalized Segmentation](#01-semantic-aware-domain-generalized-segmentation)
+  - [02 RobustNet: Improving Domain Generalization in Urban-Scene Segmentation via Instance Selective Whitening](#02-robustnet-improving-domain-generalization-in-urban-scene-segmentation-via-instance-selective-whitening)
+  - [03 FSDR: Frequency Space Domain Randomization for Domain Generalization](#03-fsdr-frequency-space-domain-randomization-for-domain-generalization)
+  - [04 Domain Randomization and Pyramid Consistency: Simulation-to-Real Generalization without Accessing Target Domain Data](#04-domain-randomization-and-pyramid-consistency-simulation-to-real-generalization-without-accessing-target-domain-data)
+  - [05 Two at Once: Enhancing Learning and Generalization Capacities via IBN-Net](#05-two-at-once-enhancing-learning-and-generalization-capacities-via-ibn-net)
+  - [06 Switchable Whitening for Deep Representation Learning](#06-switchable-whitening-for-deep-representation-learning)
+  - [07 WildNet: Learning Domain Generalized Semantic Segmentation From the Wild](#07-wildnet-learning-domain-generalized-semantic-segmentation-from-the-wild)
+  - [08 DIRL: Domain-Invariant Representation Learning for Generalizable Semantic Segmentation](#08-dirl-domain-invariant-representation-learning-for-generalizable-semantic-segmentation)
+  - [09 Intra-Source Style Augmentation for Improved Domain Generalization](#09-intra-source-style-augmentation-for-improved-domain-generalization)
+  - [10 Global and Local Texture Randomization for Synthetic-to-Real Semantic Segmentation](#10-global-and-local-texture-randomization-for-synthetic-to-real-semantic-segmentation)
+  - [11 Generalizing Deep Learning for Medical Image Segmentation to Unseen Domains via Deep Stacked Transformation](#11-generalizing-deep-learning-for-medical-image-segmentation-to-unseen-domains-via-deep-stacked-transformation)
+  - [12 Causality-Inspired Single-Source Domain Generalization for Medical Image Segmentation](#12-causality-inspired-single-source-domain-generalization-for-medical-image-segmentation)
+  - [13 Learning to Diversify for Single Domain Generalization](#13-learning-to-diversify-for-single-domain-generalization)
+  - [14 Self-Challenging Improves Cross-Domain Generalization](#14-self-challenging-improves-cross-domain-generalization)
+  - [15 Domain Generalization by Solving Jigsaw Puzzles](#15-domain-generalization-by-solving-jigsaw-puzzles)
+  - [16 Generalizable Cross-modality Medical Image Segmentation via Style Augmentation and Dual Normalization](#16-generalizable-cross-modality-medical-image-segmentation-via-style-augmentation-and-dual-normalization)
+- [VII. Test Time Adaptation](#vii-test-time-adaptation)
+  - [00 DLTTA: Dynamic Learning Rate for Test-Time Adaptation on Cross-Domain Medical Images](#00-dltta-dynamic-learning-rate-for-test-time-adaptation-on-cross-domain-medical-images)
+  - [01 Continual Test-Time Domain Adaptation](#01-continual-test-time-domain-adaptation)
+  - [02 Test-Time Training with Self-Supervision for Generalization under Distribution Shifts](#02-test-time-training-with-self-supervision-for-generalization-under-distribution-shifts)
+  - [03 Tent: Fully test-time adaptation by entropy minimization](#03-tent-fully-test-time-adaptation-by-entropy-minimization)
+  - [04 Autoencoder based self-supervised test-time adaptation for medical image analysis](#04-autoencoder-based-self-supervised-test-time-adaptation-for-medical-image-analysis)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
-  - [02 Generalizable Cross-modality Medical Image Segmentation via Style Augmentation and Dual Normalization](#02-generalizable-cross-modality-medical-image-segmentation-via-style-augmentation-and-dual-normalization)
+  - [02 DRANet: Disentangling Representation and Adaptation Networks for Unsupervised Cross-Domain Adaptation](#02-dranet-disentangling-representation-and-adaptation-networks-for-unsupervised-cross-domain-adaptation)
   - [03 Learning Topological Interactions for Multi-Class Medical Image Segmentation](#03-learning-topological-interactions-for-multi-class-medical-image-segmentation)
   - [04 Large-Kernel Attention for 3D Medical Image Segmentation](#04-large-kernel-attention-for-3d-medical-image-segmentation)
   - [05 Two-Stream UNET Networks for Semantic Segmentation in Medical Images](#05-two-stream-unet-networks-for-semantic-segmentation-in-medical-images)
   - [06 Style and Content Disentanglement in Generative Adversarial Networks](#06-style-and-content-disentanglement-in-generative-adversarial-networks)
   - [07 Content and Style Disentanglement for Artistic Style Transfer](#07-content-and-style-disentanglement-for-artistic-style-transfer)
-  - [08 DRANet: Disentangling Representation and Adaptation Networks for Unsupervised Cross-Domain Adaptation](#08-dranet-disentangling-representation-and-adaptation-networks-for-unsupervised-cross-domain-adaptation)
 
 <!-- /TOC -->
+
+
 
 # I. Survey of Medical Image Analysis
 
@@ -236,7 +238,8 @@ feedback loops into a convolutional layer. The feedback is applied after both co
 - ![Domain Adaptation for Medical Image Analysis_7](./images/Domain%20Adaptation%20for%20Medical%20Image%20Analysis_7.png)
 
 
-# II. Unet & Unet based Semantic Segmentation
+
+# II. Semantic Segmentation Architecture
 
 ## [00 SegNet: A Deep Convolutional Encoder-Decoder Architecture for Image Segmentation](./segmentation/SegNet%20A%20Deep%20Convolutional%20Encoder-Decoder%20Architecture%20for%20Image%20Segmentation.pdf)
 - Badrinarayanan V, Kendall A, Cipolla R./2017/Pattern Analysis And Machine Learning/11224
@@ -316,9 +319,7 @@ interpolation; For anisotropic data: smaller than the median to get higher resol
 - More details of [KiUNet2D](./segmentation/KiU-Net%20Towards%20Accurate%20Segmentation%20of%20Biomedical%20Images%20Using%20Over-Complete%20Representations.pdf)
 
 
-# III. DeepLab Methods
-
-## [00 DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution and Fully Connected CRFs](./segmentation/DeepLab%20Semantic%20Image%20Segmentation%20with%20Deep%20Convolutional%20Nets%2C%20Atrous%20Convolution%20and%20Fully%20Connected%20CRFs.pdf)
+## [08 DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution and Fully Connected CRFs](./segmentation/DeepLab%20Semantic%20Image%20Segmentation%20with%20Deep%20Convolutional%20Nets%2C%20Atrous%20Convolution%20and%20Fully%20Connected%20CRFs.pdf)
 - Chen L C, Papandreou G, Kokkinos I, et al./2017/Pattern Analysis and Machine Intelligence/11453
 - Three **challengens** of  DCNNs to semantic image segmentation: **(1)** reduced feature resolution(caused by repeated combination of max-pooling and downsampling->**atrous convolution**), **(2)** existence of objects at multiple scales(using multiple parallel atrous convolutional layers with different sampling rates, called **ASPP**), and **(3)** reduced localization accuracy due to DCNN invariance (fully connected Conditional Random Field, **CRF**). The DeepLab have three main advantages: *(1) Speed; (2) Accuracy; (3)Simplicity*
 - ![DeepLabV1_1](./images/DeepLabV1_1.png)
@@ -328,7 +329,7 @@ interpolation; For anisotropic data: smaller than the median to get higher resol
 - ![DeepLabV1_5](./images/DeepLabV1_5.png)
 
 
-## [01 DeepLabV3: Rethinking Atrous Convolution for Semantic Image Segmentation](./segmentation/DeepLabV3%20Rethinking%20Atrous%20Convolution%20for%20Semantic%20Image%20Segmentation.pdf)
+## [09 DeepLabV3: Rethinking Atrous Convolution for Semantic Image Segmentation](./segmentation/DeepLabV3%20Rethinking%20Atrous%20Convolution%20for%20Semantic%20Image%20Segmentation.pdf)
 - Chen L C, Papandreou G, Schroff F, et al./2017/CVPR/4868
 -  Deep Convolutional Neural Networks (DCNNs) for the semantic segmentation task have two challenges: **(1)** reduced feature resolution(**atrous convolution**); **(2)** existence of objects at multiple scales(**atrous convolution & spatial pyramid pooling**). In DeepLab V3, the authors take different strategy to handle these issues.
 - ![DeepLabV3_1](./images/DeepLabV3_2.png)
@@ -336,7 +337,7 @@ interpolation; For anisotropic data: smaller than the median to get higher resol
 - ![DeepLabV3_3](./images/DeepLabV3_3.png)
 
 
-## [02 DeepLabV3+: Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation](./segmentation/DeepLabV3%2B%20Encoder-Decoder%20with%20Atrous%20Separable%20Convolution%20for%20Semantic%20Image%20Segmentation.pdf)
+## [10 DeepLabV3+: Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation](./segmentation/DeepLabV3%2B%20Encoder-Decoder%20with%20Atrous%20Separable%20Convolution%20for%20Semantic%20Image%20Segmentation.pdf)
 - Chen L C, Zhu Y, Papandreou G, et al./2018/ECCV/6537
 - The former networks are able to **encode multi-scale contextual information** by probing the incoming features with filters or pooling operations at multiple rates and multiple effective fields-of-view, while the latter networks can **capture sharper object boundaries** by gradually recovering the spatial information. DeepLabv3+ extends DeepLabv3 by adding a **simple yet effective decoder module** to refine the
 segmentation results especially along object boundaries and apply the **depthwise separable convolution**(depthwise convolution + pointwise convolution, to reduce the model parameter) to both ASPP and decoder modules.
@@ -346,9 +347,59 @@ segmentation results especially along object boundaries and apply the **depthwis
 - ![DeepLabV3+_3](./images/DeepLabV3%2B_3.png)
 
 
-# IV. Few-shot Segmentation
+## [11 High-Resolution Swin Transformer for Automatic Medical Image Segmentation](./segmentation/High-Resolution%20Swin%20Transformer%20for%20Automatic%20Medical%20Image%20Segmentation.pdf)
+- Wei C, Ren S, Guo K, et al./2022/arXiv/-
+- Most of the existing Transformer-based networks for medical image segmentation are **U-Net-like** architecture that contains
+an **encoder** that utilizes a sequence of Transformer blocks to convert the input medical image from high-resolution representation into low-resolution feature maps and a **decoder** that gradually recovers the high-resolution representation from low-resolution feature maps. **HRSTNet** utilize the network design style from the High-Resolution Network (**HRNet**), *replace the convolutional layers with Swin Transformer blocks*, and continuously **exchange information** from the different resolution feature maps that are generated by Transformer blocks. 
+- The multi-resolution feature fusion block is designed to fusion features of different resolutions, and it utilizes the **patch merging** block to **downsample** feature maps’ resolution and the **patch expanding** block to **upsample** feature maps’ resolution.
+- ![HRSTNet_1](./images/HRSTNet_1.png)
+- ![HRSTNet_2](./images/HRSTNet_2.png)
 
-## [00 SG-One: Similarity Guidance Network for One-Shot Semantic Segmentation](./segmentation/SG-One%20Similarity%20Guidance%20Network%20for%20One-Shot%20Semantic%20Segmentation.pdf)
+
+## [12 ScaleFormer: Revisiting the Transformer-based Backbones from a Scale-wise Perspective for Medical Image Segmentation](./segmentation/ScaleFormer%20Revisiting%20the%20Transformer-based%20Backbones%20from%20a%20Scale-wise%20Perspective%20for%20Medical%20Image%20Segmentation.pdf)
+- Huang H, Xie S, Lin L, et al./2022/arXiv/-
+- There are mainly two challenges in a scale-wise perspective: (1) **intrascale problem**: the existing methods *lacked in extracting local-global cues in each scale*, which may impact the signal propagation of **small objects**; (2) **inter-scale problem**: the existing methods *failed to explore distinctive information from multiple scales*, which may hinder the representation learning from objects with **widely variable size, shape and location**.
+- ![ScaleFormer_1](./images/ScaleFormer_1.png)
+- ![ScaleFormer_2](./images/ScaleFormer_2.png)
+- ![ScaleFormer_3](./images/ScaleFormer_3.png)
+- ![ScaleFormer_4](./images/ScaleFormer_4.png)
+- ![ScaleFormer_5](./images/ScaleFormer_5.png) 
+
+
+## [13 UNETR: Transformers for 3D Medical Image Segmentation](./segmentation/UNETR%20Transformers%20for%203D%20Medical%20Image%20Segmentation.pdf)
+- Hatamizadeh A, Tang Y, Nath V, et al./2022/CVPR/148
+- Despite FCNNs' success, the locality of convolutional layers in FCNNs, limits the capability of learning **long-range spatial dependencies**. Following the successful “U-shaped” network design for the encoder and decoder, the transformer encoder is directly connected to a decoder via skip connections at different resolutions to compute the final semantic segmentation output. 
+- In particular, we reformulate the task of 3D segmentation as a 1D **sequence-to-sequence** prediction problem and use a **transformer** as the encoder to learn contextual information from the embedded input patches. Instead of using transformers in the decoder, our proposed framework uses a **CNN-based decoder**. This is due to the fact that *transformers are unable to properly capture localized information*, despite their great capability of learning global information. 
+- The **95% HD** uses the 95th percentile of the distances between ground truth and prediction surface point sets. As a result, the impact of a very small subset of outliers is minimized when calculating HD. We proposed to use a transformer encoder to increase the model's capability for learning **long-range dependencies** and **effectively capturing global contextual representation** at multiple scales.
+- ![UNETR_1](./images/UNETR_1.png)
+- ![UNETR_2](./images/UNETR_2.png)
+
+
+## [14 HRFormer: High-Resolution Transformer for Dense Prediction](./segmentation/HRformer%20High-resolution%20vision%20transformer%20for%20dense%20predict.pdf)
+- Yuan Y, Fu R, Huang L, et al./2021/NIPS/53
+- In contrast to the original Vision Transformer that produces **low-resolution representations** and has **high memory and computational cost**, HRFormer take advantage of the multi-resolution parallel design introduced in high-resolution convolutional networks (**HRNet**), along with **local-window self-attention** that performs self-attention over **small non-overlapping image windows**, for improving the **memory and computation efficiency**. In addition, we introduce a convolution into the **FFN to exchange information**(no-overlapping) across the disconnected image windows. The Vision Transformer only outputs a **single-scale feature representation**, and thus lacks the capability to handle multi-scale variation.
+- First, HRFormer adopts convolution in both the stem and **the first stage** as several concurrent studies also suggest that *convolution performs better in the early stages*. Second, HRFormer **maintains a high-resolution stream** through the entire process with **parallel medium- and low-resolution streams** helping boost high-resolution representations. With feature maps of **different resolutions**, thus HRFormer is capable to model the multi-scale variation. Third, HRFormer mixes the **short-range and long-range attention** via exchanging multi-resolution feature information with the multi-scale fusion module.
+- ![HRFormer_1](./images/HRFormer_1.png)
+- ![HRFormer_2](./images/HRFormer_2.png)
+- ![HRFormer_3](./images/HRFormer_3.png)
+- In the development of high-resolution convolutional neural networks, the community has developed three main paths including: **(i)** applying dilated convolutions to remove some down-sample layers, **(ii)** recovering high-resolution representations from low-resolution representations with decoders, and **(iii)** maintaining high-resolution representations throughout the network.
+- The benefits of 3×3 depth-wise convolution are twofold: **one is enhancing the locality and the other one is enabling the interactions across windows**. based on the combination of the local window self-attention and the FFN with 3 × 3 depth-wise convolution, we can build the HRFormer block that **improves the memory and computation efficiency significantly**.
+
+
+## [15 CRIS: CLIP-Driven Referring Image Segmentation](./segmentation/CRIS%20CLIP-Driven%20Referring%20Image%20Segmentation.pdf)
+- Wang Z, Lu Y, Li Q, et al./CVPR/2022/3
+- Referring image segmentation(**text-to-pixel not text-to-image feature learning**) aims to **segment a referent via a natural linguistic expression**. Due to **the distinct data** properties between text and image, it is challenging for a network to **well align text and pixel-level features**. Existing approaches use pretrained models to facilitate learning, yet **separately** transfer the **language/vision knowledge** from pretrained models, **ignoring the multi-modal corresponding information**.
+- Unlike semantic and instance segmentation, which requires segmenting the visual entities **belonging to a pre-determined set of categories**, referring image segmentation is **not limited to indicating specific categories** but finding a particular region according to the **input language expression**.
+- Direct usage of the CLIP can be **sub-optimal for pixel-level prediction tasks**, e.g., referring image segmentation, duo to the **discrepancy between image-level and pixel-level prediction**. The former focuses on **the global information** of an input image, while the latter needs to learn **fine-grained visual representations** for each spatial activation.
+- Firstly, **visual-language decoder** that captures **long-range dependencies** of pixel-level features through the self-attention operation and adaptively propagate fine-structured textual features into pixel-level features through the cross-attention operation. Secondly, we introduce the **text-to-pixel contrastive learning**, which can **align linguistic features and the corresponding pixel-level features**, meanwhile **distinguishing irrelevant pixel-level features in the multi-modal embedding space**.
+- ![CRIS_1](./images/CRIS_1.png)
+- ![CRIS_2](./images/CRIS_2.png)
+
+
+
+# III. Few-shot Segmentation
+
+## [00 SG-One: Similarity Guidance Network for One-Shot Semantic Segmentation](./fewshotdomainadaptation/SG-One%20Similarity%20Guidance%20Network%20for%20One-Shot%20Semantic%20Segmentation.pdf)
 - Zhang X, Wei Y, Yang Y, et al./2020/IEEE Transactions on Cybernetics/177
 - Main Contribution: 1) We propose to produce robust object-related representative vectors using **masked average pooling**(Inspiron next work) for incorporating contextual information without changing the input structure of networks. (2) We produce the **pixel-wise guidance** using **cosine similarities** between representative vectors and query features for predicting the segmentation masks.
 - ![SG-One_1](./images/SG-One_1.png)
@@ -356,7 +407,7 @@ segmentation results especially along object boundaries and apply the **depthwis
 - ![SG-One_4](./images/SG-One_4.png)
   
 
-## [01 PANet: Few-Shot Image Semantic Segmentation with Prototype Alignment](./segmentation/PANet%20Few-Shot%20Image%20Semantic%20Segmentation%20with%20Prototype%20Alignment.pdf)
+## [01 PANet: Few-Shot Image Semantic Segmentation with Prototype Alignment](./fewshotdomainadaptation/PANet%20Few-Shot%20Image%20Semantic%20Segmentation%20with%20Prototype%20Alignment.pdf)
 - Wang K, Liew J H, Zou Y, et al./2020/ICCV/302
 - PANet learns **class specific prototype representations** from a few support images within an embedding space and then performs segmentation over the query images through **matching each pixel to the learned prototypes** (Segmentation over the query images
 is performed by labeling each pixel as the class of the nearest prototype). With non-parametric metric learning, PANet offers **high-quality prototypes** that are representative for each semantic class and meanwhile discriminative for different classes.
@@ -366,7 +417,7 @@ is performed by labeling each pixel as the class of the nearest prototype). With
 - ![PANet_3](./images/PANet_3.png) , ![PANet_4](./images/PANet_4.png)
   
 
-## [02 Self-Supervision with Superpixels: Training Few-shot Medical Image Segmentation without Annotation](./segmentation/Self-Supervision%20with%20Superpixels%20Training%20Few-shot%20Medical%20Image%20Segmentation%20without%20Annotation.pdf)
+## [02 Self-Supervision with Superpixels: Training Few-shot Medical Image Segmentation without Annotation](./fewshotdomainadaptation/Self-Supervision%20with%20Superpixels%20Training%20Few-shot%20Medical%20Image%20Segmentation%20without%20Annotation.pdf)
 - Ouyang C, Biffi C, Chen C, et al./2020/ECCV/54
 - Most of the existing Few-shot semantic segmentation (FSS) techniques require abundant (compare traditional segmentation model is **much fewer**) annotated semantic classes for training.To address this problem we make several contributions:(1) A novel self-supervised FSS framework for medical images in order to **eliminate the requirement for annotations** during training. Additionally, **superpixel-based pseudo-labels** are generated to provide supervision;(2) An **adaptive local prototype pooling** module plugged into prototypical networks, to solve the common challenging **foreground-background imbalance** problem in medical image segmentation;
 - The aim of few-shot segmentation is to obtain a model that can segment an **unseen semantic class**(Dtrain's Query set), by just learning from a **few labeled images**(Dtrain's Support set) of this unseen class during inference without retraining the model. Dataset: **Dtrain & Dtest** have the same structurs but the classes of them is totally different eg. **SupSet = {Image, Mask}, QurSet = {Image, Mask}**  
@@ -376,7 +427,7 @@ is performed by labeling each pixel as the class of the nearest prototype). With
 - ![Self-Supervision with Superpixels 5](./images/Self-supervision%20with%20Superpixels_5.png)
   
 
-## [03 Learning Non-target Knowledge for Few-shot Semantic Segmentation](./segmentation/Learning%20Non-target%20Knowledge%20for%20Few-shot%20Semantic%20Segmentation.pdf)
+## [03 Learning Non-target Knowledge for Few-shot Semantic Segmentation](./fewshotdomainadaptation/Learning%20Non-target%20Knowledge%20for%20Few-shot%20Semantic%20Segmentation.pdf)
 - Liu Y, Liu N, Cao Q, et al./2022/CVPR/-
 - For existing works, The main reason is that solely focusing on **target objects** in the few-shot setting makes their models hard on learning discriminative features and differentiating ambiguous regions. This paper aim to mining and excluding **non-target regions** like back grounds (BG) & co-existing objects belonging to other classes, namely, distracting objects (DOs).
 - ![Learning Non-target Knowledge_1](./images/Learning%20Non-target%20Knowledge%20for%20Few-shot%20Semantic%20Segmentation_1.png)
@@ -386,7 +437,7 @@ is performed by labeling each pixel as the class of the nearest prototype). With
 - PS. the detail of **BGMM, BGEM, FM, DOEM** should go to the paper.
 
 
-## [04 Generalized Few-shot Semantic Segmentation](./segmentation/Generalized%20Few-shot%20Semantic%20Segmentation.pdf)
+## [04 Generalized Few-shot Semantic Segmentation](./fewshotdomainadaptation/Generalized%20Few-shot%20Semantic%20Segmentation.pdf)
 - Tian Z, Lai X, Jiang L, et al./2022/CVPR/7
 - Considering that the **contextual relation** is essential for semantic segmentation, we propose the Context-Aware Prototype Learning (**CAPL**) that provides significant performance gain to the baseline by updating the weights of base prototypes with adapted feature. CAPL not only exploits essential **co-occurrence information** from support samples, but also **adapts the model to various contexts** of query images.
 - FS-Seg models only learn to predict the foreground masks for the **given novel classes** (from the given support set). GFS-Seg adapts all possible **base and novel classes** (this is why called **Generalized**) to make predictions.
@@ -397,14 +448,14 @@ is performed by labeling each pixel as the class of the nearest prototype). With
 - ![Generalized Few-shot Semantic Segmentation_4](./images/Generalized%20Few-shot%20Semantic%20Segmentation_4.png)
 
 
-## [05 Decoupling Zero-Shot Semantic Segmentation](./segmentation/Decoupling%20Zero-Shot%20Semantic%20Segmentation.pdf)
+## [05 Decoupling Zero-Shot Semantic Segmentation](./fewshotdomainadaptation/Decoupling%20Zero-Shot%20Semantic%20Segmentation.pdf)
 - Ding J, Xue N, Xia G S, et al./2022/CVPR/-
 - An intuitive observation is that, given an image for semantic segmentation, we humans can **first group pixels into segments** and **then perform a segment-level semantic labeling process**.  Decoupling the ZS3 have two sub-tasks: 1) a **class-agnostic grouping** task to **group** the pixels into segments (**CAG**). 2) a **zero-shot classification** task on **segments** (**s-ZSC**). The implementation of this architecture is named **ZegFormer**.
 - ![Decoupling Zero-Shot Semantic Segmentation_1](./images/Decoupling%20Zero-Shot%20Semantic%20Segmentation_1.png)
 - ![Decoupling Zero-Shot Semantic Segmentation_2](./images/Decoupling%20Zero-Shot%20Semantic%20Segmentation_2.png)
 
 
-## [06 Dynamic Prototype Convolution Network for Few-Shot Semantic Segmentation](./segmentation/Dynamic%20Prototype%20Convolution%20Network%20for%20Few-Shot%20Semantic%20Segmentation.pdf)
+## [06 Dynamic Prototype Convolution Network for Few-Shot Semantic Segmentation](./fewshotdomainadaptation/Dynamic%20Prototype%20Convolution%20Network%20for%20Few-Shot%20Semantic%20Segmentation.pdf)
 - Liu J, Bao Y, Xie G S, et al./2022/CVPR/-
 - The key challenge for few-shot semantic segmentation (FSS) is how to tailor a desirable **interaction among support and query** features and/or their prototypes, under the episodic training scenario. Most existing FSS methods implement such support/query interactions by **solely leveraging plain operations** like cosine similarity and feature concatenation, which cannot well capture the intrinsic object details in the query images and cannot do segmentation for fine shapes like holes and slots.
 - ![DPCN_1](./images/DPCN_1.png)
@@ -416,7 +467,15 @@ is performed by labeling each pixel as the class of the nearest prototype). With
 - ![DPCN_4](./images/DPCN_4.png)
 
 
-# V. Self-Supervised based Segmentation
+## [07 Zero-Shot Day-Night Domain Adaptation with a Physics Prior](./fewshotdomainadaptation/Zero-Shot%20Day-Night%20Domain%20Adaptation%20with%20a%20Physics%20Prior.pdf)
+- Lengyel A, Garg S, Milford M, et al./2021/ICCV/31
+- We show that the color invariant layer reduces the day-night distribution shift in feature map activations throughout the a trainable **Color Invariant Convolution** (CIConv) layer which can be used as the input layer to any CNN to transform the input to a domain invariant representation. (color invariants have been widely used in classical computer vision applications [6, 46], yet their use in a deep learning setting has remained largely unexplored.)
+- ![CIConv_1](./images/CIConv_1.png)
+- ![CIConv_2](./images/CIConv_2.png)
+
+
+
+# IV. Self-Supervised based Segmentation
 
 ## [00 C-CAM: Causal CAM for Weakly Supervised Semantic Segmentation on Medical Image](./segmentation/C-CAM%20Causal%20CAM%20for%20Weakly%20Supervised%20Semantic%20Segmentation%20on%20Medical%20Image.pdf)
 - Chen Z, Tian Z, Zhu J, et al./2022/CVPR/-
@@ -446,60 +505,9 @@ is performed by labeling each pixel as the class of the nearest prototype). With
 - P_SL can be regarded as the **weight map** to modulate the softmax probability map P_ST. The cluster assignment P_SL exploits the inherent data distribution of target domain, thus it is highly complementary to the classifier-based pseudo label P_ST which heavily relies on source domain. **On one hand**, the label noise was reduced and the bias to source domain was calibrated by exploring pixel-level intrinsic structures of target domain images. **On the other hand**, CPSL captured inherent class distribution of target domain, which effectively avoided gradual dominance of majority classes.
 - ![CPSL_2](./images/CPSL_2.png)
 
-
-
-# VI. Transformer based Segmentation
-
-## [00 High-Resolution Swin Transformer for Automatic Medical Image Segmentation](./segmentation/High-Resolution%20Swin%20Transformer%20for%20Automatic%20Medical%20Image%20Segmentation.pdf)
-- Wei C, Ren S, Guo K, et al./2022/arXiv/-
-- Most of the existing Transformer-based networks for medical image segmentation are **U-Net-like** architecture that contains
-an **encoder** that utilizes a sequence of Transformer blocks to convert the input medical image from high-resolution representation into low-resolution feature maps and a **decoder** that gradually recovers the high-resolution representation from low-resolution feature maps. **HRSTNet** utilize the network design style from the High-Resolution Network (**HRNet**), *replace the convolutional layers with Swin Transformer blocks*, and continuously **exchange information** from the different resolution feature maps that are generated by Transformer blocks. 
-- The multi-resolution feature fusion block is designed to fusion features of different resolutions, and it utilizes the **patch merging** block to **downsample** feature maps’ resolution and the **patch expanding** block to **upsample** feature maps’ resolution.
-- ![HRSTNet_1](./images/HRSTNet_1.png)
-- ![HRSTNet_2](./images/HRSTNet_2.png)
-
-
-## [01 ScaleFormer: Revisiting the Transformer-based Backbones from a Scale-wise Perspective for Medical Image Segmentation](./segmentation/ScaleFormer%20Revisiting%20the%20Transformer-based%20Backbones%20from%20a%20Scale-wise%20Perspective%20for%20Medical%20Image%20Segmentation.pdf)
-- Huang H, Xie S, Lin L, et al./2022/arXiv/-
-- There are mainly two challenges in a scale-wise perspective: (1) **intrascale problem**: the existing methods *lacked in extracting local-global cues in each scale*, which may impact the signal propagation of **small objects**; (2) **inter-scale problem**: the existing methods *failed to explore distinctive information from multiple scales*, which may hinder the representation learning from objects with **widely variable size, shape and location**.
-- ![ScaleFormer_1](./images/ScaleFormer_1.png)
-- ![ScaleFormer_2](./images/ScaleFormer_2.png)
-- ![ScaleFormer_3](./images/ScaleFormer_3.png)
-- ![ScaleFormer_4](./images/ScaleFormer_4.png)
-- ![ScaleFormer_5](./images/ScaleFormer_5.png) 
-
-
-## [02 UNETR: Transformers for 3D Medical Image Segmentation](./segmentation/UNETR%20Transformers%20for%203D%20Medical%20Image%20Segmentation.pdf)
-- Hatamizadeh A, Tang Y, Nath V, et al./2022/CVPR/148
-- Despite FCNNs' success, the locality of convolutional layers in FCNNs, limits the capability of learning **long-range spatial dependencies**. Following the successful “U-shaped” network design for the encoder and decoder, the transformer encoder is directly connected to a decoder via skip connections at different resolutions to compute the final semantic segmentation output. 
-- In particular, we reformulate the task of 3D segmentation as a 1D **sequence-to-sequence** prediction problem and use a **transformer** as the encoder to learn contextual information from the embedded input patches. Instead of using transformers in the decoder, our proposed framework uses a **CNN-based decoder**. This is due to the fact that *transformers are unable to properly capture localized information*, despite their great capability of learning global information. 
-- The **95% HD** uses the 95th percentile of the distances between ground truth and prediction surface point sets. As a result, the impact of a very small subset of outliers is minimized when calculating HD. We proposed to use a transformer encoder to increase the model's capability for learning **long-range dependencies** and **effectively capturing global contextual representation** at multiple scales.
-- ![UNETR_1](./images/UNETR_1.png)
-- ![UNETR_2](./images/UNETR_2.png)
-
-
-## [03 HRFormer: High-Resolution Transformer for Dense Prediction](./segmentation/HRformer%20High-resolution%20vision%20transformer%20for%20dense%20predict.pdf)
-- Yuan Y, Fu R, Huang L, et al./2021/NIPS/53
-- In contrast to the original Vision Transformer that produces **low-resolution representations** and has **high memory and computational cost**, HRFormer take advantage of the multi-resolution parallel design introduced in high-resolution convolutional networks (**HRNet**), along with **local-window self-attention** that performs self-attention over **small non-overlapping image windows**, for improving the **memory and computation efficiency**. In addition, we introduce a convolution into the **FFN to exchange information**(no-overlapping) across the disconnected image windows. The Vision Transformer only outputs a **single-scale feature representation**, and thus lacks the capability to handle multi-scale variation.
-- First, HRFormer adopts convolution in both the stem and **the first stage** as several concurrent studies also suggest that *convolution performs better in the early stages*. Second, HRFormer **maintains a high-resolution stream** through the entire process with **parallel medium- and low-resolution streams** helping boost high-resolution representations. With feature maps of **different resolutions**, thus HRFormer is capable to model the multi-scale variation. Third, HRFormer mixes the **short-range and long-range attention** via exchanging multi-resolution feature information with the multi-scale fusion module.
-- ![HRFormer_1](./images/HRFormer_1.png)
-- ![HRFormer_2](./images/HRFormer_2.png)
-- ![HRFormer_3](./images/HRFormer_3.png)
-- In the development of high-resolution convolutional neural networks, the community has developed three main paths including: **(i)** applying dilated convolutions to remove some down-sample layers, **(ii)** recovering high-resolution representations from low-resolution representations with decoders, and **(iii)** maintaining high-resolution representations throughout the network.
-- The benefits of 3×3 depth-wise convolution are twofold: **one is enhancing the locality and the other one is enabling the interactions across windows**. based on the combination of the local window self-attention and the FFN with 3 × 3 depth-wise convolution, we can build the HRFormer block that **improves the memory and computation efficiency significantly**.
-
-
-## [04 CRIS: CLIP-Driven Referring Image Segmentation](./segmentation/CRIS%20CLIP-Driven%20Referring%20Image%20Segmentation.pdf)
-- Wang Z, Lu Y, Li Q, et al./CVPR/2022/3
-- Referring image segmentation(**text-to-pixel not text-to-image feature learning**) aims to **segment a referent via a natural linguistic expression**. Due to **the distinct data** properties between text and image, it is challenging for a network to **well align text and pixel-level features**. Existing approaches use pretrained models to facilitate learning, yet **separately** transfer the **language/vision knowledge** from pretrained models, **ignoring the multi-modal corresponding information**.
-- Unlike semantic and instance segmentation, which requires segmenting the visual entities **belonging to a pre-determined set of categories**, referring image segmentation is **not limited to indicating specific categories** but finding a particular region according to the **input language expression**.
-- Direct usage of the CLIP can be **sub-optimal for pixel-level prediction tasks**, e.g., referring image segmentation, duo to the **discrepancy between image-level and pixel-level prediction**. The former focuses on **the global information** of an input image, while the latter needs to learn **fine-grained visual representations** for each spatial activation.
-- Firstly, **visual-language decoder** that captures **long-range dependencies** of pixel-level features through the self-attention operation and adaptively propagate fine-structured textual features into pixel-level features through the cross-attention operation. Secondly, we introduce the **text-to-pixel contrastive learning**, which can **align linguistic features and the corresponding pixel-level features**, meanwhile **distinguishing irrelevant pixel-level features in the multi-modal embedding space**.
-- ![CRIS_1](./images/CRIS_1.png)
-- ![CRIS_2](./images/CRIS_2.png)
  
 
-# VII. Domain Adaptation
+# V. Domain Adaptation
 
 ## [00 Open Compound Domain Adaptation](./domainadaptation/Open%20Compound%20Domain%20Adaptation.pdf)
 - Liu Z, Miao Z, Pan X, et al./2020/CVPR/72
@@ -763,15 +771,16 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - ![DGVDA_2](./images/DGVDA_2.png)
 
 
-## [23 DLTTA: Dynamic Learning Rate for Test-Time Adaptation on Cross-Domain Medical Images](./domainadaptation/DLTTA%20Dynamic%20Learning%20Rate%20for%20Test-Time%20Adaptation%20on%20Cross-Domain%20Medical%20Images.pdf)
-- Yang H, Chen C, Jiang M, et al./2022/IEEE Transactions on Medical Imaging/4
-- Previous TTA methods have a common limitation of using a **fixed learning rate for all the test samples**. Such a practice would be sub-optimal for TTA, because test data may arrive sequentially therefore **the scale of distribution shift would change frequently**.
-- DLTTA, which **dynamically modulates the amount of weights update** for each test image to account for the differences in their distribution shift. Specifically,our DLTTA is equipped with a **memory bank** based estimation scheme to effectively measure **the discrepancy of a given test sample**. Based on this estimated discrepancy, a dynamic learning rate adjustment strategy is then developed to achieve a suitable degree of adaptation for each test sample.
-- UDA setting is still problematic for real-world model deployment due to two important reasons. **Firstly**, it is not efficient, if realistic, to wait for the **accumulation of sufficient amount of test samples** (e.g., thousands of instances), since the test data usually arrive sequentially one by one, or batch by batch. However, immediate prediction on a single test sample or a batch of instances is highly desired in clinical practice for timely diagnosis and treatment for patients. **Secondly**, accessing the training dataset at test time is practically difficult, because data sharing across hospitals is prohibitive due to the **privacy concern** for medical data. (TTA Setting Motivation)
-- This work's **insight** is to achieve dynamic learning rate adjustment according to a estimated distribution shift. *How to measure the discrepancy solely based on the model parameters and the current test sample in an unsupervised way is challenging and remains unsolved yet*.
-- Our proposed **memory bank-based** discrepancy measurement captures **both the model progress and the distribution variation of test data**, thus can provide more up-to-date discrepancy estimation for effective dynamic learning rate adjustment of test-time adaptation.
-- ![DLTTA_1](./images/DLTTA_1.png)
-- ![DLTTA_2](./images/DLTTA_2.png)
+## [23 Cross-domain Contrastive Learning for Unsupervised Domain Adaptation](./domainadaptation/Cross-domain%20Contrastive%20Learning%20for%20Unsupervised%20Domain%20Adaptation.pdf)
+- Wang R, Wu Z, Weng Z, et al./2022/ IEEE Transactions on Multimedia/48
+- Most existing UDA methods learn **domain-invariant feature representations** by **minimizing feature distances across domains**. In this work, we build upon
+contrastive self-supervised learning to align features so as to reduce the domain discrepancy between training and testing sets. In this work, we build upon **contrastive self-supervised learning** to align features so as to reduce the domain discrepancy between training and testing sets.
+- Exploring the **same set of categories shared by both domains**, we introduce a simple yet effective framework CDCL, for domain alignment. In particular, given an anchor image from one domain, we minimize its distances to cross-domain samples from the same class relative to those from different categories. Since target labels are unavailable, we use a **clustering-based approach** with carefully initialized centers to **produce pseudo labels**. 
+- In this paper, we ask the following **question**: can we leverage contrastive learning that produces decent feature representations in a variety of downstream tasks for domain alignment in unsupervised domain adaptation? (In domain adaptation, it is not clear how to form **positive and negative pairs** in order to align feature distributions)
+- More specifically, we **hypothesize** that *samples within the same category are close to each other while samples from different classes lie far apart, regardless of which domain they come from*. 
+- The **intuition** is that the weight vectors in the classifier layer of a pre-trained model can be regarded as prototypical features of each class learned on the source domain. In particular, we first remove the bias of the fully-connected layer and perform normalization for the classifier.
+- ![CDCL_1](./images/CDCL_1.png)
+- ![CDCL_2](./images/CDCL_2.png)
 
 
 ## [24 Exploring Domain-Invariant Parameters for Source Free Domain Adaptation](./domainadaptation/Exploring%20Domain-Invariant%20Parameters%20for%20Source%20Free%20Domain%20Adaptation.pdf)
@@ -785,13 +794,14 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - ![DIPE_3](./images/DIPE_3.png)
 
 
-## [25 Continual Test-Time Domain Adaptation](./domainadaptation/Continual%20Test-Time%20Domain%20Adaptation.pdf)
-- Wang Q, Fink O, Van Gool L, et al./2022/CVPR/68
-- Test-time domain adaptation aims to adapt a **source pretrained model** to a target domain **without using any source data**. Existing works mainly consider the case where the target domain is **static**. However, real-world machine perception systems are running in non-stationary and **continually changing environments** where the target domain distribution can change over time.
-- Existing methods, which are mostly based on **self-training and entropy regularization**, can suffer from these non-stationary environments. Due to the distribution shift over time in the target domain, pseudo-labels become unreliable. The noisy pseudo labels can further lead to **error accumulation and catastrophic forgetting**.
-- to reduce the **error accumulation** by using **weight-averaged and augmentation-averaged predictions** which are often more accurate; to avoid **catastrophic forgetting**, we propose to **stochastically restore a small part of the neurons** to the source pre-trained weights during each iteration to help preserve source knowledge in the long-term.
-- ![CTTDA_1](./images/CTTDA_1.png)
-- ![CTTDA_2](./images/CTTDA_2.png)
+## [25 Bidirectional Learning for Domain Adaptation of Semantic Segmentation](./domainadaptation/Bidirectional%20Learning%20for%20Domain%20Adaptation%20of%20Semantic%20Segmentation.pdf)
+- Li Y, Yuan L, Vasconcelos N. /2019/CVPR/520
+- Existing domain adaptation techniques either work on **limited datasets**, or yield **not so good performance** compared with supervised learning. Using the bidirectional learning(“translation-to-segmentation” and “segmentation-to-translation”), **the image translation model** and **the segmentation adaptation model** can be learned **alternatively** and **promote** to each other. Furthermore, we propose a **self-supervised learning algorithm** to learn a better segmentation adaptation model and in return improve the image translation model. 
+- *How to allow one of both modules providing positive feedbacks to the other is the key to success*. **better segmentation adaptation model** would contribute to **better translation model** through our backward direction learning.
+- domain adaptation for semantic segmentation has made good progress by separating it into **two sequential steps**: image-to-image translation model and add a discriminator on top of the features of the segmentation model. the segmentation model very relies on the quality of image-to-image translation. *Once the image-to-image translation fails, nothing can be done to make it up in the following stages*.
+- a **perceptual loss**, which measures the distance of features obtained from a **pre-trained network** on object recognition, is used in the image translation network to improve the quality of translated result.
+- ![BDL_1](./images/BDL.png)
+- ![BDL_2](./images/BDL_2.png)
 
 
 ## [26 Shallow Features Guide Unsupervised Domain Adaptation for Semantic Segmentation at Class Boundaries](./domainadaptation/Shallow%20Features%20Guide%20Unsupervised%20Domain%20Adaptation%20for%20Semantic%20Segmentation%20at%20Class%20Boundaries.pdf)
@@ -807,30 +817,10 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - Although selecting source objects(**self-training with augmented source images**) may be useful to reduce the unbalanced distributions of classes, it is a sub-optimal choice since the network would be still trained to identify shapes and details peculiar to the source domain, which are different to those found at inference time for the target images. 
 
 
-## [27 Bidirectional Learning for Domain Adaptation of Semantic Segmentation](./domainadaptation/Bidirectional%20Learning%20for%20Domain%20Adaptation%20of%20Semantic%20Segmentation.pdf)
-- Li Y, Yuan L, Vasconcelos N. /2019/CVPR/520
-- Existing domain adaptation techniques either work on **limited datasets**, or yield **not so good performance** compared with supervised learning. Using the bidirectional learning(“translation-to-segmentation” and “segmentation-to-translation”), **the image translation model** and **the segmentation adaptation model** can be learned **alternatively** and **promote** to each other. Furthermore, we propose a **self-supervised learning algorithm** to learn a better segmentation adaptation model and in return improve the image translation model. 
-- *How to allow one of both modules providing positive feedbacks to the other is the key to success*. **better segmentation adaptation model** would contribute to **better translation model** through our backward direction learning.
-- domain adaptation for semantic segmentation has made good progress by separating it into **two sequential steps**: image-to-image translation model and add a discriminator on top of the features of the segmentation model. the segmentation model very relies on the quality of image-to-image translation. *Once the image-to-image translation fails, nothing can be done to make it up in the following stages*.
-- a **perceptual loss**, which measures the distance of features obtained from a **pre-trained network** on object recognition, is used in the image translation network to improve the quality of translated result.
-- ![BDL_1](./images/BDL.png)
-- ![BDL_2](./images/BDL_2.png)
 
+# VI. Domain Generalization
 
-
-## [28 Cross-domain Contrastive Learning for Unsupervised Domain Adaptation](./domainadaptation/Cross-domain%20Contrastive%20Learning%20for%20Unsupervised%20Domain%20Adaptation.pdf)
-- Wang R, Wu Z, Weng Z, et al./2022/ IEEE Transactions on Multimedia/48
-- Most existing UDA methods learn **domain-invariant feature representations** by **minimizing feature distances across domains**. In this work, we build upon
-contrastive self-supervised learning to align features so as to reduce the domain discrepancy between training and testing sets. In this work, we build upon **contrastive self-supervised learning** to align features so as to reduce the domain discrepancy between training and testing sets.
-- Exploring the **same set of categories shared by both domains**, we introduce a simple yet effective framework CDCL, for domain alignment. In particular, given an anchor image from one domain, we minimize its distances to cross-domain samples from the same class relative to those from different categories. Since target labels are unavailable, we use a **clustering-based approach** with carefully initialized centers to **produce pseudo labels**. 
-- In this paper, we ask the following **question**: can we leverage contrastive learning that produces decent feature representations in a variety of downstream tasks for domain alignment in unsupervised domain adaptation? (In domain adaptation, it is not clear how to form **positive and negative pairs** in order to align feature distributions)
-- More specifically, we **hypothesize** that *samples within the same category are close to each other while samples from different classes lie far apart, regardless of which domain they come from*. 
-- The **intuition** is that the weight vectors in the classifier layer of a pre-trained model can be regarded as prototypical features of each class learned on the source domain. In particular, we first remove the bias of the fully-connected layer and perform normalization for the classifier.
-- ![CDCL_1](./images/CDCL_1.png)
-- ![CDCL_2](./images/CDCL_2.png)
-
-
-## [29 FedDG: Federated Domain Generalization on Medical Image Segmentation via Episodic Learning in Continuous Frequency Space](./domainadaptation/Feddg%20Federated%20domain%20generalization%20on%20medical%20image%20segmentation%20via%20episodic%20learning%20in%20continuous%20frequency%20space%20.pdf)
+## [00 FedDG: Federated Domain Generalization on Medical Image Segmentation via Episodic Learning in Continuous Frequency Space](./domainadaptation/Feddg%20Federated%20domain%20generalization%20on%20medical%20image%20segmentation%20via%20episodic%20learning%20in%20continuous%20frequency%20space%20.pdf)
 - Liu Q, Chen C, Qin J, et al./2021/CVPR/167
 - Federated learning allows distributed medical institutions to collaboratively learn a shared prediction model with privacy protection. While at clinical deployment, the models trained in federated learning can still suffer from performance drop when applied to **completely unseen hospitals outside the federation**.
 - Although FL has witnessed some pilot progress on medical image segmentation tasks, all existing works only focus on improving model performance on the internal clients, while neglecting model generalizability onto unseen domains outside the federation.
@@ -844,7 +834,7 @@ contrastive self-supervised learning to align features so as to reduce the domai
 - ![FedDG_2](./images/FedDG_2.png)
 
 
-## [30 Semantic-Aware Domain Generalized Segmentation](./domainadaptation/Semantic-Aware%20Domain%20Generalized%20Segmentation.pdf)
+## [01 Semantic-Aware Domain Generalized Segmentation](./domaingeneralization/Semantic-Aware%20Domain%20Generalized%20Segmentation.pdf)
 - Peng D, Lei Y, Hayat M, et al./2022/CVPR/21
 - for DGSS, existing approaches to tackle this problem standardize data into a **unified distribution**. We **argue** that while such a **standardization promotes global normalization**, the resulting features are not discriminative enough to get clear segmentation boundaries.
 - Semantic-Aware Normalization (SAN) and Semantic-Aware Whitening (SAW).  SAN focuses on **category-level center alignment** between features from different image styles, while SAW enforces **distributed alignment for the already center-aligned features**. With the help of SAN and SAW, we encourage both **intra-category compactness and inter-category separability**.
@@ -854,7 +844,7 @@ contrastive self-supervised learning to align features so as to reduce the domai
 - ![SADGS_3](./images/SADGS_3.png)
 
 
-## [31 RobustNet: Improving Domain Generalization in Urban-Scene Segmentation via Instance Selective Whitening](./domainadaptation/RobustNet%20Improving%20Domain%20Generalization%20in%20Urban-Scene%20Segmentation%20via%20Instance%20Selective%20Whitening.pdf)
+## [02 RobustNet: Improving Domain Generalization in Urban-Scene Segmentation via Instance Selective Whitening](./domaingeneralization/RobustNet%20Improving%20Domain%20Generalization%20in%20Urban-Scene%20Segmentation%20via%20Instance%20Selective%20Whitening.pdf)
 - Choi S, Jung S, Yun H, et al./2021/CVPR/105
 - To address DGSS, this paper proposes a novel **instance selective whitening loss** to improve the robustness of the segmentation networks for unseen domains. Our approach **disentangles the domain-specific style and domain-invariant content** encoded in higher-order statistics (i.e., feature covariance) of the feature representations and **selectively removes only the style information** causing domain shift.
 - Existing DG  learning of a shared representation across **multiple source domains** to improving the robustness of the model. However, *collecting such multi-domain datasets is costly and labor-intensive, and furthermore, the performance highly depends on the number of source datasets*.
@@ -867,7 +857,7 @@ contrastive self-supervised learning to align features so as to reduce the domai
 - ![RobustNet_4](./images/RobustNet_4.png)
 
 
-## [32 FSDR: Frequency Space Domain Randomization for Domain Generalization](./domainadaptation/FSDR%20Frequency%20Space%20Domain%20Randomization%20for%20Domain%20Generalization.pdf)
+## [03 FSDR: Frequency Space Domain Randomization for Domain Generalization](./domaingeneralization/FSDR%20Frequency%20Space%20Domain%20Randomization%20for%20Domain%20Generalization.pdf)
 - Huang J, Guan D, Xiao A, et al./2021/CVPR/94
 - It has been studied widely by **domain randomization that transfers source images to different styles** in **spatial space** for learning **domain-agnostic features** for DGSS problem. However, most existing randomization methods use **GANs that often lack of controls and even alter semantic structures** of images undesirably.
 - Inspired by the idea of JPEG that converts spatial images into **multiple frequency components** (FCs), we propose Frequency Space Domain Randomization (FSDR) that randomizes images in frequency space by **keeping domain-invariant FCs (DIFs) and randomizing domain-variant FCs (DVFs)** only.
@@ -880,7 +870,7 @@ contrastive self-supervised learning to align features so as to reduce the domai
 - ![FSDR_4](./images/FSDR_4.png)
 
 
-## [33 Domain Randomization and Pyramid Consistency: Simulation-to-Real Generalization without Accessing Target Domain Data](./domainadaptation/Domain%20Randomization%20and%20Pyramid%20Consistency%20Simulation-to-Real%20Generalization%20without%20Accessing%20Target%20Domain%20Data.pdf)
+## [04 Domain Randomization and Pyramid Consistency: Simulation-to-Real Generalization without Accessing Target Domain Data](./domaingeneralization/Domain%20Randomization%20and%20Pyramid%20Consistency%20Simulation-to-Real%20Generalization%20without%20Accessing%20Target%20Domain%20Data.pdf)
 - Yue X, Zhang Y, Zhao S, et al./2019/CVPR/235
 - we propose a new approach of **domain randomization** and **pyramid consistency** to learn a model with high generalizability. **First**, we propose to randomize the synthetic images with the styles of real images in terms of visual appearances using **auxiliary datasets**(like ImageNet), in order to effectively learn domain-invariant representations. **Second**, we further enforce **pyramid consistency across different “stylized” images** and within an image, in order to learn domain-invariant and scale-invariant features, respectively. 
 - Our **main idea** is to randomize the labeled synthetic images to the styles of real images. We further enforce the semantic segmentation network to generate consistent predictions, in a pyramid form, over these domains. Our **conjecture** is that if the network is exposed to a sufficient number of domains in the training stage, it should **interpolate** well to new real world target domains. In contrast, the domain adaptation work can be seen as **extrapolating** from a single source domain to a single target domain. 
@@ -892,7 +882,7 @@ gap by generating synthetic data with sufficient variation that the network view
 - ![DRPC_3](./images/DRPC_3.png)
 
 
-## [34 Two at Once: Enhancing Learning and Generalization Capacities via IBN-Net](./domainadaptation/Two%20at%20Once%20Enhancing%20Learning%20and%20Generalization%20Capacities%20via%20IBN-Net.pdf)
+## [05 Two at Once: Enhancing Learning and Generalization Capacities via IBN-Net](./domaingeneralization/Two%20at%20Once%20Enhancing%20Learning%20and%20Generalization%20Capacities%20via%20IBN-Net.pdf)
 - Pan X, Luo P, Shi J, et al./2018/ECCV/545
 - IBN-Net(a new CNN architecture) carefully integrates **Instance Normalization (IN) and Batch Normalization (BN)** as building blocks, and can be wrapped into many advanced deep networks to improve their performances(**Plug and play**).  This work disclose that **IN learns features that are invariant to appearance changes**, such as colors, styles, and virtuality/reality, while **BN is essential for preserving content related information**.
 - BN as a key component to **improve their learning capacity in high-level vision tasks** such as image recognition. IN was often combined with CNNs to remove **variance of images on low-level vision tasks** such as image style transfer. But the different characteristics of their learned features and the impact of their combination have not been disclosed in existing works. In contrast, IBN-Net shows that combining them in an appropriate manner improves both **learning and generalization** capacities.
@@ -904,7 +894,7 @@ gap by generating synthetic data with sufficient variation that the network view
 - ![IBN_3](./images/IBN_3.png)
 
 
-## [35 Switchable Whitening for Deep Representation Learning](./domainadaptation/Switchable%20Whitening%20for%20Deep%20Representation%20Learning.pdf)
+## [06 Switchable Whitening for Deep Representation Learning](./domaingeneralization/Switchable%20Whitening%20for%20Deep%20Representation%20Learning.pdf)
 - Pan X, Zhan X, Shi J, et al./2019/ICCV/68
 - Unlike existing works that design normalization techniques for **specific tasks**, we propose Switchable Whitening (SW), which provides a general form **unifying** different whitening methods as well as standardization methods.  
 - SW learns to switch among these operations in an **end-to-end** manner. It has several advantages. **First, SW adaptively selects appropriate whitening or standardization statistics for different tasks, making it well suited for a wide range of tasks without manual design**. Second, by integrating the benefits of different normalizers, SW shows consistent improvements over its counterparts in various challenging benchmarks. Third, SW serves as a useful tool for understanding the characteristics of whitening and standardization techniques.
@@ -914,7 +904,7 @@ gap by generating synthetic data with sufficient variation that the network view
 - ![SW_2](./images/SW_2.png)
 
 
-## [36 WildNet: Learning Domain Generalized Semantic Segmentation From the Wild](./domainadaptation/WildNet%20Learning%20Domain%20Generalized%20Semantic%20Segmentation%20From%20the%20Wild.pdf)
+## [07 WildNet: Learning Domain Generalized Semantic Segmentation From the Wild](./domaingeneralization/WildNet%20Learning%20Domain%20Generalized%20Semantic%20Segmentation%20From%20the%20Wild.pdf)
 - Lee S, Seong H, Lee S, et al./2022/CVPR/21
 - In domain generalization, **the low generalization ability for unseen target domains is clearly due to overfitting to the source domain**. To address this problem, previous works have focused on generalizing the domain by **removing or diversifying the styles of the source domain**. These **alleviated overfitting to the source-style but overlooked overfitting to the source-content**.
 - In this paper, we propose to diversify both **the content and style of the source domain** with the help of the wild. Our main idea is for networks to naturally learn domain-generalized semantic information from the wild. To this end, we diversify styles by augmenting source features to resemble wild styles and enable networks to adapt to a variety of styles.
@@ -922,7 +912,7 @@ gap by generating synthetic data with sufficient variation that the network view
 - ![WildNet](./images/WildNet.png)
 
 
-## [37 DIRL: Domain-Invariant Representation Learning for Generalizable Semantic Segmentation](./domainadaptation/DIRL%20Domain-Invariant%20Representation%20Learning%20for%20Generalizable%20Semantic.pdf)
+## [08 DIRL: Domain-Invariant Representation Learning for Generalizable Semantic Segmentation](./domaingeneralization/DIRL%20Domain-Invariant%20Representation%20Learning%20for%20Generalizable%20Semantic.pdf)
 - Xu Q, Yao L, Jiang Z, et al./2022/AAAI/8
 - However, most existing works learn the shared feature space within **multi-source domains** but **ignore the characteristic of the feature itself** (e.g., the feature sensitivity to the domain-specific style).
 - The guidance reflects in two folds: 1) **Feature re-calibration** that introduces the Prior Guided Attention Module (PGAM) to **emphasize the insensitive features and suppress the sensitive features**. 2): **Feature whiting** that proposes the Guided Feature Whiting (GFW) to **remove the feature correlations which are sensitive to the domain-specific style**.
@@ -932,7 +922,7 @@ gap by generating synthetic data with sufficient variation that the network view
 - **To the best of our knowledge**, this is the first work to explore feature sensitivity to the domain-specific style.
 
 
-## [38 Intra-Source Style Augmentation for Improved Domain Generalization](./domainadaptation/Intra-Source%20Style%20Augmentation%20for%20Improved%20Domain%20Generalization.pdf)
+## [09 Intra-Source Style Augmentation for Improved Domain Generalization](./domaingeneralization/Intra-Source%20Style%20Augmentation%20for%20Improved%20Domain%20Generalization.pdf)
 - Li Y, Zhang D, Keuper M, et al./2023/WACV/-
 - **intra-source style augmentation (ISSA)** is based on a novel **masked noise encoder** for StyleGAN2 inversion. The model learns to faithfully reconstruct the image preserving its semantic layout through noise prediction. **Random masking of the estimated noise enables the style mixing capability of our model**, i.e. it allows to alter the global appearance without affecting the semantic layout of an image. Using the proposed masked noise encoder to randomize **style and content** combinations in the training set, ISSA effectively increases the **diversity of training data and reduces spurious correlation**.
 - ISSA is **model-agnostic** and **straightforwardly** applicable with CNNs and Transformers. intra-source style augmentation (ISSA) strategy for semantic segmentation, aiming to improve the style diversity in the training set **without extra labeling effort or using extra data sources** (single source domain, we make use of the styles extracted within the source domain and mix them up).
@@ -941,7 +931,7 @@ gap by generating synthetic data with sufficient variation that the network view
 - To the best of our knowledge, our approach is the first GAN inversion method which can be effectively applied as data augmentation for the semantic segmentation of complex scenes.
 
 
-## [39 Global and Local Texture Randomization for Synthetic-to-Real Semantic Segmentation](./domainadaptation/Global%20and%20Local%20Texture%20Randomization%20for%20Synthetic-to-Real%20Semantic%20Segmentation.pdf)
+## [10 Global and Local Texture Randomization for Synthetic-to-Real Semantic Segmentation](./domaingeneralization/Global%20and%20Local%20Texture%20Randomization%20for%20Synthetic-to-Real%20Semantic%20Segmentation.pdf)
 - Peng D, Lei Y, Liu L, et al./2021/TIP/60
 - Global Texture Randomization (**GTR**) aims to **alleviate the reliance of the network on texture while promoting the learning of the domain-invariant cues**. In addition, we find the texture difference is not always occurred in **entire image and may only appear in some local areas**. Therefore, we further propose a Local Texture Randomization (**LTR**) mechanism to generate diverse local regions for partially stylizing the source images. Finally, we implement a regularization of Consistency between GTR and LTR (CGL) aiming to **harmonize the two proposed mechanisms during training**. Besides, a strategy namely Texture Complexity based Painting Selection(**TCPS**) is proposed to **ensure the selected paintings are reliable enough** for the above texture randomization mechanisms.
 - ![GTR_1](./images/GTR_1.png)
@@ -952,44 +942,7 @@ gap by generating synthetic data with sufficient variation that the network view
 - ![GTR_6](./images/GTR_6.png) , ![GTR_7](./images/GTR_7.png)
 
 
-## [40 Test-Time Training with Self-Supervision for Generalization under Distribution Shifts](./domainadaptation/Test-Time%20Training%20with%20Self-Supervision%20for%20Generalization%20under%20Distribution%20Shifts.pdf)
-- Sun Y, Wang X, Liu Z, et al./2020/ICML/325
-- We start from a simple observation. The **unlabeled test sample x presented at test time gives us a hint about the distribution from which it was drawn**. 
-- ![TTT_1](./images/TTT_1.png)
-- The joint training loss: ![TTT_2](./images/TTT_2.png)
-- The standard version of Test-Time Training:![TTT_3](./images/TTT_3.png)
-- ![TTT_4](./images/TTT_4.png)
-- On each test sample x, we perform the exact same set of random transformations as for data augmentation during training, to **form a batch only containing these augmented copies of x** for Test-Time Training.
-- ![TTT_5](./images/TTT_5.png)
-- **For the standard version of Test-Time Training**, we take **ten gradient steps**, using batches independently generated by **the same image**. **For online version of Test-Time Training**, we take only **one gradient step** given each new image.
-
-
-## [41 Tent: Fully test-time adaptation by entropy minimization](./domainadaptation/Tent%20Fully%20test-time%20adaptation%20by%20entropy%20minimization.pdf)
-- Wang D, Shelhamer E, Liu S, et al./2021/ICLR/370
-- A model must adapt itself to generalize to new and different data during testing. In this setting of **fully test-time adaptation** the model has **only the test data and its own parameters**. We propose to adapt by test entropy minimization (Tent): we **optimize the model for confidence as measured by the entropy of its predictions**. In minimizing entropy, the model **adapts itself to feedback from its own predictions**.This is **truly self-supervised self-improvement**.
-- Real-world usage motivates fully test-time adaptation by **data, computation, and task needs**:
-  1. Availability. A model might be distributed without source data for bandwidth, privacy, or profit.
-  2. Efficiency. It might not be computationally practical to (re-)process source data during testing.
-  3. Accuracy. A model might be too inaccurate without adaptation to serve its purpose.
-- **Entropy is related to error**, as more confident predictions are all-in-all more correct. **Entropy is related to shifts due to corruption**, as more corruption results in more entropy, with a strong rank correlation to the loss for image classification as the level of corruption increases.
-- ![Tent_1](./images/Tent_1.png)
-- ![Tent_2](./images/Tent_2.png)
-- ![Tent_3](./images/Tent_3.png)
-- Test-time Entropy:  ![Tent_4](./images/Tent_4.png)
-- The model parameters θ are a natural choice for test-time optimization. However, θ is the only representation of the training/source data in our setting, and altering θ could **cause the model to diverge from its training**. Furthermore, f can be nonlinear and θ can be high dimensional, making **optimization too sensitive and inefficient for test-time usage**. For stability and efficiency, we instead only update **feature modulations that are linear (scales and shifts), and low-dimensional (channel-wise)**.
-- ![Tent_5](./images/Tent_5.png)
-- ![Tent_6](./images/Tent_6.png)
-
-
-## [42 Autoencoder based self-supervised test-time adaptation for medical image analysis](./domainadaptation/Autoencoder%20based%20self-supervised%20test-time%20adaptation%20for%20medical%20image%20analysis.pdf)
-- He Y, Carass A, Zuo L, et al./2021/Medical Image Analysis/42
-- Here, we ask whether we can design a model that, once distributed to users, can quickly adapt itself to each new site without expensive retraining or access to the source training data?  
-- **Our model includes three parts**: 1) a task model (T) which performs medical image analysis tasks of synthesis or segmentation, 2) a set of autoencoders (AEs) which are used as a similarity measurement, 3) a set of adaptors (As) which are used to transform test image and features to be similar to the source. The task model and autoencoders are trained on labeled source training data and kept fixed during deployment. 
-- ![Autoencoder_TTA_1](./images/Autoencoder_TTA_1.png)
-- ![Autoencoder_TTA_2](./images/Autoencoder_TTA_2.png)
-
-
-## [43 Generalizing Deep Learning for Medical Image Segmentation to Unseen Domains via Deep Stacked Transformation](./domainadaptation/Generalizing%20Deep%20Learning%20for%20Medical%20Image%20Segmentation%20to%20Unseen%20Domains%20via%20Deep%20Stacked%20Transformation.pdf)
+## [11 Generalizing Deep Learning for Medical Image Segmentation to Unseen Domains via Deep Stacked Transformation](./domaingeneralization/Generalizing%20Deep%20Learning%20for%20Medical%20Image%20Segmentation%20to%20Unseen%20Domains%20via%20Deep%20Stacked%20Transformation.pdf)
 - Zhang L, Wang X, Yang D, et al./2020/IEEE Transactions on Medical Imaging/241
 - Common **transfer learning** and **domain adaptation** techniques are proposed to address Domain Shift. However, these solutions **require data** (and annotations) from the target domain to **retrain the model**, and is therefore restrictive in practice for widespread model deployment. Ideally, we wish to have a trained (locked) model that **can work uniformly well across unseen domains without further training**.    
 - In this paper, we propose a deep stacked transformation approach for **single source domain generalization**. Specifically, **a series of n=9 stacked transformations are applied to each image during network training**. The underlying **assumption** is that the “expected” domain shift for a specific medical imaging modality could be **simulated** by applying extensive data augmentation on a single source domain, and consequently, a deep model trained on the **augmented “big” data** (BigAug) could generalize well on unseen domains.
@@ -1006,7 +959,7 @@ aspects (**image quality, appearance, and spatial configuration**) of medical im
 - As far as we know, we are the first to investigate data augmentation for unseen domain generalization in medical imaging deep learning.
 
 
-## [44 Causality-Inspired Single-Source Domain Generalization for Medical Image Segmentation](./domainadaptation/Causality-Inspired%20Single-Source%20Domain%20Generalization%20for%20Medical%20Image%20Segmentation.pdf)
+## [12 Causality-Inspired Single-Source Domain Generalization for Medical Image Segmentation](./domaingeneralization/Causality-Inspired%20Single-Source%20Domain%20Generalization%20for%20Medical%20Image%20Segmentation.pdf)
 - Ouyang C, Chen C, Li S, et al./2022/IEEE Transactions on Medical Imaging/27
 - For the **single-source domain generalization problem**, we propose a simple **causality-inspired data augmentation** approach to expose a segmentation model to **synthesized domain-shifted training examples**. 
 - Specifically, **1)** to make the deep model robust to discrepancies in **image intensities and textures**, we employ **a family of randomly-weighted shallow networks**. They augment training images using diverse appearance transformations. **2)** Further we show that **spurious correlations among objects in an image are detrimental to domain robustness**. These correlations might be taken by the network as domain-specific clues for making predictions, and they may break on unseen domains. We remove these spurious correlations via causal intervention. This is achieved by resampling the appearances of potentially correlated objects independently.
@@ -1021,7 +974,14 @@ network might take these objects in the background as clues for recognizing the 
 - ![SSDG_3](./images/SSDG_3.png) , ![SSDG_4](./images/SSDG_4.png)
 
 
-## [45 Self-Challenging Improves Cross-Domain Generalization](./domainadaptation/Self-Challenging%20Improves%20Cross-Domain%20Generalization.pdf)
+## [13 Learning to Diversify for Single Domain Generalization](./domaingeneralization/Learning%20to%20Adapt%20Structured%20Output%20Space%20for%20Semantic%20Segmentation.pdf)
+- Wang Z, Luo Y, Qiu R, et al./2021/ICCV/100
+- Domain generalization (DG) aims to generalize a model trained on **multiple source domains** to a distributionally different target domain. In contrast to the conventional DG that *strictly requires the availability of multiple source domains*, this paper considers a more **realistic yet challenging** scenario, namely Single Domain Generalization (Single-DG), where only one source domain is available for training.
+- In this scenario, the limited diversity may jeopardize the model generalization on unseen target domains. To tackle this problem, we propose a **style-complement module** to enhance the generalization power of the model by synthesizing images from diverse distributions that are complementary to the source ones. More specifically, we adopt a tractable upper bound of mutual information (MI) between the generated and source samples and perform a **two-step optimization iteratively**: (1) by **minimizing** the MI upper bound approximation for each sample pair, *the generated images are forced to be diversified from the source samples*; (2) subsequently, we **maximize** the MI between the samples from the same semantic category, which assists the network to *learn discriminative features from diversestyled images*.
+- ![L2D](./images/L2D.png)
+
+
+## [14 Self-Challenging Improves Cross-Domain Generalization](./domaingeneralization/Self-Challenging%20Improves%20Cross-Domain%20Generalization.pdf)
 - Huang Z, Wang H, Xing E P, et al. /2020/ECCV/383
 - Convolutional Neural Networks (CNN) conduct image classification by **activating dominant features that correlated with labels**. Representation Self-Challenging (RSC) iteratively challenges (**discards** the representations associated with the higher gradients at each epoch) the dominant features activated on the training data, and forces the network to activate remaining features that correlates with labels. This process appears to activate feature representations applicable to out-of-domain data **without prior knowledge of new domain and without learning extra network parameters**. 
 - The experiments endorse the **simple, effective, and architecture-agnostic** nature of our RSC method.
@@ -1029,25 +989,88 @@ network might take these objects in the background as clues for recognizing the 
 - ![RSC](./images/RSC_1.png)
 
 
-## [46 Domain Generalization by Solving Jigsaw Puzzles](./domainadaptation/Domain%20Generalization%20by%20Solving%20Jigsaw%20Puzzles.pdf)
+## [15 Domain Generalization by Solving Jigsaw Puzzles](./domaingeneralization/Domain%20Generalization%20by%20Solving%20Jigsaw%20Puzzles.pdf)
 - Carlucci F M, D'Innocente A, Bucci S, et al./2019/CVPR/688
 - Human adaptability relies crucially on the ability to learn and merge knowledge both from **supervised and unsupervised learning**: *the parents point out few important concepts, but then the children fill in the gaps on their own. This is particularly effective, because supervised learning can never be exhaustive and thus learning autonomously allows to discover **invariances** and **regularities** that help to generalize*.
 - In this paper we propose to apply a similar approach to the task of object recognition across domains: our model learns the semantic labels in a supervised fashion, and broadens its understanding of the data by learning from self-supervised signals how to solve a jigsaw puzzle on the same images. This secondary task helps the network to learn the concepts of spatial correlation while acting as a regularizer for the classification task.
 - ![JiGen](./images/JiGen.png)
 
 
-## [47 Learning to Diversify for Single Domain Generalization](./domainadaptation/Learning%20to%20Adapt%20Structured%20Output%20Space%20for%20Semantic%20Segmentation.pdf)
-- Wang Z, Luo Y, Qiu R, et al./2021/ICCV/100
-- Domain generalization (DG) aims to generalize a model trained on **multiple source domains** to a distributionally different target domain. In contrast to the conventional DG that *strictly requires the availability of multiple source domains*, this paper considers a more **realistic yet challenging** scenario, namely Single Domain Generalization (Single-DG), where only one source domain is available for training.
-- In this scenario, the limited diversity may jeopardize the model generalization on unseen target domains. To tackle this problem, we propose a **style-complement module** to enhance the generalization power of the model by synthesizing images from diverse distributions that are complementary to the source ones. More specifically, we adopt a tractable upper bound of mutual information (MI) between the generated and source samples and perform a **two-step optimization iteratively**: (1) by **minimizing** the MI upper bound approximation for each sample pair, *the generated images are forced to be diversified from the source samples*; (2) subsequently, we **maximize** the MI between the samples from the same semantic category, which assists the network to *learn discriminative features from diversestyled images*.
-- ![L2D](./images/L2D.png)
+## [16 Generalizable Cross-modality Medical Image Segmentation via Style Augmentation and Dual Normalization](./domaingeneralization/Generalizable%20Cross-modality%20Medical%20Image%20Segmentation%20via%20Style%20Augmentation%20and%20Dual%20Normalization.pdf)
+- Zhou Z, Qi L, Yang X, et al./2022/CVPR/-
+- Generalizable Cross-modality Segmentation: a model was only trained using MR images in **source domain**, and its performance to directly segment CT images in **target domain**. It's clinical potential. 
+- The **distribution shift** between training (or labeled) and test (or unlabeled) data usually **results in** a severe performance degeneration during the deployment of trained segmentation models. The reason for distribution shift typically come from different aspects, e.g., *different acquisition parameters, various imaging methods* or **diverse modalities**.
+- Unsupervised Domain Adaptation (**UDA**) is trained on labeled source domain (i.e., training set) along with unlabeled target domain (i.e., test set), by **reducing their domain gap**. It's assuming that **test or unlabeled data could be observed** (However, the condition is hard to meet).
+- Domain Generalization (**DG**) by training models purely on source domains, aims to **directly generalize** to target domains that *could not be observed during the training process*.
+- ![GCS_1](./images/Generalizable%20Cross-modality%20Segmentation.png)
+- ![GCS_2](./images/Generalizable%20Cross-modality%20Segmentation_2.png)
+- ![GCS_3](./images/Generalizable%20Cross-modality%20Segmentation_3.png)
+- ![GCS_4](./images/Generalizable%20Cross-modality%20Segmentation_4.png)
+- ![GCS_5](./images/Generalizable%20Cross-modality%20Segmentation_5.png),![GCS_6](./images/Generalizable%20Cross-modality%20Segmentation_6.png)
+- ![GCS_7](./images/Generalizable%20Cross-modality%20Segmentation_7.png),![GCS_8](./images/Generalizable%20Cross-modality%20Segmentation_8.png)
 
 
-## [48 Zero-Shot Day-Night Domain Adaptation with a Physics Prior](./domainadaptation/Zero-Shot%20Day-Night%20Domain%20Adaptation%20with%20a%20Physics%20Prior.pdf)
-- Lengyel A, Garg S, Milford M, et al./2021/ICCV/31
-- We show that the color invariant layer reduces the day-night distribution shift in feature map activations throughout the a trainable **Color Invariant Convolution** (CIConv) layer which can be used as the input layer to any CNN to transform the input to a domain invariant representation. (color invariants have been widely used in classical computer vision applications [6, 46], yet their use in a deep learning setting has remained largely unexplored.)
-- ![CIConv_1](./images/CIConv_1.png)
-- ![CIConv_2](./images/CIConv_2.png)
+
+
+
+
+# VII. Test Time Adaptation
+
+## [00 DLTTA: Dynamic Learning Rate for Test-Time Adaptation on Cross-Domain Medical Images](./testtimeadaptation/DLTTA%20Dynamic%20Learning%20Rate%20for%20Test-Time%20Adaptation%20on%20Cross-Domain%20Medical%20Images.pdf)
+- Yang H, Chen C, Jiang M, et al./2022/IEEE Transactions on Medical Imaging/4
+- Previous TTA methods have a common limitation of using a **fixed learning rate for all the test samples**. Such a practice would be sub-optimal for TTA, because test data may arrive sequentially therefore **the scale of distribution shift would change frequently**.
+- DLTTA, which **dynamically modulates the amount of weights update** for each test image to account for the differences in their distribution shift. Specifically,our DLTTA is equipped with a **memory bank** based estimation scheme to effectively measure **the discrepancy of a given test sample**. Based on this estimated discrepancy, a dynamic learning rate adjustment strategy is then developed to achieve a suitable degree of adaptation for each test sample.
+- UDA setting is still problematic for real-world model deployment due to two important reasons. **Firstly**, it is not efficient, if realistic, to wait for the **accumulation of sufficient amount of test samples** (e.g., thousands of instances), since the test data usually arrive sequentially one by one, or batch by batch. However, immediate prediction on a single test sample or a batch of instances is highly desired in clinical practice for timely diagnosis and treatment for patients. **Secondly**, accessing the training dataset at test time is practically difficult, because data sharing across hospitals is prohibitive due to the **privacy concern** for medical data. (TTA Setting Motivation)
+- This work's **insight** is to achieve dynamic learning rate adjustment according to a estimated distribution shift. *How to measure the discrepancy solely based on the model parameters and the current test sample in an unsupervised way is challenging and remains unsolved yet*.
+- Our proposed **memory bank-based** discrepancy measurement captures **both the model progress and the distribution variation of test data**, thus can provide more up-to-date discrepancy estimation for effective dynamic learning rate adjustment of test-time adaptation.
+- ![DLTTA_1](./images/DLTTA_1.png)
+- ![DLTTA_2](./images/DLTTA_2.png)
+
+
+## [01 Continual Test-Time Domain Adaptation](./testtimeadaptation/Continual%20Test-Time%20Domain%20Adaptation.pdf)
+- Wang Q, Fink O, Van Gool L, et al./2022/CVPR/68
+- Test-time domain adaptation aims to adapt a **source pretrained model** to a target domain **without using any source data**. Existing works mainly consider the case where the target domain is **static**. However, real-world machine perception systems are running in non-stationary and **continually changing environments** where the target domain distribution can change over time.
+- Existing methods, which are mostly based on **self-training and entropy regularization**, can suffer from these non-stationary environments. Due to the distribution shift over time in the target domain, pseudo-labels become unreliable. The noisy pseudo labels can further lead to **error accumulation and catastrophic forgetting**.
+- to reduce the **error accumulation** by using **weight-averaged and augmentation-averaged predictions** which are often more accurate; to avoid **catastrophic forgetting**, we propose to **stochastically restore a small part of the neurons** to the source pre-trained weights during each iteration to help preserve source knowledge in the long-term.
+- ![CTTDA_1](./images/CTTDA_1.png)
+- ![CTTDA_2](./images/CTTDA_2.png)
+
+
+## [02 Test-Time Training with Self-Supervision for Generalization under Distribution Shifts](./testtimeadaptation/Test-Time%20Training%20with%20Self-Supervision%20for%20Generalization%20under%20Distribution%20Shifts.pdf)
+- Sun Y, Wang X, Liu Z, et al./2020/ICML/325
+- We start from a simple observation. The **unlabeled test sample x presented at test time gives us a hint about the distribution from which it was drawn**. 
+- ![TTT_1](./images/TTT_1.png)
+- The joint training loss: ![TTT_2](./images/TTT_2.png)
+- The standard version of Test-Time Training:![TTT_3](./images/TTT_3.png)
+- ![TTT_4](./images/TTT_4.png)
+- On each test sample x, we perform the exact same set of random transformations as for data augmentation during training, to **form a batch only containing these augmented copies of x** for Test-Time Training.
+- ![TTT_5](./images/TTT_5.png)
+- **For the standard version of Test-Time Training**, we take **ten gradient steps**, using batches independently generated by **the same image**. **For online version of Test-Time Training**, we take only **one gradient step** given each new image.
+
+
+## [03 Tent: Fully test-time adaptation by entropy minimization](./testtimeadaptation/Tent%20Fully%20test-time%20adaptation%20by%20entropy%20minimization.pdf)
+- Wang D, Shelhamer E, Liu S, et al./2021/ICLR/370
+- A model must adapt itself to generalize to new and different data during testing. In this setting of **fully test-time adaptation** the model has **only the test data and its own parameters**. We propose to adapt by test entropy minimization (Tent): we **optimize the model for confidence as measured by the entropy of its predictions**. In minimizing entropy, the model **adapts itself to feedback from its own predictions**.This is **truly self-supervised self-improvement**.
+- Real-world usage motivates fully test-time adaptation by **data, computation, and task needs**:
+  1. Availability. A model might be distributed without source data for bandwidth, privacy, or profit.
+  2. Efficiency. It might not be computationally practical to (re-)process source data during testing.
+  3. Accuracy. A model might be too inaccurate without adaptation to serve its purpose.
+- **Entropy is related to error**, as more confident predictions are all-in-all more correct. **Entropy is related to shifts due to corruption**, as more corruption results in more entropy, with a strong rank correlation to the loss for image classification as the level of corruption increases.
+- ![Tent_1](./images/Tent_1.png)
+- ![Tent_2](./images/Tent_2.png)
+- ![Tent_3](./images/Tent_3.png)
+- Test-time Entropy:  ![Tent_4](./images/Tent_4.png)
+- The model parameters θ are a natural choice for test-time optimization. However, θ is the only representation of the training/source data in our setting, and altering θ could **cause the model to diverge from its training**. Furthermore, f can be nonlinear and θ can be high dimensional, making **optimization too sensitive and inefficient for test-time usage**. For stability and efficiency, we instead only update **feature modulations that are linear (scales and shifts), and low-dimensional (channel-wise)**.
+- ![Tent_5](./images/Tent_5.png)
+- ![Tent_6](./images/Tent_6.png)
+
+
+## [04 Autoencoder based self-supervised test-time adaptation for medical image analysis](./testtimeadaptation/Autoencoder%20based%20self-supervised%20test-time%20adaptation%20for%20medical%20image%20analysis.pdf)
+- He Y, Carass A, Zuo L, et al./2021/Medical Image Analysis/42
+- Here, we ask whether we can design a model that, once distributed to users, can quickly adapt itself to each new site without expensive retraining or access to the source training data?  
+- **Our model includes three parts**: 1) a task model (T) which performs medical image analysis tasks of synthesis or segmentation, 2) a set of autoencoders (AEs) which are used as a similarity measurement, 3) a set of adaptors (As) which are used to transform test image and features to be similar to the source. The task model and autoencoders are trained on labeled source training data and kept fixed during deployment. 
+- ![Autoencoder_TTA_1](./images/Autoencoder_TTA_1.png)
+- ![Autoencoder_TTA_2](./images/Autoencoder_TTA_2.png)
 
 
 
@@ -1069,18 +1092,12 @@ network might take these objects in the background as clues for recognizing the 
 - ![FPN](./images/PSPNet.png)
 
 
-## [02 Generalizable Cross-modality Medical Image Segmentation via Style Augmentation and Dual Normalization](./segmentation/Generalizable%20Cross-modality%20Medical%20Image%20Segmentation%20via%20Style%20Augmentation%20and%20Dual%20Normalization.pdf)
-- Zhou Z, Qi L, Yang X, et al./2022/CVPR/-
-- Generalizable Cross-modality Segmentation: a model was only trained using MR images in **source domain**, and its performance to directly segment CT images in **target domain**. It's clinical potential. 
-- The **distribution shift** between training (or labeled) and test (or unlabeled) data usually **results in** a severe performance degeneration during the deployment of trained segmentation models. The reason for distribution shift typically come from different aspects, e.g., *different acquisition parameters, various imaging methods* or **diverse modalities**.
-- Unsupervised Domain Adaptation (**UDA**) is trained on labeled source domain (i.e., training set) along with unlabeled target domain (i.e., test set), by **reducing their domain gap**. It's assuming that **test or unlabeled data could be observed** (However, the condition is hard to meet).
-- Domain Generalization (**DG**) by training models purely on source domains, aims to **directly generalize** to target domains that *could not be observed during the training process*.
-- ![GCS_1](./images/Generalizable%20Cross-modality%20Segmentation.png)
-- ![GCS_2](./images/Generalizable%20Cross-modality%20Segmentation_2.png)
-- ![GCS_3](./images/Generalizable%20Cross-modality%20Segmentation_3.png)
-- ![GCS_4](./images/Generalizable%20Cross-modality%20Segmentation_4.png)
-- ![GCS_5](./images/Generalizable%20Cross-modality%20Segmentation_5.png),![GCS_6](./images/Generalizable%20Cross-modality%20Segmentation_6.png)
-- ![GCS_7](./images/Generalizable%20Cross-modality%20Segmentation_7.png),![GCS_8](./images/Generalizable%20Cross-modality%20Segmentation_8.png)
+## [02 DRANet: Disentangling Representation and Adaptation Networks for Unsupervised Cross-Domain Adaptation](./disentanglement/DRANet%20Disentangling%20Representation%20and%20Adaptation%20Networks%20for%20Unsupervised%20Cross-Domain%20Adaptation.pdf)
+- Lee S, Cho S, Im S./2021/CVPR/25
+- Unlike the existing domain adaptation methods that **learn associated features sharing a domain**, DRANet **preserves the distinctiveness of each domain’s characteristics**. Our model encodes individual representations of **content (scene structure) and style (artistic appearance)** from both source and target images. Then, it adapts the domain by **incorporating the transferred style factor** into the content factor along with learnable weights specified for each domain. This learning framework allows **bi-/multi-directional domain adaptation** with a single encoder-decoder network and aligns their domain shift. Additionally, we propose a **content-adaptive domain transfer module** (The key idea of this module is to search the target features whose content component is most similar to the source features. Then, the domain transfer is conducted by reflecting more style information from more suitable target features) that helps retain scene structure while transferring style
+- ![DRANet_1](./images/DRANet_1.png)
+- Our intuition behind the network design is that **different domains may have different distributions for their contents and styles**, which cannot be effectively handled by the linear separation of latent vectors. Thus, to handle such difference, our network adopts the **non-linear separation and domain-specific scale parameters** that are dedicated to handle such inter-domain difference.
+- ![DRANet_2](./images/DRANet_2.png)
 
 
 ## [03 Learning Topological Interactions for Multi-Class Medical Image Segmentation](./segmentation/Learning%20Non-target%20Knowledge%20for%20Few-shot%20Semantic%20Segmentation.pdf)
@@ -1130,9 +1147,3 @@ network might take these objects in the background as clues for recognizing the 
 - ![Content and Style Disentanglement for Artistic Style Transfer](./images/Content%20and%20Style%20Disentanglement%20for%20Artistic%20Style%20Transfer.png)
 
 
-## [08 DRANet: Disentangling Representation and Adaptation Networks for Unsupervised Cross-Domain Adaptation](./disentanglement/DRANet%20Disentangling%20Representation%20and%20Adaptation%20Networks%20for%20Unsupervised%20Cross-Domain%20Adaptation.pdf)
-- Lee S, Cho S, Im S./2021/CVPR/25
-- Unlike the existing domain adaptation methods that **learn associated features sharing a domain**, DRANet **preserves the distinctiveness of each domain’s characteristics**. Our model encodes individual representations of **content (scene structure) and style (artistic appearance)** from both source and target images. Then, it adapts the domain by **incorporating the transferred style factor** into the content factor along with learnable weights specified for each domain. This learning framework allows **bi-/multi-directional domain adaptation** with a single encoder-decoder network and aligns their domain shift. Additionally, we propose a **content-adaptive domain transfer module** (The key idea of this module is to search the target features whose content component is most similar to the source features. Then, the domain transfer is conducted by reflecting more style information from more suitable target features) that helps retain scene structure while transferring style
-- ![DRANet_1](./images/DRANet_1.png)
-- Our intuition behind the network design is that **different domains may have different distributions for their contents and styles**, which cannot be effectively handled by the linear separation of latent vectors. Thus, to handle such difference, our network adopts the **non-linear separation and domain-specific scale parameters** that are dedicated to handle such inter-domain difference.
-- ![DRANet_2](./images/DRANet_2.png)
