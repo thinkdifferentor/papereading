@@ -92,6 +92,7 @@
   - [03 Tent: Fully test-time adaptation by entropy minimization](#03-tent-fully-test-time-adaptation-by-entropy-minimization)
   - [04 Autoencoder based self-supervised test-time adaptation for medical image analysis](#04-autoencoder-based-self-supervised-test-time-adaptation-for-medical-image-analysis)
   - [05 Improved Test-Time Adaptation for Domain Generalization](#05-improved-test-time-adaptation-for-domain-generalization)
+  - [06 Decorate the Newcomers: Visual Domain Prompt for Continual Test Time Adaptation](#06-decorate-the-newcomers-visual-domain-prompt-for-continual-test-time-adaptation)
 - [VIII. Others](#viii-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -1095,6 +1096,16 @@ network might take these objects in the background as clues for recognizing the 
 - a Test Time Training (TTT) strategy hinges its performance on two main factors: selecting an **appropriate auxiliary TTT task** for updating and **identifying reliable parameters** to update during the test phase. Both previous arts and our experiments indicate that TTT may not improve but be detrimental to the learned model if those two factors are not properly considered.
 - This work addresses those two factors with: First, instead of heuristically defining an auxiliary objective, we propose a learnable consistency loss for the TTT task, which contains learnable parameters that can be adjusted toward **better alignment between our TTT task and the main prediction task**.  Second, we introduce additional adaptive parameters for the trained model, and we suggest **only updating the adaptive parameters during the test phase**.
 - ![ITTT_1](./images/ITTT_1.png), ![ITTT_2](./images/ITTT_2.png)
+
+
+## [06 Decorate the Newcomers: Visual Domain Prompt for Continual Test Time Adaptation](./testtimeadaptation/Decorate%20the%20Newcomers%20Visual%20Domain%20Prompt%20for%20Continual%20Test%20Time%20Adaptation.pdf)
+- Gan Y, Bai Y, Lou Y, et al./2023/CVPR/13/Outstanding Student Paper
+- For CTTA problem, existing methods mainly focus on model-based adaptation in a **self-training manner**, such as predicting pseudo labels for new domain datasets. Since pseudo labels are noisy and unreliable, these methods suffer from **catastrophic forgetting and error accumulation** when dealing with dynamic data distributions. (dynamically update a small portion of the input image pixels, parameter matrix, summed up point by point)
+- Motivated by the prompt learning in NLP, in this paper, we propose to learn an **image-level visual domain prompt** for target domains while having the source model parameters frozen. During testing, the changing target datasets can be adapted to the source model by **reformulating the input data with the learned visual prompts**. This **transition from the model-dependent paradigm to the model-free** one enables us to bypass the catastrophic forgetting and error accumulation problems.
+- The domain-specifc prompt (DSP) aims to **extract current domain knowledge**, while the domain-agnostic prompt (DAP) produces an effect on **maintaining the domain-shared knowledge**.
+- ![DTN_1](./images/DTN_1.png)
+- ![DTN_2](./images/DTN_1.png)
+
 
 
 # VIII. Others
