@@ -66,6 +66,7 @@
   - [25 Bidirectional Learning for Domain Adaptation of Semantic Segmentation](#25-bidirectional-learning-for-domain-adaptation-of-semantic-segmentation)
   - [26 Shallow Features Guide Unsupervised Domain Adaptation for Semantic Segmentation at Class Boundaries](#26-shallow-features-guide-unsupervised-domain-adaptation-for-semantic-segmentation-at-class-boundaries)
   - [27 Weakly-Supervised Domain Adaptive Semantic Segmentation with Prototypical Contrastive Learning](#27-weakly-supervised-domain-adaptive-semantic-segmentation-with-prototypical-contrastive-learning)
+  - [28 Prior Knowledge Guided Unsupervised Domain Adaptation](#28-prior-knowledge-guided-unsupervised-domain-adaptation)
 - [VI. Domain Generalization](#vi-domain-generalization)
   - [00 FedDG: Federated Domain Generalization on Medical Image Segmentation via Episodic Learning in Continuous Frequency Space](#00-feddg-federated-domain-generalization-on-medical-image-segmentation-via-episodic-learning-in-continuous-frequency-space)
   - [01 Semantic-Aware Domain Generalized Segmentation](#01-semantic-aware-domain-generalized-segmentation)
@@ -827,6 +828,14 @@ contrastive self-supervised learning to align features so as to reduce the domai
 - Specifically, we propose to learn better **prototypes** that are representative class features by exploiting these weak labels. We use these improved prototypes for the **contrastive alignment of class features**. In particular, we perform two different feature alignments: **first**, we align pixel features with prototypes within each domain and **second**, we align pixel features from the source to prototype of target domain in an asymmetric way. **intra domain alignment and inter domain alignment**.
 - WDASS task has not been properly explored by the community. *They use the weak labels only as additional supervision signal and not for aligning the source and target features*. 
 - ![WDASS](./images/WDASS.png)
+
+
+## [28 Prior Knowledge Guided Unsupervised Domain Adaptation](./domainadaptation/Prior%20Knowledge%20Guided%20Unsupervised%20Domain%20Adaptation.pdf)
+- Sun T, Lu C, Ling H./2022/ECCV/8
+- In this paper, we address this issue by seeking compensation from **target domain prior knowledge** for UDA setup. This work considers two specific types of prior knowledge about **the class distribution** in the target domain: **Unary Bound** that describes the **lower and upper bounds of individual class probabilities**, and **Binary Relationship** that describes the **relations between two class probabilities** and proposes a general **rectification module** that uses such prior knowledge to **refine model generated pseudo labels** (suitable for self-training based model).
+- Using *prior knowledge removes or reduces the reliance on training data*. we expect to see further studies to explore richer prior knowledge for UDA or to extend the idea to general DA scenarios (OCDA, DG).
+- ![KUDA_1](./images/KUDA_1.png)
+- ![KUDA_2](./images/KUDA_2.png)
 
 
 
