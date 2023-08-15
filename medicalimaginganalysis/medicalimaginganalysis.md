@@ -86,6 +86,7 @@
   - [15 Domain Generalization by Solving Jigsaw Puzzles](#15-domain-generalization-by-solving-jigsaw-puzzles)
   - [16 Generalizable Cross-modality Medical Image Segmentation via Style Augmentation and Dual Normalization](#16-generalizable-cross-modality-medical-image-segmentation-via-style-augmentation-and-dual-normalization)
   - [17 Meta-causal Learning for Single Domain Generalization](#17-meta-causal-learning-for-single-domain-generalization)
+  - [18 Domain Generalization with Mixstyle](#18-domain-generalization-with-mixstyle)
 - [VII. Test Time Adaptation](#vii-test-time-adaptation)
   - [00 DLTTA: Dynamic Learning Rate for Test-Time Adaptation on Cross-Domain Medical Images](#00-dltta-dynamic-learning-rate-for-test-time-adaptation-on-cross-domain-medical-images)
   - [01 Continual Test-Time Domain Adaptation](#01-continual-test-time-domain-adaptation)
@@ -1038,6 +1039,14 @@ network might take these objects in the background as clues for recognizing the 
 - ![MCL_1](./images/MCL_1.png)
 - ![MCL_2](./images/MCL_2.png)
 - ![MCL_3](./images/MCL_3.png)
+
+## [18 Domain Generalization with Mixstyle](./domaingeneralization/Domain%20generalization%20with%20mixstyle.pdf)
+- Zhou K, Yang Y, Qiao Y, et al./2021/ICLR/415
+- Such style information is captured by **the bottom layers of a CNN** where our proposed style-mixing takes place. *Mixing styles of training instances results in novel domains being synthesized implicitly, which increase the domain diversity of the source domains, and hence the generalizability of the trained model.*
+- ![Mixstyle_1](./images/Mixstyle_1.png)
+- ![Mixstyle_2](./images/Mixstyle_2.png) , ![Mixstyle_3](./images/Mixstyle_3.png)
+- ![Mixstyle_4](./images/Mixstyle_4.png)
+
 
 
 
