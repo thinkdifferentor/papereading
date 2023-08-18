@@ -67,6 +67,7 @@
   - [26 Shallow Features Guide Unsupervised Domain Adaptation for Semantic Segmentation at Class Boundaries](#26-shallow-features-guide-unsupervised-domain-adaptation-for-semantic-segmentation-at-class-boundaries)
   - [27 Weakly-Supervised Domain Adaptive Semantic Segmentation with Prototypical Contrastive Learning](#27-weakly-supervised-domain-adaptive-semantic-segmentation-with-prototypical-contrastive-learning)
   - [28 Prior Knowledge Guided Unsupervised Domain Adaptation](#28-prior-knowledge-guided-unsupervised-domain-adaptation)
+  - [29 Do We Really Need to Access the Source Data Source? Hypothesis Transfer for Unsupervised Domain Adaptation](#29-do-we-really-need-to-access-the-source-data-source-hypothesis-transfer-for-unsupervised-domain-adaptation)
 - [VI. Domain Generalization](#vi-domain-generalization)
   - [00 FedDG: Federated Domain Generalization on Medical Image Segmentation via Episodic Learning in Continuous Frequency Space](#00-feddg-federated-domain-generalization-on-medical-image-segmentation-via-episodic-learning-in-continuous-frequency-space)
   - [01 Semantic-Aware Domain Generalized Segmentation](#01-semantic-aware-domain-generalized-segmentation)
@@ -838,6 +839,14 @@ contrastive self-supervised learning to align features so as to reduce the domai
 - ![KUDA_1](./images/KUDA_1.png)
 - ![KUDA_2](./images/KUDA_2.png)
 
+
+## [29 Do We Really Need to Access the Source Data Source? Hypothesis Transfer for Unsupervised Domain Adaptation](./domainadaptation/Do%20We%20Really%20Need%20to%20Access%20the%20Source%20Data%20Source%20Hypothesis%20Transfer%20for%20Unsupervised%20Domain%20Adaptation.pdf)
+- Liang J, Hu D, Feng J./2020/ICML/697
+- This work tackles a practical setting where only a **trained source model** is available and investigates how we can effectively utilize such a model **without source data** to solve UDA problems (SF-UDA). SHOT freezes the classifier module (hypothesis) of the source model and learns the **target-specific feature extraction module** by exploiting both **information maximization and self-supervised pseudo-labeling** to implicitly align representations from the target domains to the source hypothesis.
+- SHOT is designed based on the following **observations**. If we have learned *source-like representations for target data, then the classification outputs from the source classifier (hypothesis) for target data should be similar to those of source data*, i.e., close to one-hot encodings.
+- Hypothesis Transfer Learning (HTL) can be seen as a generalization of **parameter adaptation**, which assumes *the optimal target hypothesis to be closely related to the source hypothesis*. Like the famous fine-tuning strategy, HTL mostly acquires at least a small set of **labeled target examples** per class.
+- **Expression:** We view the challenging problem from another perspective: if the domain gap is mitigated, what kind of outputs should unlabeled target data have? We argue the ideal target outputs should be similar to one-hot encoding but differ from each other.
+- ![SHOT](./images/SHOT.png)
 
 
 # VI. Domain Generalization
