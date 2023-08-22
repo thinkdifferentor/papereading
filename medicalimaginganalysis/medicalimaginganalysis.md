@@ -68,6 +68,7 @@
   - [27 Weakly-Supervised Domain Adaptive Semantic Segmentation with Prototypical Contrastive Learning](#27-weakly-supervised-domain-adaptive-semantic-segmentation-with-prototypical-contrastive-learning)
   - [28 Prior Knowledge Guided Unsupervised Domain Adaptation](#28-prior-knowledge-guided-unsupervised-domain-adaptation)
   - [29 Do We Really Need to Access the Source Data Source? Hypothesis Transfer for Unsupervised Domain Adaptation](#29-do-we-really-need-to-access-the-source-data-source-hypothesis-transfer-for-unsupervised-domain-adaptation)
+  - [30 Prototypical Pseudo Label Denoising and Target Structure Learning for Domain Adaptive Semantic Segmentation](#30-prototypical-pseudo-label-denoising-and-target-structure-learning-for-domain-adaptive-semantic-segmentation)
 - [VI. Domain Generalization](#vi-domain-generalization)
   - [00 FedDG: Federated Domain Generalization on Medical Image Segmentation via Episodic Learning in Continuous Frequency Space](#00-feddg-federated-domain-generalization-on-medical-image-segmentation-via-episodic-learning-in-continuous-frequency-space)
   - [01 Semantic-Aware Domain Generalized Segmentation](#01-semantic-aware-domain-generalized-segmentation)
@@ -847,6 +848,13 @@ contrastive self-supervised learning to align features so as to reduce the domai
 - Hypothesis Transfer Learning (HTL) can be seen as a generalization of **parameter adaptation**, which assumes *the optimal target hypothesis to be closely related to the source hypothesis*. Like the famous fine-tuning strategy, HTL mostly acquires at least a small set of **labeled target examples** per class.
 - **Expression:** We view the challenging problem from another perspective: if the domain gap is mitigated, what kind of outputs should unlabeled target data have? We argue the ideal target outputs should be similar to one-hot encoding but differ from each other.
 - ![SHOT](./images/SHOT.png)
+
+## [30 Prototypical Pseudo Label Denoising and Target Structure Learning for Domain Adaptive Semantic Segmentation](./domainadaptation/Prototypical%20Pseudo%20Label%20Denoising%20and%20Target%20Structure%20Learning%20for%20Domain%20Adaptive%20Semantic%20Segmentation.pdf)
+- Zhang P, Zhang B, Zhang T, et al./2021/CVPR/291 (**Writing**)
+- For self-training, the pseudo labels are **noisy** and the target features are **dispersed** due to the discrepancy between source and target domains. This work rely on **representative prototypes** (the feature **centroids** of classes) to address the two issues for unsupervised domain adaptation.
+- We find two key ingredients are lacking in previous works. First, typical practice  suggests selecting the pseudo labels according to a strict confidence threshold, **while high scores are not necessarily correct**, making the network fail to learn reliable knowledge in the target domain. Second, due to the domain gap, the network is prone to produce dispersed features in the target domain. It is likely that for target data, the closer to the source distribution, the higher the confidence score. As a result, **data lying far from the source distribution (i.e. low scores) will never be considered during the training**.
+- ![Pro_DA](./images/ProDA.png)
+
 
 
 # VI. Domain Generalization
