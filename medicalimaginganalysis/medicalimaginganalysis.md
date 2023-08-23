@@ -24,6 +24,7 @@
   - [13 UNETR: Transformers for 3D Medical Image Segmentation](#13-unetr-transformers-for-3d-medical-image-segmentation)
   - [14 HRFormer: High-Resolution Transformer for Dense Prediction](#14-hrformer-high-resolution-transformer-for-dense-prediction)
   - [15 CRIS: CLIP-Driven Referring Image Segmentation](#15-cris-clip-driven-referring-image-segmentation)
+  - [16 Rethinking Semantic Segmentation: A Prototype View](#16-rethinking-semantic-segmentation-a-prototype-view)
 - [III. Few-shot Segmentation](#iii-few-shot-segmentation)
   - [00 SG-One: Similarity Guidance Network for One-Shot Semantic Segmentation](#00-sg-one-similarity-guidance-network-for-one-shot-semantic-segmentation)
   - [01 PANet: Few-Shot Image Semantic Segmentation with Prototype Alignment](#01-panet-few-shot-image-semantic-segmentation-with-prototype-alignment)
@@ -402,6 +403,22 @@ an **encoder** that utilizes a sequence of Transformer blocks to convert the inp
 - Firstly, **visual-language decoder** that captures **long-range dependencies** of pixel-level features through the self-attention operation and adaptively propagate fine-structured textual features into pixel-level features through the cross-attention operation. Secondly, we introduce the **text-to-pixel contrastive learning**, which can **align linguistic features and the corresponding pixel-level features**, meanwhile **distinguishing irrelevant pixel-level features in the multi-modal embedding space**.
 - ![CRIS_1](./images/CRIS_1.png)
 - ![CRIS_2](./images/CRIS_2.png)
+
+
+## [16 Rethinking Semantic Segmentation: A Prototype View](./segmentation/Rethinking%20Semantic%20Segmentation%20A%20Prototype%20View.pdf)
+- Zhou T, Wang W, Konukoglu E, et al./2022/CVPR/106 (**Writing**)
+- Prevalent semantic segmentation solutions, despite their different network designs (FCN based or attention based) and mask decoding strategies (parametric softmax based or pixel-query based),**can be placed in one category**, by *considering the softmax weights or query vectors as learnable class prototypes*.
+- Instead of prior methods learning a single weight/query vector for each class in a fully parametric manner, our model represents **each class as a set of non-learnable prototypes**, relying solely on the mean features of several training pixels within that class. The dense prediction is thus achieved by nonparametric nearest prototype retrieving. *This allows our model to directly shape the pixel embedding space, by optimizing the arrangement between embedded pixels and anchored prototypes. It is able to handle arbitrary number of classes with a constant amount of learnable parameters.*
+- ![ProtoSeg_1](./images/ProteSeg_1.png)
+- *What are the limitations of this learnable prototype based parametric paradigm?* 
+    1. First, usually only one single prototype is learned per class, insufficient to describe rich intra-class variance.
+    2. Second, to map a H×W×D image feature tensor into a H×W×C semantic mask, at least D×C parameters are needed for prototype learning. This hurts generalizability, especially in the large-vocabulary case.
+    3. Third, with the cross-entropy loss, only the relative relations between intra-class and inter-class distances are optimized ; the actual distances between pixels and prototypes, i.e., intra-class compactness and inter-class separation, are ignored.
+- **Our model has three appealing advantages**:
+    1. each class is abstracted by a set of prototypes, well capturing class-wise characteristics and intra-class variance. With the clear meaning of the prototypes, the interpretability is also enhanced
+    2. due to the nonparametric nature, the generalizability is improved. Large-vocabulary semantic segmentation can also be handled efficiently, as the amount of learnable prototype parameters is no longer constrained to the number of classes
+    3. via prototype-anchored metric learning, the pixel embedding space is shaped as wellstructured, benefiting segmentation prediction eventually.
+- ![ProtoSeg_2](./images/ProteSeg_2.png)
 
 
 
