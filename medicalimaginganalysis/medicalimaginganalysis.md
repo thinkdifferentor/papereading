@@ -90,6 +90,7 @@
   - [16 Generalizable Cross-modality Medical Image Segmentation via Style Augmentation and Dual Normalization](#16-generalizable-cross-modality-medical-image-segmentation-via-style-augmentation-and-dual-normalization)
   - [17 Meta-causal Learning for Single Domain Generalization](#17-meta-causal-learning-for-single-domain-generalization)
   - [18 Domain Generalization with Mixstyle](#18-domain-generalization-with-mixstyle)
+  - [19 Adaptive Texture Filtering for Single-Domain Generalized Segmentation](#19-adaptive-texture-filtering-for-single-domain-generalized-segmentation)
 - [VII. Test Time Adaptation](#vii-test-time-adaptation)
   - [00 DLTTA: Dynamic Learning Rate for Test-Time Adaptation on Cross-Domain Medical Images](#00-dltta-dynamic-learning-rate-for-test-time-adaptation-on-cross-domain-medical-images)
   - [01 Continual Test-Time Domain Adaptation](#01-continual-test-time-domain-adaptation)
@@ -108,6 +109,7 @@
   - [06 Style and Content Disentanglement in Generative Adversarial Networks](#06-style-and-content-disentanglement-in-generative-adversarial-networks)
   - [07 Content and Style Disentanglement for Artistic Style Transfer](#07-content-and-style-disentanglement-for-artistic-style-transfer)
 
+<!-- /TOC -->
 <!-- /TOC -->
 
 
@@ -1081,7 +1083,16 @@ network might take these objects in the background as clues for recognizing the 
 - ![Mixstyle_2](./images/Mixstyle_2.png) , ![Mixstyle_3](./images/Mixstyle_3.png)
 - ![Mixstyle_4](./images/Mixstyle_4.png)
 
-
+## [19 Adaptive Texture Filtering for Single-Domain Generalized Segmentation](./domaingeneralization/Adaptive%20Texture%20Filtering%20for%20Single-Domain%20Generalized%20Segmentation.pdf)
+- Li X, Li M, Wang Y, et al./2023/AAAI/-
+- Existing methods diversify images in the source domain by adding complex or even abnormal textures to **reduce the sensitivity to domain-specific features**. However, these approaches depend heavily on **the richness of the texture bank, and training them can be time-consuming**. In contrast to importing textures arbitrarily or augmenting styles randomly, we focus on **the single source domain itself** to achieve generalization.
+- Adaptive texture filtering (ATF) mechanism to suppress the influence of texture without using augmentation, thus **eliminating the interference of domain-specific features**. Hierarchical guidance generalization network (HGGN) equipped with structure-guided enhancement modules, which purpose is to **learn the domain-invariant generalized knowledge** under contour supervision.
+- ![ATF_1](./images/ATF_1.png)
+- The adaptive strength predictor (ASP) predicts the filtering intensity/strength parameter λa by calculating the mean µ and variance σ^2 of the extracted features. The texture filtering generator (TFG) is responsible for generating the **content-dependent** image I_c and **texture-dependent** image I_t.
+- ![ATF_2](./images/ATF_2.png)
+- Although the filtering operation can preserve the contour of objects, some **internal structure information** of the object would be removed during this processing. However, the internal structure information is also helpful for the segmentation task.
+- Many previous works like have proved the effectiveness of IN on style normalization, but **the spatial feature representation might be weakened during IN**. However, in the DG semantic segmentation task, the spatial features after IN need to be highlighted due to **the similar structural information among different domains**.
+- ![ATF_3](./images/ATF_3.png)
 
 
 # VII. Test Time Adaptation
