@@ -70,6 +70,7 @@
   - [28 Prior Knowledge Guided Unsupervised Domain Adaptation](#28-prior-knowledge-guided-unsupervised-domain-adaptation)
   - [29 Do We Really Need to Access the Source Data Source? Hypothesis Transfer for Unsupervised Domain Adaptation](#29-do-we-really-need-to-access-the-source-data-source-hypothesis-transfer-for-unsupervised-domain-adaptation)
   - [30 Prototypical Pseudo Label Denoising and Target Structure Learning for Domain Adaptive Semantic Segmentation](#30-prototypical-pseudo-label-denoising-and-target-structure-learning-for-domain-adaptive-semantic-segmentation)
+  - [31 Unsupervised Domain Adaptation for Medical Image Segmentation by Selective Entropy Constraints and Adaptive Semantic Alignment](#31-unsupervised-domain-adaptation-for-medical-image-segmentation-by-selective-entropy-constraints-and-adaptive-semantic-alignment)
 - [VI. Domain Generalization](#vi-domain-generalization)
   - [00 FedDG: Federated Domain Generalization on Medical Image Segmentation via Episodic Learning in Continuous Frequency Space](#00-feddg-federated-domain-generalization-on-medical-image-segmentation-via-episodic-learning-in-continuous-frequency-space)
   - [01 Semantic-Aware Domain Generalized Segmentation](#01-semantic-aware-domain-generalized-segmentation)
@@ -109,6 +110,7 @@
   - [06 Style and Content Disentanglement in Generative Adversarial Networks](#06-style-and-content-disentanglement-in-generative-adversarial-networks)
   - [07 Content and Style Disentanglement for Artistic Style Transfer](#07-content-and-style-disentanglement-for-artistic-style-transfer)
 
+<!-- /TOC -->
 <!-- /TOC -->
 <!-- /TOC -->
 
@@ -873,6 +875,14 @@ contrastive self-supervised learning to align features so as to reduce the domai
 - For self-training, the pseudo labels are **noisy** and the target features are **dispersed** due to the discrepancy between source and target domains. This work rely on **representative prototypes** (the feature **centroids** of classes) to address the two issues for unsupervised domain adaptation.
 - We find two key ingredients are lacking in previous works. First, typical practice  suggests selecting the pseudo labels according to a strict confidence threshold, **while high scores are not necessarily correct**, making the network fail to learn reliable knowledge in the target domain. Second, due to the domain gap, the network is prone to produce dispersed features in the target domain. It is likely that for target data, the closer to the source distribution, the higher the confidence score. As a result, **data lying far from the source distribution (i.e. low scores) will never be considered during the training**.
 - ![Pro_DA](./images/ProDA.png)
+
+
+## [31 Unsupervised Domain Adaptation for Medical Image Segmentation by Selective Entropy Constraints and Adaptive Semantic Alignment](./domainadaptation/Unsupervised%20Domain%20Adaptation%20for%20Medical%20Image%20Segmentation%20by%20Selective%20Entropy%20Constraints%20and%20Adaptive%20Semantic%20Alignment.pdf)
+- Feng W, Ju L, Wang L, et al./2023/AAAI/1
+- Most existing methods may still produce **overconfident but erroneous results** on unseen target images, due to the properties of cross-entropy loss, which forces the network output to match the one-hot ground truth label, the neural network may be **mis-calibrated**.
+- ![SE_ASA_1](./images/SE_ASA_1.png)
+- (1) We frst introduce two data augmentation approaches to generate two sets of **semantics-preserving augmented images**. Based on the model’s predictive consistency on these two sets of augmented images, we **identify reliable and unreliable pixels**. (2) We then perform a **selective entropy constraints**: we **minimize** the entropy of reliable pixels to increase their confdence while **maximizing** the entropy of unreliable pixels to reduce their confdence. (3) Based on the identifed reliable and unreliable pixels, we further propose an **adaptive semantic alignment module** which performs class-level distribution adaptation by minimizing the distance between same class prototypes between domains, where unreliable pixels are removed to derive more accurate prototypes.
+- ![SE_ASA_2](./images/SE_ASA_2.png)
 
 
 
