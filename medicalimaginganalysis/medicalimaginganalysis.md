@@ -71,6 +71,7 @@
   - [29 Do We Really Need to Access the Source Data Source? Hypothesis Transfer for Unsupervised Domain Adaptation](#29-do-we-really-need-to-access-the-source-data-source-hypothesis-transfer-for-unsupervised-domain-adaptation)
   - [30 Prototypical Pseudo Label Denoising and Target Structure Learning for Domain Adaptive Semantic Segmentation](#30-prototypical-pseudo-label-denoising-and-target-structure-learning-for-domain-adaptive-semantic-segmentation)
   - [31 Unsupervised Domain Adaptation for Medical Image Segmentation by Selective Entropy Constraints and Adaptive Semantic Alignment](#31-unsupervised-domain-adaptation-for-medical-image-segmentation-by-selective-entropy-constraints-and-adaptive-semantic-alignment)
+  - [32 Reducing Domain Gap in Frequency and Spatial Domain for Cross-Modality Domain Adaptation on Medical Image Segmentation](#32-reducing-domain-gap-in-frequency-and-spatial-domain-for-cross-modality-domain-adaptation-on-medical-image-segmentation)
 - [VI. Domain Generalization](#vi-domain-generalization)
   - [00 FedDG: Federated Domain Generalization on Medical Image Segmentation via Episodic Learning in Continuous Frequency Space](#00-feddg-federated-domain-generalization-on-medical-image-segmentation-via-episodic-learning-in-continuous-frequency-space)
   - [01 Semantic-Aware Domain Generalized Segmentation](#01-semantic-aware-domain-generalized-segmentation)
@@ -110,6 +111,15 @@
   - [06 Style and Content Disentanglement in Generative Adversarial Networks](#06-style-and-content-disentanglement-in-generative-adversarial-networks)
   - [07 Content and Style Disentanglement for Artistic Style Transfer](#07-content-and-style-disentanglement-for-artistic-style-transfer)
 
+<!-- /TOC -->
+<!-- /TOC -->
+<!-- /TOC -->
+<!-- /TOC -->
+<!-- /TOC -->
+<!-- /TOC -->
+<!-- /TOC -->
+<!-- /TOC -->
+<!-- /TOC -->
 <!-- /TOC -->
 <!-- /TOC -->
 <!-- /TOC -->
@@ -883,6 +893,16 @@ contrastive self-supervised learning to align features so as to reduce the domai
 - ![SE_ASA_1](./images/SE_ASA_1.png)
 - (1) We frst introduce two data augmentation approaches to generate two sets of **semantics-preserving augmented images**. Based on the model’s predictive consistency on these two sets of augmented images, we **identify reliable and unreliable pixels**. (2) We then perform a **selective entropy constraints**: we **minimize** the entropy of reliable pixels to increase their confdence while **maximizing** the entropy of unreliable pixels to reduce their confdence. (3) Based on the identifed reliable and unreliable pixels, we further propose an **adaptive semantic alignment module** which performs class-level distribution adaptation by minimizing the distance between same class prototypes between domains, where unreliable pixels are removed to derive more accurate prototypes.
 - ![SE_ASA_2](./images/SE_ASA_2.png)
+
+
+## [32 Reducing Domain Gap in Frequency and Spatial Domain for Cross-Modality Domain Adaptation on Medical Image Segmentation](./domainadaptation/Reducing%20Domain%20Gap%20in%20Frequency%20and%20Spatial%20Domain%20for%20Cross-Modality%20Domain%20Adaptation%20on%20Medical%20Image%20Segmentation.pdf)
+- Liu S, Yin S, Qu L, et al./2023/AAAI/1
+- In the frequency domain, we first introduce **non-subsampled contourlet transform** for identifying domain-invariant and domain-variant frequency components (DIFs and DVFs), and then *keep the DIFs unchanged while replacing the DVFs of the source domain images with that of the target domain images to narrow the domain gap*. In the spatial domain, we propose a **batch momentum update-based histogram matching strategy** to reduce the domain-variant image style bias.
+- ![FSUDA_1](./images/FSUSA_1.png)
+- ![FSUDA_2](./images/FSUSA_2.png)
+- the FC of **low frequency** sub-band retain most of the semantic content of the image, while the FCs corresponding to **high frequency sub-bands** represent the structure and texture of the image in different directions.
+- ![FSUDA_3](./images/FSUSA_3.png)
+- We propose to use batch momentum update to calculate an average histogram of a batch of target domain images for matching, rather than the entire target domain, which tends to **smooth the target domain histogram and ignores the intensity variants**.
 
 
 
