@@ -93,6 +93,7 @@
   - [17 Meta-causal Learning for Single Domain Generalization](#17-meta-causal-learning-for-single-domain-generalization)
   - [18 Domain Generalization with Mixstyle](#18-domain-generalization-with-mixstyle)
   - [19 Adaptive Texture Filtering for Single-Domain Generalized Segmentation](#19-adaptive-texture-filtering-for-single-domain-generalized-segmentation)
+  - [20 Rethinking Data Augmentation for Single-Source Domain Generalization in Medical Image Segmentation](#20-rethinking-data-augmentation-for-single-source-domain-generalization-in-medical-image-segmentation)
 - [VII. Test Time Adaptation](#vii-test-time-adaptation)
   - [00 DLTTA: Dynamic Learning Rate for Test-Time Adaptation on Cross-Domain Medical Images](#00-dltta-dynamic-learning-rate-for-test-time-adaptation-on-cross-domain-medical-images)
   - [01 Continual Test-Time Domain Adaptation](#01-continual-test-time-domain-adaptation)
@@ -111,6 +112,7 @@
   - [06 Style and Content Disentanglement in Generative Adversarial Networks](#06-style-and-content-disentanglement-in-generative-adversarial-networks)
   - [07 Content and Style Disentanglement for Artistic Style Transfer](#07-content-and-style-disentanglement-for-artistic-style-transfer)
 
+<!-- /TOC -->
 <!-- /TOC -->
 <!-- /TOC -->
 <!-- /TOC -->
@@ -1125,10 +1127,21 @@ network might take these objects in the background as clues for recognizing the 
 - ![ATF_3](./images/ATF_3.png)
 
 
+## [20 Rethinking Data Augmentation for Single-Source Domain Generalization in Medical Image Segmentation](./domaingeneralization/Rethinking%20Data%20Augmentation%20for%20Single-Source%20Domain%20Generalization%20in%20Medical%20Image%20Segmentation.pdf)
+- Su Z, Yao K, Yang X, et al./2023/AAAI/3
+- For SDG, Previous attempts most conduct **global-only/random augmentation**. Their augmented samples are usually insuffcient in **diversity and informativeness**, thus failing to **cover the possible target domain distribution**.
+- Motivated by **the class-level representation invariance and style mutability of medical images**, we hypothesize that* unseen target data can be sampled from a linear combination of C (the class number) random variables*, where each variable follows a location-scale distribution at the class level. Accordingly, data augmented can be readily made by sampling the random variables through a general form.
+- A Saliency-balancing Fusion mechanism is further proposed to enrich the informativeness by engaging the gradient information, **guiding augmentation with proper orientation and magnitude**.
+- ![RethinkingDA_1](./images/RethinkingDA_1.png)
+- Although previous augmentation methods have led to impressive results in generalization tasks, they suffer from the following **limitations in medical image segmentation**: 1) Global-only augmentation performing transformation on the whole image limits the diversity of augmented images. 2) Random augmentation considers no constraint on the distribution of the augmented samples, which may lead to *over-generalization and cause performance degradation*. 3) General-task-specifc augmentation specially designed for natural image is restricted from medical image tasks.
+- ![RethinkingDA_2](./images/RethinkingDA_2.png)
+- ![RethinkingDA_3](./images/RethinkingDA_3.png)
+
+
 # VII. Test Time Adaptation
 
 ## [00 DLTTA: Dynamic Learning Rate for Test-Time Adaptation on Cross-Domain Medical Images](./testtimeadaptation/DLTTA%20Dynamic%20Learning%20Rate%20for%20Test-Time%20Adaptation%20on%20Cross-Domain%20Medical%20Images.pdf)
-- Yang H, Chen C, Jiang M, et al./2022/IEEE Transactions on Medical Imaging/4
+- Yang H, Chen C, Jiang M, et al./2022/IEEE Transactions on Medical Imaging/4 (**Writing**)
 - Previous TTA methods have a common limitation of using a **fixed learning rate for all the test samples**. Such a practice would be sub-optimal for TTA, because test data may arrive sequentially therefore **the scale of distribution shift would change frequently**.
 - DLTTA, which **dynamically modulates the amount of weights update** for each test image to account for the differences in their distribution shift. Specifically,our DLTTA is equipped with a **memory bank** based estimation scheme to effectively measure **the discrepancy of a given test sample**. Based on this estimated discrepancy, a dynamic learning rate adjustment strategy is then developed to achieve a suitable degree of adaptation for each test sample.
 - UDA setting is still problematic for real-world model deployment due to two important reasons. **Firstly**, it is not efficient, if realistic, to wait for the **accumulation of sufficient amount of test samples** (e.g., thousands of instances), since the test data usually arrive sequentially one by one, or batch by batch. However, immediate prediction on a single test sample or a batch of instances is highly desired in clinical practice for timely diagnosis and treatment for patients. **Secondly**, accessing the training dataset at test time is practically difficult, because data sharing across hospitals is prohibitive due to the **privacy concern** for medical data. (TTA Setting Motivation)
