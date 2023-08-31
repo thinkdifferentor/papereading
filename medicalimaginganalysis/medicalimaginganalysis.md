@@ -513,7 +513,8 @@ is performed by labeling each pixel as the class of the nearest prototype). With
 - We show that the color invariant layer reduces the day-night distribution shift in feature map activations throughout the a trainable **Color Invariant Convolution** (CIConv) layer which can be used as the input layer to any CNN to transform the input to a domain invariant representation. (color invariants have been widely used in classical computer vision applications, yet their use in a deep learning setting has remained largely unexplored.)
 - ![CIConv_1](./images/CIConv_1.png)
 - ![CIConv_2](./images/CIConv_2.png)
-
+- *Adding prior knowledge from physical models in a neural network has the potential to improve performance without additional training data*.
+- The CIConv layer transforms **the input image into an edge map representation** that is no longer sensitive to the intensity and color of the light source, but as a side effect also **removes valuable color information**. (**TODO**: optimally combining color information and color invariant edge information)
 
 
 # IV. Self-Supervised based Segmentation
