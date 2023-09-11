@@ -25,6 +25,7 @@
   - [14 HRFormer: High-Resolution Transformer for Dense Prediction](#14-hrformer-high-resolution-transformer-for-dense-prediction)
   - [15 CRIS: CLIP-Driven Referring Image Segmentation](#15-cris-clip-driven-referring-image-segmentation)
   - [16 Rethinking Semantic Segmentation: A Prototype View](#16-rethinking-semantic-segmentation-a-prototype-view)
+  - [17 Segment Anything](#17-segment-anything)
 - [III. Few-shot Segmentation](#iii-few-shot-segmentation)
   - [00 SG-One: Similarity Guidance Network for One-Shot Semantic Segmentation](#00-sg-one-similarity-guidance-network-for-one-shot-semantic-segmentation)
   - [01 PANet: Few-Shot Image Semantic Segmentation with Prototype Alignment](#01-panet-few-shot-image-semantic-segmentation-with-prototype-alignment)
@@ -112,6 +113,7 @@
   - [06 Style and Content Disentanglement in Generative Adversarial Networks](#06-style-and-content-disentanglement-in-generative-adversarial-networks)
   - [07 Content and Style Disentanglement for Artistic Style Transfer](#07-content-and-style-disentanglement-for-artistic-style-transfer)
 
+<!-- /TOC -->
 <!-- /TOC -->
 <!-- /TOC -->
 <!-- /TOC -->
@@ -437,6 +439,19 @@ an **encoder** that utilizes a sequence of Transformer blocks to convert the inp
 - ![ProtoSeg_2](./images/ProteSeg_2.png)
 
 
+## [17 Segment Anything](./segmentation/Segment%20Anything.pdf)
+- Kirillov A, Mintun E, Ravi N, et al./2023/arXiv/572
+- In this work, our goal is to build a **foundation model** for image segmentation. That is, we seek to develop a **promptable model** and pre-train it on a **broad dataset** using a **task that enables powerful generalization**.
+- The success of this plan hinges on three components: *task, model, and data*. To develop them, we address the following questions about image segmentation: 
+    1. What task will enable zero-shot generalization? (promptable segmentation task for pre-training and downstream segmentation tasks. points, a rough box or mask, free-form text.)
+    2. What is the corresponding model architecture? (flexible prompts, real-time to interactive, and ambiguity-aware. powerful image encoder, prompt encoder and lightweight mask decoder)
+    3. What data can power this task and model? (Constructing SA-1B with Data engine, three steps: assisted-manual, semi-automatic, and fully automatic.)
+- ![SAM_1](./images/SAM_1.png)
+- An important distinction in our work is that a model trained for promptable segmentation can perform a **new, different task** at inference time by acting as a **component** in a larger system, e.g., to perform instance segmentation, a promptable segmentation model is combined with an existing object detector.
+- Discussion: **Prompting and composition** are powerful tools that enable a single model to be used in extensible ways, potentially to accomplish tasks unknown at the time of model design. we anticipate that composable system design, powered by techniques such as prompt engineering, will enable a wider variety of applications than systems trained specifically for a fixed set of tasks.
+- ![SAM_2](./images/SAM_2.png)
+
+
 
 # III. Few-shot Segmentation
 
@@ -515,6 +530,7 @@ is performed by labeling each pixel as the class of the nearest prototype). With
 - ![CIConv_2](./images/CIConv_2.png)
 - *Adding prior knowledge from physical models in a neural network has the potential to improve performance without additional training data*.
 - The CIConv layer transforms **the input image into an edge map representation** that is no longer sensitive to the intensity and color of the light source, but as a side effect also **removes valuable color information**. (**TODO**: optimally combining color information and color invariant edge information)
+- [Supplementary](./fewshotdomainadaptation/Zero-Shot%20Day-Night%20Domain%20Adaptation%20with%20a%20Physics%20Prior_Supplemental.pdf) 
 
 
 # IV. Self-Supervised based Segmentation
@@ -892,7 +908,7 @@ contrastive self-supervised learning to align features so as to reduce the domai
 
 ## [31 Unsupervised Domain Adaptation for Medical Image Segmentation by Selective Entropy Constraints and Adaptive Semantic Alignment](./domainadaptation/Unsupervised%20Domain%20Adaptation%20for%20Medical%20Image%20Segmentation%20by%20Selective%20Entropy%20Constraints%20and%20Adaptive%20Semantic%20Alignment.pdf)
 - Feng W, Ju L, Wang L, et al./2023/AAAI/1
-- Most existing methods may still produce **overconfident but erroneous results** on unseen target images, due to the properties of cross-entropy loss, which forces the network output to match the one-hot ground truth label, the neural network may be **mis-calibrated**.
+- Most existing (adversarial training based) methods may still produce **overconfident but erroneous results** on unseen target images, due to the properties of cross-entropy loss, which forces the network output to match the one-hot ground truth label, the neural network may be **mis-calibrated** and would output **overconfdent predictions**. (This phenomenon is exacerbated in the presence of domain shifts)
 - ![SE_ASA_1](./images/SE_ASA_1.png)
 - (1) We frst introduce two data augmentation approaches to generate two sets of **semantics-preserving augmented images**. Based on the model’s predictive consistency on these two sets of augmented images, we **identify reliable and unreliable pixels**. (2) We then perform a **selective entropy constraints**: we **minimize** the entropy of reliable pixels to increase their confdence while **maximizing** the entropy of unreliable pixels to reduce their confdence. (3) Based on the identifed reliable and unreliable pixels, we further propose an **adaptive semantic alignment module** which performs class-level distribution adaptation by minimizing the distance between same class prototypes between domains, where unreliable pixels are removed to derive more accurate prototypes.
 - ![SE_ASA_2](./images/SE_ASA_2.png)
