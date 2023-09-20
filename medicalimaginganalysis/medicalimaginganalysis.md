@@ -73,6 +73,7 @@
   - [30 Prototypical Pseudo Label Denoising and Target Structure Learning for Domain Adaptive Semantic Segmentation](#30-prototypical-pseudo-label-denoising-and-target-structure-learning-for-domain-adaptive-semantic-segmentation)
   - [31 Unsupervised Domain Adaptation for Medical Image Segmentation by Selective Entropy Constraints and Adaptive Semantic Alignment](#31-unsupervised-domain-adaptation-for-medical-image-segmentation-by-selective-entropy-constraints-and-adaptive-semantic-alignment)
   - [32 Reducing Domain Gap in Frequency and Spatial Domain for Cross-Modality Domain Adaptation on Medical Image Segmentation](#32-reducing-domain-gap-in-frequency-and-spatial-domain-for-cross-modality-domain-adaptation-on-medical-image-segmentation)
+  - [33 Class Relationship Embedded Learning for Source-Free Unsupervised Domain Adaptation](#33-class-relationship-embedded-learning-for-source-free-unsupervised-domain-adaptation)
 - [VI. Domain Generalization](#vi-domain-generalization)
   - [00 FedDG: Federated Domain Generalization on Medical Image Segmentation via Episodic Learning in Continuous Frequency Space](#00-feddg-federated-domain-generalization-on-medical-image-segmentation-via-episodic-learning-in-continuous-frequency-space)
   - [01 Semantic-Aware Domain Generalized Segmentation](#01-semantic-aware-domain-generalized-segmentation)
@@ -113,6 +114,7 @@
   - [06 Style and Content Disentanglement in Generative Adversarial Networks](#06-style-and-content-disentanglement-in-generative-adversarial-networks)
   - [07 Content and Style Disentanglement for Artistic Style Transfer](#07-content-and-style-disentanglement-for-artistic-style-transfer)
 
+<!-- /TOC -->
 <!-- /TOC -->
 <!-- /TOC -->
 <!-- /TOC -->
@@ -924,6 +926,16 @@ contrastive self-supervised learning to align features so as to reduce the domai
 - We propose to use batch momentum update to calculate an average histogram of a batch of target domain images for matching, rather than the entire target domain, which tends to **smooth the target domain histogram and ignores the intensity variants**.
 
 
+## [33 Class Relationship Embedded Learning for Source-Free Unsupervised Domain Adaptation](./domainadaptation/Class%20Relationship%20Embedded%20Learning%20for%20Source-Free%20Unsupervised%20Domain%20Adaptation.pdf)
+- Zhang Y, Wang Z, He W./2023/CVPR/1
+- To fully utilize source knowledge, we propose to transfer the **class relationship, which is domain-invariant** but still under-explored in previous SFUDA works. To this end, we first regard **the classifier weights of the source model as class prototypes** to compute class relationship, and then propose a novel probability-based similarity between target-domain samples by embedding the source-domain class relationship, resulting in Class Relationship embedded Similarity (CRS). e.g. The computers are always more similar with the TV than the scissors.
+- *A nature question of SF-UDA: what knowledge should we transfer to facilitate the learning of unlabeled target-domain data?* 
+- Class Relationship embedded **Class-Aware** (*for prototypes*) Contrastive (**CR-CACo**) loss where the high-confident samples are enforced to be close to the corresponding prototype and away from other prototypes. Class Relationship embedded **Instance** (*for samples*) Discrimination Contrastive (**CR-IDCo**) loss where two views (augmentation) of the same sample are encouraged to be close and away from all other samples.
+- ![CRCo_1](./images/CRCO_1.png)
+- ![CRCo_2](./images/CRCO_2.png)
+
+
+
 
 # VI. Domain Generalization
 
@@ -1223,9 +1235,9 @@ network might take these objects in the background as clues for recognizing the 
 
 ## [06 Decorate the Newcomers: Visual Domain Prompt for Continual Test Time Adaptation](./testtimeadaptation/Decorate%20the%20Newcomers%20Visual%20Domain%20Prompt%20for%20Continual%20Test%20Time%20Adaptation.pdf)
 - Gan Y, Bai Y, Lou Y, et al./2023/CVPR/13/Outstanding Student Paper
-- For CTTA problem, existing methods mainly focus on model-based adaptation in a **self-training manner**, such as predicting pseudo labels for new domain datasets. Since pseudo labels are noisy and unreliable, these methods suffer from **catastrophic forgetting and error accumulation** when dealing with dynamic data distributions. (dynamically update a small portion of the input image pixels, parameter matrix, summed up point by point)
+- For CTTA problem, existing methods mainly focus on model-based adaptation in a **self-training manner**, such as predicting pseudo labels for new domain datasets. Since pseudo labels are noisy and unreliable, these methods suffer from **catastrophic forgetting and error accumulation** when dealing with dynamic data distributions. (The domain-specifc prompt and domain-agnostic prompt are dynamically updated a small portion of the input image pixels, parameter matrix, summed up point by point)
 - Motivated by the prompt learning in NLP, in this paper, we propose to learn an **image-level visual domain prompt** for target domains while having the source model parameters frozen. During testing, the changing target datasets can be adapted to the source model by **reformulating the input data with the learned visual prompts**. This **transition from the model-dependent paradigm to the model-free** one enables us to bypass the catastrophic forgetting and error accumulation problems.
-- The domain-specifc prompt (DSP) aims to **extract current domain knowledge**, while the domain-agnostic prompt (DAP) produces an effect on **maintaining the domain-shared knowledge**.
+- The domain-specifc prompt (DSP) aims to **extract current domain knowledge**, while the domain-agnostic prompt (DAP) produces an effect on **maintaining the domain-shared knowledge**.  It is worth noting that the size and position of DSP and DAP are fexible.
 - ![DTN_1](./images/DTN_1.png)
 - ![DTN_2](./images/DTN_1.png)
 
