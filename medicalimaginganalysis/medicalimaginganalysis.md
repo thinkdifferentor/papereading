@@ -1192,6 +1192,7 @@ network might take these objects in the background as clues for recognizing the 
 - This paper presents an effective and general **data augmentation framework** for medical image segmentation. We adopt a computationally efficient and data-efficient gradientbased **meta-learning scheme** to explicitly align the distribution of training and validation data which is used as a proxy for unseen test data.
 - **Training-time data augmentation** aims to increase the variation captured by the training dataset by adding perturbed samples with the goal to capture the unseen test data distribution. **Testing-time data augmentation** robustifies the final prediction by averaging predictions of predefined, assumed non-causal variations of test data, to which the model should be robust (anther way transforming the test samples to match the distribution of the training data).
 - ![JODA_1](./images/JODA_1.png)
+- ![JODA_2](./images/JODA_2.png)
 
 
 
