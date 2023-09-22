@@ -26,6 +26,7 @@
   - [15 CRIS: CLIP-Driven Referring Image Segmentation](#15-cris-clip-driven-referring-image-segmentation)
   - [16 Rethinking Semantic Segmentation: A Prototype View](#16-rethinking-semantic-segmentation-a-prototype-view)
   - [17 Segment Anything](#17-segment-anything)
+  - [18 UniverSeg: Universal Medical Image Segmentation](#18-universeg-universal-medical-image-segmentation)
 - [III. Few-shot Segmentation](#iii-few-shot-segmentation)
   - [00 SG-One: Similarity Guidance Network for One-Shot Semantic Segmentation](#00-sg-one-similarity-guidance-network-for-one-shot-semantic-segmentation)
   - [01 PANet: Few-Shot Image Semantic Segmentation with Prototype Alignment](#01-panet-few-shot-image-semantic-segmentation-with-prototype-alignment)
@@ -454,6 +455,14 @@ an **encoder** that utilizes a sequence of Transformer blocks to convert the inp
 - An important distinction in our work is that a model trained for promptable segmentation can perform a **new, different task** at inference time by acting as a **component** in a larger system, e.g., to perform instance segmentation, a promptable segmentation model is combined with an existing object detector.
 - Discussion: **Prompting and composition** are powerful tools that enable a single model to be used in extensible ways, potentially to accomplish tasks unknown at the time of model design. we anticipate that composable system design, powered by techniques such as prompt engineering, will enable a wider variety of applications than systems trained specifically for a fixed set of tasks.
 - ![SAM_2](./images/SAM_2.png)
+
+
+## [18 UniverSeg: Universal Medical Image Segmentation](./segmentation/UniverSeg%20Universal%20Medical%20Image%20Segmentation.pdf)
+- Butoi V I, Ortiz J J G, Ma T, et al./2023/ICCV/10 (**Writing**)
+- UniverSeg, a method for solving **unseen medical segmentation tasks without additional training**. Given a **query image** and **example set of image-label pairs** that define a new segmentation task, UniverSeg employs a new **Cross-Block mechanism** to produce accurate segmentation maps without the need for additional training.
+- ![UniverSeg_1](./images/UniverSeg_1.png)
+- ![UniverSeg_2](./images/UniverSeg_2.png)
+- ![UniverSeg_3](./images/UniverSeg_3.png)
 
 
 
