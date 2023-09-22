@@ -98,6 +98,7 @@
   - [19 Adaptive Texture Filtering for Single-Domain Generalized Segmentation](#19-adaptive-texture-filtering-for-single-domain-generalized-segmentation)
   - [20 Rethinking Data Augmentation for Single-Source Domain Generalization in Medical Image Segmentation](#20-rethinking-data-augmentation-for-single-source-domain-generalization-in-medical-image-segmentation)
   - [21 Single-Domain Generalization in Medical Image Segmentation via Test-Time Adaptation from Shape Dictionary](#21-single-domain-generalization-in-medical-image-segmentation-via-test-time-adaptation-from-shape-dictionary)
+  - [22 Joint Optimization of Class-Specific Training- and Test-Time Data Augmentation in Segmentation](#22-joint-optimization-of-class-specific-training--and-test-time-data-augmentation-in-segmentation)
 - [VII. Test Time Adaptation](#vii-test-time-adaptation)
   - [00 DLTTA: Dynamic Learning Rate for Test-Time Adaptation on Cross-Domain Medical Images](#00-dltta-dynamic-learning-rate-for-test-time-adaptation-on-cross-domain-medical-images)
   - [01 Continual Test-Time Domain Adaptation](#01-continual-test-time-domain-adaptation)
@@ -116,6 +117,8 @@
   - [06 Style and Content Disentanglement in Generative Adversarial Networks](#06-style-and-content-disentanglement-in-generative-adversarial-networks)
   - [07 Content and Style Disentanglement for Artistic Style Transfer](#07-content-and-style-disentanglement-for-artistic-style-transfer)
 
+<!-- /TOC -->
+<!-- /TOC -->
 <!-- /TOC -->
 <!-- /TOC -->
 <!-- /TOC -->
@@ -1182,6 +1185,13 @@ network might take these objects in the background as clues for recognizing the 
 - Liu Q, Chen C, Dou Q, et al./2022/AAAI/6 (**Writing**)
 - For SDG, this work extracts and integrates the semantic **shape prior information** (learned by Dictionary Learning) of segmentation that are invariant across domains and can be well-captured even from single domain data to facilitate segmentation under distribution shifts. Besides, a **test-time adaptation strategy with dual-consistency regularization** (test sample as a hit) is further devised to promote dynamic incorporation of these shape priors under each unseen domain to improve model generalizability.
 - ![TASD](./images/TASD.png)
+
+
+## [22 Joint Optimization of Class-Specific Training- and Test-Time Data Augmentation in Segmentation](./domaingeneralization/Joint%20Optimization%20of%20Class-Specific%20Training-%20and%20Test-Time%20Data%20Augmentation%20in%20Segmentation.pdf)
+- Li Z, Kamnitsas K, Dou Q, et al./2023/TMI/-
+- This paper presents an effective and general **data augmentation framework** for medical image segmentation. We adopt a computationally efficient and data-efficient gradientbased **meta-learning scheme** to explicitly align the distribution of training and validation data which is used as a proxy for unseen test data.
+- **Training-time data augmentation** aims to increase the variation captured by the training dataset by adding perturbed samples with the goal to capture the unseen test data distribution. **Testing-time data augmentation** robustifies the final prediction by averaging predictions of predefined, assumed non-causal variations of test data, to which the model should be robust (anther way transforming the test samples to match the distribution of the training data).
+- ![JODA_1](./images/JODA_1.png)
 
 
 
