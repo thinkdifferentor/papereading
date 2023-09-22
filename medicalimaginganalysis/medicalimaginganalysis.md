@@ -96,6 +96,7 @@
   - [18 Domain Generalization with Mixstyle](#18-domain-generalization-with-mixstyle)
   - [19 Adaptive Texture Filtering for Single-Domain Generalized Segmentation](#19-adaptive-texture-filtering-for-single-domain-generalized-segmentation)
   - [20 Rethinking Data Augmentation for Single-Source Domain Generalization in Medical Image Segmentation](#20-rethinking-data-augmentation-for-single-source-domain-generalization-in-medical-image-segmentation)
+  - [21 Single-Domain Generalization in Medical Image Segmentation via Test-Time Adaptation from Shape Dictionary](#21-single-domain-generalization-in-medical-image-segmentation-via-test-time-adaptation-from-shape-dictionary)
 - [VII. Test Time Adaptation](#vii-test-time-adaptation)
   - [00 DLTTA: Dynamic Learning Rate for Test-Time Adaptation on Cross-Domain Medical Images](#00-dltta-dynamic-learning-rate-for-test-time-adaptation-on-cross-domain-medical-images)
   - [01 Continual Test-Time Domain Adaptation](#01-continual-test-time-domain-adaptation)
@@ -114,6 +115,7 @@
   - [06 Style and Content Disentanglement in Generative Adversarial Networks](#06-style-and-content-disentanglement-in-generative-adversarial-networks)
   - [07 Content and Style Disentanglement for Artistic Style Transfer](#07-content-and-style-disentanglement-for-artistic-style-transfer)
 
+<!-- /TOC -->
 <!-- /TOC -->
 <!-- /TOC -->
 <!-- /TOC -->
@@ -1165,6 +1167,15 @@ network might take these objects in the background as clues for recognizing the 
 - Although previous augmentation methods have led to impressive results in generalization tasks, they suffer from the following **limitations in medical image segmentation**: 1) Global-only augmentation performing transformation on the whole image limits the diversity of augmented images. 2) Random augmentation considers no constraint on the distribution of the augmented samples, which may lead to *over-generalization and cause performance degradation*. 3) General-task-specifc augmentation specially designed for natural image is restricted from medical image tasks.
 - ![RethinkingDA_2](./images/RethinkingDA_2.png)
 - ![RethinkingDA_3](./images/RethinkingDA_3.png)
+
+
+## [21 Single-Domain Generalization in Medical Image Segmentation via Test-Time Adaptation from Shape Dictionary](./domaingeneralization/Single-Domain%20Generalization%20in%20Medical%20Image%20Segmentation%20via%20Test-Time%20Adaptation%20from%20Shape%20Dictionary.pdf)
+- Liu Q, Chen C, Dou Q, et al./2022/AAAI/6 (**Writing**)
+- For SDG, this work extracts and integrates the semantic **shape prior information** (learned by Dictionary Learning) of segmentation that are invariant across domains and can be well-captured even from single domain data to facilitate segmentation under distribution shifts. Besides, a **test-time adaptation strategy with dual-consistency regularization** (test sample as a hit) is further devised to promote dynamic incorporation of these shape priors under each unseen domain to improve model generalizability.
+- ![TASD](./images/TASD.png)
+
+
+
 
 
 # VII. Test Time Adaptation
