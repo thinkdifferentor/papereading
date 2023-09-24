@@ -107,7 +107,8 @@
   - [04 Autoencoder based self-supervised test-time adaptation for medical image analysis](#04-autoencoder-based-self-supervised-test-time-adaptation-for-medical-image-analysis)
   - [05 Improved Test-Time Adaptation for Domain Generalization](#05-improved-test-time-adaptation-for-domain-generalization)
   - [06 Decorate the Newcomers: Visual Domain Prompt for Continual Test Time Adaptation](#06-decorate-the-newcomers-visual-domain-prompt-for-continual-test-time-adaptation)
-- [VIII. Others](#viii-others)
+- [VIII. Federated Learning](#viii-federated-learning)
+- [IX. Others](#ix-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
   - [02 DRANet: Disentangling Representation and Adaptation Networks for Unsupervised Cross-Domain Adaptation](#02-dranet-disentangling-representation-and-adaptation-networks-for-unsupervised-cross-domain-adaptation)
@@ -117,6 +118,7 @@
   - [06 Style and Content Disentanglement in Generative Adversarial Networks](#06-style-and-content-disentanglement-in-generative-adversarial-networks)
   - [07 Content and Style Disentanglement for Artistic Style Transfer](#07-content-and-style-disentanglement-for-artistic-style-transfer)
 
+<!-- /TOC -->
 <!-- /TOC -->
 <!-- /TOC -->
 <!-- /TOC -->
@@ -1273,8 +1275,21 @@ network might take these objects in the background as clues for recognizing the 
 - ![DTN_2](./images/DTN_1.png)
 
 
+# VIII. Federated Learning
 
-# VIII. Others
+[00 Communication-Efficient Learning of Deep Networks from Decentralized Data](./federatedlearning/Communication-Efficient%20Learning%20of%20Deep%20Networks%20from%20Decentralized%20Data.pdf)
+- McMahan B, Moore E, Ramage D, et al./2017/Artificial intelligence and statistics/11274
+- Federated optimization has several key properties that differentiate it from a typical distributed optimization problem: 
+    1. **Non-IID** The training data on a given client is typically based on the usage of the mobile device by a particular user, and hence any particular user’s local dataset will not be representative of the population distribution.
+    2. **Unbalanced** Similarly, some users will make much heavier use of the service or app than others, leading to varying amounts of local training data.
+    3. **Massively distributed** We expect the number of clients participating in an optimization to be much larger than the average number of examples per client.
+    4. **Limited communication** Mobile devices are frequently offline or on slow or expensive connections.
+- ![FedAvg](./images/FedAVG_1.png)
+
+
+
+
+# IX. Others
 
 ## [00 Fully Convolutional Networks for Semantic Segmentation](./segmentation/Fully%20Convolutional%20Networks%20for%20Semantic%20Segmentation.pdf)
 - Long J, Shelhamer E, Darrell T./2015/CVPR/26993
