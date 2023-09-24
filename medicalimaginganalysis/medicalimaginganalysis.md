@@ -108,6 +108,8 @@
   - [05 Improved Test-Time Adaptation for Domain Generalization](#05-improved-test-time-adaptation-for-domain-generalization)
   - [06 Decorate the Newcomers: Visual Domain Prompt for Continual Test Time Adaptation](#06-decorate-the-newcomers-visual-domain-prompt-for-continual-test-time-adaptation)
 - [VIII. Federated Learning](#viii-federated-learning)
+  - [00 Communication-Efficient Learning of Deep Networks from Decentralized Data](#00-communication-efficient-learning-of-deep-networks-from-decentralized-data)
+  - [01 Federated Optimization in Heterogeneous Networks](#01-federated-optimization-in-heterogeneous-networks)
 - [IX. Others](#ix-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -1277,9 +1279,9 @@ network might take these objects in the background as clues for recognizing the 
 
 # VIII. Federated Learning
 
-[00 Communication-Efficient Learning of Deep Networks from Decentralized Data](./federatedlearning/Communication-Efficient%20Learning%20of%20Deep%20Networks%20from%20Decentralized%20Data.pdf)
+## [00 Communication-Efficient Learning of Deep Networks from Decentralized Data](./federatedlearning/Communication-Efficient%20Learning%20of%20Deep%20Networks%20from%20Decentralized%20Data.pdf)
 - McMahan B, Moore E, Ramage D, et al./2017/Artificial intelligence and statistics/11274
-- Federated optimization has several key properties that differentiate it from a typical distributed optimization problem: 
+- Federated optimization has several key properties that **differentiate** it from a typical distributed optimization problem: 
     1. **Non-IID** The training data on a given client is typically based on the usage of the mobile device by a particular user, and hence any particular user’s local dataset will not be representative of the population distribution.
     2. **Unbalanced** Similarly, some users will make much heavier use of the service or app than others, leading to varying amounts of local training data.
     3. **Massively distributed** We expect the number of clients participating in an optimization to be much larger than the average number of examples per client.
@@ -1287,6 +1289,13 @@ network might take these objects in the background as clues for recognizing the 
 - ![FedAvg](./images/FedAVG_1.png)
 
 
+## [01 Federated Optimization in Heterogeneous Networks](./federatedlearning/Federated%20Optimization%20in%20Heterogeneous%20Networks.pdf)
+- Li T, Sahu A K, Zaheer M, et al./2020/Proceedings of Machine learning and systems/2951
+- Federated Learning is a distributed learning paradigm with two key challenges that **differentiate** it from traditional distributed optimization: 
+  - (1) significant variability in terms of the systems characteristics on each device in the network (**systems heterogeneity**),   
+  - (2) non-identically distributed data across the network (**statistical heterogeneity**).
+- The key insight of *FedProx* is that an **interplay exists between systems and statistical heterogeneity** in federated learning. Indeed, both **dropping stragglers or naively incorporating partial information from stragglers** implicitly increases statistical heterogeneity and can adversely impact convergence behavior.
+- ![FedProx](./images/FedProx.png)
 
 
 # IX. Others
