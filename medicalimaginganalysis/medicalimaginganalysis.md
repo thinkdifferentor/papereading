@@ -27,6 +27,9 @@
   - [16 Rethinking Semantic Segmentation: A Prototype View](#16-rethinking-semantic-segmentation-a-prototype-view)
   - [17 Segment Anything](#17-segment-anything)
   - [18 UniverSeg: Universal Medical Image Segmentation](#18-universeg-universal-medical-image-segmentation)
+  - [19 Refinenet: Multi-path refinement networks for high-resolution semantic segmentation](#19-refinenet-multi-path-refinement-networks-for-high-resolution-semantic-segmentation)
+  - [20 Efficientnet: Rethinking model scaling for convolutional neural networks](#20-efficientnet-rethinking-model-scaling-for-convolutional-neural-networks)
+  - [21 SegFormer: Simple and efficient design for semantic segmentation with transformers](#21-segformer-simple-and-efficient-design-for-semantic-segmentation-with-transformers)
 - [III. Few-shot Segmentation](#iii-few-shot-segmentation)
   - [00 SG-One: Similarity Guidance Network for One-Shot Semantic Segmentation](#00-sg-one-similarity-guidance-network-for-one-shot-semantic-segmentation)
   - [01 PANet: Few-Shot Image Semantic Segmentation with Prototype Alignment](#01-panet-few-shot-image-semantic-segmentation-with-prototype-alignment)
@@ -121,6 +124,9 @@
   - [06 Style and Content Disentanglement in Generative Adversarial Networks](#06-style-and-content-disentanglement-in-generative-adversarial-networks)
   - [07 Content and Style Disentanglement for Artistic Style Transfer](#07-content-and-style-disentanglement-for-artistic-style-transfer)
 
+<!-- /TOC -->
+<!-- /TOC -->
+<!-- /TOC -->
 <!-- /TOC -->
 <!-- /TOC -->
 <!-- /TOC -->
@@ -473,6 +479,30 @@ an **encoder** that utilizes a sequence of Transformer blocks to convert the inp
 - ![UniverSeg_1](./images/UniverSeg_1.png)
 - ![UniverSeg_2](./images/UniverSeg_2.png)
 - ![UniverSeg_3](./images/UniverSeg_3.png)
+
+
+
+## [19 Refinenet: Multi-path refinement networks for high-resolution semantic segmentation](./segmentation/RefineNet%20Multi-Path%20Refinement%20Networks%20for%20High-Resolution%20Semantic%20Segmentation.pdf)
+- Lin G, Milan A, Shen C, et al./2017/CVPR/3268
+- repeated subsampling operations like pooling or convolution striding in deep CNNs lead to a significant decrease in the initial image resolution. RefineNet, a generic multi-path refinement network that explicitly exploits all the information available along the down-sampling process to enable high-resolution prediction using long-range residual connections. In this way, **the deeper layers that capture high-level semantic features can be directly refined using fine-grained features from earlier convolutions**.
+- ![RefineNet_1](./images/RefineNet_1.png)
+- ![RefineNet_2](./images/RefineNet_2.png)
+
+
+## [20 Efficientnet: Rethinking model scaling for convolutional neural networks](./segmentation/EfficientNet%20Rethinking%20Model%20Scaling%20for%20Convolutional%20Neural%20Networks.pdf)
+- Tan M, Le Q./2019/ICML/15342
+- Convolutional Neural Networks (ConvNets) are commonly developed at a fixed resource budget, and then scaled up for better accuracy if more resources are available. In this paper, we systematically study model scaling and identify that carefully balancing network **depth, width, and resolution** can lead to better performance. (neural architecture search, **NAS for EfficientNet**)
+- ![Efficientnet_1](./images/EfficientNet_1.png)
+- ![Efficientnet_2](./images/EfficientNet_2.png)
+- ![Efficientnet_3](./images/EfficientNet_3.png)
+- ![Efficientnet_4](./images/EfficientNet_4.png)
+
+
+## [21 SegFormer: Simple and efficient design for semantic segmentation with transformers](./segmentation/SegFormer%20Simple%20and%20Efficient%20Design%20for%20Semantic%20Segmentation%20with%20Transformers.pdf)
+- Xie E, Wang W, Yu Z, et al./2021/NIPS/1831
+- SegFormer has two appealing features: 1) SegFormer comprises a novel **hierarchically structured Transformer encoder** which outputs multiscale features. **It does not need positional encoding** (positional-encoding-free), thereby avoiding the interpolation of positional codes which leads to decreased performance when the testing resolution differs from training. 2) SegFormer avoids complex decoders. The proposed **MLP decoder aggregates information from different layers**, and thus combining both local attention and global attention to render powerful representations.
+- ![SegFormer_1](./images/SegFormer_1.png)
+- ![SegFormer_2](./images/SegFormer_2.png)
 
 
 
@@ -960,7 +990,7 @@ contrastive self-supervised learning to align features so as to reduce the domai
 
 # VI. Domain Generalization
 
-## [00 FedDG: Federated Domain Generalization on Medical Image Segmentation via Episodic Learning in Continuous Frequency Space](./domainadaptation/Feddg%20Federated%20domain%20generalization%20on%20medical%20image%20segmentation%20via%20episodic%20learning%20in%20continuous%20frequency%20space%20.pdf)
+## [00 FedDG: Federated Domain Generalization on Medical Image Segmentation via Episodic Learning in Continuous Frequency Space](./domaingeneralization/Feddg%20Federated%20domain%20generalization%20on%20medical%20image%20segmentation%20via%20episodic%20learning%20in%20continuous%20frequency%20space%20.pdf)
 - Liu Q, Chen C, Qin J, et al./2021/CVPR/167
 - Federated learning allows distributed medical institutions to collaboratively learn a shared prediction model with privacy protection. While at clinical deployment, the models trained in federated learning can still suffer from performance drop when applied to **completely unseen hospitals outside the federation**.
 - Although FL has witnessed some pilot progress on medical image segmentation tasks, all existing works only focus on improving model performance on the internal clients, while neglecting model generalizability onto unseen domains outside the federation.
