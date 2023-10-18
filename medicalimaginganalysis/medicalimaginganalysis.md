@@ -30,6 +30,7 @@
   - [19 Refinenet: Multi-path refinement networks for high-resolution semantic segmentation](#19-refinenet-multi-path-refinement-networks-for-high-resolution-semantic-segmentation)
   - [20 Efficientnet: Rethinking model scaling for convolutional neural networks](#20-efficientnet-rethinking-model-scaling-for-convolutional-neural-networks)
   - [21 SegFormer: Simple and efficient design for semantic segmentation with transformers](#21-segformer-simple-and-efficient-design-for-semantic-segmentation-with-transformers)
+  - [22 TransUNet: Transformers Make Strong Encoders for Medical Image Segmentation](#22-transunet-transformers-make-strong-encoders-for-medical-image-segmentation)
 - [III. Few-shot Segmentation](#iii-few-shot-segmentation)
   - [00 SG-One: Similarity Guidance Network for One-Shot Semantic Segmentation](#00-sg-one-similarity-guidance-network-for-one-shot-semantic-segmentation)
   - [01 PANet: Few-Shot Image Semantic Segmentation with Prototype Alignment](#01-panet-few-shot-image-semantic-segmentation-with-prototype-alignment)
@@ -503,6 +504,14 @@ an **encoder** that utilizes a sequence of Transformer blocks to convert the inp
 - SegFormer has two appealing features: 1) SegFormer comprises a novel **hierarchically structured Transformer encoder** which outputs multiscale features. **It does not need positional encoding** (positional-encoding-free), thereby avoiding the interpolation of positional codes which leads to decreased performance when the testing resolution differs from training. 2) SegFormer avoids complex decoders. The proposed **MLP decoder aggregates information from different layers**, and thus combining both local attention and global attention to render powerful representations.
 - ![SegFormer_1](./images/SegFormer_1.png)
 - ![SegFormer_2](./images/SegFormer_2.png)
+
+
+## [22 TransUNet: Transformers Make Strong Encoders for Medical Image Segmentation](./segmentation/TransUNet%20Transformers%20Make%20Strong%20Encoders%20for%20Medical%20Image%20Segmentation.pdf)
+- Chen J, Lu Y, Yu Q, et al./2021/arXiv/2098
+- U-Net generally demonstrates limitations in explicitly modeling **long-range dependency**, due to the intrinsic locality of convolution operations. Transformers have emerged as alternative architectures with innate global self-attention mechanisms, but can result in **limited localization abilities due to insufficient low-level details**.
+- TransUNet merits both Transformers and U-Net. **On one hand**, the Transformer encodes tokenized image patches from a convolution neural network (CNN) feature map as the input sequence for extracting global contexts. **On the other hand**, the decoder upsamples the encoded features which are then combined with the high-resolution CNN feature maps to enable precise localization.
+- ![TransUNet](./images/TransUNet.png)
+
 
 
 
