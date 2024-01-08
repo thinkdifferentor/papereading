@@ -104,6 +104,7 @@
   - [21 Single-Domain Generalization in Medical Image Segmentation via Test-Time Adaptation from Shape Dictionary](#21-single-domain-generalization-in-medical-image-segmentation-via-test-time-adaptation-from-shape-dictionary)
   - [22 Joint Optimization of Class-Specific Training- and Test-Time Data Augmentation in Segmentation](#22-joint-optimization-of-class-specific-training--and-test-time-data-augmentation-in-segmentation)
   - [23 Robust and generalizable visual representation learning via random convolutions](#23-robust-and-generalizable-visual-representation-learning-via-random-convolutions)
+  - [24 Test-time Fourier Style Calibration for Domain Generalization](#24-test-time-fourier-style-calibration-for-domain-generalization)
 - [VII. Test Time Adaptation](#vii-test-time-adaptation)
   - [00 DLTTA: Dynamic Learning Rate for Test-Time Adaptation on Cross-Domain Medical Images](#00-dltta-dynamic-learning-rate-for-test-time-adaptation-on-cross-domain-medical-images)
   - [01 Continual Test-Time Domain Adaptation](#01-continual-test-time-domain-adaptation)
@@ -125,6 +126,7 @@
   - [06 Style and Content Disentanglement in Generative Adversarial Networks](#06-style-and-content-disentanglement-in-generative-adversarial-networks)
   - [07 Content and Style Disentanglement for Artistic Style Transfer](#07-content-and-style-disentanglement-for-artistic-style-transfer)
 
+<!-- /TOC -->
 <!-- /TOC -->
 <!-- /TOC -->
 <!-- /TOC -->
@@ -1246,6 +1248,14 @@ network might take these objects in the background as clues for recognizing the 
 - Random convolutions are approximately **shape-preserving and may distort local textures**. Intuitively, randomized convolutions create an **infinite number** of new domains with similar global shapes but random local texture. RandConv, a **data augmentation** technique using **multi-scale random-convolutions** to generate images with random texture while maintaining global shapes.
 - ![RandConv](./images/RandConv.png)
 - ![RandConv_2](./images/RandConv_2.png)
+
+
+## [24 Test-time Fourier Style Calibration for Domain Generalization](./domaingeneralization/Test-time%20Fourier%20Style%20Calibration%20for%20Domain%20Generalization.pdf)
+- Zhao X, Liu C, Sicilia A, et al./2022/IJCAI/13
+- domain generalization (DG) methods primarily rely on the source domains at train-time without manipulating the target domains at test-time, which could overft to source domains. (Multi-source Domain Generalization with Test-time Adaptation)
+- ![TF-Cal_1](./images/TF-Cal_1.png)
+
+
 
 
 
