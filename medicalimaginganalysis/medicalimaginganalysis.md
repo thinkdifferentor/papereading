@@ -105,6 +105,7 @@
   - [22 Joint Optimization of Class-Specific Training- and Test-Time Data Augmentation in Segmentation](#22-joint-optimization-of-class-specific-training--and-test-time-data-augmentation-in-segmentation)
   - [23 Robust and generalizable visual representation learning via random convolutions](#23-robust-and-generalizable-visual-representation-learning-via-random-convolutions)
   - [24 Test-time Fourier Style Calibration for Domain Generalization](#24-test-time-fourier-style-calibration-for-domain-generalization)
+  - [25 MemREIN: Rein the Domain Shift for Cross-Domain Few-Shot Learning](#25-memrein-rein-the-domain-shift-for-cross-domain-few-shot-learning)
 - [VII. Test Time Adaptation](#vii-test-time-adaptation)
   - [00 DLTTA: Dynamic Learning Rate for Test-Time Adaptation on Cross-Domain Medical Images](#00-dltta-dynamic-learning-rate-for-test-time-adaptation-on-cross-domain-medical-images)
   - [01 Continual Test-Time Domain Adaptation](#01-continual-test-time-domain-adaptation)
@@ -126,6 +127,7 @@
   - [06 Style and Content Disentanglement in Generative Adversarial Networks](#06-style-and-content-disentanglement-in-generative-adversarial-networks)
   - [07 Content and Style Disentanglement for Artistic Style Transfer](#07-content-and-style-disentanglement-for-artistic-style-transfer)
 
+<!-- /TOC -->
 <!-- /TOC -->
 <!-- /TOC -->
 <!-- /TOC -->
@@ -1252,10 +1254,15 @@ network might take these objects in the background as clues for recognizing the 
 
 ## [24 Test-time Fourier Style Calibration for Domain Generalization](./domaingeneralization/Test-time%20Fourier%20Style%20Calibration%20for%20Domain%20Generalization.pdf)
 - Zhao X, Liu C, Sicilia A, et al./2022/IJCAI/13
-- domain generalization (DG) methods primarily rely on the source domains at train-time without manipulating the target domains at test-time, which could overft to source domains. (Multi-source Domain Generalization with Test-time Adaptation)
+- domain generalization (DG) methods primarily rely on the source domains at train-time without manipulating the target domains at test-time (**theoretical analysis**), which could overft to source domains. (Multi-source Domain Generalization with Test-time Adaptation)
 - ![TF-Cal_1](./images/TF-Cal_1.png)
 
 
+## [25 MemREIN: Rein the Domain Shift for Cross-Domain Few-Shot Learning](./fewshotdomainadaptation/MemREIN%20Rein%20the%20Domain%20Shift%20for%20Cross-Domain%20Few-Shot%20Learning.pdf)
+- Xu Y, Wang L, Wang Y, et al./2022/IJCAI/4
+- an instance normalization algorithm is explored to alleviate feature dissimilarity, which provides the initial model generalization ability. However, naively normalizing the feature would **lose fine-grained discriminative knowledge** between different classes.
+- The core idea of MemREIN is to enhance the **generalization ability** while still be able to balance the **discrimination ability** for subsequent classifcation.
+- ![MemREIN](./images/MemREIN.png)
 
 
 
