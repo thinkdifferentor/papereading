@@ -40,6 +40,7 @@
   - [05 Decoupling Zero-Shot Semantic Segmentation](#05-decoupling-zero-shot-semantic-segmentation)
   - [06 Dynamic Prototype Convolution Network for Few-Shot Semantic Segmentation](#06-dynamic-prototype-convolution-network-for-few-shot-semantic-segmentation)
   - [07 Zero-Shot Day-Night Domain Adaptation with a Physics Prior](#07-zero-shot-day-night-domain-adaptation-with-a-physics-prior)
+  - [08 MemREIN: Rein the Domain Shift for Cross-Domain Few-Shot Learning](#08-memrein-rein-the-domain-shift-for-cross-domain-few-shot-learning)
 - [IV. Self-Supervised based Segmentation](#iv-self-supervised-based-segmentation)
   - [00 C-CAM: Causal CAM for Weakly Supervised Semantic Segmentation on Medical Image](#00-c-cam-causal-cam-for-weakly-supervised-semantic-segmentation-on-medical-image)
   - [01 Self-Supervised Pre-Training of Swin Transformers for 3D Medical Image Analysis](#01-self-supervised-pre-training-of-swin-transformers-for-3d-medical-image-analysis)
@@ -105,7 +106,6 @@
   - [22 Joint Optimization of Class-Specific Training- and Test-Time Data Augmentation in Segmentation](#22-joint-optimization-of-class-specific-training--and-test-time-data-augmentation-in-segmentation)
   - [23 Robust and generalizable visual representation learning via random convolutions](#23-robust-and-generalizable-visual-representation-learning-via-random-convolutions)
   - [24 Test-time Fourier Style Calibration for Domain Generalization](#24-test-time-fourier-style-calibration-for-domain-generalization)
-  - [25 MemREIN: Rein the Domain Shift for Cross-Domain Few-Shot Learning](#25-memrein-rein-the-domain-shift-for-cross-domain-few-shot-learning)
 - [VII. Test Time Adaptation](#vii-test-time-adaptation)
   - [00 DLTTA: Dynamic Learning Rate for Test-Time Adaptation on Cross-Domain Medical Images](#00-dltta-dynamic-learning-rate-for-test-time-adaptation-on-cross-domain-medical-images)
   - [01 Continual Test-Time Domain Adaptation](#01-continual-test-time-domain-adaptation)
@@ -117,6 +117,7 @@
 - [VIII. Federated Learning](#viii-federated-learning)
   - [00 Communication-Efficient Learning of Deep Networks from Decentralized Data](#00-communication-efficient-learning-of-deep-networks-from-decentralized-data)
   - [01 Federated Optimization in Heterogeneous Networks](#01-federated-optimization-in-heterogeneous-networks)
+  - [02 Fair Federated Medical Image Segmentation via Client Contribution Estimation](#02-fair-federated-medical-image-segmentation-via-client-contribution-estimation)
 - [IX. Others](#ix-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -127,6 +128,9 @@
   - [06 Style and Content Disentanglement in Generative Adversarial Networks](#06-style-and-content-disentanglement-in-generative-adversarial-networks)
   - [07 Content and Style Disentanglement for Artistic Style Transfer](#07-content-and-style-disentanglement-for-artistic-style-transfer)
 
+<!-- /TOC -->
+<!-- /TOC -->
+<!-- /TOC -->
 <!-- /TOC -->
 <!-- /TOC -->
 <!-- /TOC -->
@@ -597,6 +601,14 @@ is performed by labeling each pixel as the class of the nearest prototype). With
 - *Adding prior knowledge from physical models in a neural network has the potential to improve performance without additional training data*.
 - The CIConv layer transforms **the input image into an edge map representation** that is no longer sensitive to the intensity and color of the light source, but as a side effect also **removes valuable color information**. (**TODO**: optimally combining color information and color invariant edge information)
 - [Supplementary](./fewshotdomainadaptation/Zero-Shot%20Day-Night%20Domain%20Adaptation%20with%20a%20Physics%20Prior_Supplemental.pdf) 
+
+
+## [08 MemREIN: Rein the Domain Shift for Cross-Domain Few-Shot Learning](./fewshotdomainadaptation/MemREIN%20Rein%20the%20Domain%20Shift%20for%20Cross-Domain%20Few-Shot%20Learning.pdf)
+- Xu Y, Wang L, Wang Y, et al./2022/IJCAI/4
+- an instance normalization algorithm is explored to alleviate feature dissimilarity, which provides the initial model generalization ability. However, naively normalizing the feature would **lose fine-grained discriminative knowledge** between different classes.
+- The core idea of MemREIN is to enhance the **generalization ability** while still be able to balance the **discrimination ability** for subsequent classifcation.
+- ![MemREIN](./images/MemREIN.png)
+
 
 
 # IV. Self-Supervised based Segmentation
@@ -1258,11 +1270,7 @@ network might take these objects in the background as clues for recognizing the 
 - ![TF-Cal_1](./images/TF-Cal_1.png)
 
 
-## [25 MemREIN: Rein the Domain Shift for Cross-Domain Few-Shot Learning](./fewshotdomainadaptation/MemREIN%20Rein%20the%20Domain%20Shift%20for%20Cross-Domain%20Few-Shot%20Learning.pdf)
-- Xu Y, Wang L, Wang Y, et al./2022/IJCAI/4
-- an instance normalization algorithm is explored to alleviate feature dissimilarity, which provides the initial model generalization ability. However, naively normalizing the feature would **lose fine-grained discriminative knowledge** between different classes.
-- The core idea of MemREIN is to enhance the **generalization ability** while still be able to balance the **discrimination ability** for subsequent classifcation.
-- ![MemREIN](./images/MemREIN.png)
+
 
 
 
@@ -1360,6 +1368,15 @@ network might take these objects in the background as clues for recognizing the 
   - (2) non-identically distributed data across the network (**statistical heterogeneity**).
 - The key insight of *FedProx* is that an **interplay exists between systems and statistical heterogeneity** in federated learning. Indeed, both **dropping stragglers or naively incorporating partial information from stragglers** implicitly increases statistical heterogeneity and can adversely impact convergence behavior.
 - ![FedProx](./images/FedProx.png)
+
+
+## [02 Fair Federated Medical Image Segmentation via Client Contribution Estimation](./federatedlearning/Fair%20Federated%20Medical%20Image%20Segmentation%20via%20Client%20Contribution%20Estimation.pdf)
+- Jiang M, Roth H R, Li W, et al./2023/CVPR/7
+- How to ensure **fairness** is an important topic in federated learning (FL). “**individual/group fairness**” (aims to mitigate model bias on specific protected attribute), “**collaboration fairness**” (each client to receive a reward that fairly reflects its contribution), and “**performance fairness**” (requires uniformity of the performance distribution across clients) are three most commonly studied types of fairness.
+- (1) we propose a novel client contribution estimation method to **approximate SV** (Shapley Value) by comparing a certain client with respect to all other clients. (2) We further present **a new FL algorithm**, federated training via contribution estimation (FedCE), which uses client contributions as new weighting factors for global model aggregation.
+
+
+
 
 
 # IX. Others
