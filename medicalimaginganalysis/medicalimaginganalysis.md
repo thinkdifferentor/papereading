@@ -41,10 +41,11 @@
   - [06 Dynamic Prototype Convolution Network for Few-Shot Semantic Segmentation](#06-dynamic-prototype-convolution-network-for-few-shot-semantic-segmentation)
   - [07 Zero-Shot Day-Night Domain Adaptation with a Physics Prior](#07-zero-shot-day-night-domain-adaptation-with-a-physics-prior)
   - [08 MemREIN: Rein the Domain Shift for Cross-Domain Few-Shot Learning](#08-memrein-rein-the-domain-shift-for-cross-domain-few-shot-learning)
-- [IV. Self-Supervised based Segmentation](#iv-self-supervised-based-segmentation)
+- [IV. Self-Supervised \& Semi-Supervised based Segmentation](#iv-self-supervised--semi-supervised-based-segmentation)
   - [00 C-CAM: Causal CAM for Weakly Supervised Semantic Segmentation on Medical Image](#00-c-cam-causal-cam-for-weakly-supervised-semantic-segmentation-on-medical-image)
   - [01 Self-Supervised Pre-Training of Swin Transformers for 3D Medical Image Analysis](#01-self-supervised-pre-training-of-swin-transformers-for-3d-medical-image-analysis)
   - [02 Class-Balanced Pixel-Level Self-Labeling for Domain Adaptive Semantic Segmentation](#02-class-balanced-pixel-level-self-labeling-for-domain-adaptive-semantic-segmentation)
+  - [03 CauSSL: Causality-inspired Semi-supervised Learning for Medical Image Segmentation](#03-caussl-causality-inspired-semi-supervised-learning-for-medical-image-segmentation)
 - [V. Domain Adaptation](#v-domain-adaptation)
   - [00 Open Compound Domain Adaptation](#00-open-compound-domain-adaptation)
   - [01 Source-Free Open Compound Domain Adaptation in Semantic Segmentation](#01-source-free-open-compound-domain-adaptation-in-semantic-segmentation)
@@ -611,7 +612,7 @@ is performed by labeling each pixel as the class of the nearest prototype). With
 
 
 
-# IV. Self-Supervised based Segmentation
+# IV. Self-Supervised & Semi-Supervised based Segmentation
 
 ## [00 C-CAM: Causal CAM for Weakly Supervised Semantic Segmentation on Medical Image](./segmentation/C-CAM%20Causal%20CAM%20for%20Weakly%20Supervised%20Semantic%20Segmentation%20on%20Medical%20Image.pdf)
 - Chen Z, Tian Z, Zhu J, et al./2022/CVPR/-
@@ -642,6 +643,16 @@ is performed by labeling each pixel as the class of the nearest prototype). With
 - ![CPSL_2](./images/CPSL_2.png)
 
  
+## [03 CauSSL: Causality-inspired Semi-supervised Learning for Medical Image Segmentation](./semi-supervised/CauSSL%20Causality-inspired%20Semi-supervised%20Learning%20for%20Medical%20Image%20Segmentation.pdf)
+- Miao J, Chen C, Liu F, et al./2023/ICCV/3
+- There are still concerns in the literature about the **theoretical foundation** and **explanation** of semi-supervised segmentation. This study first proposes a novel causal diagram to provide a theoretical foundation and introduce a causality-inspired SSL approach on top of co-training frameworks, CauSSL, which can be flexibly incorporated into different
+existing SSL methods.
+- Current semi-supervised segmentation methods can be mainly divided into two categories: (1) **self-training or pseudo-labeling**, which utilize pseudo-labels as supervision for unlabeled images. (2) **consistency regularization**, which apply consistency regularization on the predictions between different models or branches based on the popular Mean Teacher (MT) or co-training frameworks.
+- ![CauSSL_1](./images/CauSSL_1.png), ![CauSSL_2](./images/CauSSL_2.png)
+- ![CauSSL_3](./images/CauSSL_3.png)
+- **Note**: improvements on the algorithmic independence
+
+
 
 # V. Domain Adaptation
 
