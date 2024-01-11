@@ -46,6 +46,7 @@
   - [01 Self-Supervised Pre-Training of Swin Transformers for 3D Medical Image Analysis](#01-self-supervised-pre-training-of-swin-transformers-for-3d-medical-image-analysis)
   - [02 Class-Balanced Pixel-Level Self-Labeling for Domain Adaptive Semantic Segmentation](#02-class-balanced-pixel-level-self-labeling-for-domain-adaptive-semantic-segmentation)
   - [03 CauSSL: Causality-inspired Semi-supervised Learning for Medical Image Segmentation](#03-caussl-causality-inspired-semi-supervised-learning-for-medical-image-segmentation)
+  - [04 XNet: Wavelet-Based Low and High Frequency Fusion Networks for Fully- and Semi-Supervised Semantic Segmentation of Biomedical Images](#04-xnet-wavelet-based-low-and-high-frequency-fusion-networks-for-fully--and-semi-supervised-semantic-segmentation-of-biomedical-images)
 - [V. Domain Adaptation](#v-domain-adaptation)
   - [00 Open Compound Domain Adaptation](#00-open-compound-domain-adaptation)
   - [01 Source-Free Open Compound Domain Adaptation in Semantic Segmentation](#01-source-free-open-compound-domain-adaptation-in-semantic-segmentation)
@@ -129,6 +130,7 @@
   - [06 Style and Content Disentanglement in Generative Adversarial Networks](#06-style-and-content-disentanglement-in-generative-adversarial-networks)
   - [07 Content and Style Disentanglement for Artistic Style Transfer](#07-content-and-style-disentanglement-for-artistic-style-transfer)
 
+<!-- /TOC -->
 <!-- /TOC -->
 <!-- /TOC -->
 <!-- /TOC -->
@@ -651,6 +653,15 @@ existing SSL methods.
 - ![CauSSL_1](./images/CauSSL_1.png), ![CauSSL_2](./images/CauSSL_2.png)
 - ![CauSSL_3](./images/CauSSL_3.png)
 - **Note**: improvements on the algorithmic independence
+
+
+## [04 XNet: Wavelet-Based Low and High Frequency Fusion Networks for Fully- and Semi-Supervised Semantic Segmentation of Biomedical Images](./semi-supervised/XNet%20Wavelet-Based%20Low%20and%20High%20Frequency%20Fusion%20Networks%20for%20Fully-%20and%20Semi-Supervised%20Semantic%20Segmentation%20of%20Biomedical%20Images.pdf)
+- Zhou Y, Huang J, Wang C, et al./2023/ICCV/2
+- So far, DNN models are usually designed to support one of these two learning schemes, **unified models** that support both fully- and semi-supervised segmentation remain limited. Furthermore, few fully-supervised models focus on the intrinsic low frequency (LF) and high frequency (HF) information of images to improve performance.
+- XNet can simultaneously realize fully-supervised learning based on **LF and HF information fusion**, and semi-supervised learning based on **LF and HF outputs consistency**. the HF information generally represents image details, while the LF information are often abstract semantics.
+- ![XNet_1](./image/../images/XNet.png)
+- ![XNet_2](./image/../images/XNet_2.png)
+
 
 
 
