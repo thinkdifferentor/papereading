@@ -46,6 +46,7 @@
   - [20 ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices](#20-shufflenet-an-extremely-efficient-convolutional-neural-network-for-mobile-devices)
   - [21 Randaugment: Practical automated data augmentation with a reduced search space](#21-randaugment-practical-automated-data-augmentation-with-a-reduced-search-space)
   - [22 Spatial Transformer Networks](#22-spatial-transformer-networks)
+  - [23 Fast Fourier Convolution](#23-fast-fourier-convolution)
 
 <!-- /TOC -->
 
@@ -439,3 +440,10 @@ hair), and it enables intuitive, scale-specific control of the synthesis.
 - Unlike pooling layers, **where the receptive fields are fixed and local**, the spatial transformer module is a **dynamic mechanism** that can actively spatially transform an image (or a feature map) by **producing an appropriate transformation** for each input sample. 
 - ![STN_1](./images/STN_1.png)
 - ![STN_2](./images/STN_2.png)
+
+
+## [23 Fast Fourier Convolution](./Fast%20Fourier%20Convolution.pdf)
+- Chi L, Jiang B, Mu Y./2020/NIPS/254
+- Vanilla convolutions in modern deep networks are known to **operate locally and at fixed scale**. This causes low efficacy in connecting **two distant locations in the network**. fast Fourier convolution (FFC), which has the main hallmarks of non-local receptive fields and cross-scale fusion within the convolutional unit. According to spectral convolution theorem in Fourier theory, *point-wise update in the spectral domain globally affects all input features involved in Fourier transform*, which sheds light on neural architectural design with **non-local receptive field**.
+- ![FFC](./images/FFC.png)
+
