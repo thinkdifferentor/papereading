@@ -108,6 +108,7 @@
   - [22 Joint Optimization of Class-Specific Training- and Test-Time Data Augmentation in Segmentation](#22-joint-optimization-of-class-specific-training--and-test-time-data-augmentation-in-segmentation)
   - [23 Robust and generalizable visual representation learning via random convolutions](#23-robust-and-generalizable-visual-representation-learning-via-random-convolutions)
   - [24 Test-time Fourier Style Calibration for Domain Generalization](#24-test-time-fourier-style-calibration-for-domain-generalization)
+  - [25 Deep Frequency Filtering for Domain Generalization](#25-deep-frequency-filtering-for-domain-generalization)
 - [VII. Test Time Adaptation](#vii-test-time-adaptation)
   - [00 DLTTA: Dynamic Learning Rate for Test-Time Adaptation on Cross-Domain Medical Images](#00-dltta-dynamic-learning-rate-for-test-time-adaptation-on-cross-domain-medical-images)
   - [01 Continual Test-Time Domain Adaptation](#01-continual-test-time-domain-adaptation)
@@ -130,6 +131,7 @@
   - [06 Style and Content Disentanglement in Generative Adversarial Networks](#06-style-and-content-disentanglement-in-generative-adversarial-networks)
   - [07 Content and Style Disentanglement for Artistic Style Transfer](#07-content-and-style-disentanglement-for-artistic-style-transfer)
 
+<!-- /TOC -->
 <!-- /TOC -->
 <!-- /TOC -->
 <!-- /TOC -->
@@ -1292,7 +1294,13 @@ network might take these objects in the background as clues for recognizing the 
 - ![TF-Cal_1](./images/TF-Cal_1.png)
 
 
-
+## [25 Deep Frequency Filtering for Domain Generalization](./domaingeneralization/Deep%20Frequency%20Filtering%20for%20Domain%20Generalization.pdf)
+- Lin S, Zhang Z, Huang Z, et al./2023/CVPR/4
+- In this paper, we propose **Deep Frequency Filtering** (DFF) for learning domain-generalizable features, which is the first endeavour to explicitly modulate the frequency components of different transfer difficulties across domains in the latent space during training.
+- To achieve this, we perform Fast Fourier Transform (FFT) for **the feature maps** at different layers, then adopt a light-weight module to learn **attention masks** from the frequency representations after FFT to **enhance** transferable components while **suppressing** the components not conducive to generalization. Our **goal** is to adaptively modulate different frequency components over different network depths during training.
+- low-frequency components are relatively easier to be generalized than high-frequency ones while high-frequency components are commonly exploited to trade robustness for accuracy. Although this phenomenon can be observed consistently over different instances, it does not mean that high-frequency components have the same **proportion** in different samples or have the same **degree** of effects on the generalization ability.
+- For the frequency representation, there are two utilizable **properties**: 1. Different frequency components of the original feature are decomposed into elements at different spatial locations, which could be viewed as a frequency-based disentanglement and re-arrangement for the the original feature. 2. frequency representation is a naturally global feature representation, which can facilitate the suppression of globally distributed domain-specific information.
+- ![DFF](./images/DFF.png)
 
 
 
