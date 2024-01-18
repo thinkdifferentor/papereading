@@ -122,6 +122,7 @@
   - [00 Communication-Efficient Learning of Deep Networks from Decentralized Data](#00-communication-efficient-learning-of-deep-networks-from-decentralized-data)
   - [01 Federated Optimization in Heterogeneous Networks](#01-federated-optimization-in-heterogeneous-networks)
   - [02 Fair Federated Medical Image Segmentation via Client Contribution Estimation](#02-fair-federated-medical-image-segmentation-via-client-contribution-estimation)
+  - [03 Rethinking Architecture Design for Tackling Data Heterogeneity in Federated Learning](#03-rethinking-architecture-design-for-tackling-data-heterogeneity-in-federated-learning)
 - [IX. Others](#ix-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -132,6 +133,7 @@
   - [06 Style and Content Disentanglement in Generative Adversarial Networks](#06-style-and-content-disentanglement-in-generative-adversarial-networks)
   - [07 Content and Style Disentanglement for Artistic Style Transfer](#07-content-and-style-disentanglement-for-artistic-style-transfer)
 
+<!-- /TOC -->
 <!-- /TOC -->
 <!-- /TOC -->
 - [I. Survey of Medical Image Analysis](#i-survey-of-medical-image-analysis)
@@ -256,6 +258,7 @@
   - [00 Communication-Efficient Learning of Deep Networks from Decentralized Data](#00-communication-efficient-learning-of-deep-networks-from-decentralized-data)
   - [01 Federated Optimization in Heterogeneous Networks](#01-federated-optimization-in-heterogeneous-networks)
   - [02 Fair Federated Medical Image Segmentation via Client Contribution Estimation](#02-fair-federated-medical-image-segmentation-via-client-contribution-estimation)
+  - [03 Rethinking Architecture Design for Tackling Data Heterogeneity in Federated Learning](#03-rethinking-architecture-design-for-tackling-data-heterogeneity-in-federated-learning)
 - [IX. Others](#ix-others)
   - [00 Fully Convolutional Networks for Semantic Segmentation](#00-fully-convolutional-networks-for-semantic-segmentation)
   - [01 Pyramid Scene Parsing Network](#01-pyramid-scene-parsing-network)
@@ -1556,7 +1559,13 @@ network might take these objects in the background as clues for recognizing the 
 - (1) we propose a novel client contribution estimation method to **approximate SV** (Shapley Value) by comparing a certain client with respect to all other clients. (2) We further present **a new FL algorithm**, federated training via contribution estimation (FedCE), which uses client contributions as new weighting factors for global model aggregation.
 
 
-
+## [03 Rethinking Architecture Design for Tackling Data Heterogeneity in Federated Learning](./federatedlearning/Rethinking%20Architecture%20Design%20for%20Tackling%20Data%20Heterogeneity%20in%20Federated%20Learning.pdf)
+- Qu L, Zhou Y, Liang P P, et al./2022/CVPR/85
+- This work demonstrate that self-attention-based architectures are *more robust to distribution shifts and hence improve federated learning over heterogeneous data*. ViT-Fed can greatly reduce catastrophic forgetting of previous devices, accelerate convergence, and reach a better global model, especially when dealing with heterogeneous data.
+- To enable effective distributed training across heterogeneous devices, two categories of methods have emerged: (1) **parallel FL methods** involve training each local client in parallel either synchronously or asynchronously (such as the classic FedAVG), whereas (2) **serial methods** train each client in a serial and cyclical way (such as Cyclic Weight Transfer (CWT).
+- ![ViT-Fed](./images/ViT-Fed.png)
+- At its core, FL presents a challenge of data heterogeneity in the distributions of training data across clients, which causes **non-guaranteed convergence and model weight divergence (performance fairness)** for **parallel FL methods**, and severe **catastrophic forgetting problem** for **serial FL methods**.
+- Therefore, we suggest users apply large E (5,10) on homogeneous data to reduce communication, but a small E (1) for highly heterogeneous cases.
 
 
 # IX. Others
