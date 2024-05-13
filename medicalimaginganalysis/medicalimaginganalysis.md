@@ -963,7 +963,7 @@ target in a pixel-level**. Those **translated source images** are closely aligne
 - ![DSFN_3](./images/DSFN_3.png)
 
 
-## [14 Generalizable Cross-modality Medical Image Segmentation via Style Augmentation and Dual Normalization](./domainadaptation/Generalizable%20Cross-modality%20Medical%20Image%20Segmentation%20via%20Style%20Augmentation%20and%20Dual%20Normalization.pdf)
+## [14 Generalizable Cross-modality Medical Image Segmentation via Style Augmentation and Dual Normalization](./domaingeneralization//Generalizable%20Cross-modality%20Medical%20Image%20Segmentation%20via%20Style%20Augmentation%20and%20Dual%20Normalization.pdf)
 - Zhou Z, Qi L, Yang X, et al. /2022/CVPR/6
 - This paper propose a novel **dual-normalization model** by leveraging the **augmented source-similar and source-dissimilar images** during our generalizable segmentation. This work fouse on **cross-modality** DG problem.(cross-center and cross-modality, the later is more challenging with larger domain shift.)
 - To be specifc, given a single source domain, aiming to simulate the **possible appearance change** in unseen target domains, we frst utilize **a nonlinear transformation** to augment source-similar and source-dissimilar images. Then, to **suffciently exploit these two types of augmentations**, our proposed dualnormalization based model employs a **shared backbone yet independent batch normalization layer** for separate normalization. Afterward, we put forward a **style-based selection scheme** to automatically choose the appropriate path **in the test stage**.
